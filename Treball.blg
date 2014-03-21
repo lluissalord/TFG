@@ -1,0 +1,59 @@
+This is BibTeX, Version 0.99d (TeX Live 2012/Debian)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: Treball.aux
+The style file: unsrtnat.bst
+Database file #1: ./Bibliografia/library.bib
+Warning--empty year in Aibo_Images
+Warning--empty year in Urbi_Docs
+Warning--empty year in Arduino
+Warning--empty year in ASIMO_History
+Warning--empty year in REEM_C
+Warning--empty year in Robotics
+Warning--can't use both volume and number fields in Marc2008
+Warning--empty year in Ion
+Warning--empty year in Ion
+Warning--empty journal in TFG_Carlos_Ramos
+Warning--there's a number but no volume in Fujita2000
+Warning--empty year in ROS
+You've used 26 entries,
+            2481 wiz_defined-function locations,
+            744 strings with 9880 characters,
+and the built_in function-call counts, 9849 in all, are:
+= -- 858
+> -- 496
+< -- 18
++ -- 200
+- -- 147
+* -- 747
+:= -- 1601
+add.period$ -- 108
+call.type$ -- 26
+change.case$ -- 52
+chr.to.int$ -- 25
+cite$ -- 38
+duplicate$ -- 478
+empty$ -- 866
+format.name$ -- 177
+if$ -- 2077
+int.to.chr$ -- 2
+int.to.str$ -- 27
+missing$ -- 17
+newline$ -- 166
+num.names$ -- 80
+pop$ -- 212
+preamble$ -- 1
+purify$ -- 26
+quote$ -- 0
+skip$ -- 316
+stack$ -- 0
+substring$ -- 340
+swap$ -- 90
+text.length$ -- 4
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 182
+warning$ -- 12
+while$ -- 75
+width$ -- 0
+write$ -- 385
+(There were 12 warnings)

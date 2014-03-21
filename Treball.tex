@@ -27,6 +27,9 @@
 %\usepackage[nomain,acronym,toc]{glossaries} % nomain, if you define glossaries in a file, and you use 
 %\include{./Glossari/glossari}
 %\makeglossaries
+
+%Pendent el fer el glossari
+
 \usepackage{imakeidx}
 \makeindex
 
@@ -66,6 +69,8 @@
 \paragraph{}
 \thispagestyle{empty}
 \cleardoublepage
+
+\setcounter{page}{1} %Començar en la pagina 1
 
 \begin{abstract}
 \addcontentsline{toc}{section}{Resum}
@@ -141,14 +146,14 @@ The estability of the robots...
 
 \item[\textbf{REEM-C}] Aquest últim humanoide és el creat per PAL Robotics \cite{REEM_C}. Destaca pel fet de ser el primer bípede enfocat en la investigació i basat 100\% en ROS. El REEM-C està basat, entre d'altres teories, amb el ZMP i en el aprenentatge propi del robot. A més, les seves característiques de reconeixement de veu, manipulació d'objectes i d'interacció amb humans, és una eina educativa molt útil. \cite{Robotics}
 
-\item[\textbf{BigDog}] És un dels grans robots que s'han creat al Boston Dinamics, prenent el que va ser inicialment desenvolupat en la DARPA\cite{Marc2008}. Aquest "\textit{gos}" va ser dissenyat per ús militar, en concret, per acompanyar als soldats portant la carga necessària en terrenys on no podria desplaçar-se un vehicle convencional. Aquest quadrúpede és dinàmicament estable\footnote{Sistema que és estable tenint en compte els efectes inercials i altres components dinàmiques que apareixen en el propi sistema \cite{Purushotham2009}.} gracies al gran conjunt de sensors i actuadors que arriba a tenir, combinats amb els estudis que s'han fet sobre els algorismes que s'hi han implantat.
+\item[\textbf{BigDog}] És un dels grans robots que s'han creat al Boston Dinamics, prenent el que va ser inicialment desenvolupat en la DARPA\cite{Marc2008}. Aquest "\textit{gos}" va ser dissenyat per ús militar, en concret, per acompanyar als soldats portant la carga necessària en terrenys on no podria desplaçar-se un vehicle convencional. Aquest quadrúpede és dinàmicament estable\footnote{Sistema que és estable tenint en compte els efectes inercials i altres components dinàmiques que apareixen en el propi sistema \cite{Purushotham2009}.} gracies al gran conjunt de sensors i actuadors que arriba a tenir, combinats amb els estudis que s'han fet sobre els algorismes que s'hi han implantat \cite{Playter2006}.
 
 \item[\textbf{LittleDog}] Aquest quadrúpede és el predecessor del BigDog. Té la mateixa base que l'anterior, tot i que en aquest és on s'ha fet més estudi del aprenentatge del robot. La investigació que s'hi ha fet al damunt, tant d'aprenentatge, com de criteri de ZMP és pot entendre de forma genèrica en \cite{Kalakrishnan2010}. 
 
 \end{itemize}
 
-\paragraph{}
- 
+\paragraph{}A banda dels nombrats anteriorment, existeixen molts altres robots amb potes que han servit per aprofundir en coneixements diversos, com l'estabilitat o l'aprenentatge dels robots. Molts d'ells han sigut creats des de cero, com són els següents exemples: (1) el BISAM, on en l'article \cite{Albiez2003} s'estudia com provocar que els moviments siguin més semblants als d'un mamífer; (2) el MRWALL-SPECT IV, on l'autor d'aquests articles \cite{Loc2010} i \cite{Loc2011} es centra en l'adaptabilitat del quadrúpede a diferents terrenys; (3) el MERO, estudiat en \cite{Ion} per fer un anàlisis d'estabilitat quan aquest es desplaça; (4) per últim, també hi ha els casos d'hexàpodes, tant per l'estudi del caminar amb el criteri de les tres potes \cite{Lee1988}, com en la construcció des de cero \cite{Lojo2009}, entre d'altres. 
+
 
 %cercar articles o memories que utilitzin robots i que siguin sobre estabilitat tant sigui de quadrupedes, bipedes com de Zero Moment Point
 %També cercar sobre com tractar el tema del centre de gravetat (COG)
