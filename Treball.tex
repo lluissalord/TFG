@@ -1,0 +1,419 @@
+\documentclass[12pt,a4paper,final,twoside]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[catalan]{babel}
+
+\usepackage{hyperref}
+\usepackage{url}
+
+\usepackage{setspace}
+\onehalfspacing
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{multirow}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{framed}
+
+\usepackage[left=2.5cm,right=2.5cm,top=2.5cm,bottom=2.5cm]{geometry}
+
+\usepackage{appendix}
+\renewcommand{\appendixname}{Annexos}
+\renewcommand{\appendixtocname}{Annexos}
+\renewcommand{\appendixpagename}{Annexos}
+
+
+%\usepackage[nomain,acronym,toc]{glossaries} % nomain, if you define glossaries in a file, and you use 
+%\include{./Glossari/glossari}
+%\makeglossaries
+\usepackage{imakeidx}
+\makeindex
+
+\usepackage{wrapfig}
+
+%\usepackage{makeidx}
+%\makeindex
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhead{}
+\fancyhead[RO,LE]{\thepage}
+\fancyhead[RE,LO]{Aibo}
+\fancyfoot{}
+\fancyfoot[RO,LE]{\includegraphics[scale=0.3]{Imatges/etseib.jpg}}
+
+\usepackage[numbers]{natbib}
+\bibliographystyle{unsrtnat}
+
+\title{Aibo}
+\author{Lluís Salord Quetglas\\
+		\texttt{l.salord.quetglas@gmail.com}\\}
+\date{\today}
+
+
+
+
+\begin{document}
+\maketitle
+\thispagestyle{empty}
+\begin{figure}[h!]
+\centering
+\includegraphics[scale=0.1]{Imatges/ERS7.jpg} 
+\end{figure}
+
+\newpage
+\paragraph{}
+\thispagestyle{empty}
+\cleardoublepage
+
+\begin{abstract}
+\addcontentsline{toc}{section}{Resum}
+L'estabilitat del robots...
+\end{abstract}
+
+\renewcommand{\abstractname}{Resumen}
+\begin{abstract}
+\addcontentsline{toc}{section}{Resumen}
+La estabilidad de los robots...
+\end{abstract}
+
+\renewcommand{\abstractname}{Abstract}
+\begin{abstract}
+\addcontentsline{toc}{section}{Abstract}
+The estability of the robots...
+\end{abstract}
+\newpage
+
+
+\tableofcontents
+\newpage
+\listoffigures
+\newpage
+\listoftables
+\newpage
+
+
+%\printglossary
+%\newpage
+
+\section*{Prefaci}
+\addcontentsline{toc}{section}{Prefaci}
+\subsection*{Motivació}
+\addcontentsline{toc}{subsection}{Motivació}
+
+\paragraph{}Moltes persones que tenen devoció pel món de la robòtica els hi ha vingut des de ben joves, aquest no és el meu cas. A mi, el que m'agradava era la informàtica. Sent petit vaig aprendre de forma autodidacte a programar en \textit{C++} i crear un servidor propi. Fet que ajudà, en arribar a la UPC, a divertir-me amb assignatures relacionades amb programació, però em faltava veure reflectit el meu treball amb alguna utilitat física. No va ser fins que en Projecte II, vam controlar un mecanisme a través d'un microcontrolador \textit{Arduino}, amb programació basada en \textit{Wiring} \cite{Arduino}, llavors vaig veure clar cap on volia enfocar el meu futur, la robòtica.
+
+\paragraph{}D'aquesta motivació que ha crescut poc a poc n'ha sorgit el perquè d'escollir aquest TFG. A més, a cada pas que he fet en el treball, com més he vist i entès la gran complexitat d'altres robots, com el \textit{Big Dog} del \textit{Boston Dinamics} o el \textit{NAO} de \textit{Aldebaran Robotics}, entre d'altres, més estímuls tenia per avançar i millorar.
+
+\paragraph{}Ara bé, deixant de banda les pròpies ganes de treballar en robòtica, també he tingut en compte la preparació pel futur professional. Per això, en molts casos, a l'hora de fer alguna elecció, he intentat escollir la que fos més innovadora i útil el dia de demà. Aquest fet es veu tant en l'elecció dels llenguatges utilitzats com també en l'algorisme de resolució de la problemàtica de treball en qüestió. Per tant, queda palès que aquest treball té com a motivació la combinació d'entusiasme pel món de la robòtica i la millora d'un mateix per tal de poder arribar a un bon futur professional en aquest camp.
+
+\subsection*{Requeriments previs}
+\addcontentsline{toc}{subsection}{Requeriments previs}
+
+\paragraph{}En el TFG aquí present, tot i que s'ha intentat donar una explicació a cada concepte que podria no haver-se entès, es necessari tenir uns certs coneixements previs. Aquests serien nocions en \texttt{ROS}\footnote{\textit{Robot Operative System}, s'explica detalladament en l'apartat \ref{ROS}}, Control Automàtic, llenguatge de programació \texttt{Python}, Mecànica i Xarxes de dades.
+
+\paragraph{}A banda del que s'ha esmentat anteriorment, per reproduir de nou l'experiència és molt recomanable llegir articles sobre aprenentatge de robots, tant per reforç, com per demostració. Alguns dels recomanats es poden trobar en les Referències o en la Bibliografia.
+
+\paragraph{}Finalment, el més necessari de tot és tenir molta motivació i paciència, per així, no decaure davant les adversitats que un s'arriba a trobar i continuar endavant.
+
+\newpage
+\section*{Introducció}
+\addcontentsline{toc}{section}{Introducció}
+
+\paragraph{}Els robots són mecanismes programables i accionats per dos o més eixos amb cert grau d'autonomia, movent-se en el seu entorn, per realitzar les tasques previstes \cite{ISO_Robot}. Actualment, els robots s'utilitzen principalment per la realització d'accions de forma més exacte i barata o per treballs perillosos o repetitius. Ara bé, també existeix el cas de l'AIBO, entre d'altres robots, que pot ser utilitzat tant per entreteniment de l'usuari com per la investigació o millora dels robots actuals.
+
+\paragraph{}Els estudis en robòtica es poden centrar tant en el \texttt{hardware}, com en el \texttt{software}. Tot i només enfocar-se en una de les dues branques, sempre es requereix de l'altre en més o menys proporció. El fet és que el dissenyar i fabricar el \texttt{hardware} necessari s'emporta una gran partida del pressupost. Per això, en les investigacions que no compten amb grans pressuposts, com ara estudis universitaris, és comú l'ús de robots comercials en que es pot modificar el codi intern, com és el cas de l'AIBO.
+
+\paragraph{}A banda d'aquest robot, n'hi ha molts més que són utilitzats per dur a terme investigacions, tant robots comercials, com dissenyats i fabricats des de cero. El treball present es centra en l'AIBO, l'estabilitat, el modelat i l'aprenentatge d'un robot, per tant, tan sols es fa l'estudi d'antecedents d'aquests casos.
+
+
+\subsection*{Estat de l'art}
+\addcontentsline{toc}{subsection}{Estat de l'art}
+
+\paragraph{}En la branca d'investigació sobre l'estabilitat en robots, tant bípedes, com quadrúpedes, hi ha multitud de tesis, treballs, articles, etc. Tots ells centrant-se en un o altre aspecte com són el punt de moment zero (\textit{ZMP}), modelat de robots, aprenentatge supervisat, per reforç o per demostració, generador de patrons centrals (\textit{CPG}), algorismes genètics (\textit{GA})\footnote{La majoria d'aquests conceptes seran explicats al llarg del treball}, i molts altres.
+
+\paragraph{}Alguns dels robots sobre els que s'hi ha investigat són:
+\begin{itemize}
+\item[\textbf{QRIO}] Robot humanoide dissenyat i fabricat per Sony Corporation, és el successor de l'AIBO. Entre d'altres articles i investigacions que se n'ha fet, es troba \cite{Nagasaka2004} sobre l'estabilitat d'un robot bípede a l'hora de caminar, corre i saltar. Basat en la teoria del ZMP.
+
+\item[\textbf{ASIMO}] És un altre robot humanoide, aquest desenvolupat per HONDA, a partir de l'any 2000. Inicialment, en els seus predecessors, tan sols s'havia plantejat el fet de crear un robot mòbil bípede, però, poc a poc, s'hi han incorporat més facultats, fins arribar a ser un dels humanoides amb els moviments més semblants al dels humans\cite{ASIMO_History}. De les referències llegides en el moment de redactar el treball, de l'ASIMO hi ha estudis sobre la planificació dels passos per tal d'evitar obstacles \cite{Chestnutt2005} i sobre la interacció amb els humans \cite{Mutlu2006}.
+
+\item[\textbf{REEM-C}] Aquest últim humanoide és el creat per PAL Robotics \cite{REEM_C}. Destaca pel fet de ser el primer bípede enfocat en la investigació i basat 100\% en ROS. El REEM-C està basat, entre d'altres teories, amb el ZMP i en el aprenentatge propi del robot. A més, les seves característiques de reconeixement de veu, manipulació d'objectes i d'interacció amb humans, és una eina educativa molt útil. \cite{Robotics}
+
+\item[\textbf{BigDog}] És un dels grans robots que s'han creat al Boston Dinamics, prenent el que va ser inicialment desenvolupat en la DARPA\cite{Marc2008}. Aquest "\textit{gos}" va ser dissenyat per ús militar, en concret, per acompanyar als soldats portant la carga necessària en terrenys on no podria desplaçar-se un vehicle convencional. Aquest quadrúpede és dinàmicament estable\footnote{Sistema que és estable tenint en compte els efectes inercials i altres components dinàmiques que apareixen en el propi sistema \cite{Purushotham2009}.} gracies al gran conjunt de sensors i actuadors que arriba a tenir, combinats amb els estudis que s'han fet sobre els algorismes que s'hi han implantat.
+
+\item[\textbf{LittleDog}] Aquest quadrúpede és el predecessor del BigDog. Té la mateixa base que l'anterior, tot i que en aquest és on s'ha fet més estudi del aprenentatge del robot. La investigació que s'hi ha fet al damunt, tant d'aprenentatge, com de criteri de ZMP és pot entendre de forma genèrica en \cite{Kalakrishnan2010}. 
+
+\end{itemize}
+
+\paragraph{}
+ 
+
+%cercar articles o memories que utilitzin robots i que siguin sobre estabilitat tant sigui de quadrupedes, bipedes com de Zero Moment Point
+%També cercar sobre com tractar el tema del centre de gravetat (COG)
+%I també parlar de les referencies dels diferents Learnings
+
+%Diferents plataformes mobils
+
+
+\subsection*{Objectius}
+\addcontentsline{toc}{subsection}{Objectius}
+
+\paragraph{}L'objectiu principal del present TFG és l'optimització de l'adaptabilitat d'un robot quadrúpede, en aquest cas l'AIBO, a plans inclinats desconeguts pel robot. Per arribar a aquest objectiu s'han hagut de marcat uns objectius més concrets:
+\begin{itemize}
+\item Dissenyar un entorn de treball complert que permeti que l'algorisme utilitzat pugui ser processat en l'ordinador i enviar la informació necessària de forma remota a l'AIBO. En aquest cas l'entorn de treball tal que permeti això serà el ROS.
+\item Utilització de l'algorisme més adequat, tenint en compte tant l'entorn del robot i ell mateix, com l'abast del treball. Per això s'haurà de fer un estudi dels diferents mètodes existents que podrien ser útils per l'objecte del treball.
+\item Dur a terme una fase d'aprenentatge pel robot. Per poder fer-ho, abans, s'haurà d'haver fet un estudi en profunditat del aprenentatge per reforç.
+\item Realització de diferents proves per comprovar el correcte funcionament. Tant per poder comprovar, com per fer la fase d'aprenentatge del robot, és necessita d'una plataforma mòbil que en aquest cas ja està construïda, pel Carlos Ramos (estudiant de la EPSEVG)\cite{TFG_Carlos_Ramos}, però s'ha de millorar per fer-la més robusta.
+\end{itemize}
+
+
+
+\subsection*{Abast del treball}
+\addcontentsline{toc}{subsection}{Abast del treball}
+
+
+\subsection*{Estructura del treball}
+\addcontentsline{toc}{subsection}{Estructura del treball}
+
+\newpage
+
+
+\section{Estudis preliminars}
+\subsection{AIBO}
+\paragraph{}L'AIBO (\textit{\texttt{A}rtificial \texttt{I}nteligence Ro\texttt{BO}t}) és un robot quadrúpede dissenyat i fabricat per Sony Corporation, amb aparença canina. El primer model que va ser tret al mercat fou el \textit{ERS-110} el 1999, a partir d'aquest, i després de tres generacions, el 2003 s'arribà al \textit{ERS-7}, molt més sofisticat que els predecessors, tot i que en el 2006 s'aturà la producció de la família AIBO. El \textit{ERS-7} és el model que s'estudia i s'utilitza en el present treball.
+
+\paragraph{}Aquest es considerat un robot autònom, per tant, és capaç d'extreure informació del seu entorn, funcionar per un període llarg sense la intervenció humana, moure alguna o totes les parts d'ell mateix dins d'un entorn de treball sense l'ajut d'un humà i, finalment, evitar situacions de perill per les persones, els bens o ell mateix, si no és per especificacions del propi disseny.
+
+\paragraph{}L'aplicació d'aquest robot autònom està enfocada en ser utilitzat en propòsits d'entreteniment, tot i ser, en molts casos, utilitzat en tasques d'investigació. Els robots autònoms corrents solen ser dissenyats per desenvolupar tasques de seguretat o treballs perillosos, ara bé, en aquests casos no es pot tolerar cap tipus d'error en les operacions crítiques. Mentre els que estan dissenyats per usos d'entreteniment, en el cas que es produís algun error no seria un amenaça per la vida \cite{Fujita2000}.
+
+\paragraph{}Els dissenyadors de l'AIBO han perseguit l'objectiu d'aconseguir que el comportament sigui el màxim de real possible, que sembli viu. Per assolir-ho, han avançat per diferents camins:
+\begin{itemize}
+\item Estímuls
+\begin{itemize}
+\item Comportaments reflexius i deliberats segons una escala de temps.
+\item Comportaments per ordres externes i per desigs interns (instints i emocions).
+\item Motivacions independents donades per parts del robot com coll, cua i potes.
+\end{itemize}
+\item Instints i emocions amb els que pot canviar el comportament davant d'altres estímuls externs.
+\item Aprenentatge i evolució, inicialment és com un nadó sense pràcticament cap coneixements. Així com passa el temps, l'AIBO aprèn i creix segons com el tractis. Per tant, podria arribar a comportar-se com un noi entremaliat, si no se li dona l'atenció necessària.
+\end{itemize}
+
+\subsubsection{\textit{Hardware}}
+
+\paragraph{}Les característiques del robot són les següents: \cite{Anshar2007}
+
+\begin{itemize}
+\item Processador MIPS R7000 de 576 MHz 
+\item Memòria RAM de 64 MB
+\item LAN sense fils, 802.11b (estàndard)
+\item Targeta interna de memòria lectura/escriptura 
+\item 18 articulacions PID, cadascuna amb un sensor de força
+\begin{itemize}
+\item 4 potes
+\begin{itemize}
+\item 3 articulacions cadascuna (elevació, rotació i genoll)
+\item 1 sensor de pressió a cada peu
+\end{itemize}
+\item 3 articulacions al coll (moviment horitzontal, vertical i inclinació)
+\item 2 articulacions a la cua (moviment vertical i inclinació)
+\item 1 articulació a la boca
+\end{itemize}
+\item 2 orelles, on hi ha els micròfon estèreo i amb una articulació booleana (posició dalt o baix)
+\item Altaveus de 500 mW
+\item 26 LEDs independents
+\item Càmera de vídeo
+\begin{itemize}
+\item Sensor d'imatge CMOS
+\item 56.9$^{\circ}$ ample i 45.2$^{\circ}$
+\item Resolucions: $208\times160, 104\times80, 52\times40$
+\item 30 imatges per segon
+\end{itemize}
+\item 3 sensors de distància per infrarojos (un al cos i dos al nas, d'aquests dos, un és per objectes llunyans i un altre per pròxims)
+\item Acceleròmetres \textit{X}, \textit{Y} i \textit{Z}
+\item 4 botons sensorials de pressió (un al cap i tres al llom)
+\item 1 botó booleà sota la boca
+\item Sensor de vibració
+\item Actualització dels sensors cada 32 ms, amb 4 mostres per actualització
+\item Dimensions: $319\times180\times278$
+\item Pes aproximat: 1,65 kg (bateria i targeta de memòria incloses)
+\end{itemize}
+
+\begin{figure}[h!]
+	\centering
+        \begin{subfigure}[b]{0.5\textwidth}
+                \includegraphics[width=\textwidth]{Imatges/ERS-7(front)}
+                \caption{(vista frontal)}
+        \end{subfigure}%
+        \begin{subfigure}[b]{0.5\textwidth}
+                \includegraphics[width=\textwidth]{Imatges/ERS-7(back)}
+                \caption{(vista posterior)}
+        \end{subfigure}
+        \caption{AIBO ERS-7 \cite{Aibo_Images}}
+\end{figure}
+
+\paragraph{}Les articulacions PID, segons la seva funció i les pròpies limitacions físiques tenen uns rangs de treball diferents, aquest són els que s'exposen tot seguit: 
+
+\begin{table}[h!]
+\begin{center}
+\begin{tabular}{| c | c | c | c |}
+\hline
+Name & Range & Units & Description\\ \hline \hline
+legRF1    &    range=[-134.000000,120.000000]  & unit=deg & Right fore legJ1\\
+legRF2    &    range=[-9.000000,91.000000]     & unit=deg & Right fore legJ2\\
+legRF3    &    range=[-29.000000,119.000000]   & unit=deg & Right fore legJ3\\
+legRH1    &    range=[-134.000000,120.000000]  & unit=deg & Right hind legJ1\\
+legRH2    &    range=[-9.000000,91.000000]     & unit=deg & Right hind legJ2\\
+legRH3    &    range=[-29.000000,119.000000]   & unit=deg & Right hind legJ3\\
+legLF1    &    range=[-120.000000,134.000000]  & unit=deg & Left fore legJ1\\
+legLF2    &    range=[-9.000000,91.000000]     & unit=deg & Left fore legJ2\\
+legLF3    &    range=[-29.000000,119.000000]   & unit=deg & Left fore legJ3\\
+legLH1    &    range=[-120.000000,134.000000]  & unit=deg & Left hind legJ1\\
+legLH2    &    range=[-9.000000,91.000000]     & unit=deg & Left hind legJ2\\
+legLH3    &    range=[-29.000000,119.000000]   & unit=deg & Left hind legJ3\\
+neck      &    range=[-79.000000,2.000000]     & unit=deg & Neck tilt1\\
+headTilt  &    range=[-16.000000,44.000000]    & unit=deg & Neck tilt2\\
+headPan   &    range=[-91.000000,91.000000]    & unit=deg & Head pan\\
+tailPan   &    range=[-59.000000,59.000000]    & unit=deg & Tail pan\\
+tailTilt  &    range=[2.000000,63.000000]      & unit=deg & Tail tilt\\
+mouth     &    range=[-58.000000,-3.000000]    & unit=deg & Mouth\\
+\hline
+\end{tabular}
+\end{center}
+\caption{Rangs de funcionament de les articulacions \cite{Urbi_Docs}}
+\end{table}
+
+
+
+\subsubsection{\textit{Software}} 
+\paragraph{}Com s'ha esmentat anteriorment, l'AIBO aprèn i evoluciona segons el seu entorn amb uns coneixements inicials quasi nuls. Però sí que incorpora unes funcions bàsiques, com ara, caminar, reconeixement de veu, reproducció de sons, entre moltes altres. 
+
+
+%\paragraph{}Actualment, l'AIBO per defecte té multitud facultats, com ara, caminar en diferents direccions sense perdre l'equilibri o quedar-se en una posició de repòs estable, entre d'altres. Tot i que això només és possible en condicions òptimes (terreny pla i llis, sense forces externes que actuïn sobre el robot, etc.). Aquestes funcions i més ja han estat desenvolupades en llenguatges com OPEN-R o Tekkotsu (nivell mitjà) o Urbi (nivell alt). El repte és poder aconseguir fer això i més en ROS (\textit{Robot Operating System}), que proveeix un entorn de treball òptim per la creació de programari per a qualsevol robot, i per tant pot ser exportable de l'AIBO a qualsevol altre robot que compleixi els requisits mínims de \textit{hardware}.  
+  
+
+
+\subsection{ROS}
+\label{ROS}
+\paragraph{}\textit{\texttt{R}obot \texttt{O}perating \texttt{S}ystem} \cite{ROS} és un entorn de treball \texttt{open-source} i flexible per la programació de robots. Les bases d'aquest projecte s'iniciaren en unes investigacions a Stanford el 2007, on es varen dur a terme diferents prototips d'entorns de treball per programari de robots, com ara STanford Artificial Intelligence Robot (\textit{STAI}) o Personal Robotics (\textit{PR}). Més endavant, \textit{Willow Garage}, una empresa inversora en robòtica, va proveir recursos per tal de millorar el concepte i permetre crear implementacions correctament testejades. Finalment, amb la col·laboració desinteressada de incomptables investigadors, millorant el nucli de ROS i les eines principals que proveeix, s'ha arribat al que és ara, una plataforma àmpliament utilitzada en les investigacions de robòtica.
+
+\paragraph{}En el moment de la redacció d'aquest treball, la versió més actual de ROS és la \textit{ROS Hydro Medusa}, publicada el setembre de 2013, i pròximament es publicarà la \textit{ROS Indigo Igloo}. La Hydro està dissenyada especialment per Ubuntu 12.04 LTS (\textit{Precise}), tot i suportà també altres sistemes Linux, Mac OS X, Android i Windows en altres graus.
+
+
+\subsubsection{Estructura de ROS}
+\paragraph{}ROS ofereix una interfície que permet la comunicació entre processos per tal de processar dades conjuntament, és comú referir-s'hi com a capa intermèdia. Els conceptes fonamentals de la implementació de ROS són els \texttt{nodes}, \texttt{Master}, \texttt{messages}, \texttt{services}, \texttt{topics} i \texttt{bags}.
+
+\begin{itemize}
+\item \textbf{Nodes}: Els \texttt{nodes} són processos que realitzen càlculs. Típicament, un sistema compren multitud de \texttt{nodes}. En aquests casos és útil entendre les comunicacions entre \texttt{nodes} com un graf, amb arcs que uneixen els que s'estan comunicant.
+
+\item \textbf{Master}: El ROS \texttt{Master} proveeix els noms d'enregistrament dels \texttt{nodes}, \texttt{topics} i \texttt{services} existents als altres \texttt{nodes}. Per tant, el \texttt{Master} rep la informació de registre dels \texttt{nodes} i després aquest informa als altres \texttt{nodes} per tal que puguin establir, entre ells, connexions de forma adequada. 
+
+\item \textbf{Messages}: Els \texttt{nodes} es comuniquen un amb l'altre mitjançant \texttt{messages}. Aquest són simplement estructures de dades, que poden anar des d'\texttt{integrer}, \texttt{floats}, \texttt{booleans} fins a \texttt{arrays}.
+
+\item \textbf{Topics}: Un \texttt{node} envia un \texttt{message} mitjançant la publicació d'aquest en un \texttt{topic} donat. El \texttt{topic} és el nom que s'utilitza per identificar el contingut d'un \texttt{message} concret. 
+
+\item \textbf{Services}: El \texttt{service} és el nom que ha d'utilitzar un \texttt{node} per enviar un \texttt{message}, amb la funció de sol·licitar una resposta que depèn del \texttt{message} enviat.
+
+\item \textbf{Bags}: Els \texttt{bags} són un format per guardar i poder reproduir un altre cop les dades de \texttt{messages} de ROS. Aquests són de gran importància a l'hora de emmagatzemar dades i, per tant, per desenvolupar i testejar algorismes.
+\end{itemize}
+
+Aquesta capa intermèdia ofereix dos models de comunicació: (1) sistema de \textit{publicació/subscripció}; i (2) utilitzant \texttt{services}.
+\begin{enumerate}
+\item El sistema de \textit{publicació/subscripció} és anònim, asíncron i les dades poden ser capturades i rellegides sense canvis en el codi. Per tant, si per fer una certa tasca es requereix de les dades d'una altre tasca, com per exemple un sensor, llavors a partir de subscriure's al \texttt{topic} corresponent es poden llegir les dades que publica la tasca (sensor). Pot haver-hi múltiples publicadors i subscriptors per un únic \texttt{topic} i, en general, entre ells no saben de l'existència dels altres.
+
+\item Els \texttt{services} estan definits per dos \texttt{messages}, un és la demanda que ha fet el \texttt{node} i l'altre és la resposta a aquesta demanda. Per tant, el seu ús és molt simple, en el moment que es crida un \texttt{service}, amb les dades que aquest requereixi, el procés dona una resposta al \texttt{node} segons les dades que s'han enviat.
+\end{enumerate}
+
+\subsubsection{Objectius de ROS}
+
+\paragraph{}El principal objectiu de ROS és poder \textit{reutilitzar} el codi de desenvolupament i d'investigacions en robòtica. L'estructura de processos distribuïts permet aquest fet, ja que pot executar-se un procés (amb un codi determinat) de forma individual i acoblar-se fàcilment al conjunt. A més, aquests processos poden agrupar-se en \texttt{Packages} i \texttt{Stacks} i ser compartits de forma senzilla.
+
+\paragraph{}D'altra banda, també és tenen unes altres finalitats \cite{Quigley}: (1) descentralització; (2) plurilingüisme; (3) estar basat en eines; (4) ser una capa intermèdia fina; (5) gratuïta i \texttt{open-source}.
+
+\begin{enumerate}
+
+\item Descentralització\\
+ROS està estructurat de forma que els processos estan distribuïts, amb la possibilitat de trobar-se en \texttt{hosts} diferents, però funcionant conjuntament. Altres entorns de treball, que poden també treballar amb múltiples processos i \texttt{hosts}, si es basen en un servidor central, podrien tenir problemes en una xarxa heterogènia\footnote{Una xarxa heterogènia és una xarxa de connexió d'ordinadors i altres dispositius amb diferents sistemes operatius i/o protocols.\cite{Delphinanto2011}}.
+
+\item Plurilingüisme\\
+Cada programador és un món, cadascú té el seu llenguatge de programació preferit, sigui per la raó que sigui. Per això, ROS s'ha dissenyat per ser un llenguatge neutral. Actualment, ROS admet quatre llenguatges de programació: (1) \textit{C++}, (2) \textit{Python}, (3) \textit{Octave} i (4) \textit{LISP}, havent altres en desenvolupament.
+
+\item Basat en eines\\
+S'ha optat per dissenyar un nucli simple, on s'utilitzen multitud d'eines per construir i fer funcionar els diversos components de ROS, en vers, de dissenyar un enorme entorn de treball, tot en un. Tot i haver-se implementat alguns serveis en el propi nucli, s'ha intentat distribuir tot en mòduls separats. La pèrdua d'eficiència compensa els guanys en estabilitat i complexitat del conjunt.
+
+\item Capa intermèdia fina\\
+En molts casos, és molts difícil \textit{"extreure"} la funcionalitat d'un codi, del seu context original, per a poder ser reutilitzat, això és degut a factors provocats pel propi entorn de treball d'origen. Per això, en ROS s'indueix a la independència dels algorismes, amb el nucli del ROS, creant-los en llibreries separades. Es facilita l'extracció de codi i la seva reutilització a traves d'aquest fet, entre d'altres característiques de la interfície.
+
+\item Gratuït i \texttt{open-source}\\
+El codi natiu de ROS està disponible públicament. Aquest és un fet que permet facilitar el testeig i correcció de \texttt{software} en tots els nivells. 
+
+\end{enumerate}
+
+
+\subsubsection{Eines de ROS}
+\paragraph{}Com s'ha comentat breument en l'apartat anterior, ROS és basa, en gran part, en la multitud d'eines que disposa. Aquestes eines poden arribar a dur a terme varies tasques diferents, per exemple, navegar per l'arbre de codi font, obtenir i establir els paràmetres de configuració, visualitzar les connexions entre processos, mesurar la utilització d'ample de banda, exposar de forma gràfica les dades dels \texttt{message}, i més. A continuació es comenten breument alguns dels més utilitzats:
+\begin{itemize}
+\item \texttt{rviz}\\
+Rviz és un entorn de visualització 3D que pot combinar les dades dels sensors del robot i el model que és té, juntament amb altres dades 3D que se li aporti, per poder visualitzar el conjunt.
+
+\item \texttt{rosbag} i \texttt{rxbag}\\
+Rosbag és la comanda que et permet emmagatzemar i reproduir de nou les dades d'un \texttt{message} en un arxiu \texttt{bag}. Per altre banda, rxbag és un visualitzador per a les dades emmagatzemades dins els arxius \texttt{bag}.
+
+\item \texttt{rxplot}\\
+Rxplot permet veure dades escalars publicades en els \texttt{topics} de ROS.
+
+\item \texttt{rxgraph}\\
+Rxgraph exposa visualment amb un gràfic com funcionen els processos de ROS i les seves connexions, en aquell instant.
+
+\end{itemize}
+
+%Fins ara no s'ha donat suport oficial a AIBO en ROS...
+%topics que té l'AIBO actualment
+%Ricardo Téllez
+
+\subsection{Estabilitat}
+%Com definirem estabilitat, diferents mètodes...
+
+
+\subsection{Algorismes de resposta davant pertorbacions}
+%Creació d'un model i fer estudi d'aquest model per saber davant una pertorbació com ha de ser les entrades dels actuadors per tal de estar en una posició d'estabilitat
+
+%Supervised learning, a partir de moltes mostres d'indicacions i com ha de d'actuar per estar estable, pren una funció que aplicarà en els casos futurs.
+
+%Reinforcement learning, Q-learning i DMP (learning by demostration)
+
+%Affordance: Mes o menys es podria entendre com els sensors i actuaduadors serien moduls neuronals que envien informació ja filtrada als altres moduls neuronals de tal manera que vagi enfocat a fer una tasca determinada
+
+\newpage
+\section*{Agraïments}
+\addcontentsline{toc}{section}{Agraïments}
+
+\newpage
+
+\bibliography{./Bibliografia/library}
+\label{Referencies}
+
+
+\appendix
+\clearpage % o \cleardoublepage
+\addappheadtotoc
+\appendixpage
+\section{INSTAL·LACIÓ ROS I PAQUET D'AIBO SERVER}
+\begin{enumerate}
+\item Preparar per instal·lar ROS (en aquest cas per Ubuntu 12.04 32 bits)\begin{framed}{sudo sh -c 'echo "deb http://packages.ros.org/ros/ubuntu precise main" > /etc/apt/sources.list.d/ros-latest.list'}\end{framed}
+\item Configurar claus \begin{framed}wget http://packages.ros.org/ros.key -O - | sudo apt-key add -\end{framed}
+\item Instal·lar ROS-fuerte\begin{framed}sudo apt-get install ros-fuerte-desktop-full\end{framed}
+\item fsda\begin{framed}echo "source /opt/ros/fuerte/setup.bash" >> ~/.bashrc
+. ~/.bashrc\end{framed}
+\item dsfa\begin{framed}sudo apt-get install python-rosinstall python-rosdep\end{framed}
+\item fsad\begin{framed}rosws init ~/fuerte /opt/ros/fuerte\end{framed}
+\item asfd\begin{framed}mkdir ~/fuerte/sandbox\end{framed}
+\item asdf\begin{framed}rosws set ~/fuerte/sandbox\end{framed}
+\item afds\begin{framed}echo "source ~/fuerte/setup.bash" >> ~/.bashrc
+. ~/.bashrc\end{framed}
+\end{enumerate}
+\section{BIBLIOGRAFIA}
+\label{Bibliografia}
+\end{document}  
+
