@@ -24,7 +24,8 @@
 \renewcommand{\appendixpagename}{Annexos}
 
 
-%\usepackage[nomain,acronym,toc]{glossaries} % nomain, if you define glossaries in a file, and you use 
+%\usepackage[nomain,acronym,toc]{glossaries}
+% nomain, if you define glossaries in a file, and you use 
 %\include{./Glossari/glossari}
 %\makeglossaries
 
@@ -47,7 +48,8 @@
 \fancyfoot[RO,LE]{\includegraphics[scale=0.3]{Imatges/etseib.jpg}}
 
 \usepackage[numbers]{natbib}
-\bibliographystyle{unsrtnat}
+\bibliographystyle{unsrtnat} 
+%Poso per ordre de apració (així) o per ordre d'autors (plainnat)?
 
 \title{Aibo}
 \author{Lluís Salord Quetglas\\
@@ -102,8 +104,11 @@ The estability of the robots...
 %\printglossary
 %\newpage
 
+\label{Prefaci}
 \section*{Prefaci}
 \addcontentsline{toc}{section}{Prefaci}
+
+\label{Motivacio}
 \subsection*{Motivació}
 \addcontentsline{toc}{subsection}{Motivació}
 
@@ -113,6 +118,7 @@ The estability of the robots...
 
 \paragraph{}Ara bé, deixant de banda les pròpies ganes de treballar en robòtica, també he tingut en compte la preparació pel futur professional. Per això, en molts casos, a l'hora de fer alguna elecció, he intentat escollir la que fos més innovadora i útil el dia de demà. Aquest fet es veu tant en l'elecció dels llenguatges utilitzats com també en l'algorisme de resolució de la problemàtica de treball en qüestió. Per tant, queda palès que aquest treball té com a motivació la combinació d'entusiasme pel món de la robòtica i la millora d'un mateix per tal de poder arribar a un bon futur professional en aquest camp.
 
+\label{Requeriments}
 \subsection*{Requeriments previs}
 \addcontentsline{toc}{subsection}{Requeriments previs}
 
@@ -123,6 +129,7 @@ The estability of the robots...
 \paragraph{}Finalment, el més necessari de tot és tenir molta motivació i paciència, per així, no decaure davant les adversitats que un s'arriba a trobar i continuar endavant.
 
 \newpage
+\label{Introduccio}
 \section*{Introducció}
 \addcontentsline{toc}{section}{Introducció}
 
@@ -132,7 +139,7 @@ The estability of the robots...
 
 \paragraph{}A banda d'aquest robot, n'hi ha molts més que són utilitzats per dur a terme investigacions, tant robots comercials, com dissenyats i fabricats des de cero. El treball present es centra en l'AIBO, l'estabilitat, el modelat i l'aprenentatge d'un robot, per tant, tan sols es fa l'estudi d'antecedents d'aquests casos.
 
-
+\label{Estat-de-l'art}
 \subsection*{Estat de l'art}
 \addcontentsline{toc}{subsection}{Estat de l'art}
 
@@ -146,14 +153,15 @@ The estability of the robots...
 
 \item[\textbf{REEM-C}] Aquest últim humanoide és el creat per PAL Robotics \cite{REEM_C}. Destaca pel fet de ser el primer bípede enfocat en la investigació i basat 100\% en ROS. El REEM-C està basat, entre d'altres teories, amb el ZMP i en el aprenentatge propi del robot. A més, les seves característiques de reconeixement de veu, manipulació d'objectes i d'interacció amb humans, és una eina educativa molt útil. \cite{Robotics}
 
-\item[\textbf{BigDog}] És un dels grans robots que s'han creat al Boston Dinamics, prenent el que va ser inicialment desenvolupat en la DARPA\cite{Marc2008}. Aquest "\textit{gos}" va ser dissenyat per ús militar, en concret, per acompanyar als soldats portant la carga necessària en terrenys on no podria desplaçar-se un vehicle convencional. Aquest quadrúpede és dinàmicament estable\footnote{Sistema que és estable tenint en compte els efectes inercials i altres components dinàmiques que apareixen en el propi sistema \cite{Purushotham2009}.} gracies al gran conjunt de sensors i actuadors que arriba a tenir, combinats amb els estudis que s'han fet sobre els algorismes que s'hi han implantat \cite{Playter2006}.
+\item[\textbf{BigDog}] És un dels grans robots que s'han creat al Boston Dinamics, prenent el que va ser inicialment desenvolupat en la DARPA\cite{Marc2008}. Aquest "\textit{gos}" va ser dissenyat per ús militar, en concret, per acompanyar als soldats portant la carga necessària en terrenys on no podria desplaçar-se un vehicle convencional. Aquest quadrúpede és dinàmicament estable\footnote{Sistema que és estable tenint en compte els efectes inercials i altres components dinàmiques que apareixen en el propi sistema \cite{Purushotham2009}.} gracies al gran conjunt de sensors i actuadors que arriba a tenir. A banda d'un sistema mecànic molt complert, també s'hi ha implementat algorismes d'aprenentatge per reforç, en concret DMP (\textit{Dynamic Movement Primitives}) \footnote{DMP (\textit{Dynamic Movement Primitives}) s'explica en detall en la secció \ref{Algorismes} } \cite{Playter2006}.
 
 \item[\textbf{LittleDog}] Aquest quadrúpede és el predecessor del BigDog. Té la mateixa base que l'anterior, tot i que en aquest és on s'ha fet més estudi del aprenentatge del robot. La investigació que s'hi ha fet al damunt, tant d'aprenentatge, com de criteri de ZMP és pot entendre de forma genèrica en \cite{Kalakrishnan2010}. 
 
 \end{itemize}
 
-\paragraph{}A banda dels nombrats anteriorment, existeixen molts altres robots amb potes que han servit per aprofundir en coneixements diversos, com l'estabilitat o l'aprenentatge dels robots. Molts d'ells han sigut creats des de cero, com són els següents exemples: (1) el BISAM, on en l'article \cite{Albiez2003} s'estudia com provocar que els moviments siguin més semblants als d'un mamífer; (2) el MRWALL-SPECT IV, on l'autor d'aquests articles \cite{Loc2010} i \cite{Loc2011} es centra en l'adaptabilitat del quadrúpede a diferents terrenys; (3) el MERO, estudiat en \cite{Ion} per fer un anàlisis d'estabilitat quan aquest es desplaça; (4) per últim, també hi ha els casos d'hexàpodes, tant per l'estudi del caminar amb el criteri de les tres potes \cite{Lee1988}, com en la construcció des de cero \cite{Lojo2009}, entre d'altres. 
+\paragraph{}A banda dels nombrats anteriorment, existeixen molts altres robots amb potes que han servit per aprofundir en coneixements diversos, com l'estabilitat o l'aprenentatge dels robots. Molts d'ells han sigut creats des de cero, com són els següents exemples: (1) el PLEO, un robot "\textit{dinosaure}", que en el projecte \cite{Menendez2011} se li aportant una millora substancial en la comunicació robot-ordinador; (2) el BISAM, on en l'article \cite{Albiez2003} s'estudia com provocar que els moviments siguin més semblants als d'un mamífer quadrúpede; (3) el MRWALL-SPECT IV, on l'autor d'aquests articles \cite{Loc2010} i \cite{Loc2011} es centra en l'adaptabilitat del quadrúpede a diferents terrenys; (4) el MERO, estudiat en \cite{Ion} per fer un anàlisis d'estabilitat quan aquest es desplaça; (5) per últim, també hi ha els casos d'hexàpodes, tant per l'estudi del caminar amb el criteri de les tres potes \cite{Lee1988}, com en la construcció des de cero \cite{Lojo2009}, entre d'altres. 
 
+\paragraph{}
 
 %cercar articles o memories que utilitzin robots i que siguin sobre estabilitat tant sigui de quadrupedes, bipedes com de Zero Moment Point
 %També cercar sobre com tractar el tema del centre de gravetat (COG)
@@ -161,7 +169,7 @@ The estability of the robots...
 
 %Diferents plataformes mobils
 
-
+\label{Objectius}
 \subsection*{Objectius}
 \addcontentsline{toc}{subsection}{Objectius}
 
@@ -174,18 +182,20 @@ The estability of the robots...
 \end{itemize}
 
 
-
+\label{Abast}
 \subsection*{Abast del treball}
 \addcontentsline{toc}{subsection}{Abast del treball}
 
-
+\label{Estructura}
 \subsection*{Estructura del treball}
 \addcontentsline{toc}{subsection}{Estructura del treball}
 
 \newpage
 
-
+\label{Estudis-preliminars}
 \section{Estudis preliminars}
+
+\label{AIBO}
 \subsection{AIBO}
 \paragraph{}L'AIBO (\textit{\texttt{A}rtificial \texttt{I}nteligence Ro\texttt{BO}t}) és un robot quadrúpede dissenyat i fabricat per Sony Corporation, amb aparença canina. El primer model que va ser tret al mercat fou el \textit{ERS-110} el 1999, a partir d'aquest, i després de tres generacions, el 2003 s'arribà al \textit{ERS-7}, molt més sofisticat que els predecessors, tot i que en el 2006 s'aturà la producció de la família AIBO. El \textit{ERS-7} és el model que s'estudia i s'utilitza en el present treball.
 
@@ -205,6 +215,7 @@ The estability of the robots...
 \item Aprenentatge i evolució, inicialment és com un nadó sense pràcticament cap coneixements. Així com passa el temps, l'AIBO aprèn i creix segons com el tractis. Per tant, podria arribar a comportar-se com un noi entremaliat, si no se li dona l'atenció necessària.
 \end{itemize}
 
+\label{Hardware}
 \subsubsection{\textit{Hardware}}
 
 \paragraph{}Les característiques del robot són les següents: \cite{Anshar2007}
@@ -247,13 +258,17 @@ The estability of the robots...
 
 \begin{figure}[h!]
 	\centering
-        \begin{subfigure}[b]{0.5\textwidth}
+        \begin{subfigure}[h]{0.5\textwidth}
                 \includegraphics[width=\textwidth]{Imatges/ERS-7(front)}
                 \caption{(vista frontal)}
         \end{subfigure}%
-        \begin{subfigure}[b]{0.5\textwidth}
+        \begin{subfigure}[h]{0.5\textwidth}
                 \includegraphics[width=\textwidth]{Imatges/ERS-7(back)}
                 \caption{(vista posterior)}
+        \end{subfigure}
+        \begin{subfigure}[bl]{0.33\textwidth}
+        			\includegraphics[width=\textwidth]{Imatges/ERS-7(stomach)}
+                \caption{(vista inferior)}
         \end{subfigure}
         \caption{AIBO ERS-7 \cite{Aibo_Images}}
 \end{figure}
@@ -290,7 +305,7 @@ mouth     &    range=[-58.000000,-3.000000]    & unit=deg & Mouth\\
 \end{table}
 
 
-
+\label{Software}
 \subsubsection{\textit{Software}} 
 \paragraph{}Com s'ha esmentat anteriorment, l'AIBO aprèn i evoluciona segons el seu entorn amb uns coneixements inicials quasi nuls. Però sí que incorpora unes funcions bàsiques, com ara, caminar, reconeixement de veu, reproducció de sons, entre moltes altres. 
 
@@ -376,11 +391,11 @@ Rxgraph exposa visualment amb un gràfic com funcionen els processos de ROS i le
 %Fins ara no s'ha donat suport oficial a AIBO en ROS...
 %topics que té l'AIBO actualment
 %Ricardo Téllez
-
+\label{Estabilitat}
 \subsection{Estabilitat}
 %Com definirem estabilitat, diferents mètodes...
 
-
+\label{Algorismes}
 \subsection{Algorismes de resposta davant pertorbacions}
 %Creació d'un model i fer estudi d'aquest model per saber davant una pertorbació com ha de ser les entrades dels actuadors per tal de estar en una posició d'estabilitat
 

@@ -1,4 +1,4 @@
-\begin{thebibliography}{26}
+\begin{thebibliography}{27}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -99,6 +99,13 @@ M.~Kalakrishnan, J.~Buchli, P.~Pastor, M.~Mistry, and S.~Schaal.
 \newblock ISSN 0278-3649.
 \newblock \doi{10.1177/0278364910388677}.
 \newblock URL \url{http://ijr.sagepub.com/cgi/doi/10.1177/0278364910388677}.
+
+\bibitem[{Men\'{e}ndez Paredes}(2011)]{Menendez2011}
+R~{Men\'{e}ndez Paredes}.
+\newblock \emph{{Control y supervisi\'{o}n inal\'{a}mbrica de la plataforma
+  rob\'{o}tica Pleo}}.
+\newblock PhD thesis, Universitat Polit\'{e}cnica de Catalunya, 2011.
+\newblock URL \url{http://upcommons.upc.edu/handle/2099.1/11801}.
 
 \bibitem[Albiez et~al.(2003)Albiez, Luksch, Berns, and Dillmann]{Albiez2003}
 J.C. Albiez, T.~Luksch, K.~Berns, and R.~Dillmann.
