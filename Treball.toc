@@ -36,19 +36,20 @@
 \contentsline {paragraph}{}{11}{section*.34}
 \contentsline {subsubsection}{\numberline {1.1.2}\textit {Software}}{11}{subsubsection.1.1.2}
 \contentsline {paragraph}{}{11}{section*.36}
-\contentsline {subsection}{\numberline {1.2}ROS}{11}{subsection.1.2}
-\contentsline {paragraph}{}{11}{section*.37}
+\contentsline {subsection}{\numberline {1.2}ROS}{12}{subsection.1.2}
+\contentsline {paragraph}{}{12}{section*.37}
 \contentsline {paragraph}{}{12}{section*.38}
 \contentsline {subsubsection}{\numberline {1.2.1}Estructura de ROS}{12}{subsubsection.1.2.1}
 \contentsline {paragraph}{}{12}{section*.39}
-\contentsline {subsubsection}{\numberline {1.2.2}Objectius de ROS}{13}{subsubsection.1.2.2}
-\contentsline {paragraph}{}{13}{section*.40}
+\contentsline {subsubsection}{\numberline {1.2.2}Objectius de ROS}{14}{subsubsection.1.2.2}
+\contentsline {paragraph}{}{14}{section*.40}
 \contentsline {paragraph}{}{14}{section*.41}
-\contentsline {subsubsection}{\numberline {1.2.3}Eines de ROS}{14}{subsubsection.1.2.3}
-\contentsline {paragraph}{}{14}{section*.42}
+\contentsline {subsubsection}{\numberline {1.2.3}Eines de ROS}{15}{subsubsection.1.2.3}
+\contentsline {paragraph}{}{15}{section*.42}
 \contentsline {subsection}{\numberline {1.3}Estabilitat}{15}{subsection.1.3}
 \contentsline {subsection}{\numberline {1.4}Algorismes de resposta davant pertorbacions}{15}{subsection.1.4}
 \contentsline {section}{Agra\IeC {\@umlaut \i }ments}{16}{section*.43}
 \contentsline {section}{Annexos}{20}{section*.45}
 \contentsline {section}{\numberline {A}INSTAL\IeC {\textperiodcentered }LACI\IeC {\'O} ROS I PAQUET D'AIBO SERVER}{20}{appendix.A}
-\contentsline {section}{\numberline {B}BIBLIOGRAFIA}{21}{appendix.B}
+\contentsline {paragraph}{}{20}{section*.46}
+\contentsline {section}{\numberline {B}BIBLIOGRAFIA}{20}{appendix.B}

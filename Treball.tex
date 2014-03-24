@@ -256,7 +256,7 @@ The estability of the robots...
 \item Pes aproximat: 1,65 kg (bateria i targeta de memòria incloses)
 \end{itemize}
 
-\begin{figure}[h!]
+\begin{figure}[h]
 	\centering
         \begin{subfigure}[h]{0.5\textwidth}
                 \includegraphics[width=\textwidth]{Imatges/ERS-7(front)}
@@ -266,7 +266,7 @@ The estability of the robots...
                 \includegraphics[width=\textwidth]{Imatges/ERS-7(back)}
                 \caption{(vista posterior)}
         \end{subfigure}
-        \begin{subfigure}[bl]{0.33\textwidth}
+        \begin{subfigure}[bl]{0.5\textwidth}
         			\includegraphics[width=\textwidth]{Imatges/ERS-7(stomach)}
                 \caption{(vista inferior)}
         \end{subfigure}
@@ -304,10 +304,13 @@ mouth     &    range=[-58.000000,-3.000000]    & unit=deg & Mouth\\
 \caption{Rangs de funcionament de les articulacions \cite{Urbi_Docs}}
 \end{table}
 
+%Alguna solució per posar la taula al seu lloc
+%\pagebreak funciona, però la pagina anterior amb queda amb un espai interlinial molt gran
+
 
 \label{Software}
-\subsubsection{\textit{Software}} 
-\paragraph{}Com s'ha esmentat anteriorment, l'AIBO aprèn i evoluciona segons el seu entorn amb uns coneixements inicials quasi nuls. Però sí que incorpora unes funcions bàsiques, com ara, caminar, reconeixement de veu, reproducció de sons, entre moltes altres. 
+\subsubsection{\textit{Software}}
+\paragraph{}Com s'ha esmentat anteriorment, l'AIBO aprèn i evoluciona segons el seu entorn amb uns coneixements inicials quasi nuls. Però sí que incorpora unes funcions bàsiques, com ara, caminar, reconeixement de veu, reproducció de sons, entre moltes altres.
 
 
 %\paragraph{}Actualment, l'AIBO per defecte té multitud facultats, com ara, caminar en diferents direccions sense perdre l'equilibri o quedar-se en una posició de repòs estable, entre d'altres. Tot i que això només és possible en condicions òptimes (terreny pla i llis, sense forces externes que actuïn sobre el robot, etc.). Aquestes funcions i més ja han estat desenvolupades en llenguatges com OPEN-R o Tekkotsu (nivell mitjà) o Urbi (nivell alt). El repte és poder aconseguir fer això i més en ROS (\textit{Robot Operating System}), que proveeix un entorn de treball òptim per la creació de programari per a qualsevol robot, i per tant pot ser exportable de l'AIBO a qualsevol altre robot que compleixi els requisits mínims de \textit{hardware}.  
@@ -420,18 +423,36 @@ Rxgraph exposa visualment amb un gràfic com funcionen els processos de ROS i le
 \addappheadtotoc
 \appendixpage
 \section{INSTAL·LACIÓ ROS I PAQUET D'AIBO SERVER}
+
+\paragraph{}Tot seguit es mostren els passos a seguir per tal d'instal·lar ROS i com afegir una carpeta al la variable \texttt{ROS$\_$PACKAGE$\_$PATH}\footnote{Aquí es troben les direccions de les carpetes on s'hi ha de cercar els \texttt{packages}.}.
+
 \begin{enumerate}
-\item Preparar per instal·lar ROS (en aquest cas per Ubuntu 12.04 32 bits)\begin{framed}{sudo sh -c 'echo "deb http://packages.ros.org/ros/ubuntu precise main" > /etc/apt/sources.list.d/ros-latest.list'}\end{framed}
-\item Configurar claus \begin{framed}wget http://packages.ros.org/ros.key -O - | sudo apt-key add -\end{framed}
-\item Instal·lar ROS-fuerte\begin{framed}sudo apt-get install ros-fuerte-desktop-full\end{framed}
-\item fsda\begin{framed}echo "source /opt/ros/fuerte/setup.bash" >> ~/.bashrc
-. ~/.bashrc\end{framed}
-\item dsfa\begin{framed}sudo apt-get install python-rosinstall python-rosdep\end{framed}
-\item fsad\begin{framed}rosws init ~/fuerte /opt/ros/fuerte\end{framed}
-\item asfd\begin{framed}mkdir ~/fuerte/sandbox\end{framed}
-\item asdf\begin{framed}rosws set ~/fuerte/sandbox\end{framed}
-\item afds\begin{framed}echo "source ~/fuerte/setup.bash" >> ~/.bashrc
-. ~/.bashrc\end{framed}
+
+\item Preparar per instal·lar ROS (en aquest cas per Ubuntu 12.04 32 bits).\\
+\texttt{sudo sh -c 'echo "deb http://packages.ros.org/ros/ubuntu precise main" >\\ /etc/apt/sources.list.d/ros-latest.list'}
+
+\item Configurar claus de ROS.\\
+\texttt{wget http://packages.ros.org/ros.key -O - | sudo apt-key add -}
+
+\item Instal·lar ROS-fuerte.\\
+\texttt{sudo apt-get install ros-fuerte-desktop-full}
+
+\item Per tal que els \texttt{packages} en la carpeta del propi ROS puguin ser trobats més còmodament. La comanda final és per poder seguir treballant en el mateix terminal.\\
+\texttt{echo "source /opt/ros/fuerte/setup.bash" $\gg$ $\sim$/.bashrc.\\
+. $\sim$/.bashrc}
+
+\item Es necessiten instal·lar alguns paquets per poder continuar, com és el \texttt{rosws}, que es part del paquet \texttt{rosinstall}.\\
+\texttt{sudo apt-get install python-rosinstall python-rosdep}
+
+\item Es crea una carpeta de treball, extensió de la propia de ROS.\\
+\texttt{rosws init $\sim$/fuerte /opt/ros/fuerte}\\
+\texttt{mkdir $\sim$/fuerte/sandbox}\\
+\texttt{rosws set ~/fuerte/sandbox}
+
+\item Finalment, es repeteix l'acció (4), però en aquest cas, per poder ser trobats els \texttt{packages} de la carpeta que s'ha creat.\\
+\texttt{echo "source $\sim$/fuerte/setup.bash" $\gg$ $\sim$/.bashrc\\
+. $\sim$/.bashrc}
+
 \end{enumerate}
 \section{BIBLIOGRAFIA}
 \label{Bibliografia}
