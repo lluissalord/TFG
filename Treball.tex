@@ -143,9 +143,21 @@ The estability of the robots...
 \subsection*{Estat de l'art}
 \addcontentsline{toc}{subsection}{Estat de l'art}
 
+%cercar articles o memories que utilitzin robots i que siguin sobre estabilitat tant sigui de quadrupedes, bipedes com de Zero Moment Point
+%També cercar sobre com tractar el tema del centre de gravetat (COG)
+%I també parlar de les referencies dels diferents Learnings
+
+%Diferents plataformes mobils
+
 \paragraph{}En la branca d'investigació sobre l'estabilitat en robots, tant bípedes, com quadrúpedes, hi ha multitud de tesis, treballs, articles, etc. Tots ells centrant-se en un o altre aspecte com són el punt de moment zero (\textit{ZMP}), modelat de robots, aprenentatge supervisat, per reforç o per demostració, generador de patrons centrals (\textit{CPG}), algorismes genètics (\textit{GA})\footnote{La majoria d'aquests conceptes seran explicats al llarg del treball}, i molts altres.
 
-\paragraph{}Alguns dels robots sobre els que s'hi ha investigat són:
+\paragraph{}Tot seguit s'exposa un conjunt d'antecedents, organitzat en diferents àmbits, importants tots ells tant per realitzar l'experiència, com per entendre els factors que han conduït a cadascuna de les decisions preses.
+
+\label{Robots}
+\subsubsection*{(1) Robots}
+\addcontentsline{toc}{subsubsection}{Robots}
+
+\paragraph{}Alguns dels robots sobre els que s'hi ha investigat, amb temàtiques relacionades amb el treball present són:
 \begin{itemize}
 \item[\textbf{QRIO}] Robot humanoide dissenyat i fabricat per Sony Corporation, és el successor de l'AIBO. Entre d'altres articles i investigacions que se n'ha fet, es troba \cite{Nagasaka2004} sobre l'estabilitat d'un robot bípede a l'hora de caminar, corre i saltar. Basat en la teoria del ZMP.
 
@@ -161,13 +173,17 @@ The estability of the robots...
 
 \paragraph{}A banda dels nombrats anteriorment, existeixen molts altres robots amb potes que han servit per aprofundir en coneixements diversos, com l'estabilitat o l'aprenentatge dels robots. Molts d'ells han sigut creats des de cero, com són els següents exemples: (1) el PLEO, un robot "\textit{dinosaure}", que en el projecte \cite{Menendez2011} se li aportant una millora substancial en la comunicació robot-ordinador; (2) el BISAM, on en l'article \cite{Albiez2003} s'estudia com provocar que els moviments siguin més semblants als d'un mamífer quadrúpede; (3) el MRWALL-SPECT IV, on l'autor d'aquests articles \cite{Loc2010} i \cite{Loc2011} es centra en l'adaptabilitat del quadrúpede a diferents terrenys; (4) el MERO, estudiat en \cite{Ion} per fer un anàlisis d'estabilitat quan aquest es desplaça; (5) per últim, també hi ha els casos d'hexàpodes, tant per l'estudi del caminar amb el criteri de les tres potes \cite{Lee1988}, com en la construcció des de cero \cite{Lojo2009}, entre d'altres. 
 
-\paragraph{}
+\label{Modelat i algorismes d'aprenentatge}
+\subsubsection*{(2) Modelat i algorismes d'aprenentatge}
+\addcontentsline{toc}{subsubsection}{Modelat i algorismes d'aprenentatge}
+%Model del robot--> Durant molt temps el metode d'utilitzacio dels robots ha estat creant models d'ells i a partir d'aquest fer els estudis pertinents.
+%Que és un model? Quina informació t'aporta? Com es pot fer un model d'un robot(a mà, automàticament)? Quins inconvenients et pot portar el fer un model? De que serveix tenir un model?(saber com t'afecta una perturbacio i fer les accions tals que contraresten)Ara bé, si nomes utilitzes el model sense cap altre mètode després has de picar el codi de totes les possibilitats
 
-%cercar articles o memories que utilitzin robots i que siguin sobre estabilitat tant sigui de quadrupedes, bipedes com de Zero Moment Point
-%També cercar sobre com tractar el tema del centre de gravetat (COG)
-%I també parlar de les referencies dels diferents Learnings
+%Aprenentatges, alguns no necessiten d'un model per poder treballar tot i que si es té un model poden desenvolupar les tasques amb més facilitat i precisió (si el model ha estat creat correctament)
+%Aprenentatge supervisat i el no supervisat
+%Aprenentatge per reforç (Q-learning, R-learning, DMP, etc)
+%CPG i algorismes genètics
 
-%Diferents plataformes mobils
 
 \label{Objectius}
 \subsection*{Objectius}
@@ -400,6 +416,15 @@ Rxgraph exposa visualment amb un gràfic com funcionen els processos de ROS i le
 
 \label{Algorismes}
 \subsection{Algorismes de resposta davant pertorbacions}
+
+\paragraph{}En la robòtica, com en qualsevol àmbit, per un mateix problema es poden utilitzar infinitat de solucions. Ara bé, el tret característic de l'enginyeria és que d'entre la multitud de possibilitats, escollir la més òptima segons les condicions del moment. Abans de poder optar per una opció, s'ha de tenir una idea clara del que aporta cadascuna i observar com s'adapta al nostre problema.
+
+\paragraph{}En l'estat de l'art, s'han esmentat algunes de les possibilitats per dur a terme els objectius fixats inicialment. Aquestes opcions han estat explicades anteriorment, amb una breu descripció i trets característics que podrien ser d'interès pel nostre cas. Aquí s'exposa com cadascuna podria adaptar-se al problema, mencionant els seus avantatges i inconvenients.
+
+\subsubsection{Model del robot}
+
+\paragraph{}
+
 %Creació d'un model i fer estudi d'aquest model per saber davant una pertorbació com ha de ser les entrades dels actuadors per tal de estar en una posició d'estabilitat
 
 %Supervised learning, a partir de moltes mostres d'indicacions i com ha de d'actuar per estar estable, pren una funció que aplicarà en els casos futurs.
