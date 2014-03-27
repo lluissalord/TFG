@@ -16,6 +16,8 @@
 \usepackage{subcaption}
 \usepackage{framed}
 
+\usepackage[ampersand]{easylist}
+
 \usepackage[left=2.5cm,right=2.5cm,top=2.5cm,bottom=2.5cm]{geometry}
 
 \usepackage{appendix}
@@ -158,24 +160,58 @@ The estability of the robots...
 \addcontentsline{toc}{subsubsection}{Robots}
 
 \paragraph{}Alguns dels robots sobre els que s'hi ha investigat, amb temàtiques relacionades amb el treball present són:
-\begin{itemize}
-\item[\textbf{QRIO}] Robot humanoide dissenyat i fabricat per Sony Corporation, és el successor de l'AIBO. Entre d'altres articles i investigacions que se n'ha fet, es troba \cite{Nagasaka2004} sobre l'estabilitat d'un robot bípede a l'hora de caminar, corre i saltar. Basat en la teoria del ZMP.
+\begin{description}
 
-\item[\textbf{ASIMO}] És un altre robot humanoide, aquest desenvolupat per HONDA, a partir de l'any 2000. Inicialment, en els seus predecessors, tan sols s'havia plantejat el fet de crear un robot mòbil bípede, però, poc a poc, s'hi han incorporat més facultats, fins arribar a ser un dels humanoides amb els moviments més semblants al dels humans\cite{ASIMO_History}. De les referències llegides en el moment de redactar el treball, de l'ASIMO hi ha estudis sobre la planificació dels passos per tal d'evitar obstacles \cite{Chestnutt2005} i sobre la interacció amb els humans \cite{Mutlu2006}.
+\item[QRIO] Robot humanoide dissenyat i fabricat per Sony Corporation, és el successor de l'AIBO. Entre d'altres articles i investigacions que se n'ha fet, es troba \cite{Nagasaka2004} sobre l'estabilitat d'un robot bípede a l'hora de caminar, corre i saltar. Basat en la teoria del ZMP.
 
-\item[\textbf{REEM-C}] Aquest últim humanoide és el creat per PAL Robotics \cite{REEM_C}. Destaca pel fet de ser el primer bípede enfocat en la investigació i basat 100\% en ROS. El REEM-C està basat, entre d'altres teories, amb el ZMP i en el aprenentatge propi del robot. A més, les seves característiques de reconeixement de veu, manipulació d'objectes i d'interacció amb humans, és una eina educativa molt útil. \cite{Robotics}
+\item[ASIMO] És un altre robot humanoide, aquest desenvolupat per HONDA, a partir de l'any 2000. Inicialment, en els seus predecessors, tan sols s'havia plantejat el fet de crear un robot mòbil bípede, però, poc a poc, s'hi han incorporat més facultats, fins arribar a ser un dels humanoides amb els moviments més semblants al dels humans\cite{ASIMO_History}. De les referències llegides en el moment de redactar el treball, de l'ASIMO hi ha estudis sobre la planificació dels passos per tal d'evitar obstacles \cite{Chestnutt2005} i sobre la interacció amb els humans \cite{Mutlu2006}.
 
-\item[\textbf{BigDog}] És un dels grans robots que s'han creat al Boston Dinamics, prenent el que va ser inicialment desenvolupat en la DARPA\cite{Marc2008}. Aquest "\textit{gos}" va ser dissenyat per ús militar, en concret, per acompanyar als soldats portant la carga necessària en terrenys on no podria desplaçar-se un vehicle convencional. Aquest quadrúpede és dinàmicament estable\footnote{Sistema que és estable tenint en compte els efectes inercials i altres components dinàmiques que apareixen en el propi sistema \cite{Purushotham2009}.} gracies al gran conjunt de sensors i actuadors que arriba a tenir. A banda d'un sistema mecànic molt complert, també s'hi ha implementat algorismes d'aprenentatge per reforç, en concret DMP (\textit{Dynamic Movement Primitives}) \footnote{DMP (\textit{Dynamic Movement Primitives}) s'explica en detall en la secció \ref{Algorismes} } \cite{Playter2006}.
+\item[REEM-C] Aquest últim humanoide és el creat per PAL Robotics \cite{REEM_C}. Destaca pel fet de ser el primer bípede enfocat en la investigació i basat 100\% en ROS. El REEM-C està basat, entre d'altres teories, amb el ZMP i en el aprenentatge propi del robot. A més, les seves característiques de reconeixement de veu, manipulació d'objectes i d'interacció amb humans, és una eina educativa molt útil. \cite{Robotics}
 
-\item[\textbf{LittleDog}] Aquest quadrúpede és el predecessor del BigDog. Té la mateixa base que l'anterior, tot i que en aquest és on s'ha fet més estudi del aprenentatge del robot. La investigació que s'hi ha fet al damunt, tant d'aprenentatge, com de criteri de ZMP és pot entendre de forma genèrica en \cite{Kalakrishnan2010}. 
+\item[BigDog] És un dels grans robots que s'han creat al Boston Dinamics, prenent el que va ser inicialment desenvolupat en la DARPA\cite{Marc2008}. Aquest "\textit{gos}" va ser dissenyat per ús militar, en concret, per acompanyar als soldats portant la carga necessària en terrenys on no podria desplaçar-se un vehicle convencional. Aquest quadrúpede és dinàmicament estable\footnote{Sistema que és estable tenint en compte els efectes inercials i altres components dinàmiques que apareixen en el propi sistema \cite{Purushotham2009}.} gracies al gran conjunt de sensors i actuadors que arriba a tenir. A banda d'un sistema mecànic molt complert, també s'hi ha implementat algorismes d'aprenentatge per reforç, en concret DMP (\textit{Dynamic Movement Primitives}) \footnote{DMP (\textit{Dynamic Movement Primitives}) s'explica en detall en la secció \ref{Algorismes} } \cite{Playter2006}.
 
-\end{itemize}
+\item[LittleDog] Aquest quadrúpede és el predecessor del BigDog. Té la mateixa base que l'anterior, tot i que en aquest és on s'ha fet més estudi del aprenentatge del robot. La investigació que s'hi ha fet al damunt, tant d'aprenentatge, com de criteri de ZMP és pot entendre de forma genèrica en \cite{Kalakrishnan2010}. 
+
+\end{description}
 
 \paragraph{}A banda dels nombrats anteriorment, existeixen molts altres robots amb potes que han servit per aprofundir en coneixements diversos, com l'estabilitat o l'aprenentatge dels robots. Molts d'ells han sigut creats des de cero, com són els següents exemples: (1) el PLEO, un robot "\textit{dinosaure}", que en el projecte \cite{Menendez2011} se li aportant una millora substancial en la comunicació robot-ordinador; (2) el BISAM, on en l'article \cite{Albiez2003} s'estudia com provocar que els moviments siguin més semblants als d'un mamífer quadrúpede; (3) el MRWALL-SPECT IV, on l'autor d'aquests articles \cite{Loc2010} i \cite{Loc2011} es centra en l'adaptabilitat del quadrúpede a diferents terrenys; (4) el MERO, estudiat en \cite{Ion} per fer un anàlisis d'estabilitat quan aquest es desplaça; (5) per últim, també hi ha els casos d'hexàpodes, tant per l'estudi del caminar amb el criteri de les tres potes \cite{Lee1988}, com en la construcció des de cero \cite{Lojo2009}, entre d'altres. 
 
 \label{Modelat i algorismes d'aprenentatge}
 \subsubsection*{(2) Modelat i algorismes d'aprenentatge}
 \addcontentsline{toc}{subsubsection}{Modelat i algorismes d'aprenentatge}
+
+\paragraph{}Durant molt temps, per utilitzar un robot es requeria d'un model. D'aquesta manera, l'autòmat podia saber en quina posició es trobava, en tot moment, i reaccionar de forma correcte. Si no es feia seguint aquest procediment, l'única opció era que el programador tingués en compte totes les diferents possibilitats de fallada i les corregís, sent aquesta un tasca molt complicada.  
+
+\paragraph{}Un model d'un robot és un sistema virtual que representa de forma aproximada la cinemàtica i/o la dinàmica d'un robot, mitjançant formes geomètriques enllaçades entre elles amb una configuració determinada. Aquesta és la base d'un model, ara bé, se li poden afegir complements, com un aspecte visual més vistós, amb alguna textura o concretar quins són els actuadors o sensors i on situar-los, etc.
+
+\paragraph{}Per crear el model d'un robot existeixen diverses possibilitats. La més rudimentària és prenent les mesures del propi robot i introduir-les al programa, aquest mètode avui dia és molt poc utilitzada. El més típic és utilitzar el propi robot per fer el model, on a través d'un sistema realimentat amb (1) robot, (2) el model en construcció i (3) un controlador per la realimentació; s'arriba finalment a desenvolupar el model.
+
+\paragraph{}Ara bé, existeixen tant diferents tipus de models com també formes diferents de crear-los:
+
+\begin{itemize}
+\item Tipus de models:
+\begin{description}
+\item[Directes]
+\item[Indirectes]
+\item[Mixtes]
+\item[De predicció de múltiples passos]
+\end{description}
+\end{itemize}
+
+%\begin{easylist}[itemize]
+%& Tipus de models
+%&& Models directes
+%&& Models
+%\end{easylist}
+
+%Tipus de modelats(abans dir que no s'utilitza el fet de fer el model directament a mà, sino que s'extreu a partir del propi aprenentatge del robot)
+
+%Diferents simuladors que hi ha i com treballen
+
+%"We developed a model of the Aibo robot. This involved implementing its graphical aspect, replicating its kinematic structure, its dynamics properties (masses and moments of inertia) and its control."
+
+%"Aibo’s Position Sensing Device (PSD) is modeled by a DistanceSensor node of “infra-red” type (see Fig. 3). We modeled Aibo’s paw touch sensors by TouchSensor nodes which return binary values. Because only the paw touch sensors are of interest for the simulation of Aibo’s movements, the back sensors, the chin switch and the head sensors are not yet included in the model. Acceleration and thermo sensors do not have corresponding Webots nodes and can therefore not be simulated. Similarly, the speaker and microphone cannot be simulated in Webots, but there is a Camera node type, which we used to include Aibo’s color camera in the model."
+
 %Model del robot--> Durant molt temps el metode d'utilitzacio dels robots ha estat creant models d'ells i a partir d'aquest fer els estudis pertinents.
 %Que és un model? Quina informació t'aporta? Com es pot fer un model d'un robot(a mà, automàticament)? Quins inconvenients et pot portar el fer un model? De que serveix tenir un model?(saber com t'afecta una perturbacio i fer les accions tals que contraresten)Ara bé, si nomes utilitzes el model sense cap altre mètode després has de picar el codi de totes les possibilitats
 
@@ -422,13 +458,15 @@ Rxgraph exposa visualment amb un gràfic com funcionen els processos de ROS i le
 \label{Algorismes}
 \subsection{Algorismes de resposta davant pertorbacions}
 
-\paragraph{}En la robòtica, com en qualsevol àmbit, per un mateix problema es poden utilitzar infinitat de solucions. Ara bé, el tret característic de l'enginyeria és que d'entre la multitud de possibilitats, escollir la més òptima segons les condicions del moment. Abans de poder optar per una opció, s'ha de tenir una idea clara del que aporta cadascuna i observar com s'adapta al nostre problema.
+\paragraph{}En la robòtica, com en qualsevol àmbit, per un mateix problema poden ser utilitzades infinitat de solucions. Ara bé, el tret característic de l'enginyeria és que d'entre la multitud de possibilitats, s'esculli la més òptima segons les condicions del moment. Abans d'optar per una opció, s'ha de tenir una idea clara del que aporta cadascuna i observar com s'adapta a la problemàtica actual.
 
-\paragraph{}En l'estat de l'art, s'han esmentat algunes de les possibilitats per dur a terme els objectius fixats inicialment. Aquestes opcions han estat explicades anteriorment, amb una breu descripció i trets característics que podrien ser d'interès pel nostre cas. Aquí s'exposa com cadascuna podria adaptar-se al problema, mencionant els seus avantatges i inconvenients.
+\paragraph{}En l'estat de l'art, s'han esmentat algunes de les possibilitats per dur a terme els objectius fixats inicialment. Aquestes opcions han estat explicades anteriorment, amb una breu descripció i trets característics que podrien ser d'interès pel nostre cas. A continuació, s'exposa com cadascuna podria adaptar-se al problema, mencionant els seus avantatges i inconvenients. Al final, s'escull la més adient pel cas i se'n fa una descripció més acurada. 
 
 \subsubsection{Model del robot}
 
-\paragraph{}
+%"the execution of robot programs inside a simulator offers the possibility of directly debugging and testing them. This is a great benefit when working with platforms that do not offer any direct debugging facilities"
+
+%"Simulators, of course, do have limitations and there are some problems to be solved. It is difficult to simulate the physics of a robot (actuators, interaction with the environment, sensors) realistically, and the transfer from simulation to the real robot is not always simple."
 
 %Creació d'un model i fer estudi d'aquest model per saber davant una pertorbació com ha de ser les entrades dels actuadors per tal de estar en una posició d'estabilitat
 

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012/Debian) (format=pdflatex 2014.2.19)  25 MAR 2014 20:20
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012/Debian) (format=pdflatex 2014.2.19)  27 MAR 2014 12:00
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -509,26 +509,48 @@ Package: framed 2011/10/22 v 0.96: framed or shaded text with page breaks
 \FrameRule=\dimen130
 \FrameSep=\dimen131
 )
+(/usr/share/texlive/texmf-dist/tex/latex/easylist/easylist.sty
+Package: easylist 2010/02/28 v.1.3 Numbered items with a single command.
+\el@CounterTotal=\count114
+\el@Scratch=\count115
+\el@ControlCounter=\count116
+\el@CounterLevel=\count117
+\c@List1=\count118
+\c@List2=\count119
+\c@List3=\count120
+\c@List4=\count121
+\c@List5=\count122
+\c@List6=\count123
+\c@List7=\count124
+\c@List8=\count125
+\c@List9=\count126
+\c@List10=\count127
+\el@ProgressiveDimension=\dimen132
+\el@CounterBox=\box28
+\el@ControlBox=\box29
+\el@TotalMargin=\dimen133
+\el@LeftMove=\dimen134
+)
 (/usr/share/texlive/texmf-dist/tex/latex/geometry/geometry.sty
 Package: geometry 2010/09/12 v5.6 Page Geometry
-\Gm@cnth=\count114
-\Gm@cntv=\count115
-\c@Gm@tempcnt=\count116
-\Gm@bindingoffset=\dimen132
-\Gm@wd@mp=\dimen133
-\Gm@odd@mp=\dimen134
-\Gm@even@mp=\dimen135
-\Gm@layoutwidth=\dimen136
-\Gm@layoutheight=\dimen137
-\Gm@layouthoffset=\dimen138
-\Gm@layoutvoffset=\dimen139
+\Gm@cnth=\count128
+\Gm@cntv=\count129
+\c@Gm@tempcnt=\count130
+\Gm@bindingoffset=\dimen135
+\Gm@wd@mp=\dimen136
+\Gm@odd@mp=\dimen137
+\Gm@even@mp=\dimen138
+\Gm@layoutwidth=\dimen139
+\Gm@layoutheight=\dimen140
+\Gm@layouthoffset=\dimen141
+\Gm@layoutvoffset=\dimen142
 \Gm@dimlist=\toks22
 )
 (/usr/share/texlive/texmf-dist/tex/latex/appendix/appendix.sty
 Package: appendix 2009/09/02 v1.2b extra appendix facilities
-\c@@pps=\count117
-\c@@ppsavesec=\count118
-\c@@ppsaveapp=\count119
+\c@@pps=\count131
+\c@@ppsavesec=\count132
+\c@@ppsaveapp=\count133
 )
 (/usr/share/texlive/texmf-dist/tex/latex/imakeidx/imakeidx.sty
 Package: imakeidx 2012/05/09 v1.1 Package for typesetting indices in a synchron
@@ -540,33 +562,31 @@ Package: xkeyval 2008/08/13 v2.6a package option processing (HA)
 (/usr/share/texlive/texmf-dist/tex/generic/xkeyval/xkeyval.tex
 \XKV@toks=\toks23
 \XKV@tempa@toks=\toks24
-\XKV@depth=\count120
+\XKV@depth=\count134
 File: xkeyval.tex 2008/08/13 v2.6a key=value parser (HA)
 ))
 (/usr/share/texlive/texmf-dist/tex/latex/tools/multicol.sty
 Package: multicol 2011/06/27 v1.7a multicolumn formatting (FMi)
-\c@tracingmulticols=\count121
-\mult@box=\box28
-\multicol@leftmargin=\dimen140
-\c@unbalance=\count122
-\c@collectmore=\count123
-\doublecol@number=\count124
-\multicoltolerance=\count125
-\multicolpretolerance=\count126
-\full@width=\dimen141
-\page@free=\dimen142
-\premulticols=\dimen143
-\postmulticols=\dimen144
+\c@tracingmulticols=\count135
+\mult@box=\box30
+\multicol@leftmargin=\dimen143
+\c@unbalance=\count136
+\c@collectmore=\count137
+\doublecol@number=\count138
+\multicoltolerance=\count139
+\multicolpretolerance=\count140
+\full@width=\dimen144
+\page@free=\dimen145
+\premulticols=\dimen146
+\postmulticols=\dimen147
 \multicolsep=\skip48
 \multicolbaselineskip=\skip49
-\partial@page=\box29
-\last@line=\box30
-\mult@rightbox=\box31
-\mult@grightbox=\box32
-\mult@gfirstbox=\box33
-\mult@firstbox=\box34
-\@tempa=\box35
-\@tempa=\box36
+\partial@page=\box31
+\last@line=\box32
+\mult@rightbox=\box33
+\mult@grightbox=\box34
+\mult@gfirstbox=\box35
+\mult@firstbox=\box36
 \@tempa=\box37
 \@tempa=\box38
 \@tempa=\box39
@@ -582,14 +602,16 @@ Package: multicol 2011/06/27 v1.7a multicolumn formatting (FMi)
 \@tempa=\box49
 \@tempa=\box50
 \@tempa=\box51
-\c@columnbadness=\count127
-\c@finalcolumnbadness=\count128
-\last@try=\dimen145
-\multicolovershoot=\dimen146
-\multicolundershoot=\dimen147
-\mult@nat@firstbox=\box52
-\colbreak@box=\box53
-\multicol@sort@counter=\count129
+\@tempa=\box52
+\@tempa=\box53
+\c@columnbadness=\count141
+\c@finalcolumnbadness=\count142
+\last@try=\dimen148
+\multicolovershoot=\dimen149
+\multicolundershoot=\dimen150
+\mult@nat@firstbox=\box54
+\colbreak@box=\box55
+\multicol@sort@counter=\count143
 ))
 \Treball@idxfile=\write3
 \openout3 = `Treball.idx'.
@@ -597,10 +619,10 @@ Package: multicol 2011/06/27 v1.7a multicolumn formatting (FMi)
 
 Writing index file Treball.idx
 (/usr/share/texlive/texmf-dist/tex/latex/wrapfig/wrapfig.sty
-\wrapoverhang=\dimen148
-\WF@size=\dimen149
-\c@WF@wrappedlines=\count130
-\WF@box=\box54
+\wrapoverhang=\dimen151
+\WF@size=\dimen152
+\c@WF@wrappedlines=\count144
+\WF@box=\box56
 \WF@everypar=\toks25
 Package: wrapfig 2003/01/31  v 3.6
 )
@@ -620,28 +642,28 @@ Package: natbib 2010/09/13 8.31b (PWD, AO)
 \bibhang=\skip59
 \bibsep=\skip60
 LaTeX Info: Redefining \cite on input line 694.
-\c@NAT@ctr=\count131
+\c@NAT@ctr=\count145
 ) (./Treball.aux)
 \openout1 = `Treball.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 62.
-LaTeX Font Info:    ... okay on input line 62.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 62.
-LaTeX Font Info:    ... okay on input line 62.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 62.
-LaTeX Font Info:    ... okay on input line 62.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 62.
-LaTeX Font Info:    ... okay on input line 62.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 62.
-LaTeX Font Info:    ... okay on input line 62.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 62.
-LaTeX Font Info:    ... okay on input line 62.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 62.
-LaTeX Font Info:    ... okay on input line 62.
-LaTeX Info: Redefining \l on input line 62.
-LaTeX Info: Redefining \L on input line 62.
-\AtBeginShipoutBox=\box55
-Package hyperref Info: Link coloring OFF on input line 62.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 64.
+LaTeX Font Info:    ... okay on input line 64.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 64.
+LaTeX Font Info:    ... okay on input line 64.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 64.
+LaTeX Font Info:    ... okay on input line 64.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 64.
+LaTeX Font Info:    ... okay on input line 64.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 64.
+LaTeX Font Info:    ... okay on input line 64.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 64.
+LaTeX Font Info:    ... okay on input line 64.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 64.
+LaTeX Font Info:    ... okay on input line 64.
+LaTeX Info: Redefining \l on input line 64.
+LaTeX Info: Redefining \L on input line 64.
+\AtBeginShipoutBox=\box57
+Package hyperref Info: Link coloring OFF on input line 64.
 
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2010/04/30 v2.40 Cross-referencing by name of section
@@ -649,11 +671,11 @@ Package: nameref 2010/04/30 v2.40 Cross-referencing by name of section
 (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
 Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
-\c@section@level=\count132
+\c@section@level=\count146
 )
-LaTeX Info: Redefining \ref on input line 62.
-LaTeX Info: Redefining \pageref on input line 62.
-LaTeX Info: Redefining \nameref on input line 62.
+LaTeX Info: Redefining \ref on input line 64.
+LaTeX Info: Redefining \pageref on input line 64.
+LaTeX Info: Redefining \nameref on input line 64.
 
 (./Treball.out) (./Treball.out)
 \@outlinefile=\write4
@@ -662,16 +684,16 @@ LaTeX Info: Redefining \nameref on input line 62.
 
 (/usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count133
-\scratchdimen=\dimen150
-\scratchbox=\box56
-\nofMPsegments=\count134
-\nofMParguments=\count135
+\scratchcounter=\count147
+\scratchdimen=\dimen153
+\scratchbox=\box58
+\nofMPsegments=\count148
+\nofMParguments=\count149
 \everyMPshowfont=\toks26
-\MPscratchCnt=\count136
-\MPscratchDim=\dimen151
-\MPnumerator=\count137
-\makeMPintoPDFobject=\count138
+\MPscratchCnt=\count150
+\MPscratchDim=\dimen154
+\MPnumerator=\count151
+\makeMPintoPDFobject=\count152
 \everyMPtoPDFconversion=\toks27
 ) (/usr/share/texlive/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
 Package: epstopdf-base 2010/02/09 v2.5 Base part for package epstopdf
@@ -726,19 +748,19 @@ Package caption Info: End \AtBeginDocument code.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-LaTeX Font Info:    Try loading font information for U+msa on input line 64.
+LaTeX Font Info:    Try loading font information for U+msa on input line 66.
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2009/06/22 v3.00 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 64.
+LaTeX Font Info:    Try loading font information for U+msb on input line 66.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2009/06/22 v3.00 AMS symbols B
 )
-<Imatges/ERS7.jpg, id=110, 909.3975pt x 990.70125pt>
+<Imatges/ERS7.jpg, id=114, 909.3975pt x 990.70125pt>
 File: Imatges/ERS7.jpg Graphic file (type jpg)
  <use Imatges/ERS7.jpg>
-Package pdftex.def Info: Imatges/ERS7.jpg used on input line 67.
+Package pdftex.def Info: Imatges/ERS7.jpg used on input line 69.
 (pdftex.def)             Requested size: 90.94507pt x 99.07593pt.
 
 [1
@@ -751,10 +773,10 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-<Imatges/etseib.jpg, id=124, 128.48pt x 169.63374pt>
+<Imatges/etseib.jpg, id=128, 128.48pt x 169.63374pt>
 File: Imatges/etseib.jpg Graphic file (type jpg)
  <use Imatges/etseib.jpg>
-Package pdftex.def Info: Imatges/etseib.jpg used on input line 93.
+Package pdftex.def Info: Imatges/etseib.jpg used on input line 95.
 (pdftex.def)             Requested size: 38.54428pt x 50.8905pt.
 
 
@@ -767,17 +789,17 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.93 \newpage
+l.95 \newpage
               [1
 
  <./Imatges/etseib.jpg>] (./Treball.toc
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 57.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 62.
 
 (/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/bx/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/b/n' tried instead on input line 57.
+(Font)              Font shape `OMS/cmsy/b/n' tried instead on input line 62.
 )
 \tf@toc=\write5
 \openout5 = `Treball.toc'.
@@ -785,20 +807,20 @@ LaTeX Font Info:    Font shape `OMS/cmr/bx/n' in size <12> not available
 File: Imatges/etseib.jpg Graphic file (type jpg)
 
 <use Imatges/etseib.jpg>
-Package pdftex.def Info: Imatges/etseib.jpg used on input line 97.
+Package pdftex.def Info: Imatges/etseib.jpg used on input line 99.
 (pdftex.def)             Requested size: 38.54428pt x 50.8905pt.
 pdfTeX warning (ext4): destination with the same identifier (name{page.2}) has 
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.97 \newpage
+l.99 \newpage
               [2] (./Treball.lof)
 \tf@lof=\write6
 \openout6 = `Treball.lof'.
 
 File: Imatges/etseib.jpg Graphic file (type jpg)
  <use Imatges/etseib.jpg>
-Package pdftex.def Info: Imatges/etseib.jpg used on input line 99.
+Package pdftex.def Info: Imatges/etseib.jpg used on input line 101.
 (pdftex.def)             Requested size: 38.54428pt x 50.8905pt.
  [3] (./Treball.lot)
 \tf@lot=\write7
@@ -807,63 +829,68 @@ Package pdftex.def Info: Imatges/etseib.jpg used on input line 99.
 File: Imatges/etseib.jpg Graphic file (type jpg)
 
 <use Imatges/etseib.jpg>
-Package pdftex.def Info: Imatges/etseib.jpg used on input line 101.
+Package pdftex.def Info: Imatges/etseib.jpg used on input line 103.
 (pdftex.def)             Requested size: 38.54428pt x 50.8905pt.
  [4]
 File: Imatges/etseib.jpg Graphic file (type jpg)
  <use Imatges/etseib.jpg>
-Package pdftex.def Info: Imatges/etseib.jpg used on input line 131.
+Package pdftex.def Info: Imatges/etseib.jpg used on input line 133.
 (pdftex.def)             Requested size: 38.54428pt x 50.8905pt.
  [5]
 File: Imatges/etseib.jpg Graphic file (type jpg)
 
 <use Imatges/etseib.jpg>
-Package pdftex.def Info: Imatges/etseib.jpg used on input line 163.
+Package pdftex.def Info: Imatges/etseib.jpg used on input line 166.
 (pdftex.def)             Requested size: 38.54428pt x 50.8905pt.
  [6]
 File: Imatges/etseib.jpg Graphic file (type jpg)
  <use Imatges/etseib.jpg>
-Package pdftex.def Info: Imatges/etseib.jpg used on input line 175.
+Package pdftex.def Info: Imatges/etseib.jpg used on input line 178.
 (pdftex.def)             Requested size: 38.54428pt x 50.8905pt.
  [7]
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 194.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 192.
 File: Imatges/etseib.jpg Graphic file (type jpg)
 
 <use Imatges/etseib.jpg>
-Package pdftex.def Info: Imatges/etseib.jpg used on input line 209.
+Package pdftex.def Info: Imatges/etseib.jpg used on input line 231.
 (pdftex.def)             Requested size: 38.54428pt x 50.8905pt.
  [8]
 File: Imatges/etseib.jpg Graphic file (type jpg)
  <use Imatges/etseib.jpg>
-Package pdftex.def Info: Imatges/etseib.jpg used on input line 240.
+Package pdftex.def Info: Imatges/etseib.jpg used on input line 245.
 (pdftex.def)             Requested size: 38.54428pt x 50.8905pt.
  [9]
 File: Imatges/etseib.jpg Graphic file (type jpg)
 
 <use Imatges/etseib.jpg>
-Package pdftex.def Info: Imatges/etseib.jpg used on input line 272.
+Package pdftex.def Info: Imatges/etseib.jpg used on input line 276.
 (pdftex.def)             Requested size: 38.54428pt x 50.8905pt.
  [10]
-<Imatges/ERS-7(front).jpg, id=289, 752.8125pt x 374.39874pt>
+File: Imatges/etseib.jpg Graphic file (type jpg)
+ <use Imatges/etseib.jpg>
+Package pdftex.def Info: Imatges/etseib.jpg used on input line 308.
+(pdftex.def)             Requested size: 38.54428pt x 50.8905pt.
+ [11]
+<Imatges/ERS-7(front).jpg, id=303, 752.8125pt x 374.39874pt>
 File: Imatges/ERS-7(front).jpg Graphic file (type jpg)
 
 <use Imatges/ERS-7(front).jpg>
-Package pdftex.def Info: Imatges/ERS-7(front).jpg used on input line 278.
+Package pdftex.def Info: Imatges/ERS-7(front).jpg used on input line 314.
 (pdftex.def)             Requested size: 227.62206pt x 113.20598pt.
 
-<Imatges/ERS-7(back).jpg, id=290, 702.625pt x 346.29375pt>
+<Imatges/ERS-7(back).jpg, id=304, 702.625pt x 346.29375pt>
 File: Imatges/ERS-7(back).jpg Graphic file (type jpg)
 
 <use Imatges/ERS-7(back).jpg>
-Package pdftex.def Info: Imatges/ERS-7(back).jpg used on input line 282.
+Package pdftex.def Info: Imatges/ERS-7(back).jpg used on input line 318.
 (pdftex.def)             Requested size: 227.62206pt x 112.18481pt.
 
-<Imatges/ERS-7(stomach).pdf, id=291, 465.02533pt x 427.5433pt>
+<Imatges/ERS-7(stomach).pdf, id=305, 465.02533pt x 427.5433pt>
 File: Imatges/ERS-7(stomach).pdf Graphic file (type pdf)
 
 <use Imatges/ERS-7(stomach).pdf>
-Package pdftex.def Info: Imatges/ERS-7(stomach).pdf used on input line 286.
+Package pdftex.def Info: Imatges/ERS-7(stomach).pdf used on input line 322.
 (pdftex.def)             Requested size: 227.62206pt x 209.27623pt.
 
 
@@ -871,43 +898,43 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 File: Imatges/etseib.jpg Graphic file (type jpg)
 <use Imatges/etseib.jpg>
-Package pdftex.def Info: Imatges/etseib.jpg used on input line 339.
+Package pdftex.def Info: Imatges/etseib.jpg used on input line 375.
 (pdftex.def)             Requested size: 38.54428pt x 50.8905pt.
- [11 <./Imatges/ERS-7(front).jpg> <./Imatges/ERS-7(back).jpg> <./Imatges/ERS-7(
+ [12 <./Imatges/ERS-7(front).jpg> <./Imatges/ERS-7(back).jpg> <./Imatges/ERS-7(
 stomach).pdf>]
 File: Imatges/etseib.jpg Graphic file (type jpg)
  <use Imatges/etseib.jpg>
-Package pdftex.def Info: Imatges/etseib.jpg used on input line 347.
-(pdftex.def)             Requested size: 38.54428pt x 50.8905pt.
- [12]
-File: Imatges/etseib.jpg Graphic file (type jpg)
-
-<use Imatges/etseib.jpg>
-Package pdftex.def Info: Imatges/etseib.jpg used on input line 370.
+Package pdftex.def Info: Imatges/etseib.jpg used on input line 383.
 (pdftex.def)             Requested size: 38.54428pt x 50.8905pt.
  [13]
 File: Imatges/etseib.jpg Graphic file (type jpg)
- <use Imatges/etseib.jpg>
-Package pdftex.def Info: Imatges/etseib.jpg used on input line 390.
+
+<use Imatges/etseib.jpg>
+Package pdftex.def Info: Imatges/etseib.jpg used on input line 406.
 (pdftex.def)             Requested size: 38.54428pt x 50.8905pt.
  [14]
 File: Imatges/etseib.jpg Graphic file (type jpg)
-
-<use Imatges/etseib.jpg>
-Package pdftex.def Info: Imatges/etseib.jpg used on input line 423.
+ <use Imatges/etseib.jpg>
+Package pdftex.def Info: Imatges/etseib.jpg used on input line 426.
 (pdftex.def)             Requested size: 38.54428pt x 50.8905pt.
  [15]
 File: Imatges/etseib.jpg Graphic file (type jpg)
- <use Imatges/etseib.jpg>
-Package pdftex.def Info: Imatges/etseib.jpg used on input line 436.
+
+<use Imatges/etseib.jpg>
+Package pdftex.def Info: Imatges/etseib.jpg used on input line 464.
 (pdftex.def)             Requested size: 38.54428pt x 50.8905pt.
  [16]
 File: Imatges/etseib.jpg Graphic file (type jpg)
+ <use Imatges/etseib.jpg>
+Package pdftex.def Info: Imatges/etseib.jpg used on input line 479.
+(pdftex.def)             Requested size: 38.54428pt x 50.8905pt.
+ [17]
+File: Imatges/etseib.jpg Graphic file (type jpg)
 
 <use Imatges/etseib.jpg>
-Package pdftex.def Info: Imatges/etseib.jpg used on input line 440.
+Package pdftex.def Info: Imatges/etseib.jpg used on input line 483.
 (pdftex.def)             Requested size: 38.54428pt x 50.8905pt.
- [17] (./Treball.bbl
+ [18] (./Treball.bbl
 Underfull \hbox (badness 1616) in paragraph at lines 65--69
 []\OT1/cmr/m/n/12 PAL Ro-bo-tics.  REEM-C | PAL Ro-bo-tics Blog, .  URL []$\OT1
 /cmtt/m/n/12 http : / / blog .
@@ -917,58 +944,48 @@ File: Imatges/etseib.jpg Graphic file (type jpg)
 <use Imatges/etseib.jpg>
 Package pdftex.def Info: Imatges/etseib.jpg used on input line 93.
 (pdftex.def)             Requested size: 38.54428pt x 50.8905pt.
- [18]
+ [19]
 File: Imatges/etseib.jpg Graphic file (type jpg)
  <use Imatges/etseib.jpg>
 Package pdftex.def Info: Imatges/etseib.jpg used on input line 169.
 (pdftex.def)             Requested size: 38.54428pt x 50.8905pt.
- [19])
+ [20])
 File: Imatges/etseib.jpg Graphic file (type jpg)
 
 <use Imatges/etseib.jpg>
-Package pdftex.def Info: Imatges/etseib.jpg used on input line 447.
+Package pdftex.def Info: Imatges/etseib.jpg used on input line 490.
 (pdftex.def)             Requested size: 38.54428pt x 50.8905pt.
- [20]
+ [21]
 LaTeX Font Info:    Font shape `OMS/cmr/bx/n' in size <17.28> not available
-(Font)              Font shape `OMS/cmsy/b/n' tried instead on input line 450.
+(Font)              Font shape `OMS/cmsy/b/n' tried instead on input line 493.
 
-Overfull \hbox (7.53908pt too wide) in paragraph at lines 456--458
+Overfull \hbox (7.53908pt too wide) in paragraph at lines 499--501
 \OT1/cmtt/m/n/12 sudo sh -c 'echo "deb http://packages.ros.org/ros/ubuntu preci
 se main[] 
  []
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 484.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 527.
 File: Imatges/etseib.jpg Graphic file (type jpg)
 <use Imatges/etseib.jpg>
-Package pdftex.def Info: Imatges/etseib.jpg used on input line 484.
+Package pdftex.def Info: Imatges/etseib.jpg used on input line 527.
 (pdftex.def)             Requested size: 38.54428pt x 50.8905pt.
- [21
+ [22
 
 ]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 484.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 527.
  (./Treball.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 484.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 484.
-
-
-Package rerunfilecheck Warning: File `Treball.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `Treball.out':
-(rerunfilecheck)             Before: F58AB9FFA0760666A848BCE51C354DEC;1645
-(rerunfilecheck)             After:  CAB3A6F125FC34CDAEA87038C2850BA7;1720.
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 484.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 527.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 527.
+Package rerunfilecheck Info: File `Treball.out' has not changed.
+(rerunfilecheck)             Checksum: 524AC207E5932B7BE1E729408BE7BF02;1720.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 527.
  ) 
 Here is how much of TeX's memory you used:
- 9282 strings out of 493493
- 133838 string characters out of 3143797
- 241789 words of memory out of 3000000
- 12302 multiletter control sequences out of 15000+200000
- 16834 words of font info for 66 fonts, out of 3000000 for 9000
+ 9667 strings out of 493493
+ 137708 string characters out of 3143797
+ 249570 words of memory out of 3000000
+ 12678 multiletter control sequences out of 15000+200000
+ 17194 words of font info for 67 fonts, out of 3000000 for 9000
  957 hyphenation exceptions out of 8191
  36i,14n,74p,1054b,527s stack positions out of 5000i,500n,10000p,200000b,50000s
 pdfTeX warning (dest): name{Hfootnote.6} has been referenced but does not exi
@@ -1006,10 +1023,10 @@ e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texl
 ive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/share/texlive/te
 xmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/share/texlive/texmf-di
 st/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
-Output written on Treball.pdf (23 pages, 447491 bytes).
+Output written on Treball.pdf (24 pages, 449391 bytes).
 PDF statistics:
- 512 PDF objects out of 1000 (max. 8388607)
- 454 compressed objects within 5 object streams
- 133 named destinations out of 1000 (max. 500000)
- 242 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 523 PDF objects out of 1000 (max. 8388607)
+ 464 compressed objects within 5 object streams
+ 137 named destinations out of 1000 (max. 500000)
+ 250 words of extra memory for PDF output out of 10000 (max. 10000000)
 

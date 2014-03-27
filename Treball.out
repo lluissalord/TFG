@@ -8,9 +8,9 @@
 \BOOKMARK [2][-]{section*.19}{Estat de l'art}{section*.15}% 8
 \BOOKMARK [3][-]{section*.22}{Robots}{section*.19}% 9
 \BOOKMARK [3][-]{section*.25}{Modelat i algorismes d'aprenentatge}{section*.19}% 10
-\BOOKMARK [2][-]{section*.26}{Objectius}{section*.15}% 11
-\BOOKMARK [2][-]{section*.28}{Abast del treball}{section*.15}% 12
-\BOOKMARK [2][-]{section*.29}{Estructura del treball}{section*.15}% 13
+\BOOKMARK [2][-]{section*.30}{Objectius}{section*.15}% 11
+\BOOKMARK [2][-]{section*.32}{Abast del treball}{section*.15}% 12
+\BOOKMARK [2][-]{section*.33}{Estructura del treball}{section*.15}% 13
 \BOOKMARK [1][-]{section.1}{Estudis preliminars}{}% 14
 \BOOKMARK [2][-]{subsection.1.1}{AIBO}{section.1}% 15
 \BOOKMARK [3][-]{subsubsection.1.1.1}{Hardware}{subsection.1.1}% 16
@@ -22,7 +22,7 @@
 \BOOKMARK [2][-]{subsection.1.3}{Estabilitat}{section.1}% 22
 \BOOKMARK [2][-]{subsection.1.4}{Algorismes de resposta davant pertorbacions}{section.1}% 23
 \BOOKMARK [3][-]{subsubsection.1.4.1}{Model del robot}{subsection.1.4}% 24
-\BOOKMARK [1][-]{section*.48}{Agra\357ments}{}% 25
-\BOOKMARK [1][-]{section*.50}{Annexos}{}% 26
+\BOOKMARK [1][-]{section*.51}{Agra\357ments}{}% 25
+\BOOKMARK [1][-]{section*.53}{Annexos}{}% 26
 \BOOKMARK [1][-]{appendix.A}{INSTAL\267LACI\323 ROS I PAQUET D'AIBO SERVER}{}% 27
 \BOOKMARK [1][-]{appendix.B}{BIBLIOGRAFIA}{}% 28
