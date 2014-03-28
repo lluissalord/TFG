@@ -18,6 +18,12 @@
 
 \usepackage[ampersand]{easylist}
 
+\usepackage{array}
+\usepackage{multirow}
+\usepackage{tabulary}
+
+\usepackage{float}
+
 \usepackage[left=2.5cm,right=2.5cm,top=2.5cm,bottom=2.5cm]{geometry}
 
 \usepackage{appendix}
@@ -176,35 +182,94 @@ The estability of the robots...
 
 \paragraph{}A banda dels nombrats anteriorment, existeixen molts altres robots amb potes que han servit per aprofundir en coneixements diversos, com l'estabilitat o l'aprenentatge dels robots. Molts d'ells han sigut creats des de cero, com són els següents exemples: (1) el PLEO, un robot "\textit{dinosaure}", que en el projecte \cite{Menendez2011} se li aportant una millora substancial en la comunicació robot-ordinador; (2) el BISAM, on en l'article \cite{Albiez2003} s'estudia com provocar que els moviments siguin més semblants als d'un mamífer quadrúpede; (3) el MRWALL-SPECT IV, on l'autor d'aquests articles \cite{Loc2010} i \cite{Loc2011} es centra en l'adaptabilitat del quadrúpede a diferents terrenys; (4) el MERO, estudiat en \cite{Ion} per fer un anàlisis d'estabilitat quan aquest es desplaça; (5) per últim, també hi ha els casos d'hexàpodes, tant per l'estudi del caminar amb el criteri de les tres potes \cite{Lee1988}, com en la construcció des de cero \cite{Lojo2009}, entre d'altres. 
 
-\label{Modelat i algorismes d'aprenentatge}
-\subsubsection*{(2) Modelat i algorismes d'aprenentatge}
-\addcontentsline{toc}{subsubsection}{Modelat i algorismes d'aprenentatge}
+\label{Modelatge de robots}
+\subsubsection*{(2) Modelatge de robots}
+\addcontentsline{toc}{subsubsection}{Modelatge de robots}
 
 \paragraph{}Durant molt temps, per utilitzar un robot es requeria d'un model. D'aquesta manera, l'autòmat podia saber en quina posició es trobava, en tot moment, i reaccionar de forma correcte. Si no es feia seguint aquest procediment, l'única opció era que el programador tingués en compte totes les diferents possibilitats de fallada i les corregís, sent aquesta un tasca molt complicada.  
 
 \paragraph{}Un model d'un robot és un sistema virtual que representa de forma aproximada la cinemàtica i/o la dinàmica d'un robot, mitjançant formes geomètriques enllaçades entre elles amb una configuració determinada. Aquesta és la base d'un model, ara bé, se li poden afegir complements, com un aspecte visual més vistós, amb alguna textura o concretar quins són els actuadors o sensors i on situar-los, etc.
 
-\paragraph{}Per crear el model d'un robot existeixen diverses possibilitats. La més rudimentària és prenent les mesures del propi robot i introduir-les al programa, aquest mètode avui dia és molt poc utilitzada. El més típic és utilitzar el propi robot per fer el model, on a través d'un sistema realimentat amb (1) robot, (2) el model en construcció i (3) un controlador per la realimentació; s'arriba finalment a desenvolupar el model.
+\paragraph{}Per crear el model d'un robot existeixen diverses possibilitats. La més rudimentària és prenent les mesures del propi robot i introduir-les al programa, avui dia aquest mètode és molt poc utilitzat. El més típic és utilitzar el propi robot, amb una arquitectura d'aprenentatge òptima, per fer el model. Aquesta arquitectura es basa en un sistema realimentat amb (1) robot, (2) el model en construcció i (3) un controlador per la realimentació; s'arriba finalment a desenvolupar el model, s'il·lustra molt clarament en la figura .
 
-\paragraph{}Ara bé, existeixen tant diferents tipus de models com també formes diferents de crear-los:
+\paragraph{}Ara bé, existeixen tant diferents tipus de models, com també formes diferents de crear-los segons \cite{Nguyen-Tuong2011}:
 
 \begin{itemize}
 \item Tipus de models:
+
 \begin{description}
-\item[Directes]
-\item[Indirectes]
-\item[Mixtes]
-\item[De predicció de múltiples passos]
+
+\item[Directes] Aquest preveu el pròxim estat d'un sistema dinàmic, donada un acció i estat actual. Per tant, els models directes representen la relació causal entre estats i accions. Una de les seves utilitats és en el control automàtic clàssic, entre d'altres.
+
+\item[Indirectes] Per altre banda, aquests preveuen l'acció requerida pel sistema per passar d'un estat actual a desitja pel futur. A diferència dels directes, aquest representen una relació anticausal. Aquest és molt utilitzat en estudis de dinàmica inversa, ja que la relació inversa està ben definida.
+
+\item[Mixtes] La combinació dels dos models dona el model mixt. La idea és que la informació del model directe pugui ajudar en la manca d'unicitat del model indirecte. 
+
+\item[De predicció de múltiples passos] Finalment, aquest és principal utilitzat per la predicció d'una acció o estat futur concret, sense la disponibilitat de les mesures en del moment en qüestió.
+
 \end{description}
+
+\paragraph{}Cadascun dels models té unes caracteristiques que el defineixen, però aquestes delimiten els diferents modes d'aprenentatge que poden ser utilitzats per crear-los. Per tant, no tots els models poden ser creats a partir de qualsevol arquitectura d'aprenentatge. Aquest fet s'exemplifica en la taula següent:
+
 \end{itemize}
 
-%\begin{easylist}[itemize]
-%& Tipus de models
-%&& Models directes
-%&& Models
-%\end{easylist}
+\paragraph{} %Per crear una separació entre text i taula
 
-%Tipus de modelats(abans dir que no s'utilitza el fet de fer el model directament a mà, sino que s'extreu a partir del propi aprenentatge del robot)
+\begin{table}[h]
+\begin{center}
+\begin{tabulary}{\textwidth}{|C|C|}
+\hline
+
+\multirow{2}{*}{\textbf{Model Type}}
+& \textbf{Learning} \\ 
+& \textbf{Architecture} \\ \hline \hline
+
+\multirow{1}{*}{Forward Model}
+& Direct Modeling\\ \hline
+
+\multirow{2}{*}{Inverse Model}
+& Direct Modeling\\ 
+& Indirect Modeling\\ \hline
+
+\multirow{4}{*}{Mixed Model}
+& Direct Modeling \\
+& (if invertible) \\
+& Indrect Modeling \\
+& Distal-Teacher \\ \hline
+
+\multirow{1}{*}{Multi-step Prediction Model}
+& Direct Modeling \\ \hline
+\end{tabulary}
+\end{center}
+\caption{Relació tipus de model amb arquitectura d'aprenentatge \cite{Nguyen-Tuong2011}\label{T_model-arquitectura}}
+\end{table}
+
+
+\begin{itemize}
+\item Arquitectura d'aprenentatge:
+\begin{description}
+
+\item[Modelatge directe] El model s'extreu a partir d'aprendre de l'observació dels \texttt{inputs} i els \texttt{outputs} del propi robot. Aquesta és probablement la tècnica d'aprenentatge més freqüent per aproximació de models.
+
+\item[Modelatge indirecte] Una de les tècniques per dur a terme modelatge indirecte és l'aprenentatge de l'error de realimentació. Aquest utilitza l'error creat per el controlador de realimentació per tal d'aprendre i crear així el model. 
+
+\item[Aprenentatge amb professor distal] La idea és crear un model invers, però guiat amb un model directe, per tal de minimitzar la manca d'unicitat del model invers.  
+
+\end{description}
+
+\end{itemize}
+
+\begin{figure}[h]
+\begin{center}
+\includegraphics[scale=0.4]{Imatges/arquitectures-d'aprenentatge.png}
+\caption{Esquema de cada arquitectura d'aprenentatge \cite{Nguyen-Tuong2011}}
+\end{center}
+\end{figure}
+
+
+\paragraph{}Un dels beneficis de tenir el model d'un robot és poder fer simulacions virtuals del robot, de tal manera que no es provoca cap desgast al robot real, ni es poden donar situacions de perill. Tot i ser de gran utilitat, els simuladors també tenen les seves limitacions, és difícil simular la física d'un robot (actuadors, interaccions amb l'entorn, sensors\ldots) de manera realista, a més, passar de simulacions a un robot real no sempre és fàcil \cite{Hohl2006}.
+
+\paragraph{}Ara bé, existeixen una gran multitud de simuladors cada un amb les seves peculiaritats. Alguns dels que s'ha pogut extreure informació són els següents:
 
 %Diferents simuladors que hi ha i com treballen
 
@@ -214,6 +279,37 @@ The estability of the robots...
 
 %Model del robot--> Durant molt temps el metode d'utilitzacio dels robots ha estat creant models d'ells i a partir d'aquest fer els estudis pertinents.
 %Que és un model? Quina informació t'aporta? Com es pot fer un model d'un robot(a mà, automàticament)? Quins inconvenients et pot portar el fer un model? De que serveix tenir un model?(saber com t'afecta una perturbacio i fer les accions tals que contraresten)Ara bé, si nomes utilitzes el model sense cap altre mètode després has de picar el codi de totes les possibilitats
+
+\subsubsection*{(3) Aprenentatge supervisat}
+\addcontentsline{toc}{subsubsection}{Aprenentatge supervisat}
+
+\paragraph{}En l'aprenentatge supervisat un agent extern presenta una sèrie de dades d'exemple, de prediccions correctes a fer en diferents situacions \cite{Kober2009}. A partir d'aquestes dades d'entrenament, s'ha d'extreure un model per tal que en una situació fora desconeguda s'esculli l'acció correcte. Les bases de l'aprenentatge supervisat són: (1) el model, (2) la funció de pèrdua i error d'aproximació, i (3) procediment d'optimització \cite{Alpaydin2004}.
+
+\begin{enumerate}
+
+\item El model es representa com $g(x|\theta)$\footnote{La x són les entrades, mentre $\theta$ són els paràmetres}, on \textit{g}(·) és la classe d'hipòtesi i els valors de $\theta$ donen una hipòtesi en concret d'entre les possibles en el model.
+
+\item La funció de pèrdua, \textit{L}(·), quantifica la diferència entre la sortida desitjada, $r^t$, i l'aproximació $g(x^t|\theta)$, mentre la suma de les pèrdues de cada cas és l'error d'aproximació \begin{equation}
+E(\theta|X)=\sum_{t} L(r^t,g(x^t|\theta)
+\end{equation}
+
+\item El procediment d'optimització per trobar $\theta^t$ que minimitza l'error total 
+\begin{equation}
+\theta^*=arg\,\operatorname*{min}_\theta E(\theta|X)
+\end{equation}
+En models complexes, seria més convenient utilitzar mètodes basats en el gradient (p. e. gradient descendent, gradient conjugat, gradient biconjugat\dots) o l'algorisme de recuita simulada\footnote{A partir d'una solució inicial es selecciona una nova, aleatòriament, pròxima a la inicial. Si es millor s'hi queda, i sinó, segons una certa probabilitat, torna a l'anterior o es queda en la nova. Això es repeteix fins a la condició d'acabament\cite{Torrent-Fontbona2013}}.
+
+\end{enumerate}
+
+
+\subsubsection*{(4) Aprenentatge per reforç}
+\addcontentsline{toc}{subsubsection}{Aprenentatge per reforç}
+
+\subsubsection*{(5) Aprenentatge per demostració}
+\addcontentsline{toc}{subsubsection}{Aprenentatge per demostració}
+
+\subsubsection*{(6) Algorismes avançats}
+\addcontentsline{toc}{subsubsection}{Algorismes avançats}
 
 %Aprenentatges, alguns no necessiten d'un model per poder treballar tot i que si es té un model poden desenvolupar les tasques amb més facilitat i precisió (si el model ha estat creat correctament)
 %Aprenentatge supervisat i el no supervisat
@@ -231,7 +327,7 @@ The estability of the robots...
 \item Utilització de l'algorisme més adequat, tenint en compte tant l'entorn del robot i ell mateix, com l'abast del treball. Per això s'haurà de fer un estudi dels diferents mètodes existents que podrien ser útils per l'objecte del treball.
 \item Dur a terme una fase d'aprenentatge pel robot. Per poder fer-ho, abans, s'haurà d'haver fet un estudi en profunditat del aprenentatge per reforç.
 \item Realització de diferents proves per comprovar el correcte funcionament. Tant per poder comprovar, com per fer la fase d'aprenentatge del robot, és necessita d'una plataforma mòbil que en aquest cas ja està construïda, pel Carlos Ramos (estudiant de la EPSEVG)\cite{TFG_Carlos_Ramos}, però s'ha de millorar per fer-la més robusta.
-\end{itemize}
+\end{itemize},
 
 
 \label{Abast}
@@ -306,9 +402,10 @@ The estability of the robots...
 \item Actualització dels sensors cada 32 ms, amb 4 mostres per actualització
 \item Dimensions: $319\times180\times278$
 \item Pes aproximat: 1,65 kg (bateria i targeta de memòria incloses)
+
 \end{itemize}
 
-\begin{figure}[h]
+\begin{figure}[H]
 	\centering
         \begin{subfigure}[h]{0.5\textwidth}
                 \includegraphics[width=\textwidth]{Imatges/ERS-7(front)}
@@ -327,7 +424,7 @@ The estability of the robots...
 
 \paragraph{}Les articulacions PID, segons la seva funció i les pròpies limitacions físiques tenen uns rangs de treball diferents, aquest són els que s'exposen tot seguit: 
 
-\begin{table}[h!]
+\begin{table}[H]
 \begin{center}
 \begin{tabular}{| c | c | c | c |}
 \hline
@@ -358,6 +455,7 @@ mouth     &    range=[-58.000000,-3.000000]    & unit=deg & Mouth\\
 
 %Alguna solució per posar la taula al seu lloc
 %\pagebreak funciona, però la pagina anterior amb queda amb un espai interlinial molt gran
+%El mateix passa amb el parametre [H]
 
 
 \label{Software}

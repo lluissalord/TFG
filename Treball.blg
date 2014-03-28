@@ -3,8 +3,6 @@ Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: Treball.aux
 The style file: unsrtnat.bst
 Database file #1: ./Bibliografia/library.bib
-Warning--empty year in Aibo_Images
-Warning--empty year in Urbi_Docs
 Warning--empty year in Arduino
 Warning--empty year in ASIMO_History
 Warning--empty year in REEM_C
@@ -12,48 +10,53 @@ Warning--empty year in Robotics
 Warning--can't use both volume and number fields in Marc2008
 Warning--empty year in Ion
 Warning--empty year in Ion
+Warning--can't use both volume and number fields in Nguyen-Tuong2011
+Warning--empty publisher in Nguyen-Tuong2011
+Warning--empty publisher in Alpaydin2004
 Warning--empty journal in TFG_Carlos_Ramos
 Warning--there's a number but no volume in Fujita2000
+Warning--empty year in Aibo_Images
+Warning--empty year in Urbi_Docs
 Warning--empty year in ROS
-You've used 27 entries,
+You've used 32 entries,
             2481 wiz_defined-function locations,
-            749 strings with 10051 characters,
-and the built_in function-call counts, 10100 in all, are:
-= -- 884
-> -- 503
-< -- 19
-+ -- 204
-- -- 149
-* -- 761
-:= -- 1648
-add.period$ -- 112
-call.type$ -- 27
-change.case$ -- 53
-chr.to.int$ -- 26
-cite$ -- 39
-duplicate$ -- 493
-empty$ -- 886
-format.name$ -- 180
-if$ -- 2127
+            794 strings with 11315 characters,
+and the built_in function-call counts, 12016 in all, are:
+= -- 1062
+> -- 588
+< -- 24
++ -- 238
+- -- 173
+* -- 920
+:= -- 1961
+add.period$ -- 139
+call.type$ -- 32
+change.case$ -- 61
+chr.to.int$ -- 31
+cite$ -- 47
+duplicate$ -- 587
+empty$ -- 1051
+format.name$ -- 213
+if$ -- 2529
 int.to.chr$ -- 2
-int.to.str$ -- 28
-missing$ -- 17
-newline$ -- 172
-num.names$ -- 83
-pop$ -- 217
+int.to.str$ -- 33
+missing$ -- 24
+newline$ -- 209
+num.names$ -- 98
+pop$ -- 251
 preamble$ -- 1
-purify$ -- 27
+purify$ -- 32
 quote$ -- 0
-skip$ -- 326
+skip$ -- 379
 stack$ -- 0
-substring$ -- 342
-swap$ -- 92
-text.length$ -- 4
+substring$ -- 408
+swap$ -- 107
+text.length$ -- 6
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 189
-warning$ -- 12
-while$ -- 77
+type$ -- 218
+warning$ -- 15
+while$ -- 91
 width$ -- 0
-write$ -- 400
-(There were 12 warnings)
+write$ -- 486
+(There were 15 warnings)
