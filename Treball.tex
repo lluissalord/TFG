@@ -125,9 +125,9 @@ The estability of the robots...
 \subsection*{Motivació}
 \addcontentsline{toc}{subsection}{Motivació}
 
-\paragraph{}Moltes persones que tenen devoció pel món de la robòtica els hi ha vingut des de ben joves, aquest no és el meu cas. A mi, el que m'agradava era la informàtica. Sent petit vaig aprendre de forma autodidacte a programar en \textit{C++} i crear un servidor propi. Fet que ajudà, en arribar a la UPC, a divertir-me amb assignatures relacionades amb programació, però em faltava veure reflectit el meu treball amb alguna utilitat física. No va ser fins que en Projecte II, vam controlar un mecanisme a través d'un microcontrolador \textit{Arduino}, amb programació basada en \textit{Wiring} \cite{Arduino}, llavors vaig veure clar cap on volia enfocar el meu futur, la robòtica.
+\paragraph{}Moltes persones que tenen devoció pel món de la robòtica els hi ha vingut des de ben joves, aquest no és el meu cas. A mi, el que m'agradava era la informàtica. Sent petit vaig aprendre de forma autodidacte a programar en \textit{C++} i crear un servidor propi. Fet que ajudà, en arribar a la UPC, a divertir-me amb assignatures relacionades amb programació, però em faltava veure reflectit el meu treball amb alguna utilitat física. No va ser fins que en Projecte II, vam controlar un mecanisme a través d'un microcontrolador \textit{Arduino}\footnote{\textit{Arduino} és la marca d'una família de microcontrolador}, amb programació basada en \textit{Wiring} \cite{Arduino}, llavors vaig veure clar cap on volia enfocar el meu futur, la robòtica.
 
-\paragraph{}D'aquesta motivació que ha crescut poc a poc n'ha sorgit el perquè d'escollir aquest TFG. A més, a cada pas que he fet en el treball, com més he vist i entès la gran complexitat d'altres robots, com el \textit{Big Dog} del \textit{Boston Dinamics} o el \textit{NAO} de \textit{Aldebaran Robotics}, entre d'altres, més estímuls tenia per avançar i millorar.
+\paragraph{}D'aquesta motivació que ha crescut poc a poc n'ha sorgit el perquè d'escollir aquest TFG. A més, a cada pas que he fet en el treball, com més he vist i entès la gran complexitat d'altres robots, com el \textit{Big Dog} del \textit{Boston Dinamics} o el \textit{NAO} de \textit{Aldebaran Robotics}\footnote{En l'estat de l'art es dona una breu explicació d'aquests i altres robots}, entre d'altres, més estímuls tenia per avançar i millorar.
 
 \paragraph{}Ara bé, deixant de banda les pròpies ganes de treballar en robòtica, també he tingut en compte la preparació pel futur professional. Per això, en molts casos, a l'hora de fer alguna elecció, he intentat escollir la que fos més innovadora i útil el dia de demà. Aquest fet es veu tant en l'elecció dels llenguatges utilitzats com també en l'algorisme de resolució de la problemàtica de treball en qüestió. Per tant, queda palès que aquest treball té com a motivació la combinació d'entusiasme pel món de la robòtica i la millora d'un mateix per tal de poder arribar a un bon futur professional en aquest camp.
 
@@ -214,7 +214,7 @@ The estability of the robots...
 
 \end{description}
 
-\paragraph{}Cadascun dels models té unes caracteristiques que el defineixen, però aquestes delimiten els diferents modes d'aprenentatge que poden ser utilitzats per crear-los. Per tant, no tots els models poden ser creats a partir de qualsevol arquitectura d'aprenentatge. Aquest fet s'exemplifica en la taula següent:
+\paragraph{}Cadascun dels models té unes característiques que el defineixen, però aquestes delimiten els diferents modes d'aprenentatge que poden ser utilitzats per crear-los. Per tant, no tots els models poden ser creats a partir de qualsevol arquitectura d'aprenentatge. Aquest fet s'exemplifica en la taula següent:
 
 \end{itemize}
 
@@ -298,19 +298,19 @@ The estability of the robots...
 \subsubsection*{(3) Aprenentatge supervisat}
 \addcontentsline{toc}{subsubsection}{Aprenentatge supervisat}
 
-\paragraph{}En l'aprenentatge supervisat un agent extern presenta una sèrie de dades d'exemple, de prediccions correctes a fer en diferents situacions \cite{Kober2009}. A partir d'aquestes dades d'entrenament, s'ha d'extreure un model per tal que en una situació fora desconeguda s'esculli l'acció correcte. L'aprenentatge supervisat és, segons \cite{Cord2008}, la metodologia més important d'aprenentatge automàtic i amb molt pes en el processament de dades multimèdia.
+\paragraph{}En l'aprenentatge supervisat, un agent extern presenta una sèrie de dades d'exemple, prediccions correctes a fer en diferents situacions \cite{Kober2009}. A partir d'aquestes dades d'entrenament, s'ha d'extreure un model per tal que, en una situació desconeguda, s'esculli l'acció correcte. L'aprenentatge supervisat és, segons \cite{Cord2008}, la metodologia més important d'aprenentatge automàtic i amb molt pes en el processament de dades multimèdia.
 
-\paragraph{}Les dades a estimar poden ser binaries,on s'escull si una dada desconeguda és d'un tipus (p. e. pertany a un grup o no), o numèriques, on s'utilitza la regressió. Tant siguin les dades unes o altres, les bases de l'aprenentatge supervisat són: (1) el model, (2) la funció de pèrdua i error d'aproximació, i (3) procediment d'optimització \cite{Alpaydin2004}.
+\paragraph{}Les dades a estimar poden ser binaries,on s'escull si una dada desconeguda és d'un tipus (p. e. pertany a un grup o no), o numèriques, on s'utilitza la regressió per aproximar. Tant siguin unes o altres, les bases de l'aprenentatge supervisat són: (1) el model, (2) la funció de pèrdua i la d'error d'aproximació, i (3) procediment d'optimització \cite{Alpaydin2004}.
 
 \begin{enumerate}
 
 \item El model es representa com $g(x|\theta)$\footnote{La x són les entrades, mentre $\theta$ són els paràmetres}, on \textit{g}(·) és la classe d'hipòtesi i els valors de $\theta$ donen una hipòtesi en concret d'entre les possibles en el model.
 
 \item La funció de pèrdua, \textit{L}(·), quantifica la diferència entre la sortida desitjada, $r^t$, i l'aproximació $g(x^t|\theta)$, mentre la suma de les pèrdues de cada cas és l'error d'aproximació \begin{equation} \label{eq:er-aprox}
-E(\theta|X)=\sum_{t} L(r^t,g(x^t|\theta)
+E(\theta|X)=\sum_{t} L(r^t,g(x^t|\theta))
 \end{equation}
 
-\item El procediment d'optimització per trobar $\theta^t$ que minimitza l'error total 
+\item El procediment d'optimització per trobar $\theta^*$ que minimitza l'error total és:
 \begin{equation} \label{eq:theta-opt}
 \theta^*=arg\,\operatorname*{min}_\theta E(\theta|X)
 \end{equation}
@@ -320,12 +320,11 @@ En models complexes, seria més convenient utilitzar mètodes basats en el gradi
 
 \paragraph{}Un dels algorismes més simples és la classificació per veí més proper, aquest és molt útil per entendre el funcionament bàsic de l'aprenentatge supervisat \cite{Learned-Miller2014}. En aquest cas, les dades d'entrenament estan etiquetades, per tant, cada una pertany a un grup en concret. Suposem que es té alguna forma de fer el càlcul de la distància entre dues mostres $x_{1}$ i $x_{2}$, expressat com $D(x_{1}, x_{2})$.
 
-\paragraph{}Llavors amb la forma simplificada, pel cas de binàries, de \eqref{eq:theta-opt}, sent $x_{t}$ la dada a classificar i $x_{i}$ l'exemple més pròxim
+\paragraph{}Llavors amb la forma simplificada, pel cas de binàries, de \eqref{eq:theta-opt}
 \begin{equation} \label{eq:theta-opt-exemple}
 i^*=\operatorname*{arg\,min}_{i\in\{1\dots n\}} D(x_{t}, x_{i})
 \end{equation}
-Després de trobar $i^*$, s'assigna l'etiqueta de $x_{i}$ a 
-$x_{t}$. Per suposat, aquesta assignació és una suposició, pot ser correcte o incorrecte.
+Sent $x_{t}$ la dada a classificar i $x_{i}$ l'exemple més pròxim. Després de trobar $i^*$, s'assigna l'etiqueta de $x_{i}$ a $x_{t}$, queda així classificada la dada. Per suposat, aquesta assignació és una suposició, pot ser correcte o incorrecte.
 
 
 \subsubsection*{(4) Aprenentatge per reforç}
@@ -336,6 +335,24 @@ $x_{t}$. Per suposat, aquesta assignació és una suposició, pot ser correcte o
 
 \subsubsection*{(6) Algorismes avançats}
 \addcontentsline{toc}{subsubsection}{Algorismes avançats}
+
+\begin{description}
+
+\item[CPG] \textit{Central Pattern Generators}, la idea és crear una arquitectura capaç de generar coordinació entre diferents elements, independentment de la tasca a realitzar i de la plataforma robòtica utilitzada. Una forma de veure-ho és des del punt de vista dels autors de \cite{Tellez2005a}:
+\begin{quotation}
+"\textit{\dots we see the robot’s mind as a group of different modules each one in charge of its own device (sensor or actuator) that interacts with the rest of modules\dots} "
+\end{quotation}
+
+\paragraph{}Aquesta cita podria ser traduïda com que cada dispositiu encarregant-se d'ell mateix, però amb la interacció amb els altres, tots junt arriben a crear la ment del robot.
+
+\paragraph{}Per poder dur a terme aquesta arquitectura es requereixen de dos tipus d'algorismes: (1) algorismes neuro-evolutius, per poder cooperar entre mòduls i controlar els elements associats; i (2) algorismes co-evolutius, per instruir i arribar a un objectiu comú entre tots.
+
+%Necessari posar antecedents?? (\cite{Tellez2005a})
+%using neural oscillators and Central Pattern Generators (CPG) [3][4][5][6], like for example the use of CPGs for the control of several postures and movements [7]
+
+\item[CBR] \textit{Case Based Reasoning}, aquest algorisme podria ser considerat de la família de l'aprenentatge supervisat. Consisteix l'aproximació de l'acció correcte a través de dos tipus de dades: (1) dades d'entrenament, del mateix estil que les del supervisat; i (2) extretes a partir de la pròpia experiència. El cicle de funcionament del CBR seria el següent: (i) prendre el cas o els casos més semblants a la situació actual, dels que estan emmagatzemats; (ii) adaptar el cas pres a la situació; (iii) avaluar com de satisfactori ha estat la solució adoptada; (iv) aprendre d'aquest nou cas.
+
+\end{description}
 
 %Aprenentatges, alguns no necessiten d'un model per poder treballar tot i que si es té un model poden desenvolupar les tasques amb més facilitat i precisió (si el model ha estat creat correctament)
 %Aprenentatge supervisat i el no supervisat

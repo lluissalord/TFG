@@ -12,9 +12,9 @@
 \BOOKMARK [3][-]{section*.42}{Aprenentatge per refor\347}{section*.19}% 12
 \BOOKMARK [3][-]{section*.43}{Aprenentatge per demostraci\363}{section*.19}% 13
 \BOOKMARK [3][-]{section*.44}{Algorismes avan\347ats}{section*.19}% 14
-\BOOKMARK [2][-]{section*.45}{Objectius}{section*.15}% 15
-\BOOKMARK [2][-]{section*.47}{Abast del treball}{section*.15}% 16
-\BOOKMARK [2][-]{section*.48}{Estructura del treball}{section*.15}% 17
+\BOOKMARK [2][-]{section*.47}{Objectius}{section*.15}% 15
+\BOOKMARK [2][-]{section*.49}{Abast del treball}{section*.15}% 16
+\BOOKMARK [2][-]{section*.50}{Estructura del treball}{section*.15}% 17
 \BOOKMARK [1][-]{section.1}{Estudis preliminars}{}% 18
 \BOOKMARK [2][-]{subsection.1.1}{AIBO}{section.1}% 19
 \BOOKMARK [3][-]{subsubsection.1.1.1}{Hardware}{subsection.1.1}% 20
@@ -26,8 +26,8 @@
 \BOOKMARK [2][-]{subsection.1.3}{Estabilitat}{section.1}% 26
 \BOOKMARK [2][-]{subsection.1.4}{Algorismes de resposta davant pertorbacions}{section.1}% 27
 \BOOKMARK [3][-]{subsubsection.1.4.1}{Model del robot}{subsection.1.4}% 28
-\BOOKMARK [1][-]{section*.65}{Agra\357ments}{}% 29
-\BOOKMARK [1][-]{section*.65}{Refer\350ncies}{}% 30
-\BOOKMARK [1][-]{section*.67}{Annexos}{}% 31
+\BOOKMARK [1][-]{section*.67}{Agra\357ments}{}% 29
+\BOOKMARK [1][-]{section*.67}{Refer\350ncies}{}% 30
+\BOOKMARK [1][-]{section*.69}{Annexos}{}% 31
 \BOOKMARK [1][-]{appendix.A}{Instal\267laci\363 de ROS, llibreries d'Urbi i paquet aibo server}{}% 32
 \BOOKMARK [1][-]{appendix.B}{Bibliografia}{}% 33

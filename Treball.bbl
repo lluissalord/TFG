@@ -1,4 +1,4 @@
-\begin{thebibliography}{37}
+\begin{thebibliography}{38}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -179,8 +179,8 @@ Lukas Hohl, Ricardo Tellez, Olivier Michel, and Auke~Jan Ijspeert.
 \newblock URL
   \url{http://linkinghub.elsevier.com/retrieve/pii/S0921889006000327}.
 
-\bibitem[Michel and Michel(2004)]{Michel2004}
-Olivier Michel and Olivier Michel.
+\bibitem[Michel(2004)]{Michel2004}
+Olivier Michel.
 \newblock {Cyberbotics Ltd. Webots: Professional Mobile Robot Simulation}.
 \newblock \emph{International Journal of Advanced Robotic Systems}, 1:\penalty0
   40--43, 2004.
@@ -242,6 +242,14 @@ Erik~G. Learned-Miller.
 \newblock PhD thesis, University of Massachusetts, Amherst, 2014.
 \newblock URL
   \url{http://people.cs.umass.edu/~elm/Teaching/Docs/supervised2014a.pdf}.
+
+\bibitem[T\'{e}llez et~al.(2005)T\'{e}llez, Angulo, and Pardo]{Tellez2005a}
+RA~A T\'{e}llez, Cecilio Angulo, and DE~E Pardo.
+\newblock {Highly modular architecture for the general control of autonomous
+  robots}.
+\newblock \emph{Computational Intelligence and \ldots}, \penalty0 (Figure
+  1):\penalty0 709--716, 2005.
+\newblock URL \url{http://link.springer.com/chapter/10.1007/11494669\_87}.
 
 \bibitem[{Ramos Olave}(2013)]{TFG_Carlos_Ramos}
 Carlos~Mario {Ramos Olave}.

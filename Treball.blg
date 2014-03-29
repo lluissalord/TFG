@@ -16,48 +16,49 @@ Warning--empty year in Ion
 Warning--empty year in Ion
 Warning--empty publisher in Cord2008
 Warning--empty publisher in Alpaydin2004
+Warning--there's a number but no volume in Tellez2005a
 Warning--empty journal in TFG_Carlos_Ramos
 Warning--there's a number but no volume in Fujita2000
 Warning--empty year in ROS
-You've used 37 entries,
+You've used 38 entries,
             2481 wiz_defined-function locations,
-            828 strings with 12473 characters,
-and the built_in function-call counts, 13862 in all, are:
-= -- 1223
-> -- 685
+            836 strings with 12707 characters,
+and the built_in function-call counts, 14249 in all, are:
+= -- 1259
+> -- 698
 < -- 28
-+ -- 276
-- -- 201
-* -- 1051
-:= -- 2258
-add.period$ -- 157
-call.type$ -- 37
-change.case$ -- 69
-chr.to.int$ -- 36
-cite$ -- 53
-duplicate$ -- 682
-empty$ -- 1209
-format.name$ -- 250
-if$ -- 2923
++ -- 282
+- -- 205
+* -- 1085
+:= -- 2320
+add.period$ -- 161
+call.type$ -- 38
+change.case$ -- 71
+chr.to.int$ -- 37
+cite$ -- 55
+duplicate$ -- 701
+empty$ -- 1247
+format.name$ -- 253
+if$ -- 3003
 int.to.chr$ -- 2
-int.to.str$ -- 38
-missing$ -- 28
-newline$ -- 237
-num.names$ -- 113
-pop$ -- 295
+int.to.str$ -- 39
+missing$ -- 29
+newline$ -- 243
+num.names$ -- 116
+pop$ -- 302
 preamble$ -- 1
-purify$ -- 37
+purify$ -- 38
 quote$ -- 0
-skip$ -- 445
+skip$ -- 452
 stack$ -- 0
-substring$ -- 469
-swap$ -- 126
+substring$ -- 496
+swap$ -- 128
 text.length$ -- 7
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 250
-warning$ -- 16
-while$ -- 106
+type$ -- 257
+warning$ -- 17
+while$ -- 110
 width$ -- 0
-write$ -- 554
-(There were 16 warnings)
+write$ -- 569
+(There were 17 warnings)
