@@ -55,6 +55,11 @@
 \fancyfoot{}
 \fancyfoot[RO,LE]{\includegraphics[scale=0.3]{Imatges/etseib.jpg}}
 
+\headheight = 15pt %Donava un warning sino
+
+\textheight = 690pt %Col·locació de l'escut a distancia que quedi be
+\footskip = 60pt
+
 \usepackage[numbers]{natbib}
 \bibliographystyle{unsrtnat} 
 %Poso per ordre de apració (així) o per ordre d'autors (plainnat)?
@@ -99,7 +104,7 @@ La estabilidad de los robots...
 The estability of the robots...
 \end{abstract}
 \newpage
-
+\cleardoublepage
 
 \tableofcontents
 \newpage
@@ -267,9 +272,19 @@ The estability of the robots...
 \end{figure}
 
 
-\paragraph{}Un dels beneficis de tenir el model d'un robot és poder fer simulacions virtuals del robot, de tal manera que no es provoca cap desgast al robot real, ni es poden donar situacions de perill. Tot i ser de gran utilitat, els simuladors també tenen les seves limitacions, és difícil simular la física d'un robot (actuadors, interaccions amb l'entorn, sensors\ldots) de manera realista, a més, passar de simulacions a un robot real no sempre és fàcil \cite{Hohl2006}.
+\paragraph{}Un dels beneficis de tenir el model d'un robot és poder fer simulacions virtuals del robot, de tal manera que no es provoca cap desgast al robot real, ni es poden donar situacions de perill. Tot i ser de gran utilitat, els simuladors també tenen les seves limitacions, és difícil simular la física d'un robot (actuadors, interaccions amb l'entorn, sensors\dots) de manera realista, a més, passar de simulacions a un robot real no sempre és fàcil \cite{Hohl2006}.
 
-\paragraph{}Ara bé, existeixen una gran multitud de simuladors cada un amb les seves peculiaritats. Alguns dels que s'ha pogut extreure informació són els següents:
+\paragraph{}Ara bé, existeixen una gran multitud de simuladors cada un amb les seves peculiaritats. Alguns dels que s'ha pogut extreure informació i que podrien ser de més interès són els següents:
+
+\begin{description}
+\item[Webots\texttrademark] \cite{Michel2004} Simulador de robots mòbils desenvolupat per Cyberbotics Ltd. La física està basada en Open Dinamic Engine (\textit{ODE}), per així simular una dinàmica més acurada. Aquest \texttt{software} proveeix un entorn de treball per modelar i programar el teu propi robot, a més inclou models de diversos robots com són Sony Aibo, Khepera, Lego Mindstorms\texttrademark o Pioneer2.
+
+\item[SimRobot] \cite{Laue2006a} Aquest és un simulador genèric de robots en 3D. Com el Webots\texttrademark , el SimRobot també es basa en la física d'\textit{ODE}. Un dels inconvenients d'aquest simulador és que no es possible transferir els controladors de la simulació al robot real.
+
+\item[Gazebo] \cite{Khatib2002} És un simulador multi-robots en 3D. Aquest, al igual que Webots\texttrademark , permet el modelatge del teu propi robot, tot i ser en llenguatge C, també es diferencia amb Gazebo pels models que inclou, que són el Pioneer2DX i el SegwayRMP.
+\end{description}
+
+\paragraph{}Com s'ha mencionat, en les descripcions anteriors, Webots\texttrademark inclou un model del Sony Aibo, dissenyat en \cite{Hohl2006}. Aquest té implementat l'estructura cinemàtica, propietats dinàmiques\footnote{Masses i moments d'inèrcia}, el seu control i l'aspecte gràfic. Per altre banda, també es pot simular els sensors de distància i els de les potes. El model té certes limitacions, els sensors del llom, cap, acceleròmetres i tèrmics no estan implementats per poder ser simulats. 
 
 %Diferents simuladors que hi ha i com treballen
 
@@ -283,23 +298,34 @@ The estability of the robots...
 \subsubsection*{(3) Aprenentatge supervisat}
 \addcontentsline{toc}{subsubsection}{Aprenentatge supervisat}
 
-\paragraph{}En l'aprenentatge supervisat un agent extern presenta una sèrie de dades d'exemple, de prediccions correctes a fer en diferents situacions \cite{Kober2009}. A partir d'aquestes dades d'entrenament, s'ha d'extreure un model per tal que en una situació fora desconeguda s'esculli l'acció correcte. Les bases de l'aprenentatge supervisat són: (1) el model, (2) la funció de pèrdua i error d'aproximació, i (3) procediment d'optimització \cite{Alpaydin2004}.
+\paragraph{}En l'aprenentatge supervisat un agent extern presenta una sèrie de dades d'exemple, de prediccions correctes a fer en diferents situacions \cite{Kober2009}. A partir d'aquestes dades d'entrenament, s'ha d'extreure un model per tal que en una situació fora desconeguda s'esculli l'acció correcte. L'aprenentatge supervisat és, segons \cite{Cord2008}, la metodologia més important d'aprenentatge automàtic i amb molt pes en el processament de dades multimèdia.
+
+\paragraph{}Les dades a estimar poden ser binaries,on s'escull si una dada desconeguda és d'un tipus (p. e. pertany a un grup o no), o numèriques, on s'utilitza la regressió. Tant siguin les dades unes o altres, les bases de l'aprenentatge supervisat són: (1) el model, (2) la funció de pèrdua i error d'aproximació, i (3) procediment d'optimització \cite{Alpaydin2004}.
 
 \begin{enumerate}
 
 \item El model es representa com $g(x|\theta)$\footnote{La x són les entrades, mentre $\theta$ són els paràmetres}, on \textit{g}(·) és la classe d'hipòtesi i els valors de $\theta$ donen una hipòtesi en concret d'entre les possibles en el model.
 
-\item La funció de pèrdua, \textit{L}(·), quantifica la diferència entre la sortida desitjada, $r^t$, i l'aproximació $g(x^t|\theta)$, mentre la suma de les pèrdues de cada cas és l'error d'aproximació \begin{equation}
+\item La funció de pèrdua, \textit{L}(·), quantifica la diferència entre la sortida desitjada, $r^t$, i l'aproximació $g(x^t|\theta)$, mentre la suma de les pèrdues de cada cas és l'error d'aproximació \begin{equation} \label{eq:er-aprox}
 E(\theta|X)=\sum_{t} L(r^t,g(x^t|\theta)
 \end{equation}
 
 \item El procediment d'optimització per trobar $\theta^t$ que minimitza l'error total 
-\begin{equation}
+\begin{equation} \label{eq:theta-opt}
 \theta^*=arg\,\operatorname*{min}_\theta E(\theta|X)
 \end{equation}
 En models complexes, seria més convenient utilitzar mètodes basats en el gradient (p. e. gradient descendent, gradient conjugat, gradient biconjugat\dots) o l'algorisme de recuita simulada\footnote{A partir d'una solució inicial es selecciona una nova, aleatòriament, pròxima a la inicial. Si es millor s'hi queda, i sinó, segons una certa probabilitat, torna a l'anterior o es queda en la nova. Això es repeteix fins a la condició d'acabament\cite{Torrent-Fontbona2013}}.
 
 \end{enumerate}
+
+\paragraph{}Un dels algorismes més simples és la classificació per veí més proper, aquest és molt útil per entendre el funcionament bàsic de l'aprenentatge supervisat \cite{Learned-Miller2014}. En aquest cas, les dades d'entrenament estan etiquetades, per tant, cada una pertany a un grup en concret. Suposem que es té alguna forma de fer el càlcul de la distància entre dues mostres $x_{1}$ i $x_{2}$, expressat com $D(x_{1}, x_{2})$.
+
+\paragraph{}Llavors amb la forma simplificada, pel cas de binàries, de \eqref{eq:theta-opt}, sent $x_{t}$ la dada a classificar i $x_{i}$ l'exemple més pròxim
+\begin{equation} \label{eq:theta-opt-exemple}
+i^*=\operatorname*{arg\,min}_{i\in\{1\dots n\}} D(x_{t}, x_{i})
+\end{equation}
+Després de trobar $i^*$, s'assigna l'etiqueta de $x_{i}$ a 
+$x_{t}$. Per suposat, aquesta assignació és una suposició, pot ser correcte o incorrecte.
 
 
 \subsubsection*{(4) Aprenentatge per reforç}
@@ -460,7 +486,7 @@ mouth     &    range=[-58.000000,-3.000000]    & unit=deg & Mouth\\
 
 \label{Software}
 \subsubsection{\textit{Software}}
-\paragraph{}Com s'ha esmentat anteriorment, l'AIBO aprèn i evoluciona segons el seu entorn amb uns coneixements inicials quasi nuls. Però sí que incorpora unes funcions bàsiques, com ara, caminar, reconeixement de veu, reproducció de sons, entre moltes altres.
+%\paragraph{}Com s'ha esmentat anteriorment, l'AIBO aprèn i evoluciona segons el seu entorn amb uns coneixements inicials quasi nuls. Però sí que incorpora unes funcions bàsiques, com ara, caminar, reconeixement de veu, reproducció de sons, entre moltes altres.
 
 
 %\paragraph{}Actualment, l'AIBO per defecte té multitud facultats, com ara, caminar en diferents direccions sense perdre l'equilibri o quedar-se en una posició de repòs estable, entre d'altres. Tot i que això només és possible en condicions òptimes (terreny pla i llis, sense forces externes que actuïn sobre el robot, etc.). Aquestes funcions i més ja han estat desenvolupades en llenguatges com OPEN-R o Tekkotsu (nivell mitjà) o Urbi (nivell alt). El repte és poder aconseguir fer això i més en ROS (\textit{Robot Operating System}), que proveeix un entorn de treball òptim per la creació de programari per a qualsevol robot, i per tant pot ser exportable de l'AIBO a qualsevol altre robot que compleixi els requisits mínims de \textit{hardware}.  
@@ -569,6 +595,7 @@ Rxgraph exposa visualment amb un gràfic com funcionen els processos de ROS i le
 %Creació d'un model i fer estudi d'aquest model per saber davant una pertorbació com ha de ser les entrades dels actuadors per tal de estar en una posició d'estabilitat
 
 %Supervised learning, a partir de moltes mostres d'indicacions i com ha de d'actuar per estar estable, pren una funció que aplicarà en els casos futurs.
+%Noise: (1) Pot haver-hi impresicions en la gravacio de atributs d'entrada (2) Pot haver-hi errors en el "labeling" dels punts de datos (3) Poden existir atributs adicionals que no s'han tingut en compte i que afecten al "labeling", aquests poden ser "hidden or latent" i pot ser que no siguin observables
 
 %Reinforcement learning, Q-learning i DMP (learning by demostration)
 
@@ -580,32 +607,36 @@ Rxgraph exposa visualment amb un gràfic com funcionen els processos de ROS i le
 
 \newpage
 
-\bibliography{./Bibliografia/library}
 \label{Referencies}
+\addcontentsline{toc}{section}{Referències}
+\bibliography{./Bibliografia/library}
+
 
 
 \appendix
 \clearpage % o \cleardoublepage
 \addappheadtotoc
 \appendixpage
-\section{INSTAL·LACIÓ ROS I PAQUET D'AIBO SERVER}
 
-\paragraph{}Tot seguit es mostren els passos a seguir per tal d'instal·lar ROS i com afegir una carpeta al la variable \texttt{ROS$\_$PACKAGE$\_$PATH}\footnote{Aquí es troben les direccions de les carpetes on s'hi ha de cercar els \texttt{packages}.}.
+\section{Instal·lació de ROS, llibreries d'Urbi i paquet aibo server}
+
+\paragraph{}Tot seguit es mostren els passos a seguir per tal d'instal·lar ROS i com afegir una carpeta al la variable \texttt{ROS$\_$PACKAGE$\_$PATH}\footnote{Aquí es troben les direccions de les carpetes on ROS cerca els \texttt{packages}.}.
 
 \begin{enumerate}
 
 \item Preparar per instal·lar ROS (en aquest cas per Ubuntu 12.04 32 bits).\\
-\texttt{sudo sh -c 'echo "deb http://packages.ros.org/ros/ubuntu precise main" >\\ /etc/apt/sources.list.d/ros-latest.list'}
+\texttt{sudo sh -c 'echo "deb http://packages.ros.org/ros/ubuntu precise main" \\ > /etc/apt/sources.list.d/ros-latest.list'}
 
 \item Configurar claus de ROS.\\
 \texttt{wget http://packages.ros.org/ros.key -O - | sudo apt-key add -}
 
 \item Instal·lar ROS-fuerte.\\
+\texttt{sudo apt-get update}\\
 \texttt{sudo apt-get install ros-fuerte-desktop-full}
 
 \item Per tal que els \texttt{packages} en la carpeta del propi ROS puguin ser trobats més còmodament. La comanda final és per poder seguir treballant en el mateix terminal.\\
 \texttt{echo "source /opt/ros/fuerte/setup.bash" $\gg$ $\sim$/.bashrc.\\
-. $\sim$/.bashrc}
+source $\sim$/.bashrc}
 
 \item Es necessiten instal·lar alguns paquets per poder continuar, com és el \texttt{rosws}, que es part del paquet \texttt{rosinstall}.\\
 \texttt{sudo apt-get install python-rosinstall python-rosdep}
@@ -615,12 +646,19 @@ Rxgraph exposa visualment amb un gràfic com funcionen els processos de ROS i le
 \texttt{mkdir $\sim$/fuerte/sandbox}\\
 \texttt{rosws set ~/fuerte/sandbox}
 
-\item Finalment, es repeteix l'acció (4), però en aquest cas, per poder ser trobats els \texttt{packages} de la carpeta que s'ha creat.\\
+\item Per acabar la instal·lació de ROS, es repeteix l'acció (4), però en aquest cas, per poder ser trobats els \texttt{packages} de la carpeta que s'ha creat.\\
 \texttt{echo "source $\sim$/fuerte/setup.bash" $\gg$ $\sim$/.bashrc\\
-. $\sim$/.bashrc}
+source $\sim$/.bashrc}
+
+\item Tot seguit, s'ha d'instal·lar la llibreria d'urbi. En aquest cas, tan sols s'ha descarregar l'arxiu comprimit\footnote{\url{http://www.gostai.com/downloads/urbi/1.5/urbi-sdk-1.5-l0258c7a-i486-linux-gnu-gcc-4.1.tar.gz}} i extreure'l en \textbackslash .\\
+
+\item Finalment per instal·lar el paquet d'Aibo server, s'ha de copiar la carpeta en alguna de les direccions de \texttt{ROS$\_$PACKAGE$\_$PATH} i compilar seguint aquest procediment:\\
+\texttt{roscd aibo$\_$server/}\\
+\texttt{rosmake --pre-clean}
 
 \end{enumerate}
-\section{BIBLIOGRAFIA}
-\label{Bibliografia}
+
+\section{Bibliografia}
+
 \end{document}  
 

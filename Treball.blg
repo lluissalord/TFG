@@ -3,6 +3,10 @@ Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: Treball.aux
 The style file: unsrtnat.bst
 Database file #1: ./Bibliografia/library.bib
+Warning--can't use both volume and number fields in Nguyen-Tuong2011
+Warning--empty publisher in Nguyen-Tuong2011
+Warning--empty year in Aibo_Images
+Warning--empty year in Urbi_Docs
 Warning--empty year in Arduino
 Warning--empty year in ASIMO_History
 Warning--empty year in REEM_C
@@ -10,53 +14,50 @@ Warning--empty year in Robotics
 Warning--can't use both volume and number fields in Marc2008
 Warning--empty year in Ion
 Warning--empty year in Ion
-Warning--can't use both volume and number fields in Nguyen-Tuong2011
-Warning--empty publisher in Nguyen-Tuong2011
+Warning--empty publisher in Cord2008
 Warning--empty publisher in Alpaydin2004
 Warning--empty journal in TFG_Carlos_Ramos
 Warning--there's a number but no volume in Fujita2000
-Warning--empty year in Aibo_Images
-Warning--empty year in Urbi_Docs
 Warning--empty year in ROS
-You've used 32 entries,
+You've used 37 entries,
             2481 wiz_defined-function locations,
-            794 strings with 11315 characters,
-and the built_in function-call counts, 12016 in all, are:
-= -- 1062
-> -- 588
-< -- 24
-+ -- 238
-- -- 173
-* -- 920
-:= -- 1961
-add.period$ -- 139
-call.type$ -- 32
-change.case$ -- 61
-chr.to.int$ -- 31
-cite$ -- 47
-duplicate$ -- 587
-empty$ -- 1051
-format.name$ -- 213
-if$ -- 2529
+            828 strings with 12473 characters,
+and the built_in function-call counts, 13862 in all, are:
+= -- 1223
+> -- 685
+< -- 28
++ -- 276
+- -- 201
+* -- 1051
+:= -- 2258
+add.period$ -- 157
+call.type$ -- 37
+change.case$ -- 69
+chr.to.int$ -- 36
+cite$ -- 53
+duplicate$ -- 682
+empty$ -- 1209
+format.name$ -- 250
+if$ -- 2923
 int.to.chr$ -- 2
-int.to.str$ -- 33
-missing$ -- 24
-newline$ -- 209
-num.names$ -- 98
-pop$ -- 251
+int.to.str$ -- 38
+missing$ -- 28
+newline$ -- 237
+num.names$ -- 113
+pop$ -- 295
 preamble$ -- 1
-purify$ -- 32
+purify$ -- 37
 quote$ -- 0
-skip$ -- 379
+skip$ -- 445
 stack$ -- 0
-substring$ -- 408
-swap$ -- 107
-text.length$ -- 6
+substring$ -- 469
+swap$ -- 126
+text.length$ -- 7
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 218
-warning$ -- 15
-while$ -- 91
+type$ -- 250
+warning$ -- 16
+while$ -- 106
 width$ -- 0
-write$ -- 486
-(There were 15 warnings)
+write$ -- 554
+(There were 16 warnings)

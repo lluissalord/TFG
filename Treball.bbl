@@ -1,9 +1,27 @@
-\begin{thebibliography}{32}
+\begin{thebibliography}{37}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
   \providecommand{\doi}[1]{doi: #1}\else
   \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Nguyen-Tuong and Peters(2011)]{Nguyen-Tuong2011}
+Duy Nguyen-Tuong and Jan Peters.
+\newblock \emph{{Model learning for robot control: a survey.}}, volume~12.
+\newblock November 2011.
+\newblock ISBN 3405062780.
+\newblock \doi{10.1007/s10339-011-0404-1}.
+\newblock URL \url{http://www.ncbi.nlm.nih.gov/pubmed/21487784}.
+
+\bibitem[Rainsersen()]{Aibo_Images}
+Rainsersen.
+\newblock {Imatges Aibo ERS-7}.
+\newblock URL \url{http://rainersen.de/aibo/}.
+
+\bibitem[Gostai()]{Urbi_Docs}
+Gostai.
+\newblock {URBI Doc for Aibo ERS2xx ERS7 and URBI 1.0}.
+\newblock URL \url{http://www.gostai.com/doc/en/aibo/}.
 
 \bibitem[Arduino()]{Arduino}
 Arduino.
@@ -150,14 +168,6 @@ Ignacio~Pedrosa Lojo.
 \newblock PhD thesis, Universitat Polit\'{e}cnica de Catalunya, 2009.
 \newblock URL \url{http://upcommons.upc.edu/handle/2099.1/6488}.
 
-\bibitem[Nguyen-Tuong and Peters(2011)]{Nguyen-Tuong2011}
-Duy Nguyen-Tuong and Jan Peters.
-\newblock \emph{{Model learning for robot control: a survey.}}, volume~12.
-\newblock November 2011.
-\newblock ISBN 3405062780.
-\newblock \doi{10.1007/s10339-011-0404-1}.
-\newblock URL \url{http://www.ncbi.nlm.nih.gov/pubmed/21487784}.
-
 \bibitem[Hohl et~al.(2006)Hohl, Tellez, Michel, and Ijspeert]{Hohl2006}
 Lukas Hohl, Ricardo Tellez, Olivier Michel, and Auke~Jan Ijspeert.
 \newblock {Aibo and Webots: Simulation, wireless remote control and controller
@@ -169,12 +179,41 @@ Lukas Hohl, Ricardo Tellez, Olivier Michel, and Auke~Jan Ijspeert.
 \newblock URL
   \url{http://linkinghub.elsevier.com/retrieve/pii/S0921889006000327}.
 
+\bibitem[Michel and Michel(2004)]{Michel2004}
+Olivier Michel and Olivier Michel.
+\newblock {Cyberbotics Ltd. Webots: Professional Mobile Robot Simulation}.
+\newblock \emph{International Journal of Advanced Robotic Systems}, 1:\penalty0
+  40--43, 2004.
+
+\bibitem[Laue et~al.(2006)Laue, Spiess, and R\"{o}fer]{Laue2006a}
+Tim Laue, Kai Spiess, and T~R\"{o}fer.
+\newblock {SimRobot–a general physical robot simulator and its application in
+  robocup}.
+\newblock \emph{RoboCup 2005: Robot Soccer World Cup IX}, pages 173--183, 2006.
+\newblock URL \url{http://link.springer.com/chapter/10.1007/11780519\_16}.
+
+\bibitem[Khatib et~al.(2002)Khatib, Brock, Chang, Conti, Ruspini, and
+  Sentis]{Khatib2002}
+Oussama Khatib, Oliver Brock, Kyong-Sok Chang, Francois Conti, Diego Ruspini,
+  and Luis Sentis.
+\newblock {Robotics and interactive simulation}, 2002.
+\newblock ISSN 00010782.
+
 \bibitem[Kober and Peters(2012)]{Kober2009}
 Jens Kober and Jan Peters.
 \newblock {Reinforcement learning in robotics: A survey}.
 \newblock \emph{Reinforcement Learning}, 2012.
 \newblock URL
   \url{http://link.springer.com/chapter/10.1007/978-3-642-27645-3\_18}.
+
+\bibitem[Cord and Cunningham(2008)]{Cord2008}
+Matthieu Cord and P\'{a}draig Cunningham.
+\newblock \emph{{Machine learning techniques for multimedia}}.
+\newblock 2008.
+\newblock URL \url{ftp://icksie.no-ip.org/EBooks/Computers/Artificial
+  Intelligence/Semi-supervised learning.pdf
+  ftp://icksie.no-ip.org/EBooks/Computers/Artificial
+  Intelligence/Cord\_Cunningham-Machine\_Learning\_Techniques\_for\_Multimedia-9783540751700.pdf}.
 
 \bibitem[Alpaydin(2004)]{Alpaydin2004}
 Ethem Alpaydin.
@@ -196,6 +235,13 @@ F.~Torrent-Fontbona, V.~Mu\~{n}oz, and B.~L\'{o}pez.
   2013.
 \newblock ISSN 09574174.
 \newblock \doi{10.1016/j.eswa.2013.01.065}.
+
+\bibitem[Learned-Miller(2014)]{Learned-Miller2014}
+Erik~G. Learned-Miller.
+\newblock \emph{{Introduction to Supervised Learning}}.
+\newblock PhD thesis, University of Massachusetts, Amherst, 2014.
+\newblock URL
+  \url{http://people.cs.umass.edu/~elm/Teaching/Docs/supervised2014a.pdf}.
 
 \bibitem[{Ramos Olave}(2013)]{TFG_Carlos_Ramos}
 Carlos~Mario {Ramos Olave}.
@@ -221,16 +267,6 @@ Muh. Anshar and Mary-Anne Williams.
 \newblock \doi{10.1016/S1672-6529(07)60039-0}.
 \newblock URL
   \url{http://linkinghub.elsevier.com/retrieve/pii/S1672652907600390}.
-
-\bibitem[Rainsersen()]{Aibo_Images}
-Rainsersen.
-\newblock {Imatges Aibo ERS-7}.
-\newblock URL \url{http://rainersen.de/aibo/}.
-
-\bibitem[Gostai()]{Urbi_Docs}
-Gostai.
-\newblock {URBI Doc for Aibo ERS2xx ERS7 and URBI 1.0}.
-\newblock URL \url{http://www.gostai.com/doc/en/aibo/}.
 
 \bibitem[{Robot Operating System}()]{ROS}
 {Robot Operating System}.
