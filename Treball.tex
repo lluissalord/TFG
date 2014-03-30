@@ -61,7 +61,7 @@
 \footskip = 60pt
 
 \usepackage[numbers]{natbib}
-\bibliographystyle{unsrtnat} 
+\bibliographystyle{plainnat} 
 %Poso per ordre de apració (així) o per ordre d'autors (plainnat)?
 
 \title{Aibo}
@@ -137,7 +137,7 @@ The estability of the robots...
 
 \paragraph{}En el TFG aquí present, tot i que s'ha intentat donar una explicació a cada concepte que podria no haver-se entès, es necessari tenir uns certs coneixements previs. Aquests serien nocions en \texttt{ROS}\footnote{\textit{Robot Operative System}, s'explica detalladament en l'apartat \ref{ROS}}, Control Automàtic, llenguatge de programació \texttt{Python}, Mecànica i Xarxes de dades.
 
-\paragraph{}A banda del que s'ha esmentat anteriorment, per reproduir de nou l'experiència és molt recomanable llegir articles sobre aprenentatge de robots, tant per reforç, com per demostració. Alguns dels recomanats es poden trobar en les Referències o en la Bibliografia.
+\paragraph{}A banda del que s'ha esmentat anteriorment, per reproduir de nou l'experiència és molt recomanable llegir articles sobre aprenentatge de robots, tant per reforç, com DMPs. Alguns dels recomanats es poden trobar en les Referències o en la Bibliografia.
 
 \paragraph{}Finalment, el més necessari de tot és tenir molta motivació i paciència, per així, no decaure davant les adversitats que un s'arriba a trobar i continuar endavant.
 
@@ -162,7 +162,7 @@ The estability of the robots...
 
 %Diferents plataformes mobils
 
-\paragraph{}En la branca d'investigació sobre l'estabilitat en robots, tant bípedes, com quadrúpedes, hi ha multitud de tesis, treballs, articles, etc. Tots ells centrant-se en un o altre aspecte com són el punt de moment zero (\textit{ZMP}), modelat de robots, aprenentatge supervisat, per reforç o per demostració, generador de patrons centrals (\textit{CPG}), algorismes genètics (\textit{GA})\footnote{La majoria d'aquests conceptes seran explicats al llarg del treball}, i molts altres.
+\paragraph{}En la branca d'investigació sobre l'estabilitat en robots, tant bípedes, com quadrúpedes, hi ha multitud de tesis, treballs, articles, etc. Tots ells centrant-se en un o altre aspecte com són: el punt de moment zero (\textit{ZMP}), modelat de robots, aprenentatge supervisat, per reforç o \textit{DMP}, generador de patrons centrals (\textit{CPG}), algorismes genètics (\textit{GA})\footnote{La majoria d'aquests conceptes seran explicats al llarg d'aquest apartat.}, i molts altres.
 
 \paragraph{}Tot seguit s'exposa un conjunt d'antecedents, organitzat en diferents àmbits, importants tots ells tant per realitzar l'experiència, com per entendre els factors que han conduït a cadascuna de les decisions preses.
 
@@ -179,7 +179,7 @@ The estability of the robots...
 
 \item[REEM-C] Aquest últim humanoide és el creat per PAL Robotics \cite{REEM_C}. Destaca pel fet de ser el primer bípede enfocat en la investigació i basat 100\% en ROS. El REEM-C està basat, entre d'altres teories, amb el ZMP i en el aprenentatge propi del robot. A més, les seves característiques de reconeixement de veu, manipulació d'objectes i d'interacció amb humans, és una eina educativa molt útil. \cite{Robotics}
 
-\item[BigDog] És un dels grans robots que s'han creat al Boston Dinamics, prenent el que va ser inicialment desenvolupat en la DARPA\cite{Marc2008}. Aquest "\textit{gos}" va ser dissenyat per ús militar, en concret, per acompanyar als soldats portant la carga necessària en terrenys on no podria desplaçar-se un vehicle convencional. Aquest quadrúpede és dinàmicament estable\footnote{Sistema que és estable tenint en compte els efectes inercials i altres components dinàmiques que apareixen en el propi sistema \cite{Purushotham2009}.} gracies al gran conjunt de sensors i actuadors que arriba a tenir. A banda d'un sistema mecànic molt complert, també s'hi ha implementat algorismes d'aprenentatge per reforç, en concret DMP (\textit{Dynamic Movement Primitives}) \footnote{DMP (\textit{Dynamic Movement Primitives}) s'explica en detall en la secció \ref{Algorismes} } \cite{Playter2006}.
+\item[BigDog] És un dels grans robots que s'han creat al Boston Dinamics, prenent el que va ser inicialment desenvolupat en la DARPA\cite{Marc2008}. Aquest "\textit{gos}" va ser dissenyat per ús militar, en concret, per acompanyar als soldats portant la carga necessària en terrenys on no podria desplaçar-se un vehicle convencional. Aquest quadrúpede és dinàmicament estable\footnote{Sistema que és estable tenint en compte els efectes inercials i altres components dinàmiques que apareixen en el propi sistema \cite{Purushotham2009}.} gracies al gran conjunt de sensors i actuadors que arriba a tenir. A banda d'un sistema mecànic molt complert, també s'hi ha implementat algorismes d'aprenentatge per reforç (\textit{Reinforcement Learning}\footnote{Aprenentatge per reforç s'explica en detall en l'estat de l'art. En molts casos es abreviat com \textit{RL}.}), en concret DMP (\textit{Dynamic Movement Primitives}) \footnote{DMP (\textit{Dynamic Movement Primitives}) s'explica en detall en la secció \ref{Algorismes} } \cite{Playter2006}.
 
 \item[LittleDog] Aquest quadrúpede és el predecessor del BigDog. Té la mateixa base que l'anterior, tot i que en aquest és on s'ha fet més estudi del aprenentatge del robot. La investigació que s'hi ha fet al damunt, tant d'aprenentatge, com de criteri de ZMP és pot entendre de forma genèrica en \cite{Kalakrishnan2010}. 
 
@@ -330,10 +330,37 @@ Sent $x_{t}$ la dada a classificar i $x_{i}$ l'exemple més pròxim. Després de
 \subsubsection*{(4) Aprenentatge per reforç}
 \addcontentsline{toc}{subsubsection}{Aprenentatge per reforç}
 
-\subsubsection*{(5) Aprenentatge per demostració}
-\addcontentsline{toc}{subsubsection}{Aprenentatge per demostració}
+\paragraph{}En la robòtica, l'aprenentatge per reforç proveeix d'unes eines molt útils per tal de crear comportaments sofisticats i amb gran dificultat de disseny. Permet a un robot desenvolupar el seu propi comportament a base de prova i error. En aquest cas, el dissenyador, en lloc de donar unes dades per explícitament crear la solució al problema, tan sols proveeix una realimentació amb una funció objectiu de valors escalars que mesura la bondat de l'acció anterior. Per tant, un agent explora les possibles estratègies i després rep una recompensa per l'acció feta, intentant sempre maximitzar la recompensa acumulada durant el seu temps de vida \cite{Kober2009}.
 
-\subsubsection*{(6) Algorismes avançats}
+\paragraph{}Aquest agent i el seu entorn pot ser modelat com un estat \textit{s}$\in$\textit{S}\footnote{Un estat \textit{s} conté la informació necessaria per descriure la situació actual i futures.} i una acció \textit{a}$\in$\textit{A}\footnote{Un estat del sistema es controlat o carregat per una acció \textit{a}.}. Una recompensa es donada a l'agent, per cadascuna de les accions que desenvolupa, en funció de l'estat i les observacions. L'objectiu de \texttt{RL} és crear una política\footnote{Per política s'entén com en \cite{iec-dlc} "\textit{Manera de conduir un afer.}"} $\pi$ que maximitza la recompensa acumulada escollint unes accions \textit{a} en determinats estats \textit{s}.
+
+\paragraph{}La idea clàssica d'aprenentatge per reforç es prenia des del punt de vista que l'agent consistia en un procés de decisions de Markov (\textit{Markov Decsion Process} o \textit{MDP})\footnote{Conjunt d'estats \textit{S}, accions \textit{A}, recompenses \textit{R} i probabilitats de transició T, aquest últim defineix la dinàmica del sistema per predir l'efecte de l'acció en un estat donat.} on la propietat de Markov estableix que el següent estat \textit{s}$'$ i la recompensa estan definits tan sols per l'acció \textit{a} i l'estat \textit{s} \cite{Sutton1998}. %Actualment, no tots els estudis que es fan segueixen el concepte de \textit{MDP}, ja que s'utilitza el \texttt{RL} sense tenir definit el sistema dinàmic, per tant, sense saber l'efecte de l'acció sobre l'estat. 
+
+%S'hauria de posar la parta comentada anteriorment? Tot i que del sistema dinamic només se'n parla en el peu de pagina?
+
+\paragraph{}L'acumulació de recompensa és el que es maximitza, per tant segons el mètode d'atorgar-la definirà el comportament òptim \cite{Kober2009}. Existeixen diversos models, aquí se n'exposen tres:
+\begin{description}
+
+
+\item[Horitzó finit] Aplicat en models on es sap en quants passos es resol el problema, maximitza la recompensa per \textit{H} passos.
+\begin{equation}
+J=E\left\{ \sum_{h=0}^{H} R_{h} \right\}.
+\end{equation}
+
+\item[Model de descompte] Un factor de descompte ($\gamma\in[0,1)$) a la recompensa futura. Aquest és introduït manualment i determina en quina proporció afecta el futur.
+\begin{equation}
+J=E\left\{ \sum_{h=0}^{\infty} \gamma^h R_{h} \right\}.
+\end{equation}
+
+\item[Recompensa mitja] Finalment en aquest es té en compte la mitja total de les recompenses. El problema d'aquesta és que no es pot diferenciar si s'esta afavorint l'inici o el final del temps de vida.
+\begin{equation}
+J=\lim_{H \to \infty} E\left\{ \frac{1}{H}\sum_{h=0}^{H} R_{h} \right\}.
+\end{equation} 
+
+\end{description}
+
+
+\subsubsection*{(5) Algorismes avançats}
 \addcontentsline{toc}{subsubsection}{Algorismes avançats}
 
 \begin{description}
@@ -351,6 +378,8 @@ Sent $x_{t}$ la dada a classificar i $x_{i}$ l'exemple més pròxim. Després de
 %using neural oscillators and Central Pattern Generators (CPG) [3][4][5][6], like for example the use of CPGs for the control of several postures and movements [7]
 
 \item[CBR] \textit{Case Based Reasoning}, aquest algorisme podria ser considerat de la família de l'aprenentatge supervisat. Consisteix l'aproximació de l'acció correcte a través de dos tipus de dades: (1) dades d'entrenament, del mateix estil que les del supervisat; i (2) extretes a partir de la pròpia experiència. El cicle de funcionament del CBR seria el següent: (i) prendre el cas o els casos més semblants a la situació actual, dels que estan emmagatzemats; (ii) adaptar el cas pres a la situació; (iii) avaluar com de satisfactori ha estat la solució adoptada; (iv) aprendre d'aquest nou cas.
+
+\item[GA] \textit{Genetic Algorithm}, és un mètode estocàstic de cerca que pren la idea de l'evolució biològica natural. Aquest pren uns antecedents aleatoris, d'aquests en treu solucions les quals s'hi provoca una mutació, per últim, les solucions alterades es converteixen en els antecedents. Aquest procés es repeteix fins arribar a la solució que s'adapta suficient a la funció objectiu o al limit de generacions.
 
 \end{description}
 

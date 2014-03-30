@@ -1,64 +1,65 @@
 This is BibTeX, Version 0.99d (TeX Live 2012/Debian)
 Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: Treball.aux
-The style file: unsrtnat.bst
+The style file: plainnat.bst
 Database file #1: ./Bibliografia/library.bib
+Warning--empty publisher in Alpaydin2004
+Warning--empty year in Arduino
+Warning--empty publisher in Cord2008
+Warning--empty year in iec-dlc
+Warning--there's a number but no volume in Fujita2000
+Warning--empty year in Urbi_Docs
+Warning--empty year in ASIMO_History
+Warning--empty year in Ion
+Warning--empty year in Ion
 Warning--can't use both volume and number fields in Nguyen-Tuong2011
 Warning--empty publisher in Nguyen-Tuong2011
+Warning--can't use both volume and number fields in Marc2008
 Warning--empty year in Aibo_Images
-Warning--empty year in Urbi_Docs
-Warning--empty year in Arduino
-Warning--empty year in ASIMO_History
+Warning--empty journal in TFG_Carlos_Ramos
+Warning--empty year in ROS
 Warning--empty year in REEM_C
 Warning--empty year in Robotics
-Warning--can't use both volume and number fields in Marc2008
-Warning--empty year in Ion
-Warning--empty year in Ion
-Warning--empty publisher in Cord2008
-Warning--empty publisher in Alpaydin2004
 Warning--there's a number but no volume in Tellez2005a
-Warning--empty journal in TFG_Carlos_Ramos
-Warning--there's a number but no volume in Fujita2000
-Warning--empty year in ROS
-You've used 38 entries,
-            2481 wiz_defined-function locations,
-            836 strings with 12707 characters,
-and the built_in function-call counts, 14249 in all, are:
-= -- 1259
-> -- 698
-< -- 28
-+ -- 282
-- -- 205
-* -- 1085
-:= -- 2320
-add.period$ -- 161
-call.type$ -- 38
-change.case$ -- 71
-chr.to.int$ -- 37
-cite$ -- 55
-duplicate$ -- 701
-empty$ -- 1247
-format.name$ -- 253
-if$ -- 3003
+You've used 40 entries,
+            2773 wiz_defined-function locations,
+            892 strings with 13441 characters,
+and the built_in function-call counts, 18122 in all, are:
+= -- 1665
+> -- 1035
+< -- 30
++ -- 357
+- -- 316
+* -- 1464
+:= -- 2853
+add.period$ -- 169
+call.type$ -- 40
+change.case$ -- 220
+chr.to.int$ -- 39
+cite$ -- 98
+duplicate$ -- 791
+empty$ -- 1408
+format.name$ -- 368
+if$ -- 3756
 int.to.chr$ -- 2
-int.to.str$ -- 39
-missing$ -- 29
-newline$ -- 243
-num.names$ -- 116
-pop$ -- 302
+int.to.str$ -- 1
+missing$ -- 30
+newline$ -- 255
+num.names$ -- 162
+pop$ -- 436
 preamble$ -- 1
-purify$ -- 38
+purify$ -- 185
 quote$ -- 0
-skip$ -- 452
+skip$ -- 635
 stack$ -- 0
-substring$ -- 496
-swap$ -- 128
+substring$ -- 512
+swap$ -- 92
 text.length$ -- 7
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 257
-warning$ -- 17
-while$ -- 110
+type$ -- 425
+warning$ -- 18
+while$ -- 155
 width$ -- 0
-write$ -- 569
-(There were 17 warnings)
+write$ -- 597
+(There were 18 warnings)

@@ -1,50 +1,45 @@
-\begin{thebibliography}{38}
+\begin{thebibliography}{40}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
   \providecommand{\doi}[1]{doi: #1}\else
   \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
 
-\bibitem[Nguyen-Tuong and Peters(2011)]{Nguyen-Tuong2011}
-Duy Nguyen-Tuong and Jan Peters.
-\newblock \emph{{Model learning for robot control: a survey.}}, volume~12.
-\newblock November 2011.
-\newblock ISBN 3405062780.
-\newblock \doi{10.1007/s10339-011-0404-1}.
-\newblock URL \url{http://www.ncbi.nlm.nih.gov/pubmed/21487784}.
+\bibitem[Albiez et~al.(2003)Albiez, Luksch, Berns, and Dillmann]{Albiez2003}
+J.C. Albiez, T.~Luksch, K.~Berns, and R.~Dillmann.
+\newblock {Reactive reflex-based control for a four-legged walking machine}.
+\newblock \emph{Robotics and Autonomous Systems}, 44\penalty0 (3-4):\penalty0
+  181--189, September 2003.
+\newblock ISSN 09218890.
+\newblock \doi{10.1016/S0921-8890(03)00068-X}.
+\newblock URL
+  \url{http://linkinghub.elsevier.com/retrieve/pii/S092188900300068X}.
 
-\bibitem[Rainsersen()]{Aibo_Images}
-Rainsersen.
-\newblock {Imatges Aibo ERS-7}.
-\newblock URL \url{http://rainersen.de/aibo/}.
+\bibitem[Alpaydin(2004)]{Alpaydin2004}
+Ethem Alpaydin.
+\newblock \emph{{Introduction to Machine Learning (Adaptive Computation and
+  Machine Learning)}}, volume~5.
+\newblock 2004.
+\newblock ISBN 0262012111.
+\newblock \doi{10.1007/s10994-009-5137-3}.
+\newblock URL
+  \url{http://www.amazon.ca/exec/obidos/redirect?tag=citeulike09-20\&amp;path=ASIN/0262012111}.
 
-\bibitem[Gostai()]{Urbi_Docs}
-Gostai.
-\newblock {URBI Doc for Aibo ERS2xx ERS7 and URBI 1.0}.
-\newblock URL \url{http://www.gostai.com/doc/en/aibo/}.
+\bibitem[Anshar and Williams(2007)]{Anshar2007}
+Muh. Anshar and Mary-Anne Williams.
+\newblock {Extended Evolutionary Fast Learn-to-Walk Approach for Four-Legged
+  Robots}.
+\newblock \emph{Journal of Bionic Engineering}, 4\penalty0 (4):\penalty0
+  255--263, December 2007.
+\newblock ISSN 16726529.
+\newblock \doi{10.1016/S1672-6529(07)60039-0}.
+\newblock URL
+  \url{http://linkinghub.elsevier.com/retrieve/pii/S1672652907600390}.
 
 \bibitem[Arduino()]{Arduino}
 Arduino.
 \newblock {Arduino - HomePage}.
 \newblock URL \url{http://www.arduino.cc/}.
-
-\bibitem[{International Organization for Standaritzacion}(2012)]{ISO_Robot}
-{International Organization for Standaritzacion}.
-\newblock {ISO 8373:2012: Robots and robotic devices — Vocabulary}.
-\newblock Technical report, ISO, Gen\`{e}ve, 2012.
-
-\bibitem[Nagasaka et~al.(2004)Nagasaka, Kuroki, and Suzuki]{Nagasaka2004}
-K~Nagasaka, Y~Kuroki, and S~Suzuki.
-\newblock {Integrated motion control for walking, jumping and running on a
-  small bipedal entertainment robot}.
-\newblock \emph{Robotics and \ldots}, pages 3189--3194, 2004.
-\newblock URL
-  \url{http://ieeexplore.ieee.org/xpls/abs\_all.jsp?arnumber=1308745}.
-
-\bibitem[HONDA()]{ASIMO_History}
-HONDA.
-\newblock {History of ASIMO Robotics | ASIMO Innovations by Honda}.
-\newblock URL \url{http://asimo.honda.com/asimo-history/}.
 
 \bibitem[Chestnutt et~al.(2005)Chestnutt, Lau, Cheung, Kuffner, Hodgins, and
   Kanade]{Chestnutt2005}
@@ -53,49 +48,69 @@ J.~Chestnutt, M.~Lau, G.~Cheung, J.~Kuffner, J.~Hodgins, and T.~Kanade.
 \newblock \emph{Proceedings of the 2005 IEEE International Conference on
   Robotics and Automation}, 2005.
 
-\bibitem[Mutlu et~al.(2006)Mutlu, Osman, Forlizzi, Hodgins, and
-  Kiesler]{Mutlu2006}
-Bilge Mutlu, S.~Osman, Jodi Forlizzi, J.~Hodgins, and S.~Kiesler.
-\newblock {Perceptions of ASIMO: an exploration on co-operation and competition
-  with humans and humanoid robots}.
-\newblock In \emph{Proceedings of the 1st ACM SIGCHI/SIGART conference on
-  Human-robot interaction}, pages 351--352. ACM, 2006.
-\newblock ISBN 1595932941.
-\newblock \doi{10.1145/1121241.1121311}.
-\newblock URL \url{http://portal.acm.org/citation.cfm?id=1121311}.
+\bibitem[Cord and Cunningham(2008)]{Cord2008}
+Matthieu Cord and P\'{a}draig Cunningham.
+\newblock \emph{{Machine learning techniques for multimedia}}.
+\newblock 2008.
+\newblock URL \url{ftp://icksie.no-ip.org/EBooks/Computers/Artificial
+  Intelligence/Semi-supervised learning.pdf
+  ftp://icksie.no-ip.org/EBooks/Computers/Artificial
+  Intelligence/Cord\_Cunningham-Machine\_Learning\_Techniques\_for\_Multimedia-9783540751700.pdf}.
 
-\bibitem[Robotics({\natexlab{a}})]{REEM_C}
-PAL Robotics.
-\newblock {REEM-C}, {\natexlab{a}}.
-\newblock URL \url{http://pal-robotics.com/en/robots/reem-c}.
+\bibitem[Delphinanto et~al.(2011)Delphinanto, Koonen, and den
+  Hartog]{Delphinanto2011}
+Archi Delphinanto, Ton Koonen, and Frank den Hartog.
+\newblock {End-to-end available bandwidth probing in heterogeneous IP home
+  networks}.
+\newblock \emph{2011 IEEE Consumer Communications and Networking Conference
+  (CCNC)}, pages 431--435, 2011.
+\newblock \doi{10.1109/CCNC.2011.5766506}.
 
-\bibitem[Robotics({\natexlab{b}})]{Robotics}
-PAL Robotics.
-\newblock {REEM-C | PAL Robotics Blog}, {\natexlab{b}}.
+\bibitem[d'Estudis Catalans()]{iec-dlc}
+Institut d'Estudis Catalans.
+\newblock {Diccionari de la llengua catalana}.
+\newblock URL \url{http://dlc.iec.cat/index.html}.
+
+\bibitem[Fujita(2000)]{Fujita2000}
+Masahiro Fujita.
+\newblock {Digital creatures for future entertainment robotics}.
+\newblock \emph{Robotics and Automation, 2000. Proceedings. ICRA' \ldots},
+  \penalty0 (April), 2000.
 \newblock URL
-  \url{http://blog.pal-robotics.com/blog/2013/11/21/unplug-play-reem-c/}.
+  \url{http://ieeexplore.ieee.org/xpls/abs\_all.jsp?arnumber=844149}.
 
-\bibitem[Raibert(2008)]{Marc2008}
-Marc Raibert.
-\newblock {BigDog, the Rough-Terrain Quadruped Robot}.
-\newblock In Myung~J Chung, editor, \emph{Proceedings of the 17th IFAC World
-  Congress, 2008}, volume~17. The International Federation of Automatic
-  Control, 2008.
-\newblock \doi{10.3182/20080706-5-KR-1001.01833}.
-\newblock URL \url{http://www.ifac-papersonline.net/Detailed/37519.html}.
+\bibitem[Gostai()]{Urbi_Docs}
+Gostai.
+\newblock {URBI Doc for Aibo ERS2xx ERS7 and URBI 1.0}.
+\newblock URL \url{http://www.gostai.com/doc/en/aibo/}.
 
-\bibitem[Purushotham and Rao(2009)]{Purushotham2009}
-A.~Purushotham and G.~Venkata Rao.
-\newblock {Dynamic stability analysis of a quadruped robotic manipulator
-  system: analytical approach.}
-\newblock \emph{International Journal of Applied Engineering Research}, 2009.
+\bibitem[Hohl et~al.(2006)Hohl, Tellez, Michel, and Ijspeert]{Hohl2006}
+Lukas Hohl, Ricardo Tellez, Olivier Michel, and Auke~Jan Ijspeert.
+\newblock {Aibo and Webots: Simulation, wireless remote control and controller
+  transfer}.
+\newblock \emph{Robotics and Autonomous Systems}, 54\penalty0 (6):\penalty0
+  472--485, June 2006.
+\newblock ISSN 09218890.
+\newblock \doi{10.1016/j.robot.2006.02.006}.
+\newblock URL
+  \url{http://linkinghub.elsevier.com/retrieve/pii/S0921889006000327}.
 
-\bibitem[Playter et~al.(2006)Playter, Buehler, and Raibert]{Playter2006}
-R.~Playter, M.~Buehler, and M.~Raibert.
-\newblock {BigDog}.
-\newblock \emph{Proceeding of SPIE}, 6230:\penalty0 62302O--62302O--6, 2006.
-\newblock \doi{10.1117/12.684087}.
-\newblock URL \url{http://dx.doi.org/10.1117/12.684087}.
+\bibitem[HONDA()]{ASIMO_History}
+HONDA.
+\newblock {History of ASIMO Robotics | ASIMO Innovations by Honda}.
+\newblock URL \url{http://asimo.honda.com/asimo-history/}.
+
+\bibitem[{International Organization for Standaritzacion}(2012)]{ISO_Robot}
+{International Organization for Standaritzacion}.
+\newblock {ISO 8373:2012: Robots and robotic devices — Vocabulary}.
+\newblock Technical report, ISO, Gen\`{e}ve, 2012.
+
+\bibitem[Ion et~al.()Ion, Simionescu, and Ungureanu]{Ion}
+Ion Ion, Ion Simionescu, and Marius Ungureanu.
+\newblock {Stability Analysis of Gaits of Quadruped Walking Robot MERO}.
+\newblock \emph{\ldots Workshop on Mobile Robots, \ldots}.
+\newblock URL
+  \url{http://www.profesaulosuna.com/data/files/ROBOTICA/ROBOT/20.pdf}.
 
 \bibitem[Kalakrishnan et~al.(2010)Kalakrishnan, Buchli, Pastor, Mistry, and
   Schaal]{Kalakrishnan2010}
@@ -108,22 +123,39 @@ M.~Kalakrishnan, J.~Buchli, P.~Pastor, M.~Mistry, and S.~Schaal.
 \newblock \doi{10.1177/0278364910388677}.
 \newblock URL \url{http://ijr.sagepub.com/cgi/doi/10.1177/0278364910388677}.
 
-\bibitem[{Men\'{e}ndez Paredes}(2011)]{Menendez2011}
-R~{Men\'{e}ndez Paredes}.
-\newblock \emph{{Control y supervisi\'{o}n inal\'{a}mbrica de la plataforma
-  rob\'{o}tica Pleo}}.
-\newblock PhD thesis, Universitat Polit\'{e}cnica de Catalunya, 2011.
-\newblock URL \url{http://upcommons.upc.edu/handle/2099.1/11801}.
+\bibitem[Khatib et~al.(2002)Khatib, Brock, Chang, Conti, Ruspini, and
+  Sentis]{Khatib2002}
+Oussama Khatib, Oliver Brock, Kyong-Sok Chang, Francois Conti, Diego Ruspini,
+  and Luis Sentis.
+\newblock {Robotics and interactive simulation}, 2002.
+\newblock ISSN 00010782.
 
-\bibitem[Albiez et~al.(2003)Albiez, Luksch, Berns, and Dillmann]{Albiez2003}
-J.C. Albiez, T.~Luksch, K.~Berns, and R.~Dillmann.
-\newblock {Reactive reflex-based control for a four-legged walking machine}.
-\newblock \emph{Robotics and Autonomous Systems}, 44\penalty0 (3-4):\penalty0
-  181--189, September 2003.
-\newblock ISSN 09218890.
-\newblock \doi{10.1016/S0921-8890(03)00068-X}.
+\bibitem[Kober and Peters(2012)]{Kober2009}
+Jens Kober and Jan Peters.
+\newblock {Reinforcement learning in robotics: A survey}.
+\newblock \emph{Reinforcement Learning}, 2012.
 \newblock URL
-  \url{http://linkinghub.elsevier.com/retrieve/pii/S092188900300068X}.
+  \url{http://link.springer.com/chapter/10.1007/978-3-642-27645-3\_18}.
+
+\bibitem[Laue et~al.(2006)Laue, Spiess, and R\"{o}fer]{Laue2006a}
+Tim Laue, Kai Spiess, and T~R\"{o}fer.
+\newblock {SimRobot–a general physical robot simulator and its application in
+  robocup}.
+\newblock \emph{RoboCup 2005: Robot Soccer World Cup IX}, pages 173--183, 2006.
+\newblock URL \url{http://link.springer.com/chapter/10.1007/11780519\_16}.
+
+\bibitem[Learned-Miller(2014)]{Learned-Miller2014}
+Erik~G. Learned-Miller.
+\newblock \emph{{Introduction to Supervised Learning}}.
+\newblock PhD thesis, University of Massachusetts, Amherst, 2014.
+\newblock URL
+  \url{http://people.cs.umass.edu/~elm/Teaching/Docs/supervised2014a.pdf}.
+
+\bibitem[Lee et~al.(1988)Lee, Liao, and Chen]{Lee1988}
+TT~Lee, CM~Liao, and TK~Chen.
+\newblock {On the stability properties of hexapod tripod gait}.
+\newblock \emph{Robotics and Automation, IEEE \ldots}, 4\penalty0 (4), 1988.
+\newblock URL \url{http://ieeexplore.ieee.org/xpls/abs\_all.jsp?arnumber=808}.
 
 \bibitem[Loc et~al.(2010)Loc, Roh, Koo, Tran, Kim, Moon, and Choi]{Loc2010}
 Vo-Gia Loc, Se-goh Roh, Ig~Mo Koo, Duc~Trong Tran, Ho~Moon Kim, Hyungpil Moon,
@@ -149,35 +181,18 @@ Vo-Gia Loc, Ig~Mo Koo, Duc~Trong Tran, Sangdoek Park, Hyungpil Moon, and
 \newblock URL
   \url{http://linkinghub.elsevier.com/retrieve/pii/S0921889011001588}.
 
-\bibitem[Ion et~al.()Ion, Simionescu, and Ungureanu]{Ion}
-Ion Ion, Ion Simionescu, and Marius Ungureanu.
-\newblock {Stability Analysis of Gaits of Quadruped Walking Robot MERO}.
-\newblock \emph{\ldots Workshop on Mobile Robots, \ldots}.
-\newblock URL
-  \url{http://www.profesaulosuna.com/data/files/ROBOTICA/ROBOT/20.pdf}.
-
-\bibitem[Lee et~al.(1988)Lee, Liao, and Chen]{Lee1988}
-TT~Lee, CM~Liao, and TK~Chen.
-\newblock {On the stability properties of hexapod tripod gait}.
-\newblock \emph{Robotics and Automation, IEEE \ldots}, 4\penalty0 (4), 1988.
-\newblock URL \url{http://ieeexplore.ieee.org/xpls/abs\_all.jsp?arnumber=808}.
-
 \bibitem[Lojo(2009)]{Lojo2009}
 Ignacio~Pedrosa Lojo.
 \newblock \emph{{Proyecto MIRHO (Mobile Intelligent Hexapod Robot)}}.
 \newblock PhD thesis, Universitat Polit\'{e}cnica de Catalunya, 2009.
 \newblock URL \url{http://upcommons.upc.edu/handle/2099.1/6488}.
 
-\bibitem[Hohl et~al.(2006)Hohl, Tellez, Michel, and Ijspeert]{Hohl2006}
-Lukas Hohl, Ricardo Tellez, Olivier Michel, and Auke~Jan Ijspeert.
-\newblock {Aibo and Webots: Simulation, wireless remote control and controller
-  transfer}.
-\newblock \emph{Robotics and Autonomous Systems}, 54\penalty0 (6):\penalty0
-  472--485, June 2006.
-\newblock ISSN 09218890.
-\newblock \doi{10.1016/j.robot.2006.02.006}.
-\newblock URL
-  \url{http://linkinghub.elsevier.com/retrieve/pii/S0921889006000327}.
+\bibitem[{Men\'{e}ndez Paredes}(2011)]{Menendez2011}
+R~{Men\'{e}ndez Paredes}.
+\newblock \emph{{Control y supervisi\'{o}n inal\'{a}mbrica de la plataforma
+  rob\'{o}tica Pleo}}.
+\newblock PhD thesis, Universitat Polit\'{e}cnica de Catalunya, 2011.
+\newblock URL \url{http://upcommons.upc.edu/handle/2099.1/11801}.
 
 \bibitem[Michel(2004)]{Michel2004}
 Olivier Michel.
@@ -185,45 +200,104 @@ Olivier Michel.
 \newblock \emph{International Journal of Advanced Robotic Systems}, 1:\penalty0
   40--43, 2004.
 
-\bibitem[Laue et~al.(2006)Laue, Spiess, and R\"{o}fer]{Laue2006a}
-Tim Laue, Kai Spiess, and T~R\"{o}fer.
-\newblock {SimRobot–a general physical robot simulator and its application in
-  robocup}.
-\newblock \emph{RoboCup 2005: Robot Soccer World Cup IX}, pages 173--183, 2006.
-\newblock URL \url{http://link.springer.com/chapter/10.1007/11780519\_16}.
+\bibitem[Mutlu et~al.(2006)Mutlu, Osman, Forlizzi, Hodgins, and
+  Kiesler]{Mutlu2006}
+Bilge Mutlu, S.~Osman, Jodi Forlizzi, J.~Hodgins, and S.~Kiesler.
+\newblock {Perceptions of ASIMO: an exploration on co-operation and competition
+  with humans and humanoid robots}.
+\newblock In \emph{Proceedings of the 1st ACM SIGCHI/SIGART conference on
+  Human-robot interaction}, pages 351--352. ACM, 2006.
+\newblock ISBN 1595932941.
+\newblock \doi{10.1145/1121241.1121311}.
+\newblock URL \url{http://portal.acm.org/citation.cfm?id=1121311}.
 
-\bibitem[Khatib et~al.(2002)Khatib, Brock, Chang, Conti, Ruspini, and
-  Sentis]{Khatib2002}
-Oussama Khatib, Oliver Brock, Kyong-Sok Chang, Francois Conti, Diego Ruspini,
-  and Luis Sentis.
-\newblock {Robotics and interactive simulation}, 2002.
-\newblock ISSN 00010782.
-
-\bibitem[Kober and Peters(2012)]{Kober2009}
-Jens Kober and Jan Peters.
-\newblock {Reinforcement learning in robotics: A survey}.
-\newblock \emph{Reinforcement Learning}, 2012.
+\bibitem[Nagasaka et~al.(2004)Nagasaka, Kuroki, and Suzuki]{Nagasaka2004}
+K~Nagasaka, Y~Kuroki, and S~Suzuki.
+\newblock {Integrated motion control for walking, jumping and running on a
+  small bipedal entertainment robot}.
+\newblock \emph{Robotics and \ldots}, pages 3189--3194, 2004.
 \newblock URL
-  \url{http://link.springer.com/chapter/10.1007/978-3-642-27645-3\_18}.
+  \url{http://ieeexplore.ieee.org/xpls/abs\_all.jsp?arnumber=1308745}.
 
-\bibitem[Cord and Cunningham(2008)]{Cord2008}
-Matthieu Cord and P\'{a}draig Cunningham.
-\newblock \emph{{Machine learning techniques for multimedia}}.
-\newblock 2008.
-\newblock URL \url{ftp://icksie.no-ip.org/EBooks/Computers/Artificial
-  Intelligence/Semi-supervised learning.pdf
-  ftp://icksie.no-ip.org/EBooks/Computers/Artificial
-  Intelligence/Cord\_Cunningham-Machine\_Learning\_Techniques\_for\_Multimedia-9783540751700.pdf}.
+\bibitem[Nguyen-Tuong and Peters(2011)]{Nguyen-Tuong2011}
+Duy Nguyen-Tuong and Jan Peters.
+\newblock \emph{{Model learning for robot control: a survey.}}, volume~12.
+\newblock November 2011.
+\newblock ISBN 3405062780.
+\newblock \doi{10.1007/s10339-011-0404-1}.
+\newblock URL \url{http://www.ncbi.nlm.nih.gov/pubmed/21487784}.
 
-\bibitem[Alpaydin(2004)]{Alpaydin2004}
-Ethem Alpaydin.
-\newblock \emph{{Introduction to Machine Learning (Adaptive Computation and
-  Machine Learning)}}, volume~5.
-\newblock 2004.
-\newblock ISBN 0262012111.
-\newblock \doi{10.1007/s10994-009-5137-3}.
+\bibitem[Playter et~al.(2006)Playter, Buehler, and Raibert]{Playter2006}
+R.~Playter, M.~Buehler, and M.~Raibert.
+\newblock {BigDog}.
+\newblock \emph{Proceeding of SPIE}, 6230:\penalty0 62302O--62302O--6, 2006.
+\newblock \doi{10.1117/12.684087}.
+\newblock URL \url{http://dx.doi.org/10.1117/12.684087}.
+
+\bibitem[Purushotham and Rao(2009)]{Purushotham2009}
+A.~Purushotham and G.~Venkata Rao.
+\newblock {Dynamic stability analysis of a quadruped robotic manipulator
+  system: analytical approach.}
+\newblock \emph{International Journal of Applied Engineering Research}, 2009.
+
+\bibitem[Quigley et~al.(2009)Quigley, Gerkey, Conley, Faust, Foote, Leibs,
+  Berger, Wheeler, and Ng]{Quigley}
+Morgan Quigley, Brian Gerkey, Ken Conley, Josh Faust, Tully Foote, Jeremy
+  Leibs, Eric Berger, Rob Wheeler, and Andrew Ng.
+\newblock {ROS: an open-source Robot Operating System}.
+\newblock \emph{ICRA Workshop on Open Source Software}, 2009.
+
+\bibitem[Raibert(2008)]{Marc2008}
+Marc Raibert.
+\newblock {BigDog, the Rough-Terrain Quadruped Robot}.
+\newblock In Myung~J Chung, editor, \emph{Proceedings of the 17th IFAC World
+  Congress, 2008}, volume~17. The International Federation of Automatic
+  Control, 2008.
+\newblock \doi{10.3182/20080706-5-KR-1001.01833}.
+\newblock URL \url{http://www.ifac-papersonline.net/Detailed/37519.html}.
+
+\bibitem[Rainsersen()]{Aibo_Images}
+Rainsersen.
+\newblock {Imatges Aibo ERS-7}.
+\newblock URL \url{http://rainersen.de/aibo/}.
+
+\bibitem[{Ramos Olave}(2013)]{TFG_Carlos_Ramos}
+Carlos~Mario {Ramos Olave}.
+\newblock {Dise\~{n}o, implementaci\'{o}n y control visual de posici\'{o}n de
+  un sistema placa-bola}.
+\newblock 2013.
+
+\bibitem[{Robot Operating System}()]{ROS}
+{Robot Operating System}.
+\newblock {ROS.org}.
+\newblock URL \url{http://www.ros.org/core-components/}.
+
+\bibitem[Robotics({\natexlab{a}})]{REEM_C}
+PAL Robotics.
+\newblock {REEM-C}, {\natexlab{a}}.
+\newblock URL \url{http://pal-robotics.com/en/robots/reem-c}.
+
+\bibitem[Robotics({\natexlab{b}})]{Robotics}
+PAL Robotics.
+\newblock {REEM-C | PAL Robotics Blog}, {\natexlab{b}}.
 \newblock URL
-  \url{http://www.amazon.ca/exec/obidos/redirect?tag=citeulike09-20\&amp;path=ASIN/0262012111}.
+  \url{http://blog.pal-robotics.com/blog/2013/11/21/unplug-play-reem-c/}.
+
+\bibitem[Sutton and Barto(1998)]{Sutton1998}
+R~S Sutton and A~G Barto.
+\newblock {Reinforcement learning: an introduction.}
+\newblock \emph{IEEE transactions on neural networks / a publication of the
+  IEEE Neural Networks Council}, 9:\penalty0 1054, 1998.
+\newblock ISSN 1045-9227.
+\newblock \doi{10.1109/TNN.1998.712192}.
+
+\bibitem[T\'{e}llez et~al.(2005)T\'{e}llez, Angulo, and Pardo]{Tellez2005a}
+RA~A T\'{e}llez, Cecilio Angulo, and DE~E Pardo.
+\newblock {Highly modular architecture for the general control of autonomous
+  robots}.
+\newblock \emph{Computational Intelligence and \ldots}, \penalty0 (Figure
+  1):\penalty0 709--716, 2005.
+\newblock URL \url{http://link.springer.com/chapter/10.1007/11494669\_87}.
 
 \bibitem[Torrent-Fontbona et~al.(2013)Torrent-Fontbona, Mu\~{n}oz, and
   L\'{o}pez]{Torrent-Fontbona2013}
@@ -235,66 +309,5 @@ F.~Torrent-Fontbona, V.~Mu\~{n}oz, and B.~L\'{o}pez.
   2013.
 \newblock ISSN 09574174.
 \newblock \doi{10.1016/j.eswa.2013.01.065}.
-
-\bibitem[Learned-Miller(2014)]{Learned-Miller2014}
-Erik~G. Learned-Miller.
-\newblock \emph{{Introduction to Supervised Learning}}.
-\newblock PhD thesis, University of Massachusetts, Amherst, 2014.
-\newblock URL
-  \url{http://people.cs.umass.edu/~elm/Teaching/Docs/supervised2014a.pdf}.
-
-\bibitem[T\'{e}llez et~al.(2005)T\'{e}llez, Angulo, and Pardo]{Tellez2005a}
-RA~A T\'{e}llez, Cecilio Angulo, and DE~E Pardo.
-\newblock {Highly modular architecture for the general control of autonomous
-  robots}.
-\newblock \emph{Computational Intelligence and \ldots}, \penalty0 (Figure
-  1):\penalty0 709--716, 2005.
-\newblock URL \url{http://link.springer.com/chapter/10.1007/11494669\_87}.
-
-\bibitem[{Ramos Olave}(2013)]{TFG_Carlos_Ramos}
-Carlos~Mario {Ramos Olave}.
-\newblock {Dise\~{n}o, implementaci\'{o}n y control visual de posici\'{o}n de
-  un sistema placa-bola}.
-\newblock 2013.
-
-\bibitem[Fujita(2000)]{Fujita2000}
-Masahiro Fujita.
-\newblock {Digital creatures for future entertainment robotics}.
-\newblock \emph{Robotics and Automation, 2000. Proceedings. ICRA' \ldots},
-  \penalty0 (April), 2000.
-\newblock URL
-  \url{http://ieeexplore.ieee.org/xpls/abs\_all.jsp?arnumber=844149}.
-
-\bibitem[Anshar and Williams(2007)]{Anshar2007}
-Muh. Anshar and Mary-Anne Williams.
-\newblock {Extended Evolutionary Fast Learn-to-Walk Approach for Four-Legged
-  Robots}.
-\newblock \emph{Journal of Bionic Engineering}, 4\penalty0 (4):\penalty0
-  255--263, December 2007.
-\newblock ISSN 16726529.
-\newblock \doi{10.1016/S1672-6529(07)60039-0}.
-\newblock URL
-  \url{http://linkinghub.elsevier.com/retrieve/pii/S1672652907600390}.
-
-\bibitem[{Robot Operating System}()]{ROS}
-{Robot Operating System}.
-\newblock {ROS.org}.
-\newblock URL \url{http://www.ros.org/core-components/}.
-
-\bibitem[Quigley et~al.(2009)Quigley, Gerkey, Conley, Faust, Foote, Leibs,
-  Berger, Wheeler, and Ng]{Quigley}
-Morgan Quigley, Brian Gerkey, Ken Conley, Josh Faust, Tully Foote, Jeremy
-  Leibs, Eric Berger, Rob Wheeler, and Andrew Ng.
-\newblock {ROS: an open-source Robot Operating System}.
-\newblock \emph{ICRA Workshop on Open Source Software}, 2009.
-
-\bibitem[Delphinanto et~al.(2011)Delphinanto, Koonen, and den
-  Hartog]{Delphinanto2011}
-Archi Delphinanto, Ton Koonen, and Frank den Hartog.
-\newblock {End-to-end available bandwidth probing in heterogeneous IP home
-  networks}.
-\newblock \emph{2011 IEEE Consumer Communications and Networking Conference
-  (CCNC)}, pages 431--435, 2011.
-\newblock \doi{10.1109/CCNC.2011.5766506}.
 
 \end{thebibliography}
