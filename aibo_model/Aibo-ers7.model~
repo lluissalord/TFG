@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<gazebo version='1.0'>
+<!-- Han d'estar copiats en la carpeta /opt/ros/fuerte/stacks/simulator_gazebo/gazebo/gazebo/share/gazebo-1.0.2/models/  per a carregar-se amb els altres models-->
+  <model name="Aibo">
+  <origin pose="0.0 0.120 0.146 0 0 0"/>
+  <link name="my_top">
+    <inertial>
+      <mass value="1.0" />
+      <!-- center of mass (com) is defined w.r.t. link local coordinate system -->
+      <!-- give a little y-offset to make the top precess -->
+      <inertia  ixx="1.0" ixy="0.0"  ixz="0.0"  iyy="1.0"  iyz="0.0"  izz="1.0" />
+    </inertial>
+    <visual>
+      <!-- visual origin is defined w.r.t. link local coordinate system -->
+      <geometry>
+        <mesh filename="Aibo/aibo-ers7.dae" scale="0.0254 0.0254 0.0254"/>
+      </geometry>
+    </visual>
+    <collision>
+      <!-- collision origin is defined w.r.t. link local coordinate system -->
+      <geometry>
+        <mesh filename="Aibo/aibo-ers7.dae" scale="0.0254 0.0254 0.0254"/>
+      </geometry>
+    </collision>
+  </link>
+ </model>
+</gazebo>
