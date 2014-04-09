@@ -97,7 +97,7 @@ namespace aibo
     //_client->send("loop tailTilt << tailTilt.val,");
     _client->setCallback (urbi::callback(*this, &AiboServer::onJointSensor),"mouth");
     //_client->send("loop mouth << mouth.val,");
-    _client->setCallback (*this, &AiboServer::onAccelSensor,"accelX");
+    _client->setCallback (urbi::callback(*this, &AiboServer::onAccelSensor),"accelX");                 //inicialment estava posat _client->setCallback (*this, &AiboServer::onAccelSensor,"accelX");
     //_client->send("loop accelX << accelX.val,");
     _client->setCallback (urbi::callback(*this, &AiboServer::onAccelSensor),"accelY");
     //_client->send("loop accelY << accelY.val,");
@@ -181,7 +181,6 @@ namespace aibo
   
     double value = (double)msg.value->val;
     
-	std::cout << "callback called"<<std::flush;
 
     if (msg.tag == "accelX")
       _accelX = value;
@@ -197,42 +196,45 @@ namespace aibo
   urbi::UCallbackAction AiboServer::onJointSensor(const urbi::UMessage &msg) 
   {
     double value = (double)msg.value->val;
-	if (msg.tag=="legRF1")
+	switch (msg.tag)
+	{
+	case "legRF1":
 		_jointRF1=value;
-	if (msg.tag=="legRF2")
+	case "legRF2":
 		_jointRF2=value;
-	if (msg.tag=="legRF3")
+	case "legRF3":
 		_jointRF3=value;
-	if (msg.tag=="legRH1")
+	case "legRH1":
 		_jointRH1=value;
-	if (msg.tag=="legRH2")
+	case "legRH2":
 		_jointRH2=value;
-	if (msg.tag=="legRH3")
+	case "legRH3":
 		_jointRH3=value;
-	if (msg.tag=="legLF1")
+	case "legLF1":
 		_jointLF1=value;
-	if (msg.tag=="legLF2")
+	case "legLF2":
 		_jointLF2=value;
-	if (msg.tag=="legLF3")
+	case "legLF3":
 		_jointLF3=value;
-	if (msg.tag=="legLH1")
+	case "legLH1":
 		_jointLH1=value;
-	if (msg.tag=="legLH2")
+	case "legLH2":
 		_jointLH2=value;
-	if (msg.tag=="legLH3")
+	case "legLH3":
 		_jointLH3=value;
-	if (msg.tag=="neck")
+	case "neck":
 		_headNeck=value;
-	if (msg.tag=="headPan")
+	case "headPan":
 		_headPan=value;
-	if (msg.tag=="headTilt")
+	case "headTilt":
 		_headTilt=value;
-	if (msg.tag=="mouth")
+	case "mouth":
 		_mouth=value;
-	if (msg.tag=="tailTilt")
+	case "tailTilt":
 		_tailTilt=value;
-	if (msg.tag=="tailPan")
+	case "tailPan":
 		_tailPan=value;
+	}
     return urbi::URBI_CONTINUE;
   }
   
