@@ -181,6 +181,7 @@ namespace aibo
   
     double value = (double)msg.value->val;
     
+	std::cout << "callback called"<<std::flush;
 
     if (msg.tag == "accelX")
       _accelX = value;
@@ -196,45 +197,42 @@ namespace aibo
   urbi::UCallbackAction AiboServer::onJointSensor(const urbi::UMessage &msg) 
   {
     double value = (double)msg.value->val;
-	switch (msg.tag)
-	{
-	case "legRF1":
+	if (msg.tag=="legRF1")
 		_jointRF1=value;
-	case "legRF2":
+	if (msg.tag=="legRF2")
 		_jointRF2=value;
-	case "legRF3":
+	if (msg.tag=="legRF3")
 		_jointRF3=value;
-	case "legRH1":
+	if (msg.tag=="legRH1")
 		_jointRH1=value;
-	case "legRH2":
+	if (msg.tag=="legRH2")
 		_jointRH2=value;
-	case "legRH3":
+	if (msg.tag=="legRH3")
 		_jointRH3=value;
-	case "legLF1":
+	if (msg.tag=="legLF1")
 		_jointLF1=value;
-	case "legLF2":
+	if (msg.tag=="legLF2")
 		_jointLF2=value;
-	case "legLF3":
+	if (msg.tag=="legLF3")
 		_jointLF3=value;
-	case "legLH1":
+	if (msg.tag=="legLH1")
 		_jointLH1=value;
-	case "legLH2":
+	if (msg.tag=="legLH2")
 		_jointLH2=value;
-	case "legLH3":
+	if (msg.tag=="legLH3")
 		_jointLH3=value;
-	case "neck":
+	if (msg.tag=="neck")
 		_headNeck=value;
-	case "headPan":
+	if (msg.tag=="headPan")
 		_headPan=value;
-	case "headTilt":
+	if (msg.tag=="headTilt")
 		_headTilt=value;
-	case "mouth":
+	if (msg.tag=="mouth")
 		_mouth=value;
-	case "tailTilt":
+	if (msg.tag=="tailTilt")
 		_tailTilt=value;
-	case "tailPan":
+	if (msg.tag=="tailPan")
 		_tailPan=value;
-	}
     return urbi::URBI_CONTINUE;
   }
   
@@ -347,8 +345,7 @@ namespace aibo
 
     if (_aiboIR.getNumSubscribers() > 0)
     {
-		std::cout << _aiboIR.getNumSubscribers()<<std::flush;
-		std::cout << "IR"<<std::flush;
+
       _client->send("distanceChest << distanceChest.val;");
       _client->send("distanceNear << distanceNear.val;");
       _client->send("distanceFar << distanceFar.val;");
