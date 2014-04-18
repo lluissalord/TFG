@@ -1,0 +1,409 @@
+<?xml version="1.0"?>
+<robot name="Aibo" static="0">
+  <link name="base_link" >
+      <inertial>
+	<mass value="1"/>
+        <inertia ixx='1' ixy='0' ixz='0' iyy='1' iyz='0' izz='1'/>
+      </inertial>
+      <collision name="geom">
+        <geometry>
+         <cylinder radius="0.055" length="0.240"/>
+        </geometry>
+	<origin xyz="0.0 0 0" rpy="0 1.5707 1.5707"/>
+      </collision>
+      <visual name="visual">
+        <geometry>
+          <cylinder radius="0.055" length="0.240"/>
+        </geometry>
+	<origin xyz="0.0 0 0" rpy="0 1.5707 1.5707"/>
+      </visual>
+    </link>
+
+
+  <link name="RF_up_leg" >
+      <collision name="geom">
+        <geometry>
+          <cylinder radius="0.020" length="0.075"/>
+        </geometry>
+	<origin xyz="0.055 0.065 -0.025" rpy="0 0 0"/>
+      </collision>
+   
+      <visual name="visual">
+        <geometry>
+          <cylinder radius="0.020" length="0.075"/>
+        </geometry>
+	<origin xyz="0.055 0.065 -0.025" rpy="0 0 0"/>
+      </visual>
+      <inertial>
+	<mass value="0.1"/>
+        <inertia ixx='1' ixy='0' ixz='0' iyy='1' iyz='0' izz='1'/>
+      </inertial>
+    </link>
+
+
+  <link name="LF_up_leg" >
+      <collision name="geom">
+        <geometry>
+          <cylinder radius="0.020" length="0.075"/>
+        </geometry>
+	<origin xyz="-0.055 0.065 -0.025" rpy=" 0 0 0"/>
+      </collision>
+   
+      <visual name="visual">	
+        <geometry>
+          <cylinder radius="0.020" length="0.075"/>
+        </geometry>
+	<origin xyz="-0.055 0.065 -0.025" rpy=" 0 0 0"/>
+      </visual>
+      <inertial>
+	<mass value="0.1"/>
+        <inertia ixx='1' ixy='0' ixz='0' iyy='1' iyz='0' izz='1'/>
+      </inertial>
+    </link>
+
+
+  <link name="RB_up_leg" >
+      <collision name="geom">
+        <geometry>
+          <cylinder radius="0.020" length="0.075"/>
+        </geometry>
+	<origin xyz="0.055 -0.065 -0.025" rpy=" 0 0 0"/>
+      </collision>
+   
+      <visual name="visual">
+        <geometry>
+          <cylinder radius="0.020" length="0.075"/>
+        </geometry>
+	<origin xyz="0.055 -0.065 -0.025" rpy=" 0 0 0"/>
+      </visual>
+      <inertial>
+	<mass value="0.1"/>
+        <inertia ixx='1' ixy='0' ixz='0' iyy='1' iyz='0' izz='1'/>
+      </inertial>
+    </link>
+
+
+  <link name="LB_up_leg" >
+      <collision name="geom">
+        <geometry>
+          <cylinder radius="0.020" length="0.075"/>
+        </geometry>
+	<origin xyz="-0.055 -0.065 -0.025" rpy=" 0 0 0"/>
+      </collision> 
+      <visual name="visual">
+        <geometry>
+          <cylinder radius="0.020" length="0.075"/>
+        </geometry>
+	<origin xyz="-0.055 -0.065 -0.025" rpy=" 0 0 0"/>
+      </visual>
+      <inertial>
+	<mass value="0.1"/>
+        <inertia ixx='1' ixy='0' ixz='0' iyy='1' iyz='0' izz='1'/>
+      </inertial>
+    </link>
+
+
+  <link name="RF_down_leg" >
+      <collision name="geom">
+	<origin xyz="0.055 0.085135 -0.09286" rpy="0.38025 0 0"/>
+        <geometry>
+          <cylinder radius="0.020" length="0.080"/>
+        </geometry>
+      </collision>
+   
+      <visual name="visual">
+	<origin xyz="0.055 0.085135 -0.09286" rpy="0.38025 0 0"/>
+        <geometry>
+          <cylinder radius="0.020" length="0.080"/>
+        </geometry>
+      </visual>
+      <inertial>
+	<mass value="0.1"/>
+        <inertia ixx='1' ixy='0' ixz='0' iyy='1' iyz='0' izz='1'/>
+      </inertial>
+    </link>
+
+
+  <link name="LF_down_leg" >
+      <collision name="geom">
+	<origin xyz="-0.055 0.085135 -0.09286" rpy="0.38025 0 0"/>
+        <geometry>
+          <cylinder radius="0.020" length="0.080"/>
+        </geometry>
+      </collision>
+   
+      <visual name="visual">
+	<origin xyz="-0.055 0.085135 -0.09286" rpy="0.38025 0 0"/>
+        <geometry>
+          <cylinder radius="0.020" length="0.080"/>
+        </geometry>
+      </visual>
+      <inertial>
+	<mass value="0.1"/>
+        <inertia ixx='1' ixy='0' ixz='0' iyy='1' iyz='0' izz='1'/>
+      </inertial>
+    </link>
+
+
+  <link name="RB_down_leg" >
+      <collision name="geom">
+	<origin xyz="0.055 -0.085135 -0.09286" rpy="-0.38025 0 0"/>
+        <geometry>
+          <cylinder radius="0.020" length="0.080"/>
+        </geometry>
+      </collision>
+   
+      <visual name="visual">
+	<origin xyz="0.055 -0.085135 -0.09286" rpy="-0.38025 0 0"/>
+        <geometry>
+          <cylinder radius="0.020" length="0.080"/>
+        </geometry>
+      </visual>
+      <inertial>
+	<mass value="0.1"/>
+        <inertia ixx='1' ixy='0' ixz='0' iyy='1' iyz='0' izz='1'/>
+      </inertial>
+    </link>
+
+
+  <link name="LB_down_leg" >
+      <collision name="geom">
+	<origin xyz="-0.055 -0.085135 -0.09286" rpy="-0.38025 0 0"/>
+        <geometry>
+          <cylinder radius="0.020" length="0.080"/>
+        </geometry>
+      </collision>
+   
+      <visual name="visual">
+	<origin xyz="-0.055 -0.085135 -0.09286" rpy="-0.38025 0 0"/>
+        <geometry>
+          <cylinder radius="0.020" length="0.080"/>
+        </geometry>
+      </visual>
+      <inertial>
+	<mass value="0.1"/>
+        <inertia ixx='1' ixy='0' ixz='0' iyy='1' iyz='0' izz='1'/>
+      </inertial>
+    </link>
+
+
+  <link name="RF_paw" >
+      <collision name="geom">
+	<origin xyz="-0.055 0.099985 -0.130" rpy="0 0 0"/>
+        <geometry>
+          <cylinder radius="0.020" length="0.080"/>
+        </geometry>
+      </collision>
+   
+      <visual name="visual">
+	<origin xyz="-0.055 0.099985 -0.130" rpy="0 0 0"/>
+        <geometry>
+          <cylinder radius="0.020" length="0.080"/>
+        </geometry>
+      </visual>
+      <inertial>
+	<mass value="0.1"/>
+        <inertia ixx='1' ixy='0' ixz='0' iyy='1' iyz='0' izz='1'/>
+      </inertial>
+    </link>
+<!--
+
+  <link name="LF_paw" >
+      <collision name="geom">
+	<origin xyz="-0.055 0.099985 -0.130" rpy="0 0 0"/>
+        <geometry>
+          <sphere radius="0.015"/>
+        </geometry>
+	<surface>
+	  <friction>
+            <ode mu='1.000000' mu2='1.000000'/>
+          </friction>
+	</surface>
+      </collision>
+      <visual name="visual">
+	<origin xyz="-0.055 0.099985 -0.130" rpy="0 0 0"/>
+        <geometry>
+          <sphere radius="0.015"/>
+        </geometry>
+      </visual>
+      <inertial>
+	<mass value="0.1"/>
+        <inertia ixx='1' ixy='0' ixz='0' iyy='1' iyz='0' izz='1'/>
+      </inertial>
+    </link>
+
+
+  <link name="RB_paw" >
+      <collision name="geom">
+	<origin xyz="0.055 -0.099985 -0.130" rpy="0 0 0"/>
+        <geometry>
+          <sphere radius="0.015"/>
+        </geometry>
+	<surface>
+	  <friction>
+            <ode mu='1.000000' mu2='1.000000'/>
+          </friction>
+	</surface>
+      </collision>
+      <visual name="visual">
+	<origin xyz="0.055 -0.099985 -0.130" rpy="0 0 0"/>
+        <geometry>
+          <sphere radius="0.015"/>
+        </geometry>
+      </visual>
+      <inertial>
+	<mass value="0.1"/>
+        <inertia ixx='1' ixy='0' ixz='0' iyy='1' iyz='0' izz='1'/>
+      </inertial>
+    </link>
+
+
+  <link name="LB_paw" >
+      <collision name="geom">
+	<origin xyz="-0.055 -0.099985 -0.130" rpy="0 0 0"/>
+        <geometry>
+          <sphere radius="0.015"/>
+        </geometry>
+	<surface>
+	  <friction>
+            <ode mu='1.000000' mu2='1.000000'/>
+          </friction>
+	</surface>
+      </collision>
+      <visual name="visual">
+	<origin xyz="-0.055 -0.099985 -0.130" rpy="0 0 0"/>
+        <geometry>
+          <sphere radius="0.015"/>
+        </geometry>
+      </visual>
+      <inertial>
+	<mass value="0.1"/>
+        <inertia ixx='1' ixy='0' ixz='0' iyy='1' iyz='0' izz='1'/>
+      </inertial>
+    </link>
+
+
+
+-->
+    <joint type="fixed" name="RF_up_leg_joint">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <parent link="base_link"/>
+      <child link="RF_up_leg"/>
+    </joint>
+
+    <joint type="fixed" name="LF_up_leg_joint">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <parent link="base_link"/>
+      <child link="LF_up_leg"/>
+    </joint>
+
+    <joint type="fixed" name="RB_up_leg_joint">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <parent link="base_link"/>
+      <child link="RB_up_leg"/>
+    </joint>
+
+    <joint type="fixed" name="LB_up_leg_joint">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <parent link="base_link"/>
+      <child link="LB_up_leg"/>
+    </joint>
+  
+
+
+    <joint type="fixed" name="RF_down_leg_joint">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <parent link="RF_up_leg"/>
+      <child link="RF_down_leg"/>
+    </joint>
+
+    <joint type="fixed" name="LF_down_leg_joint">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <parent link="LF_up_leg"/>
+      <child link="LF_down_leg"/>
+    </joint>
+
+    <joint type="fixed" name="RB_down_leg_joint">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <parent link="RB_up_leg"/>
+      <child link="RB_down_leg"/>
+    </joint>
+
+    <joint type="fixed" name="LB_down_leg_joint">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <parent link="LB_up_leg"/>
+      <child link="LB_down_leg"/>
+    </joint>
+
+
+
+    <joint type="fixed" name="RF_paw_joint">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <parent link="base_link"/>
+      <child link="RF_paw"/>
+    </joint>
+<!--
+    <joint type="fixed" name="LF_paw_joint">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <parent link="LF_down_leg"/>
+      <child link="LF_paw"/>
+    </joint>
+
+    <joint type="fixed" name="RB_paw_joint">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <parent link="RB_down_leg"/>
+      <child link="RB_paw"/>
+    </joint>
+
+    <joint type="fixed" name="LB_paw_joint">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <parent link="LB_down_leg"/>
+      <child link="LB_paw"/>
+    </joint>
+-->
+
+  <gazebo reference="base_link">
+    <material>Gazebo/Green</material>
+  </gazebo>
+  <gazebo reference="RF_up_leg">
+    <material>Gazebo/Blue</material>
+  </gazebo>
+  <gazebo reference="LF_up_leg">
+    <material>Gazebo/Blue</material>
+  </gazebo>
+  <gazebo reference="RB_up_leg">
+    <material>Gazebo/Blue</material>
+  </gazebo>
+  <gazebo reference="LB_up_leg">
+    <material>Gazebo/Blue</material>
+  </gazebo>
+  <gazebo reference="RF_down_leg">
+    <material>Gazebo/Blue</material>
+  </gazebo>
+  <gazebo reference="LF_down_leg">
+    <material>Gazebo/Blue</material>
+  </gazebo>
+  <gazebo reference="RB_down_leg">
+    <material>Gazebo/Blue</material>
+  </gazebo>
+  <gazebo reference="LB_down_leg">
+    <material>Gazebo/Blue</material>
+  </gazebo>
+<!--  <gazebo reference="RF_paw">
+    <material>Gazebo/White</material>
+  </gazebo>
+  
+  <gazebo reference="LF_paw">
+    <material>Gazebo/White</material>
+  </gazebo>
+  <gazebo reference="RB_paw">
+    <material>Gazebo/White</material>
+  </gazebo>
+  <gazebo reference="LB_paw">
+    <material>Gazebo/White</material>
+  </gazebo>
+
+-->
+	
+
+</robot>
