@@ -1,10 +1,13 @@
 <?xml version="1.0"?>
 <gazebo version='1.0'>
 <!-- Han d'estar copiats en la carpeta /opt/ros/fuerte/stacks/simulator_gazebo/gazebo/gazebo/share/gazebo-1.0.2/models/  per a carregar-se amb els altres models-->
+
+<!-- Esta posat sense gravetat per a veure's quina és la forma, les joints no funcionen degudament -->
+
   <model name="Aibo" >
   <origin pose="0.0 0.120 0.146 0 0 0"/>
 
-    <link name="body" gravity="1" self_collide="1">
+    <link name="body" gravity="0" self_collide="1">
       <origin pose="0.0 0 0 0 1.5707 1.5707"/>
    
       <inertial mass="1.0">
@@ -26,7 +29,7 @@
     
 <!------------------------------------------------------------------->
 <!--Potes, part superior-->
-    <link name="RF_up_leg" gravity="1" self_collide="1">
+    <link name="RF_up_leg" gravity="0" self_collide="1">
       <origin pose="0.055 0.065 -0.025 0 0 0"/>
   
       <inertial mass="0.1">
@@ -47,7 +50,7 @@
       </visual>
     </link>
 
-    <link name="LF_up_leg" gravity="1" self_collide="1">
+    <link name="LF_up_leg" gravity="0" self_collide="1">
       <origin pose="-0.055 0.065 -0.025 0 0 0"/>
   
       <inertial mass="0.1">
@@ -68,7 +71,7 @@
       </visual>
     </link>
 
-    <link name="RB_up_leg" gravity="1" self_collide="1">
+    <link name="RB_up_leg" gravity="0" self_collide="1">
       <origin pose="0.055 -0.065 -0.025 0 0 0"/>
   
       <inertial mass="0.1">
@@ -89,7 +92,7 @@
       </visual>
     </link>
 
-    <link name="LB_up_leg" gravity="1" self_collide="1">
+    <link name="LB_up_leg" gravity="0" self_collide="1">
       <origin pose="-0.055 -0.065 -0.025 0 0 0"/>
   
       <inertial mass="0.1">
@@ -112,7 +115,7 @@
 
 <!------------------------------------------------------------------->
 <!--Potes, part inferior-->
-    <link name="RF_down_leg" gravity="1" self_collide="1">
+    <link name="RF_down_leg" gravity="0" self_collide="1">
       <origin pose="0.055 0.085135 -0.09286 0.38025 0 0"/>
   
       <inertial mass="0.1">
@@ -133,7 +136,7 @@
       </visual>
     </link>
 
-    <link name="LF_down_leg" gravity="1" self_collide="1">
+    <link name="LF_down_leg" gravity="0" self_collide="1">
       <origin pose="-0.055 0.085135 -0.09286 0.38025 0 0"/>
   
       <inertial mass="0.1">
@@ -154,7 +157,7 @@
       </visual>
     </link>
 
-    <link name="RB_down_leg" gravity="1" self_collide="1">
+    <link name="RB_down_leg" gravity="0" self_collide="1">
       <origin pose="0.055 -0.085135 -0.09286 -0.38025 0 0"/>
   
       <inertial mass="0.1">
@@ -175,7 +178,7 @@
       </visual>
     </link>
 
-    <link name="LB_down_leg" gravity="1" self_collide="1">
+    <link name="LB_down_leg" gravity="0" self_collide="1">
       <origin pose="-0.055 -0.085135 -0.09286 -0.38025 0 0"/>
   
       <inertial mass="0.1">
@@ -198,7 +201,7 @@
 
 <!------------------------------------------------------------------->
 <!--Peus-->    
-    <link name="RF_paw" gravity="1" self_collide="1">
+    <link name="RF_paw" gravity="0" self_collide="1">
       <origin pose="0.055 0.099985 -0.130 0 0 0"/>
   
       <inertial mass="0.1">
@@ -224,7 +227,7 @@
       </visual>
     </link>
 
-    <link name="LF_paw" gravity="1" self_collide="1">
+    <link name="LF_paw" gravity="0" self_collide="1">
       <origin pose="-0.055 0.099985 -0.130 0 0 0"/>
   
       <inertial mass="0.1">
@@ -250,7 +253,7 @@
       </visual>
     </link>
 
-    <link name="RB_paw" gravity="1" self_collide="1">
+    <link name="RB_paw" gravity="0" self_collide="1">
       <origin pose="0.055 -0.099985 -0.130 0 0 0"/>
   
       <inertial mass="0.1">
@@ -276,7 +279,7 @@
       </visual>
     </link>
 
-    <link name="LB_paw" gravity="1" self_collide="1">
+    <link name="LB_paw" gravity="0" self_collide="1">
       <origin pose="-0.055 -0.099985 -0.130 0 0 0"/>
   
       <inertial mass="0.1">

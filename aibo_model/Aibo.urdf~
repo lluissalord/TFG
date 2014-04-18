@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<robot name="Aibo" static="0">
+<robot name="Aibo" static="1">
 
   <gazebo reference="">
     <static>False</static>
@@ -395,6 +395,7 @@
 <!-- Articulacio l'espatlla en revolucio de [-134,120] les dretes i [-120,134] les esquerres graus al voltant de eix x -->
 
 <!-- Articulacio del genoll en revolucio de [-29,119] graus al voltant de eix x -->
+<!-- Aquestes dades han estat extretes de la pagina de Gostai Urbi  -->
 
 <!-- Pota esquerra frontal (ordenat per superior eix x, sup. eix y, inferior) -->
 
