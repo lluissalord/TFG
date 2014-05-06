@@ -1,0 +1,2 @@
+- setup-file:
+    local-name: /home/lluis/catkin_ws/src/usc-clmc-ros-pkg/dmp/locally_weighted_regression/build/devel/setup.sh

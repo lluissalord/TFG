@@ -1,0 +1,41 @@
+FILE(REMOVE_RECURSE
+  "../msg_gen"
+  "../msg_gen"
+  "../src/dynamic_movement_primitive/msg"
+  "CMakeFiles/dmp++.dir/dmpLib/src/dynamic_movement_primitive.cpp.o"
+  "CMakeFiles/dmp++.dir/dmpLib/src/dynamic_movement_primitive_parameters.cpp.o"
+  "CMakeFiles/dmp++.dir/dmpLib/src/dynamic_movement_primitive_state.cpp.o"
+  "CMakeFiles/dmp++.dir/dmpLib/src/transformation_system.cpp.o"
+  "CMakeFiles/dmp++.dir/dmpLib/src/transformation_system_parameters.cpp.o"
+  "CMakeFiles/dmp++.dir/dmpLib/src/transformation_system_state.cpp.o"
+  "CMakeFiles/dmp++.dir/dmpLib/src/canonical_system.cpp.o"
+  "CMakeFiles/dmp++.dir/dmpLib/src/canonical_system_parameters.cpp.o"
+  "CMakeFiles/dmp++.dir/dmpLib/src/canonical_system_state.cpp.o"
+  "CMakeFiles/dmp++.dir/dmpLib/src/trajectory.cpp.o"
+  "CMakeFiles/dmp++.dir/dmpLib/src/logger.cpp.o"
+  "CMakeFiles/dmp++.dir/dmpLib/src/icra2009_dynamic_movement_primitive.cpp.o"
+  "CMakeFiles/dmp++.dir/dmpLib/src/icra2009_dynamic_movement_primitive_parameters.cpp.o"
+  "CMakeFiles/dmp++.dir/dmpLib/src/icra2009_dynamic_movement_primitive_state.cpp.o"
+  "CMakeFiles/dmp++.dir/dmpLib/src/icra2009_transformation_system.cpp.o"
+  "CMakeFiles/dmp++.dir/dmpLib/src/icra2009_transformation_system_parameters.cpp.o"
+  "CMakeFiles/dmp++.dir/dmpLib/src/icra2009_transformation_system_state.cpp.o"
+  "CMakeFiles/dmp++.dir/dmpLib/src/icra2009_canonical_system.cpp.o"
+  "CMakeFiles/dmp++.dir/dmpLib/src/icra2009_canonical_system_parameters.cpp.o"
+  "CMakeFiles/dmp++.dir/dmpLib/src/icra2009_canonical_system_state.cpp.o"
+  "CMakeFiles/dmp++.dir/dmpLib/src/nc2010_dynamic_movement_primitive.cpp.o"
+  "CMakeFiles/dmp++.dir/dmpLib/src/nc2010_dynamic_movement_primitive_parameters.cpp.o"
+  "CMakeFiles/dmp++.dir/dmpLib/src/nc2010_dynamic_movement_primitive_state.cpp.o"
+  "CMakeFiles/dmp++.dir/dmpLib/src/nc2010_transformation_system.cpp.o"
+  "CMakeFiles/dmp++.dir/dmpLib/src/nc2010_transformation_system_parameters.cpp.o"
+  "CMakeFiles/dmp++.dir/dmpLib/src/nc2010_transformation_system_state.cpp.o"
+  "CMakeFiles/dmp++.dir/dmpLib/src/nc2010_canonical_system.cpp.o"
+  "CMakeFiles/dmp++.dir/dmpLib/src/nc2010_canonical_system_parameters.cpp.o"
+  "CMakeFiles/dmp++.dir/dmpLib/src/nc2010_canonical_system_state.cpp.o"
+  "../lib/libdmp++.pdb"
+  "../lib/libdmp++.so"
+)
+
+# Per-language clean rules from dependency scanning.
+FOREACH(lang CXX)
+  INCLUDE(CMakeFiles/dmp++.dir/cmake_clean_${lang}.cmake OPTIONAL)
+ENDFOREACH(lang)

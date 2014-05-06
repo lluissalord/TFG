@@ -1,0 +1,2 @@
+- setup-file:
+    local-name: /home/lluis/catkin_ws/src/usc-clmc-ros-pkg/dmp/dynamic_movement_primitive/build/devel/setup.sh

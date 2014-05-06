@@ -1,0 +1,19 @@
+#!/usr/bin/env sh
+# generated from catkin/python/catkin/environment_cache.py
+
+# based on a snapshot of the environment before and after calling the setup script
+# it emulates the modifications of the setup script without recurring computations
+
+# new environment variables
+
+# modified environment variables
+export CATKIN_TEST_RESULTS_DIR="/home/lluis/catkin_ws/src/usc-clmc-ros-pkg/dmp/locally_weighted_regression/build/test_results"
+export CMAKE_PREFIX_PATH="/home/lluis/catkin_ws/src/usc-clmc-ros-pkg/dmp/locally_weighted_regression/build/devel:$CMAKE_PREFIX_PATH"
+export CPATH="/home/lluis/catkin_ws/src/usc-clmc-ros-pkg/dmp/locally_weighted_regression/build/devel/include:$CPATH"
+export LD_LIBRARY_PATH="/home/lluis/catkin_ws/src/usc-clmc-ros-pkg/dmp/locally_weighted_regression/build/devel/lib:$LD_LIBRARY_PATH"
+export PATH="/home/lluis/catkin_ws/src/usc-clmc-ros-pkg/dmp/locally_weighted_regression/build/devel/bin:$PATH"
+export PKG_CONFIG_PATH="/home/lluis/catkin_ws/src/usc-clmc-ros-pkg/dmp/locally_weighted_regression/build/devel/lib/pkgconfig:$PKG_CONFIG_PATH"
+export PYTHONPATH="/home/lluis/catkin_ws/src/usc-clmc-ros-pkg/dmp/locally_weighted_regression/build/devel/lib/python2.7/dist-packages:$PYTHONPATH"
+export ROSLISP_PACKAGE_DIRECTORIES="/home/lluis/catkin_ws/src/usc-clmc-ros-pkg/dmp/locally_weighted_regression/build/devel/share/common-lisp:$ROSLISP_PACKAGE_DIRECTORIES"
+export ROS_PACKAGE_PATH="/home/lluis/catkin_ws/src/usc-clmc-ros-pkg/dmp/locally_weighted_regression:$ROS_PACKAGE_PATH"
+export ROS_TEST_RESULTS_DIR="/home/lluis/catkin_ws/src/usc-clmc-ros-pkg/dmp/locally_weighted_regression/build/test_results"

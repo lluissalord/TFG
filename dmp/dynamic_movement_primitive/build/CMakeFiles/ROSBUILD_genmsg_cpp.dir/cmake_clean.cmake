@@ -1,0 +1,43 @@
+FILE(REMOVE_RECURSE
+  "../msg_gen"
+  "../msg_gen"
+  "../src/dynamic_movement_primitive/msg"
+  "CMakeFiles/ROSBUILD_genmsg_cpp"
+  "../msg_gen/cpp/include/dynamic_movement_primitive/ICRA2009TransformationSystemMsg.h"
+  "../msg_gen/cpp/include/dynamic_movement_primitive/TimeMsg.h"
+  "../msg_gen/cpp/include/dynamic_movement_primitive/TypeMsg.h"
+  "../msg_gen/cpp/include/dynamic_movement_primitive/ICRA2009TransformationSystemStateMsg.h"
+  "../msg_gen/cpp/include/dynamic_movement_primitive/TransformationSystemMsg.h"
+  "../msg_gen/cpp/include/dynamic_movement_primitive/TransformationSystemParametersMsg.h"
+  "../msg_gen/cpp/include/dynamic_movement_primitive/ICRA2009DynamicMovementPrimitiveMsg.h"
+  "../msg_gen/cpp/include/dynamic_movement_primitive/StateMsg.h"
+  "../msg_gen/cpp/include/dynamic_movement_primitive/ICRA2009CanonicalSystemMsg.h"
+  "../msg_gen/cpp/include/dynamic_movement_primitive/CanonicalSystemParametersMsg.h"
+  "../msg_gen/cpp/include/dynamic_movement_primitive/NC2010CanonicalSystemParametersMsg.h"
+  "../msg_gen/cpp/include/dynamic_movement_primitive/DynamicMovementPrimitiveMsg.h"
+  "../msg_gen/cpp/include/dynamic_movement_primitive/ICRA2009DynamicMovementPrimitiveParametersMsg.h"
+  "../msg_gen/cpp/include/dynamic_movement_primitive/DynamicMovementPrimitiveStateMsg.h"
+  "../msg_gen/cpp/include/dynamic_movement_primitive/NC2010DynamicMovementPrimitiveStateMsg.h"
+  "../msg_gen/cpp/include/dynamic_movement_primitive/ControllerStatusMsg.h"
+  "../msg_gen/cpp/include/dynamic_movement_primitive/NC2010TransformationSystemStateMsg.h"
+  "../msg_gen/cpp/include/dynamic_movement_primitive/DMPUtilitiesMsg.h"
+  "../msg_gen/cpp/include/dynamic_movement_primitive/NC2010CanonicalSystemMsg.h"
+  "../msg_gen/cpp/include/dynamic_movement_primitive/ICRA2009CanonicalSystemStateMsg.h"
+  "../msg_gen/cpp/include/dynamic_movement_primitive/NC2010CanonicalSystemStateMsg.h"
+  "../msg_gen/cpp/include/dynamic_movement_primitive/NC2010TransformationSystemMsg.h"
+  "../msg_gen/cpp/include/dynamic_movement_primitive/NC2010DynamicMovementPrimitiveParametersMsg.h"
+  "../msg_gen/cpp/include/dynamic_movement_primitive/TransformationSystemStateMsg.h"
+  "../msg_gen/cpp/include/dynamic_movement_primitive/ICRA2009TransformationSystemParametersMsg.h"
+  "../msg_gen/cpp/include/dynamic_movement_primitive/CanonicalSystemMsg.h"
+  "../msg_gen/cpp/include/dynamic_movement_primitive/ICRA2009CanonicalSystemParametersMsg.h"
+  "../msg_gen/cpp/include/dynamic_movement_primitive/NC2010TransformationSystemParametersMsg.h"
+  "../msg_gen/cpp/include/dynamic_movement_primitive/DynamicMovementPrimitiveParametersMsg.h"
+  "../msg_gen/cpp/include/dynamic_movement_primitive/NC2010DynamicMovementPrimitiveMsg.h"
+  "../msg_gen/cpp/include/dynamic_movement_primitive/ICRA2009DynamicMovementPrimitiveStateMsg.h"
+  "../msg_gen/cpp/include/dynamic_movement_primitive/CanonicalSystemStateMsg.h"
+)
+
+# Per-language clean rules from dependency scanning.
+FOREACH(lang)
+  INCLUDE(CMakeFiles/ROSBUILD_genmsg_cpp.dir/cmake_clean_${lang}.cmake OPTIONAL)
+ENDFOREACH(lang)
