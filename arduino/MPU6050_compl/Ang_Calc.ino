@@ -36,5 +36,12 @@ bool Ang_Calc(){
   compAngleX = 0.93 * (compAngleX + gyroX * dt_ang) + 0.07 * roll; // Calculate the angle using a Complimentary filter
   compAngleY = 0.93 * (compAngleY + gyroY * dt_ang) + 0.07 * pitch;
   
+  if(abs(Pose.pose.orientation.x-compAngleX)<0.02){
+    compAngleX=Pose.pose.orientation.x;
+  }
+  if(abs(Pose.pose.orientation.y-compAngleY)<0.02){
+    compAngleY=Pose.pose.orientation.y;
+  }
+  
   return false;
 }

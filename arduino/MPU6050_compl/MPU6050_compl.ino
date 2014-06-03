@@ -31,8 +31,8 @@ ros::Publisher pos("pos", &Pose);
 /* IMU Data */
 double accX, accY, accZ;
 double gyroX, gyroY, gyroZ;
-//double ax_sum,ay_sum,az_sum;
-double vel_x,vel_y,vel_z;
+double ax_prev, ay_prev, az_prev;
+double vel_x, vel_y, vel_z;
 
 uint8_t count_x,count_y,count_z;
 
@@ -132,4 +132,6 @@ void loop() {
   
   pos.publish(&Pose);
   nh.spinOnce();
+  
+  delay(2);
 }
