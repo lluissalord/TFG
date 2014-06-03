@@ -1,9 +1,9 @@
 FILE(REMOVE_RECURSE
+  "../msg_gen"
+  "../msg_gen"
   "../src/aibo_server/msg"
-  "../msg_gen"
-  "../msg_gen"
-  "CMakeFiles/aibo_server.dir/src/AiboNode.o"
-  "CMakeFiles/aibo_server.dir/src/AiboServer.o"
+  "CMakeFiles/aibo_server.dir/src/AiboNode.cpp.o"
+  "CMakeFiles/aibo_server.dir/src/AiboServer.cpp.o"
   "../bin/aibo_server.pdb"
   "../bin/aibo_server"
 )

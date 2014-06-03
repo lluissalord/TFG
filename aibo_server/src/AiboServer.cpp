@@ -8,10 +8,7 @@
 */
 
 #include "AiboServer.h"
-
-#include <urbi/usyncclient.hh>
 #include <urbi/uabstractclient.hh>
-
 #include <aibo_server/IRArray.h>
 #include <aibo_server/BumperArray.h>
 #include <aibo_server/Accel.h>
@@ -20,6 +17,7 @@
 #include <sensor_msgs/Range.h>
 #include <sensor_msgs/JointState.h>
 #include <aibo_server/TouchArray.h>
+#include "std_msgs/String.h"
 
 #define NUM_MOTORS 18
 
@@ -29,102 +27,97 @@ namespace aibo
   AiboServer::AiboServer(const char* IP) :
     _nh( "~" )
   {
-
-    _client = new urbi::UClient(IP, 54000);
-
-    /**if (_client->error() )  //  Validation of the client creation
-      ROS_ERROR ("Error connecting to the Urbi Server %s", IP);
-      urbi::exit(1);
-*/	//get node name
+	//One client for readin an one for sending
+    _clientS = new urbi::UClient(IP, 54000);
+	_clientR = new urbi::UClient(IP,54000);
+   	//get node name
 	_nName= ros::this_node::getName();
 
     // set the topics that will publish the Aibo sensor values
-    _aiboIR = _nh.advertise<aibo_server::IRArray>(_nName + "/aibo/infrared", 100, false);
-    _aiboSound = _nh.advertise<aibo_server::Sound>(_nName + "/aibo/sound", 100, false);
-    _aiboImage = _nh.advertise<sensor_msgs::Image>(_nName + "/aibo/image", 100, false);
-    _aiboJoint = _nh.advertise<sensor_msgs::JointState>(_nName + "/aibo/joints", 100, false);
-    _aiboAccel = _nh.advertise<aibo_server::Accel>(_nName + "/aibo/accel", 100, false);
-    _aiboPaw = _nh.advertise<aibo_server::BumperArray>(_nName + "/aibo/paws", 100, false);
-    _aiboTouch = _nh.advertise<aibo_server::TouchArray>(_nName + "/aibo/touch", 100, false);
-	//_aiboSubJoint = _nh.advertise<aibo_server::Joints>(_nName + "/aibo/subJoints", 100);
-    //sub=_nh.subscribe<aibo_server::Joints>("/aibo/subJoints", 1000, &AiboServer::setOnJoint, &AiboServer);
-
-    // set callbacks for sensors
+    _aiboIR = _nh.advertise<aibo_server::IRArray>(_nName + "/aibo/infrared", 1, false);
+    _aiboSound = _nh.advertise<aibo_server::Sound>(_nName + "/aibo/sound", 1, false);
+    _aiboImage = _nh.advertise<sensor_msgs::Image>(_nName + "/aibo/image", 1, false);
+    _aiboJoint = _nh.advertise<aibo_server::Joints>(_nName + "/aibo/joints", 1000, false);
+    _aiboAccel = _nh.advertise<aibo_server::Accel>(_nName + "/aibo/accel", 1, false);
+    _aiboPaw = _nh.advertise<aibo_server::BumperArray>(_nName + "/aibo/paws", 1, false);
+    _aiboTouch = _nh.advertise<aibo_server::TouchArray>(_nName + "/aibo/touch", 1, false);
+	
+    // set callbacks for sensors loop distanceChest << distanceChest.val & loop distanceNear << distanceNear.val;
     
-    _client->setCallback (urbi::callback(*this, &AiboServer::onDistanceSensor),"distanceChest");
-    //_client->send("loop distanceChest << distanceChest.val,");
-    _client->setCallback (urbi::callback(*this, &AiboServer::onDistanceSensor),"distanceNear");
-    //_client->send("loop distanceNear << distanceNear.val,");
-    _client->setCallback (urbi::callback(*this, &AiboServer::onDistanceSensor),"distanceFar");
-    //_client->send("loop distanceFar << distanceFar.val,");
-    //_client->setCallback (urbi::callback(*this, &AiboServer::onSoundSensor),"speaker");
-    //_client->send("loop speaker << speaker.val,");
-    _client->setCallback (urbi::callback(*this, &AiboServer::onImageSensor),"camera");
-    //_client->send("loop camera << camera.val,");
-    _client->setCallback (urbi::callback(*this, &AiboServer::onJointSensor),"legRF1");
-    //_client->send("loop legRF1 << legRF1.val,");
-    _client->setCallback (urbi::callback(*this, &AiboServer::onJointSensor),"legRF2");
-    //_client->send("loop legRF2 << legRF2.val,");
-    _client->setCallback (urbi::callback(*this, &AiboServer::onJointSensor),"legRF3");
-    //_client->send("loop legRF3 << legRF3.val,");
-    _client->setCallback (urbi::callback(*this, &AiboServer::onJointSensor),"legRH1");
-    //_client->send("loop legRH1 << legRH1.val,");
-    _client->setCallback (urbi::callback(*this, &AiboServer::onJointSensor),"legRH2");
-    //_client->send("loop legRH2 << legRH2.val,");
-    _client->setCallback (urbi::callback(*this, &AiboServer::onJointSensor),"legRH3");
-    //_client->send("loop legRH3 << legRH3.val,");
-    _client->setCallback (urbi::callback(*this, &AiboServer::onJointSensor),"legLF1");
-    //_client->send("loop legLF1 << legLF1.val,");
-    _client->setCallback (urbi::callback(*this, &AiboServer::onJointSensor),"legLF2");
-    //_client->send("loop legLF2 << legLF2.val,");
-    _client->setCallback (urbi::callback(*this, &AiboServer::onJointSensor),"legLF3");
-    //_client->send("loop legLF3 << legLF3.val,");
-    _client->setCallback (urbi::callback(*this, &AiboServer::onJointSensor),"legLH1");
-    //_client->send("loop legLH1 << legLH1.val,");
-    _client->setCallback (urbi::callback(*this, &AiboServer::onJointSensor),"legLH2");
-    //_client->send("loop legLH2 << legLH2.val,");
-    _client->setCallback (urbi::callback(*this, &AiboServer::onJointSensor),"legLH3");
-    //_client->send("loop legLH3 << legLH3.val,");
-    _client->setCallback (urbi::callback(*this, &AiboServer::onJointSensor),"neck");
-    //_client->send("loop neck << neck.val,");
-    _client->setCallback (urbi::callback(*this, &AiboServer::onJointSensor),"headTilt");
-    //_client->send("loop headTilt << headTilt.val,");
-    _client->setCallback (urbi::callback(*this, &AiboServer::onJointSensor),"headPan");
-    //_client->send("loop headPan << headPan.val,");
-    _client->setCallback (urbi::callback(*this, &AiboServer::onJointSensor),"tailPan");
-    //_client->send("loop tailPan << tailPan.val,");
-    _client->setCallback (urbi::callback(*this, &AiboServer::onJointSensor),"tailTilt");
-    //_client->send("loop tailTilt << tailTilt.val,");
-    _client->setCallback (urbi::callback(*this, &AiboServer::onJointSensor),"mouth");
-    //_client->send("loop mouth << mouth.val,");
-    _client->setCallback (urbi::callback(*this, &AiboServer::onAccelSensor),"accelX");                 //inicialment estava posat _client->setCallback (*this, &AiboServer::onAccelSensor,"accelX");
-    //_client->send("loop accelX << accelX.val,");
-    _client->setCallback (urbi::callback(*this, &AiboServer::onAccelSensor),"accelY");
-    //_client->send("loop accelY << accelY.val,");
-    _client->setCallback (urbi::callback(*this, &AiboServer::onAccelSensor),"accelZ");
-    //_client->send("loop accelZ << accelZ.val,");
-	_client->setCallback (urbi::callback(*this, &AiboServer::onPawSensor),"pawLF");
-    //_client->send("loop pawLF << pawLF.val,");
-    _client->setCallback (urbi::callback(*this, &AiboServer::onPawSensor),"pawLH");
-    //_client->send("loop pawLH << pawLH.val,");
-    _client->setCallback (urbi::callback(*this, &AiboServer::onPawSensor),"pawRF");
-    //_client->send("loop pawRF << pawRF.val,");
-    _client->setCallback (urbi::callback(*this, &AiboServer::onPawSensor),"pawRH");
-    //_client->send("loop pawRH << pawRH.val,");
-    _client->setCallback (urbi::callback(*this, &AiboServer::onTouchSensor),"chinSensor");
-    //_client->send("loop chinSensor << chinSensor.val,");
-    _client->setCallback (urbi::callback(*this, &AiboServer::onTouchSensor),"backSensorF");
-    //_client->send("loop backSensorF << backSensorF.val,");
-    _client->setCallback (urbi::callback(*this, &AiboServer::onTouchSensor),"backSensorM");
-    //_client->send("loop backSensorM << backSensorM.val,");
-    _client->setCallback (urbi::callback(*this, &AiboServer::onTouchSensor),"backSensorR");
-    //_client->send("loop backSensorR << backSensorR.val,");
-    _client->setCallback (urbi::callback(*this, &AiboServer::onTouchSensor),"headSensor");
-    //_client->send("loop headSensor << headSensor.val,");
-       
-    _client->send ("motors on;");  // activates motors
+    _clientR->setCallback (urbi::callback(*this, &AiboServer::onCall),"distanceChest");
+    _clientR->send("loop distanceChest << distanceChest.val,");
+    _clientR->setCallback (urbi::callback(*this, &AiboServer::onCall),"distanceNear");
+    _clientR->send("loop distanceNear << distanceNear.val,");
+    _clientR->setCallback (urbi::callback(*this, &AiboServer::onCall),"distanceFar");
+    _clientR->send("loop distanceFar << distanceFar.val,");
+    //_clientR->setCallback (urbi::callback(*this, &AiboServer::onSoundSensor),"speaker");
+    //_clientR->send("loop speaker << speaker.val,");
+    //_clientR->setCallback (urbi::callback(*this, &AiboServer::onImageSensor),"camera");
+    //_clientR->send("loop camera << camera.val,");
+    _clientR->setCallback (urbi::callback(*this, &AiboServer::onCall),"legRF1");
+    _clientR->send("loop legRF1 << legRF1.val,");
+    _clientR->setCallback (urbi::callback(*this, &AiboServer::onCall),"legRF2");
+    _clientR->send("loop legRF2 << legRF2.val,");
+    _clientR->setCallback (urbi::callback(*this, &AiboServer::onCall),"legRF3");
+    _clientR->send("loop legRF3 << legRF3.val,");
+    _clientR->setCallback (urbi::callback(*this, &AiboServer::onCall),"legRH1");
+    _clientR->send("loop legRH1 << legRH1.val,");
+    _clientR->setCallback (urbi::callback(*this, &AiboServer::onCall),"legRH2");
+    _clientR->send("loop legRH2 << legRH2.val,");
+    _clientR->setCallback (urbi::callback(*this, &AiboServer::onCall),"legRH3");
+    _clientR->send("loop legRH3 << legRH3.val,");
+    _clientR->setCallback (urbi::callback(*this, &AiboServer::onCall),"legLF1");
+    _clientR->send("loop legLF1 << legLF1.val,");
+    _clientR->setCallback (urbi::callback(*this, &AiboServer::onCall),"legLF2");
+    _clientR->send("loop legLF2 << legLF2.val,");
+    _clientR->setCallback (urbi::callback(*this, &AiboServer::onCall),"legLF3");
+    _clientR->send("loop legLF3 << legLF3.val,");
+    _clientR->setCallback (urbi::callback(*this, &AiboServer::onCall),"legLH1");
+    _clientR->send("loop legLH1 << legLH1.val,");
+    _clientR->setCallback (urbi::callback(*this, &AiboServer::onCall),"legLH2");
+    _clientR->send("loop legLH2 << legLH2.val,");
+    _clientR->setCallback (urbi::callback(*this, &AiboServer::onCall),"legLH3");
+    _clientR->send("loop legLH3 << legLH3.val,");
+    _clientR->setCallback (urbi::callback(*this, &AiboServer::onCall),"neck");
+    _clientR->send("loop neck << neck.val,");
+    _clientR->setCallback (urbi::callback(*this, &AiboServer::onCall),"headTilt");
+    _clientR->send("loop headTilt << headTilt.val,");
+    _clientR->setCallback (urbi::callback(*this, &AiboServer::onCall),"headPan");
+    _clientR->send("loop headPan << headPan.val,");
+    _clientR->setCallback (urbi::callback(*this, &AiboServer::onCall),"tailPan");
+    _clientR->send("loop tailPan << tailPan.val,");
+    _clientR->setCallback (urbi::callback(*this, &AiboServer::onCall),"tailTilt");
+    _clientR->send("loop tailTilt << tailTilt.val,");
+    _clientR->setCallback (urbi::callback(*this, &AiboServer::onCall),"mouth");
+    _clientR->send("loop mouth << mouth.val,");
+    _clientR->setCallback (urbi::callback(*this, &AiboServer::onCall),"accelX");
+    _clientR->send("loop accelX << accelX.val,");
+    _clientR->setCallback (urbi::callback(*this, &AiboServer::onCall),"accelY");
+    _clientR->send("loop accelY << accelY.val,");
+    _clientR->setCallback (urbi::callback(*this, &AiboServer::onCall),"accelZ");
+    _clientR->send("loop accelZ << accelZ.val,");
+	_clientR->setCallback (urbi::callback(*this, &AiboServer::onCall),"pawLF");
+    _clientR->send("loop pawLF << pawLF.val,");
+    _clientR->setCallback (urbi::callback(*this, &AiboServer::onCall),"pawLH");
+    _clientR->send("loop pawLH << pawLH.val,");
+    _clientR->setCallback (urbi::callback(*this, &AiboServer::onCall),"pawRF");
+    _clientR->send("loop pawRF << pawRF.val,");
+    _clientR->setCallback (urbi::callback(*this, &AiboServer::onCall),"pawRH");
+    _clientR->send("loop pawRH << pawRH.val,");
+    _clientR->setCallback (urbi::callback(*this, &AiboServer::onCall),"chinSensor");
+    _clientR->send("loop chinSensor << chinSensor.val,");
+    _clientR->setCallback (urbi::callback(*this, &AiboServer::onCall),"backSensorF");
+    _clientR->send("loop backSensorF << backSensorF.val,");
+    _clientR->setCallback (urbi::callback(*this, &AiboServer::onCall),"backSensorM");
+    _clientR->send("loop backSensorM << backSensorM.val,");
+    _clientR->setCallback (urbi::callback(*this, &AiboServer::onCall),"backSensorR");
+    _clientR->send("loop backSensorR << backSensorR.val,");
+    _clientR->setCallback (urbi::callback(*this, &AiboServer::onCall),"headSensor");
+    _clientR->send("loop headSensor << headSensor.val;");
+    // activates motors
+    _clientS->send ("motors on;");  
     setBlendingmode();
-    startPosition();
+    //startPosition();
     std::cout << "start"<<std::flush;
 	
 
@@ -132,72 +125,38 @@ namespace aibo
 
   AiboServer::~AiboServer()
   {
-    delete _client;
+    delete _clientR;
+    delete _clientS;
   }
   
-  urbi::UCallbackAction AiboServer::onTouchSensor(const urbi::UMessage &msg) 
+  urbi::UCallbackAction AiboServer::onCall(const urbi::UMessage &msg) 
   {
    double value = (double)msg.value->val;
-    
     if (msg.tag == "chinSensor")
-      _touch1 = value;
-    else
-    {
-      if (msg.tag == "backSensorF")
-        _touch2 = value;
-      else 
-      {
-        if (msg.tag == "backSensorM")
-          _touch3 = value;
-        else
-        {
-          if (msg.tag == "backSensorR")
-            _touch4 = value;
-          else
-            _touch5 = value; // for headsensor case
-        }
-      }
-    }
-
-    return urbi::URBI_CONTINUE;
-  }
-  
-  urbi::UCallbackAction AiboServer::onPawSensor(const urbi::UMessage &msg) 
-  {
-    double value = (double)msg.value->val;
+		_touch1 = value;
+	if (msg.tag == "backSensorF")
+		_touch2 = value;
+    if (msg.tag == "backSensorM")
+		_touch3 = value;
+    if (msg.tag == "backSensorR")
+		_touch4 = value;
+    if (msg.tag == "headSensor")  
+		_touch5 = value; 
 	if (msg.tag == "pawLF")
-      _pawLF = value;
+		_pawLF = value;
     if (msg.tag == "pawLH")
-      _pawLH = value;
+		_pawLH = value;
     if (msg.tag == "pawRF")
-      _pawRF = value;
+		_pawRF = value;
     if (msg.tag == "pawRH")
-      _pawRH = value;
-    return urbi::URBI_CONTINUE;
-  }
-  
-  urbi::UCallbackAction AiboServer::onAccelSensor(const urbi::UMessage &msg) 
-  {
-  
-    double value = (double)msg.value->val;
-    
-	std::cout << "callback called"<<std::flush;
-
-    if (msg.tag == "accelX")
-      _accelX = value;
-    if (msg.tag == "accelY")
-        _accelY = value;
-    if (msg.tag == "accelZ") 
+		_pawRH = value;    
+	if (msg.tag == "accelX")
+		_accelX = value;
+	if (msg.tag == "accelY")
+		_accelY = value;
+	if (msg.tag == "accelZ") 
         _accelZ = value;
-    
-    
-    return urbi::URBI_CONTINUE;
-  }
-  
-  urbi::UCallbackAction AiboServer::onJointSensor(const urbi::UMessage &msg) 
-  {
-    double value = (double)msg.value->val;
-	if (msg.tag=="legRF1")
+    if (msg.tag=="legRF1")
 		_jointRF1=value;
 	if (msg.tag=="legRF2")
 		_jointRF2=value;
@@ -233,8 +192,17 @@ namespace aibo
 		_tailTilt=value;
 	if (msg.tag=="tailPan")
 		_tailPan=value;
+	if (msg.tag == "distanceChest")
+		_IRChest = value;
+    if (msg.tag == "distanceNear")
+        _IRNear = value;
+   if (msg.tag == "distanceFar")  
+        _IRFar = value;
+    
     return urbi::URBI_CONTINUE;
   }
+  
+  
   
   urbi::UCallbackAction AiboServer::onImageSensor(const urbi::UMessage &msg) 
   {
@@ -253,27 +221,7 @@ namespace aibo
     return urbi::URBI_CONTINUE;
   }
 
-  urbi::UCallbackAction AiboServer::onDistanceSensor(const urbi::UMessage &msg) 
-  {
-    if (msg.type != urbi::MESSAGE_DATA)
-      return urbi::URBI_CONTINUE;
-
-    double value = (double)msg.value->val;
-    
-    if (msg.tag == "distanceChest")
-      _IRChest = value;
-    else
-    {
-      if (msg.tag == "distanceNear")
-        _IRNear = value;
-      else 
-        _IRFar = value;
-    }
-    
-    return urbi::URBI_CONTINUE;
-  }
-      
-
+ 
 
   void AiboServer::setBlendingmode()
   {
@@ -281,8 +229,9 @@ namespace aibo
     for (int i=0; i<NUM_MOTORS; i++)
     {
       char command[100];
-      sprintf (command,"blend[cancel] %s.val,",MOTORS[i]);
-      _client->send(command);
+      
+      sprintf (command,"%s.val->blend = cancel,",MOTORS[i]);
+      _clientS->send(command);
       usleep (1000);
     }
   }
@@ -296,7 +245,7 @@ namespace aibo
     {
       char command[100];
       sprintf (command,"%s.val=%d smooth:2800,",MOTORS[i],BROADBASE_ANGLE[i]);
-      _client->send(command);
+      _clientS->send(command);
       usleep (10000);
     }
     usleep(2000000);
@@ -305,7 +254,7 @@ namespace aibo
     {
       char command2[100];
       sprintf (command2,"%s.val=%d smooth:2800,",MOTORS[i],SLEEPING_ANGLE[i]);
-      _client->send(command2);
+      _clientS->send(command2);
       usleep(10000);
     }
     usleep(2000000);
@@ -314,7 +263,7 @@ namespace aibo
     {
       char command3[100];
       sprintf (command3,"%s.val=%d smooth:2800,",MOTORS[i],CROUCHING_ANGLE[i]);
-      _client->send(command3);
+      _clientS->send(command3);
       usleep(10000);
     }
     usleep(2000000);
@@ -322,7 +271,7 @@ namespace aibo
     {
       char command4[100];
       sprintf (command4,"%s.val=%d smooth:2800,",MOTORS[i],STANDUP_ANGLE[i]);
-      _client->send(command4);
+      _clientS->send(command4);
       usleep(10000);
     }
     usleep(2000000);
@@ -331,6 +280,8 @@ namespace aibo
 
   void AiboServer::publishState()
   {
+		std::cout << "joint"<<std::flush;
+
     publishIRsMsg();
     publishSoundMsg();
     publishImageMsg();
@@ -345,10 +296,7 @@ namespace aibo
 
     if (_aiboIR.getNumSubscribers() > 0)
     {
-
-      _client->send("distanceChest << distanceChest.val;");
-      _client->send("distanceNear << distanceNear.val;");
-      _client->send("distanceFar << distanceFar.val;");
+	
       aibo_server::IRArray msgArray;
       sensor_msgs::Range msg;
       msg.radiation_type = sensor_msgs::Range::INFRARED;
@@ -366,11 +314,7 @@ namespace aibo
   {
     if (_aiboTouch.getNumSubscribers() > 0)
     {
-    _client->send("chinSensor << chinSensor.val;");
-    _client->send("backSensorF << backSensorF.val;");
-    _client->send("backSensorM << backSensorM.val;");
-    _client->send("backSensorR << backSensorR.val;");
-    _client->send("headSensor << headSensor.val;");
+  
       aibo_server::TouchArray msg;
       msg.touch.push_back(_touch1);
       msg.touch.push_back(_touch2);
@@ -394,43 +338,26 @@ namespace aibo
   {
     if (_aiboJoint.getNumSubscribers() > 0)
     {
-    _client->send("legRF1 << legRF1.val;");
-    _client->send(" legRF2 << legRF2.val;");
-    _client->send(" legRF3 << legRF3.val;");
-    _client->send(" legRH1 << legRH1.val;");
-    _client->send(" legRH2 << legRH2.val;");
-    _client->send(" legRH3 << legRH3.val;");
-    _client->send(" legLF1 << legLF1.val;");
-    _client->send(" legLF2 << legLF2.val;");
-    _client->send(" legLF3 << legLF3.val;");
-    _client->send(" legLH1 << legLH1.val;");
-    _client->send(" legLH2 << legLH2.val;");
-    _client->send(" legLH3 << legLH3.val;");
-    _client->send(" neck << neck.val;");
-    _client->send(" headTilt << headTilt.val;");
-    _client->send(" headPan << headPan.val;");
-    _client->send(" tailPan << tailPan.val;");
-    _client->send(" tailTilt << tailTilt.val;");
-    _client->send(" mouth << mouth.val;");
-      sensor_msgs::JointState msg;
-      msg.position.push_back(_jointRF1);
-      msg.position.push_back(_jointRF2);
-      msg.position.push_back(_jointRF3);
-      msg.position.push_back(_jointRH1);
-      msg.position.push_back(_jointRH2);
-      msg.position.push_back(_jointRH3);
-      msg.position.push_back(_jointLF1);
-      msg.position.push_back(_jointLF2);
-      msg.position.push_back(_jointLF3);
-      msg.position.push_back(_jointLH1);
-      msg.position.push_back(_jointLH2);
-      msg.position.push_back(_jointLH3);
-      msg.position.push_back(_headPan);
-      msg.position.push_back(_headNeck);
-      msg.position.push_back(_headTilt);
-      msg.position.push_back(_mouth);
-      msg.position.push_back(_tailTilt);
-      msg.position.push_back(_tailPan);
+	std::cout << "joint"<<std::flush;
+      aibo_server::Joints msg;
+      msg.jointRF1=(_jointRF1);
+      msg.jointRF2=(_jointRF2);
+      msg.jointRF3=(_jointRF3);
+      msg.jointRH1=(_jointRH1);
+      msg.jointRH2=(_jointRH2);
+      msg.jointRH3=(_jointRH3);
+      msg.jointLF1=(_jointLF1);
+      msg.jointLF2=(_jointLF2);
+      msg.jointLF3=(_jointLF3);
+      msg.jointLH1=(_jointLH1);
+      msg.jointLH2=(_jointLH2);
+      msg.jointLH3=(_jointLH3);
+      msg.headPan=(_headPan);
+      msg.headNeck=(_headNeck);
+      msg.headTilt=(_headTilt);
+      msg.mouth=(_mouth);
+      msg.tailTilt=(_tailTilt);
+      msg.tailPan=(_tailPan);
       _aiboJoint.publish(msg);
     }
   }
@@ -439,7 +366,7 @@ namespace aibo
   {
     if (_aiboImage.getNumSubscribers() > 0)
     {
-    _client->send("loop camera << camera.val,");
+    
       sensor_msgs::Image msg;
       _aiboImage.publish (msg);
     }
@@ -449,10 +376,7 @@ namespace aibo
   {
     if (_aiboPaw.getNumSubscribers() > 0)
     {
-    _client->send("pawLF << pawLF.val;");
-    _client->send("pawLH << pawLH.val;");
-    _client->send("pawRF << pawRF.val;");
-    _client->send("pawRH << pawRH.val;");
+    
       aibo_server::BumperArray msg;
       msg.paws.push_back(_pawLF);
       msg.paws.push_back(_pawLH);
@@ -466,11 +390,6 @@ namespace aibo
   {
     if (_aiboAccel.getNumSubscribers() > 0)
     {
-			//std::cout << "accelworking"<<std::flush;
-    _client->send("accelX << accelX.val,");
-    _client->send("accelY << accelY.val,");
-    _client->send("accelZ << accelZ.val;");
-		std::cout << _aiboAccel.getNumSubscribers()<<std::flush;
       aibo_server::Accel msg;
       msg.x=_accelX;
       msg.y=_accelY;
@@ -481,66 +400,12 @@ namespace aibo
   }
   void AiboServer::setOnJoint(const aibo_server::Joints::ConstPtr& msg) 
   {
-	 char cmd[100];
-     sprintf(cmd,"legLF1.val=%g,",msg->jointLF1);
-     _client->send(cmd);
-     usleep(1000);
-	 sprintf(cmd,"legLF2.val=%g,",msg->jointLF2);
-     _client->send(cmd);
-     usleep(1000);
-      sprintf(cmd,"legLF3.val=%g,",msg->jointLF3);
-     _client->send(cmd);
-     usleep(1000);
-      sprintf(cmd,"legLH1.val=%g,",msg->jointLH1);
-     _client->send(cmd);
-     usleep(1000);
-      sprintf(cmd,"legLH2.val=%g,",msg->jointLH2);
-     _client->send(cmd);
-     usleep(1000); 
-     sprintf(cmd,"legLH3.val=%g,",msg->jointLH3);
-     _client->send(cmd);
-     usleep(1000); 
-     sprintf(cmd,"legRF1.val=%g,",msg->jointRF1);
-     _client->send(cmd);
-     usleep(1000); 
-     sprintf(cmd,"legRF2.val=%g,",msg->jointRF2);
-     _client->send(cmd);
-     usleep(1000);
-     sprintf(cmd,"legRF3.val=%g,",msg->jointRF3);
-     _client->send(cmd);
-     usleep(1000); 
-     sprintf(cmd,"legRH1.val=%g,",msg->jointRH1);
-     _client->send(cmd);
-     usleep(1000);
-      sprintf(cmd,"legRH2.val=%g,",msg->jointRH2);
-     _client->send(cmd);
-     usleep(1000);
-      sprintf(cmd,"legRH3.val=%g,",msg->jointRH3);
-     _client->send(cmd);
-     usleep(1000);
-      sprintf(cmd,"neck.val=%g,",msg->headNeck);
-     _client->send(cmd);
-     usleep(1000);
-      sprintf(cmd,"mouth.val=%g,",msg->mouth);
-     _client->send(cmd);
-     usleep(1000);
-      sprintf(cmd,"headPan.val=%g,",msg->headPan);
-     _client->send(cmd);
-     usleep(1000);
-      sprintf(cmd,"headTilt.val=%g,",msg->headTilt);
-     _client->send(cmd);
-     usleep(1000);
-      sprintf(cmd,"tailTilt.val=%g,",msg->tailTilt);
-     _client->send(cmd);
-     usleep(1000);
-      sprintf(cmd,"tailPan.val=%g,",msg->tailPan);
-     _client->send(cmd);
-     usleep(1000);
+	  
+	 char cmd[1000];
+     sprintf(cmd,"legLF1.val=%g time: 150 & legLF2.val=%g time: 150 & legLF3.val=%g time: 150 & legLH1.val=%g time: 150 & legLH2.val=%g time: 150 & legLH3.val=%g time: 150 & legRF1.val=%g time: 150 & legRF2.val=%g time: 150 & legRF3.val=%g time: 150 & legRH1.val=%g time: 150 & legRH2.val=%g time: 150 & legRH3.val=%g time: 150 & neck.val=%g time: 150 & mouth.val=%g time: 150 & headPan.val=%g time: 150 & headTilt.val=%g time: 150 & tailTilt.val=%g time: 150 & tailPan.val=%g time: 150,",msg->jointLF1,msg->jointLF2,msg->jointLF3,msg->jointLH1,msg->jointLH2,msg->jointLH3,msg->jointRF1,msg->jointRF2,msg->jointRF3,msg->jointRH1,msg->jointRH2,msg->jointRH3,msg->headNeck,msg->mouth,msg->headPan,msg->headTilt,msg->tailTilt,msg->tailPan);
+     _clientS->send(cmd);
+     usleep(150000);
   }
   
-	
-  
-  
-	
 
 }

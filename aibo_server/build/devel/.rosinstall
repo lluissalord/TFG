@@ -1,0 +1,2 @@
+- setup-file:
+    local-name: /home/lluis/catkin_ws/src/aibo_server/build/devel/setup.sh

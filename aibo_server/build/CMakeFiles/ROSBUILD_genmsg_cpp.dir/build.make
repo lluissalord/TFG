@@ -32,137 +32,263 @@ CMAKE_COMMAND = /usr/bin/cmake
 RM = /usr/bin/cmake -E remove -f
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/diego/fuerte_workspace/sandbox/aibo_server
+CMAKE_SOURCE_DIR = /home/lluis/catkin_ws/src/aibo_server
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/diego/fuerte_workspace/sandbox/aibo_server/build
+CMAKE_BINARY_DIR = /home/lluis/catkin_ws/src/aibo_server/build
 
 # Utility rule file for ROSBUILD_genmsg_cpp.
 
 # Include the progress variables for this target.
 include CMakeFiles/ROSBUILD_genmsg_cpp.dir/progress.make
 
-CMakeFiles/ROSBUILD_genmsg_cpp: ../msg_gen/cpp/include/aibo_server/Bumper.h
-CMakeFiles/ROSBUILD_genmsg_cpp: ../msg_gen/cpp/include/aibo_server/IRArray.h
 CMakeFiles/ROSBUILD_genmsg_cpp: ../msg_gen/cpp/include/aibo_server/Joints.h
-CMakeFiles/ROSBUILD_genmsg_cpp: ../msg_gen/cpp/include/aibo_server/Sound.h
-CMakeFiles/ROSBUILD_genmsg_cpp: ../msg_gen/cpp/include/aibo_server/Accel.h
-CMakeFiles/ROSBUILD_genmsg_cpp: ../msg_gen/cpp/include/aibo_server/TouchArray.h
 CMakeFiles/ROSBUILD_genmsg_cpp: ../msg_gen/cpp/include/aibo_server/BumperArray.h
-
-../msg_gen/cpp/include/aibo_server/Bumper.h: ../msg/Bumper.msg
-../msg_gen/cpp/include/aibo_server/Bumper.h: /opt/ros/fuerte/share/roscpp/rosbuild/scripts/genmsg_cpp.py
-../msg_gen/cpp/include/aibo_server/Bumper.h: /opt/ros/fuerte/share/roslib/bin/gendeps
-../msg_gen/cpp/include/aibo_server/Bumper.h: /opt/ros/fuerte/share/std_msgs/msg/Header.msg
-../msg_gen/cpp/include/aibo_server/Bumper.h: ../manifest.xml
-../msg_gen/cpp/include/aibo_server/Bumper.h: /opt/ros/fuerte/share/roslang/manifest.xml
-../msg_gen/cpp/include/aibo_server/Bumper.h: /opt/ros/fuerte/share/rospy/manifest.xml
-../msg_gen/cpp/include/aibo_server/Bumper.h: /opt/ros/fuerte/share/roscpp/manifest.xml
-../msg_gen/cpp/include/aibo_server/Bumper.h: /opt/ros/fuerte/share/std_msgs/manifest.xml
-../msg_gen/cpp/include/aibo_server/Bumper.h: /opt/ros/fuerte/share/geometry_msgs/manifest.xml
-../msg_gen/cpp/include/aibo_server/Bumper.h: /opt/ros/fuerte/share/sensor_msgs/manifest.xml
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/diego/fuerte_workspace/sandbox/aibo_server/build/CMakeFiles $(CMAKE_PROGRESS_1)
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Generating ../msg_gen/cpp/include/aibo_server/Bumper.h"
-	/opt/ros/fuerte/share/roscpp/rosbuild/scripts/genmsg_cpp.py /home/diego/fuerte_workspace/sandbox/aibo_server/msg/Bumper.msg
-
-../msg_gen/cpp/include/aibo_server/IRArray.h: ../msg/IRArray.msg
-../msg_gen/cpp/include/aibo_server/IRArray.h: /opt/ros/fuerte/share/roscpp/rosbuild/scripts/genmsg_cpp.py
-../msg_gen/cpp/include/aibo_server/IRArray.h: /opt/ros/fuerte/share/roslib/bin/gendeps
-../msg_gen/cpp/include/aibo_server/IRArray.h: /opt/ros/fuerte/share/sensor_msgs/msg/Range.msg
-../msg_gen/cpp/include/aibo_server/IRArray.h: /opt/ros/fuerte/share/std_msgs/msg/Header.msg
-../msg_gen/cpp/include/aibo_server/IRArray.h: ../manifest.xml
-../msg_gen/cpp/include/aibo_server/IRArray.h: /opt/ros/fuerte/share/roslang/manifest.xml
-../msg_gen/cpp/include/aibo_server/IRArray.h: /opt/ros/fuerte/share/rospy/manifest.xml
-../msg_gen/cpp/include/aibo_server/IRArray.h: /opt/ros/fuerte/share/roscpp/manifest.xml
-../msg_gen/cpp/include/aibo_server/IRArray.h: /opt/ros/fuerte/share/std_msgs/manifest.xml
-../msg_gen/cpp/include/aibo_server/IRArray.h: /opt/ros/fuerte/share/geometry_msgs/manifest.xml
-../msg_gen/cpp/include/aibo_server/IRArray.h: /opt/ros/fuerte/share/sensor_msgs/manifest.xml
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/diego/fuerte_workspace/sandbox/aibo_server/build/CMakeFiles $(CMAKE_PROGRESS_2)
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Generating ../msg_gen/cpp/include/aibo_server/IRArray.h"
-	/opt/ros/fuerte/share/roscpp/rosbuild/scripts/genmsg_cpp.py /home/diego/fuerte_workspace/sandbox/aibo_server/msg/IRArray.msg
+CMakeFiles/ROSBUILD_genmsg_cpp: ../msg_gen/cpp/include/aibo_server/Bumper.h
+CMakeFiles/ROSBUILD_genmsg_cpp: ../msg_gen/cpp/include/aibo_server/Accel.h
+CMakeFiles/ROSBUILD_genmsg_cpp: ../msg_gen/cpp/include/aibo_server/Sound.h
+CMakeFiles/ROSBUILD_genmsg_cpp: ../msg_gen/cpp/include/aibo_server/IRArray.h
+CMakeFiles/ROSBUILD_genmsg_cpp: ../msg_gen/cpp/include/aibo_server/TouchArray.h
 
 ../msg_gen/cpp/include/aibo_server/Joints.h: ../msg/Joints.msg
-../msg_gen/cpp/include/aibo_server/Joints.h: /opt/ros/fuerte/share/roscpp/rosbuild/scripts/genmsg_cpp.py
-../msg_gen/cpp/include/aibo_server/Joints.h: /opt/ros/fuerte/share/roslib/bin/gendeps
+../msg_gen/cpp/include/aibo_server/Joints.h: /opt/ros/hydro/share/roscpp/rosbuild/scripts/genmsg_cpp.py
+../msg_gen/cpp/include/aibo_server/Joints.h: /opt/ros/hydro/share/roslib/cmake/../../../lib/roslib/gendeps
 ../msg_gen/cpp/include/aibo_server/Joints.h: ../manifest.xml
-../msg_gen/cpp/include/aibo_server/Joints.h: /opt/ros/fuerte/share/roslang/manifest.xml
-../msg_gen/cpp/include/aibo_server/Joints.h: /opt/ros/fuerte/share/rospy/manifest.xml
-../msg_gen/cpp/include/aibo_server/Joints.h: /opt/ros/fuerte/share/roscpp/manifest.xml
-../msg_gen/cpp/include/aibo_server/Joints.h: /opt/ros/fuerte/share/std_msgs/manifest.xml
-../msg_gen/cpp/include/aibo_server/Joints.h: /opt/ros/fuerte/share/geometry_msgs/manifest.xml
-../msg_gen/cpp/include/aibo_server/Joints.h: /opt/ros/fuerte/share/sensor_msgs/manifest.xml
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/diego/fuerte_workspace/sandbox/aibo_server/build/CMakeFiles $(CMAKE_PROGRESS_3)
+../msg_gen/cpp/include/aibo_server/Joints.h: /opt/ros/hydro/share/genmsg/package.xml
+../msg_gen/cpp/include/aibo_server/Joints.h: /opt/ros/hydro/share/genpy/package.xml
+../msg_gen/cpp/include/aibo_server/Joints.h: /opt/ros/hydro/share/catkin/package.xml
+../msg_gen/cpp/include/aibo_server/Joints.h: /opt/ros/hydro/share/console_bridge/package.xml
+../msg_gen/cpp/include/aibo_server/Joints.h: /opt/ros/hydro/share/cpp_common/package.xml
+../msg_gen/cpp/include/aibo_server/Joints.h: /opt/ros/hydro/share/rostime/package.xml
+../msg_gen/cpp/include/aibo_server/Joints.h: /opt/ros/hydro/share/roscpp_traits/package.xml
+../msg_gen/cpp/include/aibo_server/Joints.h: /opt/ros/hydro/share/roscpp_serialization/package.xml
+../msg_gen/cpp/include/aibo_server/Joints.h: /opt/ros/hydro/share/message_runtime/package.xml
+../msg_gen/cpp/include/aibo_server/Joints.h: /opt/ros/hydro/share/gencpp/package.xml
+../msg_gen/cpp/include/aibo_server/Joints.h: /opt/ros/hydro/share/genlisp/package.xml
+../msg_gen/cpp/include/aibo_server/Joints.h: /opt/ros/hydro/share/message_generation/package.xml
+../msg_gen/cpp/include/aibo_server/Joints.h: /opt/ros/hydro/share/rosbuild/package.xml
+../msg_gen/cpp/include/aibo_server/Joints.h: /opt/ros/hydro/share/rosconsole/package.xml
+../msg_gen/cpp/include/aibo_server/Joints.h: /opt/ros/hydro/share/std_msgs/package.xml
+../msg_gen/cpp/include/aibo_server/Joints.h: /opt/ros/hydro/share/rosgraph_msgs/package.xml
+../msg_gen/cpp/include/aibo_server/Joints.h: /opt/ros/hydro/share/xmlrpcpp/package.xml
+../msg_gen/cpp/include/aibo_server/Joints.h: /opt/ros/hydro/share/roscpp/package.xml
+../msg_gen/cpp/include/aibo_server/Joints.h: /opt/ros/hydro/share/rosgraph/package.xml
+../msg_gen/cpp/include/aibo_server/Joints.h: /opt/ros/hydro/share/rospack/package.xml
+../msg_gen/cpp/include/aibo_server/Joints.h: /opt/ros/hydro/share/roslib/package.xml
+../msg_gen/cpp/include/aibo_server/Joints.h: /opt/ros/hydro/share/rospy/package.xml
+../msg_gen/cpp/include/aibo_server/Joints.h: /opt/ros/hydro/share/geometry_msgs/package.xml
+../msg_gen/cpp/include/aibo_server/Joints.h: /opt/ros/hydro/share/sensor_msgs/package.xml
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/lluis/catkin_ws/src/aibo_server/build/CMakeFiles $(CMAKE_PROGRESS_1)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Generating ../msg_gen/cpp/include/aibo_server/Joints.h"
-	/opt/ros/fuerte/share/roscpp/rosbuild/scripts/genmsg_cpp.py /home/diego/fuerte_workspace/sandbox/aibo_server/msg/Joints.msg
-
-../msg_gen/cpp/include/aibo_server/Sound.h: ../msg/Sound.msg
-../msg_gen/cpp/include/aibo_server/Sound.h: /opt/ros/fuerte/share/roscpp/rosbuild/scripts/genmsg_cpp.py
-../msg_gen/cpp/include/aibo_server/Sound.h: /opt/ros/fuerte/share/roslib/bin/gendeps
-../msg_gen/cpp/include/aibo_server/Sound.h: /opt/ros/fuerte/share/std_msgs/msg/Header.msg
-../msg_gen/cpp/include/aibo_server/Sound.h: ../manifest.xml
-../msg_gen/cpp/include/aibo_server/Sound.h: /opt/ros/fuerte/share/roslang/manifest.xml
-../msg_gen/cpp/include/aibo_server/Sound.h: /opt/ros/fuerte/share/rospy/manifest.xml
-../msg_gen/cpp/include/aibo_server/Sound.h: /opt/ros/fuerte/share/roscpp/manifest.xml
-../msg_gen/cpp/include/aibo_server/Sound.h: /opt/ros/fuerte/share/std_msgs/manifest.xml
-../msg_gen/cpp/include/aibo_server/Sound.h: /opt/ros/fuerte/share/geometry_msgs/manifest.xml
-../msg_gen/cpp/include/aibo_server/Sound.h: /opt/ros/fuerte/share/sensor_msgs/manifest.xml
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/diego/fuerte_workspace/sandbox/aibo_server/build/CMakeFiles $(CMAKE_PROGRESS_4)
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Generating ../msg_gen/cpp/include/aibo_server/Sound.h"
-	/opt/ros/fuerte/share/roscpp/rosbuild/scripts/genmsg_cpp.py /home/diego/fuerte_workspace/sandbox/aibo_server/msg/Sound.msg
-
-../msg_gen/cpp/include/aibo_server/Accel.h: ../msg/Accel.msg
-../msg_gen/cpp/include/aibo_server/Accel.h: /opt/ros/fuerte/share/roscpp/rosbuild/scripts/genmsg_cpp.py
-../msg_gen/cpp/include/aibo_server/Accel.h: /opt/ros/fuerte/share/roslib/bin/gendeps
-../msg_gen/cpp/include/aibo_server/Accel.h: /opt/ros/fuerte/share/std_msgs/msg/Header.msg
-../msg_gen/cpp/include/aibo_server/Accel.h: ../manifest.xml
-../msg_gen/cpp/include/aibo_server/Accel.h: /opt/ros/fuerte/share/roslang/manifest.xml
-../msg_gen/cpp/include/aibo_server/Accel.h: /opt/ros/fuerte/share/rospy/manifest.xml
-../msg_gen/cpp/include/aibo_server/Accel.h: /opt/ros/fuerte/share/roscpp/manifest.xml
-../msg_gen/cpp/include/aibo_server/Accel.h: /opt/ros/fuerte/share/std_msgs/manifest.xml
-../msg_gen/cpp/include/aibo_server/Accel.h: /opt/ros/fuerte/share/geometry_msgs/manifest.xml
-../msg_gen/cpp/include/aibo_server/Accel.h: /opt/ros/fuerte/share/sensor_msgs/manifest.xml
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/diego/fuerte_workspace/sandbox/aibo_server/build/CMakeFiles $(CMAKE_PROGRESS_5)
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Generating ../msg_gen/cpp/include/aibo_server/Accel.h"
-	/opt/ros/fuerte/share/roscpp/rosbuild/scripts/genmsg_cpp.py /home/diego/fuerte_workspace/sandbox/aibo_server/msg/Accel.msg
-
-../msg_gen/cpp/include/aibo_server/TouchArray.h: ../msg/TouchArray.msg
-../msg_gen/cpp/include/aibo_server/TouchArray.h: /opt/ros/fuerte/share/roscpp/rosbuild/scripts/genmsg_cpp.py
-../msg_gen/cpp/include/aibo_server/TouchArray.h: /opt/ros/fuerte/share/roslib/bin/gendeps
-../msg_gen/cpp/include/aibo_server/TouchArray.h: /opt/ros/fuerte/share/std_msgs/msg/Header.msg
-../msg_gen/cpp/include/aibo_server/TouchArray.h: ../manifest.xml
-../msg_gen/cpp/include/aibo_server/TouchArray.h: /opt/ros/fuerte/share/roslang/manifest.xml
-../msg_gen/cpp/include/aibo_server/TouchArray.h: /opt/ros/fuerte/share/rospy/manifest.xml
-../msg_gen/cpp/include/aibo_server/TouchArray.h: /opt/ros/fuerte/share/roscpp/manifest.xml
-../msg_gen/cpp/include/aibo_server/TouchArray.h: /opt/ros/fuerte/share/std_msgs/manifest.xml
-../msg_gen/cpp/include/aibo_server/TouchArray.h: /opt/ros/fuerte/share/geometry_msgs/manifest.xml
-../msg_gen/cpp/include/aibo_server/TouchArray.h: /opt/ros/fuerte/share/sensor_msgs/manifest.xml
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/diego/fuerte_workspace/sandbox/aibo_server/build/CMakeFiles $(CMAKE_PROGRESS_6)
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Generating ../msg_gen/cpp/include/aibo_server/TouchArray.h"
-	/opt/ros/fuerte/share/roscpp/rosbuild/scripts/genmsg_cpp.py /home/diego/fuerte_workspace/sandbox/aibo_server/msg/TouchArray.msg
+	/opt/ros/hydro/share/roscpp/rosbuild/scripts/genmsg_cpp.py /home/lluis/catkin_ws/src/aibo_server/msg/Joints.msg
 
 ../msg_gen/cpp/include/aibo_server/BumperArray.h: ../msg/BumperArray.msg
-../msg_gen/cpp/include/aibo_server/BumperArray.h: /opt/ros/fuerte/share/roscpp/rosbuild/scripts/genmsg_cpp.py
-../msg_gen/cpp/include/aibo_server/BumperArray.h: /opt/ros/fuerte/share/roslib/bin/gendeps
-../msg_gen/cpp/include/aibo_server/BumperArray.h: /opt/ros/fuerte/share/std_msgs/msg/Header.msg
+../msg_gen/cpp/include/aibo_server/BumperArray.h: /opt/ros/hydro/share/roscpp/rosbuild/scripts/genmsg_cpp.py
+../msg_gen/cpp/include/aibo_server/BumperArray.h: /opt/ros/hydro/share/roslib/cmake/../../../lib/roslib/gendeps
+../msg_gen/cpp/include/aibo_server/BumperArray.h: /opt/ros/hydro/share/std_msgs/msg/Header.msg
 ../msg_gen/cpp/include/aibo_server/BumperArray.h: ../manifest.xml
-../msg_gen/cpp/include/aibo_server/BumperArray.h: /opt/ros/fuerte/share/roslang/manifest.xml
-../msg_gen/cpp/include/aibo_server/BumperArray.h: /opt/ros/fuerte/share/rospy/manifest.xml
-../msg_gen/cpp/include/aibo_server/BumperArray.h: /opt/ros/fuerte/share/roscpp/manifest.xml
-../msg_gen/cpp/include/aibo_server/BumperArray.h: /opt/ros/fuerte/share/std_msgs/manifest.xml
-../msg_gen/cpp/include/aibo_server/BumperArray.h: /opt/ros/fuerte/share/geometry_msgs/manifest.xml
-../msg_gen/cpp/include/aibo_server/BumperArray.h: /opt/ros/fuerte/share/sensor_msgs/manifest.xml
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/diego/fuerte_workspace/sandbox/aibo_server/build/CMakeFiles $(CMAKE_PROGRESS_7)
+../msg_gen/cpp/include/aibo_server/BumperArray.h: /opt/ros/hydro/share/genmsg/package.xml
+../msg_gen/cpp/include/aibo_server/BumperArray.h: /opt/ros/hydro/share/genpy/package.xml
+../msg_gen/cpp/include/aibo_server/BumperArray.h: /opt/ros/hydro/share/catkin/package.xml
+../msg_gen/cpp/include/aibo_server/BumperArray.h: /opt/ros/hydro/share/console_bridge/package.xml
+../msg_gen/cpp/include/aibo_server/BumperArray.h: /opt/ros/hydro/share/cpp_common/package.xml
+../msg_gen/cpp/include/aibo_server/BumperArray.h: /opt/ros/hydro/share/rostime/package.xml
+../msg_gen/cpp/include/aibo_server/BumperArray.h: /opt/ros/hydro/share/roscpp_traits/package.xml
+../msg_gen/cpp/include/aibo_server/BumperArray.h: /opt/ros/hydro/share/roscpp_serialization/package.xml
+../msg_gen/cpp/include/aibo_server/BumperArray.h: /opt/ros/hydro/share/message_runtime/package.xml
+../msg_gen/cpp/include/aibo_server/BumperArray.h: /opt/ros/hydro/share/gencpp/package.xml
+../msg_gen/cpp/include/aibo_server/BumperArray.h: /opt/ros/hydro/share/genlisp/package.xml
+../msg_gen/cpp/include/aibo_server/BumperArray.h: /opt/ros/hydro/share/message_generation/package.xml
+../msg_gen/cpp/include/aibo_server/BumperArray.h: /opt/ros/hydro/share/rosbuild/package.xml
+../msg_gen/cpp/include/aibo_server/BumperArray.h: /opt/ros/hydro/share/rosconsole/package.xml
+../msg_gen/cpp/include/aibo_server/BumperArray.h: /opt/ros/hydro/share/std_msgs/package.xml
+../msg_gen/cpp/include/aibo_server/BumperArray.h: /opt/ros/hydro/share/rosgraph_msgs/package.xml
+../msg_gen/cpp/include/aibo_server/BumperArray.h: /opt/ros/hydro/share/xmlrpcpp/package.xml
+../msg_gen/cpp/include/aibo_server/BumperArray.h: /opt/ros/hydro/share/roscpp/package.xml
+../msg_gen/cpp/include/aibo_server/BumperArray.h: /opt/ros/hydro/share/rosgraph/package.xml
+../msg_gen/cpp/include/aibo_server/BumperArray.h: /opt/ros/hydro/share/rospack/package.xml
+../msg_gen/cpp/include/aibo_server/BumperArray.h: /opt/ros/hydro/share/roslib/package.xml
+../msg_gen/cpp/include/aibo_server/BumperArray.h: /opt/ros/hydro/share/rospy/package.xml
+../msg_gen/cpp/include/aibo_server/BumperArray.h: /opt/ros/hydro/share/geometry_msgs/package.xml
+../msg_gen/cpp/include/aibo_server/BumperArray.h: /opt/ros/hydro/share/sensor_msgs/package.xml
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/lluis/catkin_ws/src/aibo_server/build/CMakeFiles $(CMAKE_PROGRESS_2)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Generating ../msg_gen/cpp/include/aibo_server/BumperArray.h"
-	/opt/ros/fuerte/share/roscpp/rosbuild/scripts/genmsg_cpp.py /home/diego/fuerte_workspace/sandbox/aibo_server/msg/BumperArray.msg
+	/opt/ros/hydro/share/roscpp/rosbuild/scripts/genmsg_cpp.py /home/lluis/catkin_ws/src/aibo_server/msg/BumperArray.msg
+
+../msg_gen/cpp/include/aibo_server/Bumper.h: ../msg/Bumper.msg
+../msg_gen/cpp/include/aibo_server/Bumper.h: /opt/ros/hydro/share/roscpp/rosbuild/scripts/genmsg_cpp.py
+../msg_gen/cpp/include/aibo_server/Bumper.h: /opt/ros/hydro/share/roslib/cmake/../../../lib/roslib/gendeps
+../msg_gen/cpp/include/aibo_server/Bumper.h: /opt/ros/hydro/share/std_msgs/msg/Header.msg
+../msg_gen/cpp/include/aibo_server/Bumper.h: ../manifest.xml
+../msg_gen/cpp/include/aibo_server/Bumper.h: /opt/ros/hydro/share/genmsg/package.xml
+../msg_gen/cpp/include/aibo_server/Bumper.h: /opt/ros/hydro/share/genpy/package.xml
+../msg_gen/cpp/include/aibo_server/Bumper.h: /opt/ros/hydro/share/catkin/package.xml
+../msg_gen/cpp/include/aibo_server/Bumper.h: /opt/ros/hydro/share/console_bridge/package.xml
+../msg_gen/cpp/include/aibo_server/Bumper.h: /opt/ros/hydro/share/cpp_common/package.xml
+../msg_gen/cpp/include/aibo_server/Bumper.h: /opt/ros/hydro/share/rostime/package.xml
+../msg_gen/cpp/include/aibo_server/Bumper.h: /opt/ros/hydro/share/roscpp_traits/package.xml
+../msg_gen/cpp/include/aibo_server/Bumper.h: /opt/ros/hydro/share/roscpp_serialization/package.xml
+../msg_gen/cpp/include/aibo_server/Bumper.h: /opt/ros/hydro/share/message_runtime/package.xml
+../msg_gen/cpp/include/aibo_server/Bumper.h: /opt/ros/hydro/share/gencpp/package.xml
+../msg_gen/cpp/include/aibo_server/Bumper.h: /opt/ros/hydro/share/genlisp/package.xml
+../msg_gen/cpp/include/aibo_server/Bumper.h: /opt/ros/hydro/share/message_generation/package.xml
+../msg_gen/cpp/include/aibo_server/Bumper.h: /opt/ros/hydro/share/rosbuild/package.xml
+../msg_gen/cpp/include/aibo_server/Bumper.h: /opt/ros/hydro/share/rosconsole/package.xml
+../msg_gen/cpp/include/aibo_server/Bumper.h: /opt/ros/hydro/share/std_msgs/package.xml
+../msg_gen/cpp/include/aibo_server/Bumper.h: /opt/ros/hydro/share/rosgraph_msgs/package.xml
+../msg_gen/cpp/include/aibo_server/Bumper.h: /opt/ros/hydro/share/xmlrpcpp/package.xml
+../msg_gen/cpp/include/aibo_server/Bumper.h: /opt/ros/hydro/share/roscpp/package.xml
+../msg_gen/cpp/include/aibo_server/Bumper.h: /opt/ros/hydro/share/rosgraph/package.xml
+../msg_gen/cpp/include/aibo_server/Bumper.h: /opt/ros/hydro/share/rospack/package.xml
+../msg_gen/cpp/include/aibo_server/Bumper.h: /opt/ros/hydro/share/roslib/package.xml
+../msg_gen/cpp/include/aibo_server/Bumper.h: /opt/ros/hydro/share/rospy/package.xml
+../msg_gen/cpp/include/aibo_server/Bumper.h: /opt/ros/hydro/share/geometry_msgs/package.xml
+../msg_gen/cpp/include/aibo_server/Bumper.h: /opt/ros/hydro/share/sensor_msgs/package.xml
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/lluis/catkin_ws/src/aibo_server/build/CMakeFiles $(CMAKE_PROGRESS_3)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Generating ../msg_gen/cpp/include/aibo_server/Bumper.h"
+	/opt/ros/hydro/share/roscpp/rosbuild/scripts/genmsg_cpp.py /home/lluis/catkin_ws/src/aibo_server/msg/Bumper.msg
+
+../msg_gen/cpp/include/aibo_server/Accel.h: ../msg/Accel.msg
+../msg_gen/cpp/include/aibo_server/Accel.h: /opt/ros/hydro/share/roscpp/rosbuild/scripts/genmsg_cpp.py
+../msg_gen/cpp/include/aibo_server/Accel.h: /opt/ros/hydro/share/roslib/cmake/../../../lib/roslib/gendeps
+../msg_gen/cpp/include/aibo_server/Accel.h: /opt/ros/hydro/share/std_msgs/msg/Header.msg
+../msg_gen/cpp/include/aibo_server/Accel.h: ../manifest.xml
+../msg_gen/cpp/include/aibo_server/Accel.h: /opt/ros/hydro/share/genmsg/package.xml
+../msg_gen/cpp/include/aibo_server/Accel.h: /opt/ros/hydro/share/genpy/package.xml
+../msg_gen/cpp/include/aibo_server/Accel.h: /opt/ros/hydro/share/catkin/package.xml
+../msg_gen/cpp/include/aibo_server/Accel.h: /opt/ros/hydro/share/console_bridge/package.xml
+../msg_gen/cpp/include/aibo_server/Accel.h: /opt/ros/hydro/share/cpp_common/package.xml
+../msg_gen/cpp/include/aibo_server/Accel.h: /opt/ros/hydro/share/rostime/package.xml
+../msg_gen/cpp/include/aibo_server/Accel.h: /opt/ros/hydro/share/roscpp_traits/package.xml
+../msg_gen/cpp/include/aibo_server/Accel.h: /opt/ros/hydro/share/roscpp_serialization/package.xml
+../msg_gen/cpp/include/aibo_server/Accel.h: /opt/ros/hydro/share/message_runtime/package.xml
+../msg_gen/cpp/include/aibo_server/Accel.h: /opt/ros/hydro/share/gencpp/package.xml
+../msg_gen/cpp/include/aibo_server/Accel.h: /opt/ros/hydro/share/genlisp/package.xml
+../msg_gen/cpp/include/aibo_server/Accel.h: /opt/ros/hydro/share/message_generation/package.xml
+../msg_gen/cpp/include/aibo_server/Accel.h: /opt/ros/hydro/share/rosbuild/package.xml
+../msg_gen/cpp/include/aibo_server/Accel.h: /opt/ros/hydro/share/rosconsole/package.xml
+../msg_gen/cpp/include/aibo_server/Accel.h: /opt/ros/hydro/share/std_msgs/package.xml
+../msg_gen/cpp/include/aibo_server/Accel.h: /opt/ros/hydro/share/rosgraph_msgs/package.xml
+../msg_gen/cpp/include/aibo_server/Accel.h: /opt/ros/hydro/share/xmlrpcpp/package.xml
+../msg_gen/cpp/include/aibo_server/Accel.h: /opt/ros/hydro/share/roscpp/package.xml
+../msg_gen/cpp/include/aibo_server/Accel.h: /opt/ros/hydro/share/rosgraph/package.xml
+../msg_gen/cpp/include/aibo_server/Accel.h: /opt/ros/hydro/share/rospack/package.xml
+../msg_gen/cpp/include/aibo_server/Accel.h: /opt/ros/hydro/share/roslib/package.xml
+../msg_gen/cpp/include/aibo_server/Accel.h: /opt/ros/hydro/share/rospy/package.xml
+../msg_gen/cpp/include/aibo_server/Accel.h: /opt/ros/hydro/share/geometry_msgs/package.xml
+../msg_gen/cpp/include/aibo_server/Accel.h: /opt/ros/hydro/share/sensor_msgs/package.xml
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/lluis/catkin_ws/src/aibo_server/build/CMakeFiles $(CMAKE_PROGRESS_4)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Generating ../msg_gen/cpp/include/aibo_server/Accel.h"
+	/opt/ros/hydro/share/roscpp/rosbuild/scripts/genmsg_cpp.py /home/lluis/catkin_ws/src/aibo_server/msg/Accel.msg
+
+../msg_gen/cpp/include/aibo_server/Sound.h: ../msg/Sound.msg
+../msg_gen/cpp/include/aibo_server/Sound.h: /opt/ros/hydro/share/roscpp/rosbuild/scripts/genmsg_cpp.py
+../msg_gen/cpp/include/aibo_server/Sound.h: /opt/ros/hydro/share/roslib/cmake/../../../lib/roslib/gendeps
+../msg_gen/cpp/include/aibo_server/Sound.h: /opt/ros/hydro/share/std_msgs/msg/Header.msg
+../msg_gen/cpp/include/aibo_server/Sound.h: ../manifest.xml
+../msg_gen/cpp/include/aibo_server/Sound.h: /opt/ros/hydro/share/genmsg/package.xml
+../msg_gen/cpp/include/aibo_server/Sound.h: /opt/ros/hydro/share/genpy/package.xml
+../msg_gen/cpp/include/aibo_server/Sound.h: /opt/ros/hydro/share/catkin/package.xml
+../msg_gen/cpp/include/aibo_server/Sound.h: /opt/ros/hydro/share/console_bridge/package.xml
+../msg_gen/cpp/include/aibo_server/Sound.h: /opt/ros/hydro/share/cpp_common/package.xml
+../msg_gen/cpp/include/aibo_server/Sound.h: /opt/ros/hydro/share/rostime/package.xml
+../msg_gen/cpp/include/aibo_server/Sound.h: /opt/ros/hydro/share/roscpp_traits/package.xml
+../msg_gen/cpp/include/aibo_server/Sound.h: /opt/ros/hydro/share/roscpp_serialization/package.xml
+../msg_gen/cpp/include/aibo_server/Sound.h: /opt/ros/hydro/share/message_runtime/package.xml
+../msg_gen/cpp/include/aibo_server/Sound.h: /opt/ros/hydro/share/gencpp/package.xml
+../msg_gen/cpp/include/aibo_server/Sound.h: /opt/ros/hydro/share/genlisp/package.xml
+../msg_gen/cpp/include/aibo_server/Sound.h: /opt/ros/hydro/share/message_generation/package.xml
+../msg_gen/cpp/include/aibo_server/Sound.h: /opt/ros/hydro/share/rosbuild/package.xml
+../msg_gen/cpp/include/aibo_server/Sound.h: /opt/ros/hydro/share/rosconsole/package.xml
+../msg_gen/cpp/include/aibo_server/Sound.h: /opt/ros/hydro/share/std_msgs/package.xml
+../msg_gen/cpp/include/aibo_server/Sound.h: /opt/ros/hydro/share/rosgraph_msgs/package.xml
+../msg_gen/cpp/include/aibo_server/Sound.h: /opt/ros/hydro/share/xmlrpcpp/package.xml
+../msg_gen/cpp/include/aibo_server/Sound.h: /opt/ros/hydro/share/roscpp/package.xml
+../msg_gen/cpp/include/aibo_server/Sound.h: /opt/ros/hydro/share/rosgraph/package.xml
+../msg_gen/cpp/include/aibo_server/Sound.h: /opt/ros/hydro/share/rospack/package.xml
+../msg_gen/cpp/include/aibo_server/Sound.h: /opt/ros/hydro/share/roslib/package.xml
+../msg_gen/cpp/include/aibo_server/Sound.h: /opt/ros/hydro/share/rospy/package.xml
+../msg_gen/cpp/include/aibo_server/Sound.h: /opt/ros/hydro/share/geometry_msgs/package.xml
+../msg_gen/cpp/include/aibo_server/Sound.h: /opt/ros/hydro/share/sensor_msgs/package.xml
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/lluis/catkin_ws/src/aibo_server/build/CMakeFiles $(CMAKE_PROGRESS_5)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Generating ../msg_gen/cpp/include/aibo_server/Sound.h"
+	/opt/ros/hydro/share/roscpp/rosbuild/scripts/genmsg_cpp.py /home/lluis/catkin_ws/src/aibo_server/msg/Sound.msg
+
+../msg_gen/cpp/include/aibo_server/IRArray.h: ../msg/IRArray.msg
+../msg_gen/cpp/include/aibo_server/IRArray.h: /opt/ros/hydro/share/roscpp/rosbuild/scripts/genmsg_cpp.py
+../msg_gen/cpp/include/aibo_server/IRArray.h: /opt/ros/hydro/share/roslib/cmake/../../../lib/roslib/gendeps
+../msg_gen/cpp/include/aibo_server/IRArray.h: /opt/ros/hydro/share/sensor_msgs/msg/Range.msg
+../msg_gen/cpp/include/aibo_server/IRArray.h: /opt/ros/hydro/share/std_msgs/msg/Header.msg
+../msg_gen/cpp/include/aibo_server/IRArray.h: ../manifest.xml
+../msg_gen/cpp/include/aibo_server/IRArray.h: /opt/ros/hydro/share/genmsg/package.xml
+../msg_gen/cpp/include/aibo_server/IRArray.h: /opt/ros/hydro/share/genpy/package.xml
+../msg_gen/cpp/include/aibo_server/IRArray.h: /opt/ros/hydro/share/catkin/package.xml
+../msg_gen/cpp/include/aibo_server/IRArray.h: /opt/ros/hydro/share/console_bridge/package.xml
+../msg_gen/cpp/include/aibo_server/IRArray.h: /opt/ros/hydro/share/cpp_common/package.xml
+../msg_gen/cpp/include/aibo_server/IRArray.h: /opt/ros/hydro/share/rostime/package.xml
+../msg_gen/cpp/include/aibo_server/IRArray.h: /opt/ros/hydro/share/roscpp_traits/package.xml
+../msg_gen/cpp/include/aibo_server/IRArray.h: /opt/ros/hydro/share/roscpp_serialization/package.xml
+../msg_gen/cpp/include/aibo_server/IRArray.h: /opt/ros/hydro/share/message_runtime/package.xml
+../msg_gen/cpp/include/aibo_server/IRArray.h: /opt/ros/hydro/share/gencpp/package.xml
+../msg_gen/cpp/include/aibo_server/IRArray.h: /opt/ros/hydro/share/genlisp/package.xml
+../msg_gen/cpp/include/aibo_server/IRArray.h: /opt/ros/hydro/share/message_generation/package.xml
+../msg_gen/cpp/include/aibo_server/IRArray.h: /opt/ros/hydro/share/rosbuild/package.xml
+../msg_gen/cpp/include/aibo_server/IRArray.h: /opt/ros/hydro/share/rosconsole/package.xml
+../msg_gen/cpp/include/aibo_server/IRArray.h: /opt/ros/hydro/share/std_msgs/package.xml
+../msg_gen/cpp/include/aibo_server/IRArray.h: /opt/ros/hydro/share/rosgraph_msgs/package.xml
+../msg_gen/cpp/include/aibo_server/IRArray.h: /opt/ros/hydro/share/xmlrpcpp/package.xml
+../msg_gen/cpp/include/aibo_server/IRArray.h: /opt/ros/hydro/share/roscpp/package.xml
+../msg_gen/cpp/include/aibo_server/IRArray.h: /opt/ros/hydro/share/rosgraph/package.xml
+../msg_gen/cpp/include/aibo_server/IRArray.h: /opt/ros/hydro/share/rospack/package.xml
+../msg_gen/cpp/include/aibo_server/IRArray.h: /opt/ros/hydro/share/roslib/package.xml
+../msg_gen/cpp/include/aibo_server/IRArray.h: /opt/ros/hydro/share/rospy/package.xml
+../msg_gen/cpp/include/aibo_server/IRArray.h: /opt/ros/hydro/share/geometry_msgs/package.xml
+../msg_gen/cpp/include/aibo_server/IRArray.h: /opt/ros/hydro/share/sensor_msgs/package.xml
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/lluis/catkin_ws/src/aibo_server/build/CMakeFiles $(CMAKE_PROGRESS_6)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Generating ../msg_gen/cpp/include/aibo_server/IRArray.h"
+	/opt/ros/hydro/share/roscpp/rosbuild/scripts/genmsg_cpp.py /home/lluis/catkin_ws/src/aibo_server/msg/IRArray.msg
+
+../msg_gen/cpp/include/aibo_server/TouchArray.h: ../msg/TouchArray.msg
+../msg_gen/cpp/include/aibo_server/TouchArray.h: /opt/ros/hydro/share/roscpp/rosbuild/scripts/genmsg_cpp.py
+../msg_gen/cpp/include/aibo_server/TouchArray.h: /opt/ros/hydro/share/roslib/cmake/../../../lib/roslib/gendeps
+../msg_gen/cpp/include/aibo_server/TouchArray.h: /opt/ros/hydro/share/std_msgs/msg/Header.msg
+../msg_gen/cpp/include/aibo_server/TouchArray.h: ../manifest.xml
+../msg_gen/cpp/include/aibo_server/TouchArray.h: /opt/ros/hydro/share/genmsg/package.xml
+../msg_gen/cpp/include/aibo_server/TouchArray.h: /opt/ros/hydro/share/genpy/package.xml
+../msg_gen/cpp/include/aibo_server/TouchArray.h: /opt/ros/hydro/share/catkin/package.xml
+../msg_gen/cpp/include/aibo_server/TouchArray.h: /opt/ros/hydro/share/console_bridge/package.xml
+../msg_gen/cpp/include/aibo_server/TouchArray.h: /opt/ros/hydro/share/cpp_common/package.xml
+../msg_gen/cpp/include/aibo_server/TouchArray.h: /opt/ros/hydro/share/rostime/package.xml
+../msg_gen/cpp/include/aibo_server/TouchArray.h: /opt/ros/hydro/share/roscpp_traits/package.xml
+../msg_gen/cpp/include/aibo_server/TouchArray.h: /opt/ros/hydro/share/roscpp_serialization/package.xml
+../msg_gen/cpp/include/aibo_server/TouchArray.h: /opt/ros/hydro/share/message_runtime/package.xml
+../msg_gen/cpp/include/aibo_server/TouchArray.h: /opt/ros/hydro/share/gencpp/package.xml
+../msg_gen/cpp/include/aibo_server/TouchArray.h: /opt/ros/hydro/share/genlisp/package.xml
+../msg_gen/cpp/include/aibo_server/TouchArray.h: /opt/ros/hydro/share/message_generation/package.xml
+../msg_gen/cpp/include/aibo_server/TouchArray.h: /opt/ros/hydro/share/rosbuild/package.xml
+../msg_gen/cpp/include/aibo_server/TouchArray.h: /opt/ros/hydro/share/rosconsole/package.xml
+../msg_gen/cpp/include/aibo_server/TouchArray.h: /opt/ros/hydro/share/std_msgs/package.xml
+../msg_gen/cpp/include/aibo_server/TouchArray.h: /opt/ros/hydro/share/rosgraph_msgs/package.xml
+../msg_gen/cpp/include/aibo_server/TouchArray.h: /opt/ros/hydro/share/xmlrpcpp/package.xml
+../msg_gen/cpp/include/aibo_server/TouchArray.h: /opt/ros/hydro/share/roscpp/package.xml
+../msg_gen/cpp/include/aibo_server/TouchArray.h: /opt/ros/hydro/share/rosgraph/package.xml
+../msg_gen/cpp/include/aibo_server/TouchArray.h: /opt/ros/hydro/share/rospack/package.xml
+../msg_gen/cpp/include/aibo_server/TouchArray.h: /opt/ros/hydro/share/roslib/package.xml
+../msg_gen/cpp/include/aibo_server/TouchArray.h: /opt/ros/hydro/share/rospy/package.xml
+../msg_gen/cpp/include/aibo_server/TouchArray.h: /opt/ros/hydro/share/geometry_msgs/package.xml
+../msg_gen/cpp/include/aibo_server/TouchArray.h: /opt/ros/hydro/share/sensor_msgs/package.xml
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/lluis/catkin_ws/src/aibo_server/build/CMakeFiles $(CMAKE_PROGRESS_7)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Generating ../msg_gen/cpp/include/aibo_server/TouchArray.h"
+	/opt/ros/hydro/share/roscpp/rosbuild/scripts/genmsg_cpp.py /home/lluis/catkin_ws/src/aibo_server/msg/TouchArray.msg
 
 ROSBUILD_genmsg_cpp: CMakeFiles/ROSBUILD_genmsg_cpp
-ROSBUILD_genmsg_cpp: ../msg_gen/cpp/include/aibo_server/Bumper.h
-ROSBUILD_genmsg_cpp: ../msg_gen/cpp/include/aibo_server/IRArray.h
 ROSBUILD_genmsg_cpp: ../msg_gen/cpp/include/aibo_server/Joints.h
-ROSBUILD_genmsg_cpp: ../msg_gen/cpp/include/aibo_server/Sound.h
-ROSBUILD_genmsg_cpp: ../msg_gen/cpp/include/aibo_server/Accel.h
-ROSBUILD_genmsg_cpp: ../msg_gen/cpp/include/aibo_server/TouchArray.h
 ROSBUILD_genmsg_cpp: ../msg_gen/cpp/include/aibo_server/BumperArray.h
+ROSBUILD_genmsg_cpp: ../msg_gen/cpp/include/aibo_server/Bumper.h
+ROSBUILD_genmsg_cpp: ../msg_gen/cpp/include/aibo_server/Accel.h
+ROSBUILD_genmsg_cpp: ../msg_gen/cpp/include/aibo_server/Sound.h
+ROSBUILD_genmsg_cpp: ../msg_gen/cpp/include/aibo_server/IRArray.h
+ROSBUILD_genmsg_cpp: ../msg_gen/cpp/include/aibo_server/TouchArray.h
 ROSBUILD_genmsg_cpp: CMakeFiles/ROSBUILD_genmsg_cpp.dir/build.make
 .PHONY : ROSBUILD_genmsg_cpp
 
@@ -175,6 +301,6 @@ CMakeFiles/ROSBUILD_genmsg_cpp.dir/clean:
 .PHONY : CMakeFiles/ROSBUILD_genmsg_cpp.dir/clean
 
 CMakeFiles/ROSBUILD_genmsg_cpp.dir/depend:
-	cd /home/diego/fuerte_workspace/sandbox/aibo_server/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/diego/fuerte_workspace/sandbox/aibo_server /home/diego/fuerte_workspace/sandbox/aibo_server /home/diego/fuerte_workspace/sandbox/aibo_server/build /home/diego/fuerte_workspace/sandbox/aibo_server/build /home/diego/fuerte_workspace/sandbox/aibo_server/build/CMakeFiles/ROSBUILD_genmsg_cpp.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/lluis/catkin_ws/src/aibo_server/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/lluis/catkin_ws/src/aibo_server /home/lluis/catkin_ws/src/aibo_server /home/lluis/catkin_ws/src/aibo_server/build /home/lluis/catkin_ws/src/aibo_server/build /home/lluis/catkin_ws/src/aibo_server/build/CMakeFiles/ROSBUILD_genmsg_cpp.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/ROSBUILD_genmsg_cpp.dir/depend
 

@@ -23,23 +23,18 @@ namespace aibo
         AiboServer(const char* IP);
         virtual ~AiboServer();
          
-        urbi::UClient* _client;
+        urbi::UClient* _clientS;
+        urbi::UClient* _clientR;
         
-        urbi::UCallbackAction onDistanceSensor(const urbi::UMessage &msg);
+        urbi::UCallbackAction onCall(const urbi::UMessage &msg);
         urbi::UCallbackAction onSoundSensor(const urbi::UMessage &msg);
         urbi::UCallbackAction onImageSensor(const urbi::UMessage &msg);
-        urbi::UCallbackAction onJointSensor(const urbi::UMessage &msg);
-        urbi::UCallbackAction onAccelSensor(const urbi::UMessage &msg);
-       
-        urbi::UCallbackAction onPawSensor(const urbi::UMessage &msg);
-        urbi::UCallbackAction onTouchSensor(const urbi::UMessage &msg);
-        urbi::UCallbackAction onJoint(const urbi::UMessage &msg);	
-		void setOnJoint(const aibo_server::Joints::ConstPtr& msg) ;
+       	void setOnJoint(const aibo_server::Joints::ConstPtr& msg) ;
 
         void publishState();
-       ros::NodeHandle _nh;
-       ros::Subscriber sub;
-       std::string _nName;
+		ros::NodeHandle _nh;
+		ros::Subscriber sub;
+		std::string _nName;
       private:
           // Paws
           bool _pawLF, _pawLH, _pawRF, _pawRH;

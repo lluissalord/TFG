@@ -1,7 +1,7 @@
 FILE(REMOVE_RECURSE
+  "../msg_gen"
+  "../msg_gen"
   "../src/aibo_server/msg"
-  "../msg_gen"
-  "../msg_gen"
   "CMakeFiles/test-future"
 )
 

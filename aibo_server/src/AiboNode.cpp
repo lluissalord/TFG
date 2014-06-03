@@ -16,43 +16,41 @@
 #include <stdio.h>
 void *urbiExecute(void*)
 {
-   	std::cout << "urbiEXECUTE"<<std::flush;
-	urbi::execute();
-   	std::cout << "urbiEXECUTE22222"<<std::flush;
-	return NULL;
+   	urbi::execute();
+   	return NULL;
 }
 
 int main(int argc, char** argv)
 {
 
-  ros::init(argc, argv, "aibo_server");
-  aibo::AiboServer pepe (argv[1]);
-
-  ROS_INFO ("Aibo Server Started");
-  ros::Rate r(10);
-  pthread_t t1;
-  if(pthread_create(&t1, NULL, &urbiExecute,NULL)) {
+	ros::init(argc, argv, "aibo_server");
+	aibo::AiboServer pepe (argv[1]);
+	ros::NodeHandle n;
+	ROS_INFO ("Aibo Server Started");
+	ros::Rate r(8);
+	// crea thread
+	//pthread_t t1;
+	//ROS_INFO ("Aibo Server thread1");
+	//pthread_create(&t1, NULL, &urbiExecute,NULL);
+	//ROS_INFO ("Aibo Server thread2");
+	//pthread_join(t1,NULL);
+	pthread_t t1;
+	if(pthread_create(&t1, NULL, &urbiExecute,NULL)) {
 
 	fprintf(stderr, "Error creating thread\n");
 	return 1;
 	}
-
+	pepe.sub = pepe._nh.subscribe<aibo_server::Joints>(pepe._nName + "/aibo/subJoints", 1000, &aibo::AiboServer::setOnJoint, &pepe);
+	ROS_INFO ("Aibo Server thread3");
+	ROS_INFO ("Aibo Server sub");	
   while (ros::ok())
   {
+	ROS_INFO ("Aibo Server pub1");
   	pepe.publishState();
-  	pepe.sub = pepe._nh.subscribe<aibo_server::Joints>(pepe._nName + "/aibo/subJoints", 100, &aibo::AiboServer::setOnJoint, &pepe);
-	ros::spinOnce();
+  	ros::spinOnce();
 	r.sleep();	
   }
-  if(pthread_join(t1, NULL)) {
-
-	fprintf(stderr, "Error joining thread\n");
-	return 2;
-
-	}
-  
- 
-		
+ 	
   ROS_INFO("Finished main loop");
   
   return(0);

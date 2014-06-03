@@ -1,16 +1,16 @@
 FILE(REMOVE_RECURSE
+  "../msg_gen"
+  "../msg_gen"
   "../src/aibo_server/msg"
-  "../msg_gen"
-  "../msg_gen"
   "CMakeFiles/ROSBUILD_genmsg_py"
   "../src/aibo_server/msg/__init__.py"
-  "../src/aibo_server/msg/_Bumper.py"
-  "../src/aibo_server/msg/_IRArray.py"
   "../src/aibo_server/msg/_Joints.py"
-  "../src/aibo_server/msg/_Sound.py"
-  "../src/aibo_server/msg/_Accel.py"
-  "../src/aibo_server/msg/_TouchArray.py"
   "../src/aibo_server/msg/_BumperArray.py"
+  "../src/aibo_server/msg/_Bumper.py"
+  "../src/aibo_server/msg/_Accel.py"
+  "../src/aibo_server/msg/_Sound.py"
+  "../src/aibo_server/msg/_IRArray.py"
+  "../src/aibo_server/msg/_TouchArray.py"
 )
 
 # Per-language clean rules from dependency scanning.

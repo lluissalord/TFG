@@ -93,8 +93,8 @@ string frame_id
       buff.write(struct.pack('<I%ss'%length, length, _x))
       _x = self
       buff.write(_struct_3d.pack(_x.x, _x.y, _x.z))
-    except struct.error as se: self._check_types(se)
-    except TypeError as te: self._check_types(te)
+    except struct.error as se: self._check_types(struct.error("%s: '%s' when writing '%s'" % (type(se), str(se), str(_x))))
+    except TypeError as te: self._check_types(ValueError("%s: '%s' when writing '%s'" % (type(te), str(te), str(_x))))
 
   def deserialize(self, str):
     """
@@ -144,8 +144,8 @@ string frame_id
       buff.write(struct.pack('<I%ss'%length, length, _x))
       _x = self
       buff.write(_struct_3d.pack(_x.x, _x.y, _x.z))
-    except struct.error as se: self._check_types(se)
-    except TypeError as te: self._check_types(te)
+    except struct.error as se: self._check_types(struct.error("%s: '%s' when writing '%s'" % (type(se), str(se), str(_x))))
+    except TypeError as te: self._check_types(ValueError("%s: '%s' when writing '%s'" % (type(te), str(te), str(_x))))
 
   def deserialize_numpy(self, str, numpy):
     """

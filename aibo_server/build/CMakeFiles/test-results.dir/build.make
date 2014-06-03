@@ -32,10 +32,10 @@ CMAKE_COMMAND = /usr/bin/cmake
 RM = /usr/bin/cmake -E remove -f
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/diego/fuerte_workspace/sandbox/aibo_server
+CMAKE_SOURCE_DIR = /home/lluis/catkin_ws/src/aibo_server
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/diego/fuerte_workspace/sandbox/aibo_server/build
+CMAKE_BINARY_DIR = /home/lluis/catkin_ws/src/aibo_server/build
 
 # Utility rule file for test-results.
 
@@ -43,7 +43,7 @@ CMAKE_BINARY_DIR = /home/diego/fuerte_workspace/sandbox/aibo_server/build
 include CMakeFiles/test-results.dir/progress.make
 
 CMakeFiles/test-results:
-	/opt/ros/fuerte/share/rosunit/bin/summarize_results.py --nodeps aibo_server
+	/opt/ros/hydro/share/rosunit/cmake/../scripts/summarize_results.py --nodeps aibo_server
 
 test-results: CMakeFiles/test-results
 test-results: CMakeFiles/test-results.dir/build.make
@@ -58,6 +58,6 @@ CMakeFiles/test-results.dir/clean:
 .PHONY : CMakeFiles/test-results.dir/clean
 
 CMakeFiles/test-results.dir/depend:
-	cd /home/diego/fuerte_workspace/sandbox/aibo_server/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/diego/fuerte_workspace/sandbox/aibo_server /home/diego/fuerte_workspace/sandbox/aibo_server /home/diego/fuerte_workspace/sandbox/aibo_server/build /home/diego/fuerte_workspace/sandbox/aibo_server/build /home/diego/fuerte_workspace/sandbox/aibo_server/build/CMakeFiles/test-results.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/lluis/catkin_ws/src/aibo_server/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/lluis/catkin_ws/src/aibo_server /home/lluis/catkin_ws/src/aibo_server /home/lluis/catkin_ws/src/aibo_server/build /home/lluis/catkin_ws/src/aibo_server/build /home/lluis/catkin_ws/src/aibo_server/build/CMakeFiles/test-results.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/test-results.dir/depend
 

@@ -122,8 +122,8 @@ float64 mouth
     try:
       _x = self
       buff.write(_struct_18d.pack(_x.jointLF1, _x.jointLF2, _x.jointLF3, _x.jointLH1, _x.jointLH2, _x.jointLH3, _x.jointRF1, _x.jointRF2, _x.jointRF3, _x.jointRH1, _x.jointRH2, _x.jointRH3, _x.tailPan, _x.tailTilt, _x.headTilt, _x.headPan, _x.headNeck, _x.mouth))
-    except struct.error as se: self._check_types(se)
-    except TypeError as te: self._check_types(te)
+    except struct.error as se: self._check_types(struct.error("%s: '%s' when writing '%s'" % (type(se), str(se), str(_x))))
+    except TypeError as te: self._check_types(ValueError("%s: '%s' when writing '%s'" % (type(te), str(te), str(_x))))
 
   def deserialize(self, str):
     """
@@ -150,8 +150,8 @@ float64 mouth
     try:
       _x = self
       buff.write(_struct_18d.pack(_x.jointLF1, _x.jointLF2, _x.jointLF3, _x.jointLH1, _x.jointLH2, _x.jointLH3, _x.jointRF1, _x.jointRF2, _x.jointRF3, _x.jointRH1, _x.jointRH2, _x.jointRH3, _x.tailPan, _x.tailTilt, _x.headTilt, _x.headPan, _x.headNeck, _x.mouth))
-    except struct.error as se: self._check_types(se)
-    except TypeError as te: self._check_types(te)
+    except struct.error as se: self._check_types(struct.error("%s: '%s' when writing '%s'" % (type(se), str(se), str(_x))))
+    except TypeError as te: self._check_types(ValueError("%s: '%s' when writing '%s'" % (type(te), str(te), str(_x))))
 
   def deserialize_numpy(self, str, numpy):
     """

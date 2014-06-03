@@ -87,8 +87,8 @@ string frame_id
       buff.write(_struct_I.pack(length))
       pattern = '<%sd'%length
       buff.write(struct.pack(pattern, *self.sound_values))
-    except struct.error as se: self._check_types(se)
-    except TypeError as te: self._check_types(te)
+    except struct.error as se: self._check_types(struct.error("%s: '%s' when writing '%s'" % (type(se), str(se), str(_x))))
+    except TypeError as te: self._check_types(ValueError("%s: '%s' when writing '%s'" % (type(te), str(te), str(_x))))
 
   def deserialize(self, str):
     """
@@ -143,8 +143,8 @@ string frame_id
       buff.write(_struct_I.pack(length))
       pattern = '<%sd'%length
       buff.write(self.sound_values.tostring())
-    except struct.error as se: self._check_types(se)
-    except TypeError as te: self._check_types(te)
+    except struct.error as se: self._check_types(struct.error("%s: '%s' when writing '%s'" % (type(se), str(se), str(_x))))
+    except TypeError as te: self._check_types(ValueError("%s: '%s' when writing '%s'" % (type(te), str(te), str(_x))))
 
   def deserialize_numpy(self, str, numpy):
     """

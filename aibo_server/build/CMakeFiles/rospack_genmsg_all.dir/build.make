@@ -32,10 +32,10 @@ CMAKE_COMMAND = /usr/bin/cmake
 RM = /usr/bin/cmake -E remove -f
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/diego/fuerte_workspace/sandbox/aibo_server
+CMAKE_SOURCE_DIR = /home/lluis/catkin_ws/src/aibo_server
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/diego/fuerte_workspace/sandbox/aibo_server/build
+CMAKE_BINARY_DIR = /home/lluis/catkin_ws/src/aibo_server/build
 
 # Utility rule file for rospack_genmsg_all.
 
@@ -57,6 +57,6 @@ CMakeFiles/rospack_genmsg_all.dir/clean:
 .PHONY : CMakeFiles/rospack_genmsg_all.dir/clean
 
 CMakeFiles/rospack_genmsg_all.dir/depend:
-	cd /home/diego/fuerte_workspace/sandbox/aibo_server/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/diego/fuerte_workspace/sandbox/aibo_server /home/diego/fuerte_workspace/sandbox/aibo_server /home/diego/fuerte_workspace/sandbox/aibo_server/build /home/diego/fuerte_workspace/sandbox/aibo_server/build /home/diego/fuerte_workspace/sandbox/aibo_server/build/CMakeFiles/rospack_genmsg_all.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/lluis/catkin_ws/src/aibo_server/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/lluis/catkin_ws/src/aibo_server /home/lluis/catkin_ws/src/aibo_server /home/lluis/catkin_ws/src/aibo_server/build /home/lluis/catkin_ws/src/aibo_server/build /home/lluis/catkin_ws/src/aibo_server/build/CMakeFiles/rospack_genmsg_all.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/rospack_genmsg_all.dir/depend
 

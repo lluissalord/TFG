@@ -32,10 +32,10 @@ CMAKE_COMMAND = /usr/bin/cmake
 RM = /usr/bin/cmake -E remove -f
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/diego/fuerte_workspace/sandbox/aibo_server
+CMAKE_SOURCE_DIR = /home/lluis/catkin_ws/src/aibo_server
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/diego/fuerte_workspace/sandbox/aibo_server/build
+CMAKE_BINARY_DIR = /home/lluis/catkin_ws/src/aibo_server/build
 
 # Include any dependencies generated for this target.
 include CMakeFiles/aibo_server.dir/depend.make
@@ -46,76 +46,112 @@ include CMakeFiles/aibo_server.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/aibo_server.dir/flags.make
 
-CMakeFiles/aibo_server.dir/src/AiboNode.o: CMakeFiles/aibo_server.dir/flags.make
-CMakeFiles/aibo_server.dir/src/AiboNode.o: ../src/AiboNode.cpp
-CMakeFiles/aibo_server.dir/src/AiboNode.o: ../manifest.xml
-CMakeFiles/aibo_server.dir/src/AiboNode.o: /opt/ros/fuerte/share/roslang/manifest.xml
-CMakeFiles/aibo_server.dir/src/AiboNode.o: /opt/ros/fuerte/share/rospy/manifest.xml
-CMakeFiles/aibo_server.dir/src/AiboNode.o: /opt/ros/fuerte/share/roscpp/manifest.xml
-CMakeFiles/aibo_server.dir/src/AiboNode.o: /opt/ros/fuerte/share/std_msgs/manifest.xml
-CMakeFiles/aibo_server.dir/src/AiboNode.o: /opt/ros/fuerte/share/geometry_msgs/manifest.xml
-CMakeFiles/aibo_server.dir/src/AiboNode.o: /opt/ros/fuerte/share/sensor_msgs/manifest.xml
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/diego/fuerte_workspace/sandbox/aibo_server/build/CMakeFiles $(CMAKE_PROGRESS_1)
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/aibo_server.dir/src/AiboNode.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -o CMakeFiles/aibo_server.dir/src/AiboNode.o -c /home/diego/fuerte_workspace/sandbox/aibo_server/src/AiboNode.cpp
+CMakeFiles/aibo_server.dir/src/AiboNode.cpp.o: CMakeFiles/aibo_server.dir/flags.make
+CMakeFiles/aibo_server.dir/src/AiboNode.cpp.o: ../src/AiboNode.cpp
+CMakeFiles/aibo_server.dir/src/AiboNode.cpp.o: ../manifest.xml
+CMakeFiles/aibo_server.dir/src/AiboNode.cpp.o: /opt/ros/hydro/share/genmsg/package.xml
+CMakeFiles/aibo_server.dir/src/AiboNode.cpp.o: /opt/ros/hydro/share/genpy/package.xml
+CMakeFiles/aibo_server.dir/src/AiboNode.cpp.o: /opt/ros/hydro/share/catkin/package.xml
+CMakeFiles/aibo_server.dir/src/AiboNode.cpp.o: /opt/ros/hydro/share/console_bridge/package.xml
+CMakeFiles/aibo_server.dir/src/AiboNode.cpp.o: /opt/ros/hydro/share/cpp_common/package.xml
+CMakeFiles/aibo_server.dir/src/AiboNode.cpp.o: /opt/ros/hydro/share/rostime/package.xml
+CMakeFiles/aibo_server.dir/src/AiboNode.cpp.o: /opt/ros/hydro/share/roscpp_traits/package.xml
+CMakeFiles/aibo_server.dir/src/AiboNode.cpp.o: /opt/ros/hydro/share/roscpp_serialization/package.xml
+CMakeFiles/aibo_server.dir/src/AiboNode.cpp.o: /opt/ros/hydro/share/message_runtime/package.xml
+CMakeFiles/aibo_server.dir/src/AiboNode.cpp.o: /opt/ros/hydro/share/gencpp/package.xml
+CMakeFiles/aibo_server.dir/src/AiboNode.cpp.o: /opt/ros/hydro/share/genlisp/package.xml
+CMakeFiles/aibo_server.dir/src/AiboNode.cpp.o: /opt/ros/hydro/share/message_generation/package.xml
+CMakeFiles/aibo_server.dir/src/AiboNode.cpp.o: /opt/ros/hydro/share/rosbuild/package.xml
+CMakeFiles/aibo_server.dir/src/AiboNode.cpp.o: /opt/ros/hydro/share/rosconsole/package.xml
+CMakeFiles/aibo_server.dir/src/AiboNode.cpp.o: /opt/ros/hydro/share/std_msgs/package.xml
+CMakeFiles/aibo_server.dir/src/AiboNode.cpp.o: /opt/ros/hydro/share/rosgraph_msgs/package.xml
+CMakeFiles/aibo_server.dir/src/AiboNode.cpp.o: /opt/ros/hydro/share/xmlrpcpp/package.xml
+CMakeFiles/aibo_server.dir/src/AiboNode.cpp.o: /opt/ros/hydro/share/roscpp/package.xml
+CMakeFiles/aibo_server.dir/src/AiboNode.cpp.o: /opt/ros/hydro/share/rosgraph/package.xml
+CMakeFiles/aibo_server.dir/src/AiboNode.cpp.o: /opt/ros/hydro/share/rospack/package.xml
+CMakeFiles/aibo_server.dir/src/AiboNode.cpp.o: /opt/ros/hydro/share/roslib/package.xml
+CMakeFiles/aibo_server.dir/src/AiboNode.cpp.o: /opt/ros/hydro/share/rospy/package.xml
+CMakeFiles/aibo_server.dir/src/AiboNode.cpp.o: /opt/ros/hydro/share/geometry_msgs/package.xml
+CMakeFiles/aibo_server.dir/src/AiboNode.cpp.o: /opt/ros/hydro/share/sensor_msgs/package.xml
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/lluis/catkin_ws/src/aibo_server/build/CMakeFiles $(CMAKE_PROGRESS_1)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/aibo_server.dir/src/AiboNode.cpp.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -o CMakeFiles/aibo_server.dir/src/AiboNode.cpp.o -c /home/lluis/catkin_ws/src/aibo_server/src/AiboNode.cpp
 
-CMakeFiles/aibo_server.dir/src/AiboNode.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/aibo_server.dir/src/AiboNode.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -E /home/diego/fuerte_workspace/sandbox/aibo_server/src/AiboNode.cpp > CMakeFiles/aibo_server.dir/src/AiboNode.i
+CMakeFiles/aibo_server.dir/src/AiboNode.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/aibo_server.dir/src/AiboNode.cpp.i"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -E /home/lluis/catkin_ws/src/aibo_server/src/AiboNode.cpp > CMakeFiles/aibo_server.dir/src/AiboNode.cpp.i
 
-CMakeFiles/aibo_server.dir/src/AiboNode.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/aibo_server.dir/src/AiboNode.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -S /home/diego/fuerte_workspace/sandbox/aibo_server/src/AiboNode.cpp -o CMakeFiles/aibo_server.dir/src/AiboNode.s
+CMakeFiles/aibo_server.dir/src/AiboNode.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/aibo_server.dir/src/AiboNode.cpp.s"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -S /home/lluis/catkin_ws/src/aibo_server/src/AiboNode.cpp -o CMakeFiles/aibo_server.dir/src/AiboNode.cpp.s
 
-CMakeFiles/aibo_server.dir/src/AiboNode.o.requires:
-.PHONY : CMakeFiles/aibo_server.dir/src/AiboNode.o.requires
+CMakeFiles/aibo_server.dir/src/AiboNode.cpp.o.requires:
+.PHONY : CMakeFiles/aibo_server.dir/src/AiboNode.cpp.o.requires
 
-CMakeFiles/aibo_server.dir/src/AiboNode.o.provides: CMakeFiles/aibo_server.dir/src/AiboNode.o.requires
-	$(MAKE) -f CMakeFiles/aibo_server.dir/build.make CMakeFiles/aibo_server.dir/src/AiboNode.o.provides.build
-.PHONY : CMakeFiles/aibo_server.dir/src/AiboNode.o.provides
+CMakeFiles/aibo_server.dir/src/AiboNode.cpp.o.provides: CMakeFiles/aibo_server.dir/src/AiboNode.cpp.o.requires
+	$(MAKE) -f CMakeFiles/aibo_server.dir/build.make CMakeFiles/aibo_server.dir/src/AiboNode.cpp.o.provides.build
+.PHONY : CMakeFiles/aibo_server.dir/src/AiboNode.cpp.o.provides
 
-CMakeFiles/aibo_server.dir/src/AiboNode.o.provides.build: CMakeFiles/aibo_server.dir/src/AiboNode.o
+CMakeFiles/aibo_server.dir/src/AiboNode.cpp.o.provides.build: CMakeFiles/aibo_server.dir/src/AiboNode.cpp.o
 
-CMakeFiles/aibo_server.dir/src/AiboServer.o: CMakeFiles/aibo_server.dir/flags.make
-CMakeFiles/aibo_server.dir/src/AiboServer.o: ../src/AiboServer.cpp
-CMakeFiles/aibo_server.dir/src/AiboServer.o: ../manifest.xml
-CMakeFiles/aibo_server.dir/src/AiboServer.o: /opt/ros/fuerte/share/roslang/manifest.xml
-CMakeFiles/aibo_server.dir/src/AiboServer.o: /opt/ros/fuerte/share/rospy/manifest.xml
-CMakeFiles/aibo_server.dir/src/AiboServer.o: /opt/ros/fuerte/share/roscpp/manifest.xml
-CMakeFiles/aibo_server.dir/src/AiboServer.o: /opt/ros/fuerte/share/std_msgs/manifest.xml
-CMakeFiles/aibo_server.dir/src/AiboServer.o: /opt/ros/fuerte/share/geometry_msgs/manifest.xml
-CMakeFiles/aibo_server.dir/src/AiboServer.o: /opt/ros/fuerte/share/sensor_msgs/manifest.xml
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/diego/fuerte_workspace/sandbox/aibo_server/build/CMakeFiles $(CMAKE_PROGRESS_2)
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/aibo_server.dir/src/AiboServer.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -o CMakeFiles/aibo_server.dir/src/AiboServer.o -c /home/diego/fuerte_workspace/sandbox/aibo_server/src/AiboServer.cpp
+CMakeFiles/aibo_server.dir/src/AiboServer.cpp.o: CMakeFiles/aibo_server.dir/flags.make
+CMakeFiles/aibo_server.dir/src/AiboServer.cpp.o: ../src/AiboServer.cpp
+CMakeFiles/aibo_server.dir/src/AiboServer.cpp.o: ../manifest.xml
+CMakeFiles/aibo_server.dir/src/AiboServer.cpp.o: /opt/ros/hydro/share/genmsg/package.xml
+CMakeFiles/aibo_server.dir/src/AiboServer.cpp.o: /opt/ros/hydro/share/genpy/package.xml
+CMakeFiles/aibo_server.dir/src/AiboServer.cpp.o: /opt/ros/hydro/share/catkin/package.xml
+CMakeFiles/aibo_server.dir/src/AiboServer.cpp.o: /opt/ros/hydro/share/console_bridge/package.xml
+CMakeFiles/aibo_server.dir/src/AiboServer.cpp.o: /opt/ros/hydro/share/cpp_common/package.xml
+CMakeFiles/aibo_server.dir/src/AiboServer.cpp.o: /opt/ros/hydro/share/rostime/package.xml
+CMakeFiles/aibo_server.dir/src/AiboServer.cpp.o: /opt/ros/hydro/share/roscpp_traits/package.xml
+CMakeFiles/aibo_server.dir/src/AiboServer.cpp.o: /opt/ros/hydro/share/roscpp_serialization/package.xml
+CMakeFiles/aibo_server.dir/src/AiboServer.cpp.o: /opt/ros/hydro/share/message_runtime/package.xml
+CMakeFiles/aibo_server.dir/src/AiboServer.cpp.o: /opt/ros/hydro/share/gencpp/package.xml
+CMakeFiles/aibo_server.dir/src/AiboServer.cpp.o: /opt/ros/hydro/share/genlisp/package.xml
+CMakeFiles/aibo_server.dir/src/AiboServer.cpp.o: /opt/ros/hydro/share/message_generation/package.xml
+CMakeFiles/aibo_server.dir/src/AiboServer.cpp.o: /opt/ros/hydro/share/rosbuild/package.xml
+CMakeFiles/aibo_server.dir/src/AiboServer.cpp.o: /opt/ros/hydro/share/rosconsole/package.xml
+CMakeFiles/aibo_server.dir/src/AiboServer.cpp.o: /opt/ros/hydro/share/std_msgs/package.xml
+CMakeFiles/aibo_server.dir/src/AiboServer.cpp.o: /opt/ros/hydro/share/rosgraph_msgs/package.xml
+CMakeFiles/aibo_server.dir/src/AiboServer.cpp.o: /opt/ros/hydro/share/xmlrpcpp/package.xml
+CMakeFiles/aibo_server.dir/src/AiboServer.cpp.o: /opt/ros/hydro/share/roscpp/package.xml
+CMakeFiles/aibo_server.dir/src/AiboServer.cpp.o: /opt/ros/hydro/share/rosgraph/package.xml
+CMakeFiles/aibo_server.dir/src/AiboServer.cpp.o: /opt/ros/hydro/share/rospack/package.xml
+CMakeFiles/aibo_server.dir/src/AiboServer.cpp.o: /opt/ros/hydro/share/roslib/package.xml
+CMakeFiles/aibo_server.dir/src/AiboServer.cpp.o: /opt/ros/hydro/share/rospy/package.xml
+CMakeFiles/aibo_server.dir/src/AiboServer.cpp.o: /opt/ros/hydro/share/geometry_msgs/package.xml
+CMakeFiles/aibo_server.dir/src/AiboServer.cpp.o: /opt/ros/hydro/share/sensor_msgs/package.xml
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/lluis/catkin_ws/src/aibo_server/build/CMakeFiles $(CMAKE_PROGRESS_2)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/aibo_server.dir/src/AiboServer.cpp.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -o CMakeFiles/aibo_server.dir/src/AiboServer.cpp.o -c /home/lluis/catkin_ws/src/aibo_server/src/AiboServer.cpp
 
-CMakeFiles/aibo_server.dir/src/AiboServer.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/aibo_server.dir/src/AiboServer.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -E /home/diego/fuerte_workspace/sandbox/aibo_server/src/AiboServer.cpp > CMakeFiles/aibo_server.dir/src/AiboServer.i
+CMakeFiles/aibo_server.dir/src/AiboServer.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/aibo_server.dir/src/AiboServer.cpp.i"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -E /home/lluis/catkin_ws/src/aibo_server/src/AiboServer.cpp > CMakeFiles/aibo_server.dir/src/AiboServer.cpp.i
 
-CMakeFiles/aibo_server.dir/src/AiboServer.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/aibo_server.dir/src/AiboServer.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -S /home/diego/fuerte_workspace/sandbox/aibo_server/src/AiboServer.cpp -o CMakeFiles/aibo_server.dir/src/AiboServer.s
+CMakeFiles/aibo_server.dir/src/AiboServer.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/aibo_server.dir/src/AiboServer.cpp.s"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -S /home/lluis/catkin_ws/src/aibo_server/src/AiboServer.cpp -o CMakeFiles/aibo_server.dir/src/AiboServer.cpp.s
 
-CMakeFiles/aibo_server.dir/src/AiboServer.o.requires:
-.PHONY : CMakeFiles/aibo_server.dir/src/AiboServer.o.requires
+CMakeFiles/aibo_server.dir/src/AiboServer.cpp.o.requires:
+.PHONY : CMakeFiles/aibo_server.dir/src/AiboServer.cpp.o.requires
 
-CMakeFiles/aibo_server.dir/src/AiboServer.o.provides: CMakeFiles/aibo_server.dir/src/AiboServer.o.requires
-	$(MAKE) -f CMakeFiles/aibo_server.dir/build.make CMakeFiles/aibo_server.dir/src/AiboServer.o.provides.build
-.PHONY : CMakeFiles/aibo_server.dir/src/AiboServer.o.provides
+CMakeFiles/aibo_server.dir/src/AiboServer.cpp.o.provides: CMakeFiles/aibo_server.dir/src/AiboServer.cpp.o.requires
+	$(MAKE) -f CMakeFiles/aibo_server.dir/build.make CMakeFiles/aibo_server.dir/src/AiboServer.cpp.o.provides.build
+.PHONY : CMakeFiles/aibo_server.dir/src/AiboServer.cpp.o.provides
 
-CMakeFiles/aibo_server.dir/src/AiboServer.o.provides.build: CMakeFiles/aibo_server.dir/src/AiboServer.o
+CMakeFiles/aibo_server.dir/src/AiboServer.cpp.o.provides.build: CMakeFiles/aibo_server.dir/src/AiboServer.cpp.o
 
 # Object files for target aibo_server
 aibo_server_OBJECTS = \
-"CMakeFiles/aibo_server.dir/src/AiboNode.o" \
-"CMakeFiles/aibo_server.dir/src/AiboServer.o"
+"CMakeFiles/aibo_server.dir/src/AiboNode.cpp.o" \
+"CMakeFiles/aibo_server.dir/src/AiboServer.cpp.o"
 
 # External object files for target aibo_server
 aibo_server_EXTERNAL_OBJECTS =
 
-../bin/aibo_server: CMakeFiles/aibo_server.dir/src/AiboNode.o
-../bin/aibo_server: CMakeFiles/aibo_server.dir/src/AiboServer.o
+../bin/aibo_server: CMakeFiles/aibo_server.dir/src/AiboNode.cpp.o
+../bin/aibo_server: CMakeFiles/aibo_server.dir/src/AiboServer.cpp.o
 ../bin/aibo_server: CMakeFiles/aibo_server.dir/build.make
 ../bin/aibo_server: CMakeFiles/aibo_server.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --red --bold "Linking CXX executable ../bin/aibo_server"
@@ -125,8 +161,8 @@ aibo_server_EXTERNAL_OBJECTS =
 CMakeFiles/aibo_server.dir/build: ../bin/aibo_server
 .PHONY : CMakeFiles/aibo_server.dir/build
 
-CMakeFiles/aibo_server.dir/requires: CMakeFiles/aibo_server.dir/src/AiboNode.o.requires
-CMakeFiles/aibo_server.dir/requires: CMakeFiles/aibo_server.dir/src/AiboServer.o.requires
+CMakeFiles/aibo_server.dir/requires: CMakeFiles/aibo_server.dir/src/AiboNode.cpp.o.requires
+CMakeFiles/aibo_server.dir/requires: CMakeFiles/aibo_server.dir/src/AiboServer.cpp.o.requires
 .PHONY : CMakeFiles/aibo_server.dir/requires
 
 CMakeFiles/aibo_server.dir/clean:
@@ -134,6 +170,6 @@ CMakeFiles/aibo_server.dir/clean:
 .PHONY : CMakeFiles/aibo_server.dir/clean
 
 CMakeFiles/aibo_server.dir/depend:
-	cd /home/diego/fuerte_workspace/sandbox/aibo_server/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/diego/fuerte_workspace/sandbox/aibo_server /home/diego/fuerte_workspace/sandbox/aibo_server /home/diego/fuerte_workspace/sandbox/aibo_server/build /home/diego/fuerte_workspace/sandbox/aibo_server/build /home/diego/fuerte_workspace/sandbox/aibo_server/build/CMakeFiles/aibo_server.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/lluis/catkin_ws/src/aibo_server/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/lluis/catkin_ws/src/aibo_server /home/lluis/catkin_ws/src/aibo_server /home/lluis/catkin_ws/src/aibo_server/build /home/lluis/catkin_ws/src/aibo_server/build /home/lluis/catkin_ws/src/aibo_server/build/CMakeFiles/aibo_server.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/aibo_server.dir/depend
 
