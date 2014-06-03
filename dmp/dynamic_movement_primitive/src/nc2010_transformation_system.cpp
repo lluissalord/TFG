@@ -13,7 +13,8 @@
  *********************************************************************/
 
 // system includes
-#include <assert/assert.h>
+#include <usc_utilities/assert.h>
+#include <usc_utilities/param_server.h>
 
 // local includes
 #include <dynamic_movement_primitive/nc2010_transformation_system.h>
@@ -23,7 +24,7 @@ using namespace std;
 
 namespace dmp
 {
-/* Eliminat perque no s'utilitza el usc_utilities
+
 bool NC2010TransformationSystem::initOneDimensionalTransformationSystemHelper(std::vector<dmp_lib::NC2010TSPtr>& transformation_systems,
                                                                                 XmlRpc::XmlRpcValue transformation_systems_parameters_xml,
                                                                                 ros::NodeHandle& node_handle,
@@ -174,7 +175,7 @@ bool NC2010TransformationSystem::initFromNodeHandle(std::vector<dmp_lib::NC2010T
     }
   }
   return true;
-}*/
+}
 
 bool NC2010TransformationSystem::initFromMessage(std::vector<dmp_lib::NC2010TSPtr>& transformation_systems,
                                                    const vector<NC2010TSMsg>& ts_msgs)

@@ -25,6 +25,7 @@ struct ControllerStatusMsg_ {
   : seq(0)
   , percent_complete(0.0)
   , status(0)
+  , id(0)
   , start_time()
   , end_time()
   {
@@ -34,6 +35,7 @@ struct ControllerStatusMsg_ {
   : seq(0)
   , percent_complete(0.0)
   , status(0)
+  , id(0)
   , start_time()
   , end_time()
   {
@@ -47,6 +49,9 @@ struct ControllerStatusMsg_ {
 
   typedef int32_t _status_type;
   int32_t status;
+
+  typedef int32_t _id_type;
+  int32_t id;
 
   typedef ros::Time _start_time_type;
   ros::Time start_time;
@@ -89,12 +94,12 @@ template<class ContainerAllocator>
 struct MD5Sum< ::dynamic_movement_primitive::ControllerStatusMsg_<ContainerAllocator> > {
   static const char* value() 
   {
-    return "0b06eac6a56c1de7c611c3ac01e71e3e";
+    return "4bfcce93c8ed1804fd0667fdcf64c916";
   }
 
   static const char* value(const  ::dynamic_movement_primitive::ControllerStatusMsg_<ContainerAllocator> &) { return value(); } 
-  static const uint64_t static_value1 = 0x0b06eac6a56c1de7ULL;
-  static const uint64_t static_value2 = 0xc611c3ac01e71e3eULL;
+  static const uint64_t static_value1 = 0x4bfcce93c8ed1804ULL;
+  static const uint64_t static_value2 = 0xfd0667fdcf64c916ULL;
 };
 
 template<class ContainerAllocator>
@@ -114,6 +119,7 @@ struct Definition< ::dynamic_movement_primitive::ControllerStatusMsg_<ContainerA
     return "int32 seq\n\
 float64 percent_complete\n\
 int32 status\n\
+int32 id\n\
 int32 IDLE=0\n\
 int32 STARTED=1\n\
 int32 PREEMPTED=2\n\
@@ -145,6 +151,7 @@ template<class ContainerAllocator> struct Serializer< ::dynamic_movement_primiti
     stream.next(m.seq);
     stream.next(m.percent_complete);
     stream.next(m.status);
+    stream.next(m.id);
     stream.next(m.start_time);
     stream.next(m.end_time);
   }
@@ -170,6 +177,8 @@ struct Printer< ::dynamic_movement_primitive::ControllerStatusMsg_<ContainerAllo
     Printer<double>::stream(s, indent + "  ", v.percent_complete);
     s << indent << "status: ";
     Printer<int32_t>::stream(s, indent + "  ", v.status);
+    s << indent << "id: ";
+    Printer<int32_t>::stream(s, indent + "  ", v.id);
     s << indent << "start_time: ";
     Printer<ros::Time>::stream(s, indent + "  ", v.start_time);
     s << indent << "end_time: ";

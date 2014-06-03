@@ -93,14 +93,6 @@ target_link_libraries(../dmpLib/test/dmp_test dmp++)
 rosbuild_link_boost(../dmpLib/test/dmp_test system filesystem) 
 
 # common commands for building c++ executables and libraries
-#rosbuild_add_library(dmp_execute_lib
-#dmpLib/src/dynamic_movement_primitive.cpp
-#dmpLib/src/icra2009_dynamic_movement_primitive.cpp
-#)
-
-rosbuild_add_executable(dmp_execute script/dmp_execute.cpp)
-target_link_libraries(dmp_execute dmp++)
-
 rosbuild_add_library(${PROJECT_NAME}
   src/dynamic_movement_primitive.cpp
   src/transformation_system.cpp

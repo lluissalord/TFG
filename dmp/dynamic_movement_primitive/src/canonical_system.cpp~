@@ -24,7 +24,7 @@
 
 namespace dmp
 {
-/* Eliminat perque no s'utilitza el usc_utilities
+
 bool CanonicalSystem::initFromNodeHandle(dmp_lib::CSPtr canonical_system,
                                          ros::NodeHandle& node_handle)
 {
@@ -44,7 +44,7 @@ bool CanonicalSystem::initFromNodeHandle(dmp_lib::CSPtr canonical_system,
       return false;
     }
     return true;
-}*/
+}
 
 bool CanonicalSystem::initFromMessage(dmp_lib::CSPtr canonical_system,
                                       const CSMsg& cs_msg)
@@ -76,15 +76,15 @@ bool CanonicalSystem::writeToMessage(const dmp_lib::CSConstPtr canonical_system,
   }
 
   // set parameters
-  if(!parameters->get(cs_msg.parameters.alpha_x))
+  /*if(!parameters->get(cs_msg.parameters.alpha_x))
   {
     return false;
-  }
+  }*/
 
   // set state
-  dmp_lib::State current_state;
-  state->get(current_state, cs_msg.state.time);
-  current_state.get(cs_msg.state.state.x, cs_msg.state.state.xd, cs_msg.state.state.xdd);
+  //dmp_lib::State current_state;
+  //state->get(current_state, cs_msg.state.time);
+  //current_state.get(cs_msg.state.state.x, cs_msg.state.state.xd, cs_msg.state.state.xdd);
   return true;
 }
 

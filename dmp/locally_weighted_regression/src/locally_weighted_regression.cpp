@@ -18,6 +18,7 @@
 #include <boost/foreach.hpp>
 
 #include <assert/assert.h>
+#include <usc_utilities/param_server.h>
 
 // local includes
 #include <locally_weighted_regression/locally_weighted_regression.h>
@@ -29,7 +30,7 @@ namespace lwr
 {
 
 static const char* lwr_model_topic_file_name = "lwr_model";
-/* Eliminat perque no s'utilitza el usc_utilities
+
 bool LocallyWeightedRegression::initFromNodeHandle(ros::NodeHandle& node_handle, const double cutoff)
 {
   ROS_DEBUG("Initializing LWR model from node handle.");
@@ -71,7 +72,7 @@ bool LocallyWeightedRegression::initFromNodeHandle(ros::NodeHandle& node_handle,
   ROS_VERIFY(lwr_model_->initialize(parameters));
 
   return (initialized_ = true);
-}*/
+}
 
 bool LocallyWeightedRegression::initFromMessage(const LWRModelMsg& model)
 {

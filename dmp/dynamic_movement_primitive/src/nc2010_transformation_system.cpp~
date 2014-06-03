@@ -13,7 +13,7 @@
  *********************************************************************/
 
 // system includes
-#include <usc_utilities/assert.h>
+#include <assert/assert.h>
 #include <usc_utilities/param_server.h>
 
 // local includes

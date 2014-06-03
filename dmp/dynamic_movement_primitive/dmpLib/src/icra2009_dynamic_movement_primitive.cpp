@@ -106,6 +106,7 @@ bool ICRA2009DynamicMovementPrimitive::get(ICRA2009DMPParamConstPtr& parameters,
     transformation_systems.push_back(transformation_systems_[i]);
   }
   canonical_system = canonical_system_;
+
   return true;
 }
 
@@ -114,7 +115,7 @@ bool ICRA2009DynamicMovementPrimitive::initialize(const vector<string>& variable
   assert(!variable_names.empty());
   assert(lwr_parameters->isInitialized());
 
-  vector<TSPtr> icra2009_transformation_systems;
+  vector<ICRA2009TSPtr> icra2009_transformation_systems;
   for (int i = 0; i < (int)variable_names.size(); ++i)
   {
     ICRA2009TSParamPtr icra2009_transformation_system_parameters(new ICRA2009TransformationSystemParameters());
@@ -154,19 +155,33 @@ bool ICRA2009DynamicMovementPrimitive::initialize(const vector<string>& variable
     return false;
   }
 
-  DMPParamPtr dmp_parameters(new DynamicMovementPrimitiveParameters());
+  ICRA2009DMPParamPtr dmp_parameters(new ICRA2009DynamicMovementPrimitiveParameters);
   if(!dmp_parameters->setCutoff(0.001))
   {
     Logger::logPrintf("Could not set cutoff.", Logger::ERROR);
     return false;
   }
 
-  if (!DynamicMovementPrimitive::initialize(dmp_parameters, icra2009_transformation_systems, icra2009_canonical_system))
+  ICRA2009DMPStatePtr state(new ICRA2009DynamicMovementPrimitiveState());
+  //Change because it fails, the same function it's done by the next lines 
+  /*if (!DynamicMovementPrimitive::initialize(dmp_parameters, icra2009_transformation_systems, icra2009_canonical_system))
   {
     Logger::logPrintf("Could not initialize dmp.", Logger::ERROR);
     return false;
+  }*/
+
+  if(initialize(dmp_parameters, state, icra2009_transformation_systems, icra2009_canonical_system))
+  {
+    if(!setupIndices())
+    {
+      return (initialized_ = false);
+    }
+
+    //zero_feedback_ = Eigen::VectorXd::Zero(indices_.size());
+
+    return (initialized_ = true);
   }
-  return (initialized_ = true);
+  return (initialized_ = false);
 }
 
 }

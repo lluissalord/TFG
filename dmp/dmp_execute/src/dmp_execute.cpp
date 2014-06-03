@@ -1,0 +1,328 @@
+// system includes
+#include <string>
+#include <vector>
+#include <stdio.h>
+#include <boost/thread.hpp>
+
+#include <dmp_lib/dynamic_movement_primitive.h>
+#include <dmp_lib/icra2009_dynamic_movement_primitive.h>
+
+#include <dynamic_movement_primitive_controller/dmp_joints_controller.h>
+
+#include <dynamic_movement_primitive/icra2009_canonical_system.h>
+#include <dynamic_movement_primitive/icra2009_transformation_system.h>
+#include <dynamic_movement_primitive/icra2009_dynamic_movement_primitive.h>
+
+#include <dmp_lib/utilities.h>
+#include <dmp_lib/logger.h>
+
+#include <policy_improvement_loop/policy_improvement_loop.h>
+//#include <policy_improvement_loop/dmp_waypoint_task.h>
+
+int main(int argc, char** argv)
+{
+  ros::init(argc, argv, "Aibo_execute");
+
+  ros::NodeHandle node_handle;
+  bool enable_policy_PI2 = std::atoi(argv[1]); //rosrun dmp_execute dmp_execute 1 Si es vol activar PI2
+                                               //rosrun dmp_execute dmp_execute 0 Si no es vol activar PI2
+
+  std::vector<std::string> variable_names;
+  variable_names.push_back("legLF1");
+  variable_names.push_back("legLF2");
+  variable_names.push_back("legLH1");
+  variable_names.push_back("legLH2");
+  variable_names.push_back("legRF1");
+  variable_names.push_back("legRF2");
+  variable_names.push_back("legRH1");
+  variable_names.push_back("legRH2");
+  ROS_VERIFY(usc_utilities::write(node_handle, "variable_names", variable_names));
+
+  const double k_gain = 100;
+  const double d_gain = 2.0 * sqrt(k_gain); //importar llibreria per fer arrel quadrada
+  const double sampling_frequency = 5; // Hz
+  int num_samples = 15; //Per així tenir una durada de 3 sec
+  const double initial_duration = 3; //sec
+  std::vector<double> initial_start; //Inicialment i talvegada en tots es casos nomes 8 articulacions
+  initial_start.push_back(0.0); 
+  initial_start.push_back(0.0);
+  initial_start.push_back(0.0); 
+  initial_start.push_back(0.0);
+  initial_start.push_back(0.0); 
+  initial_start.push_back(0.0);
+  initial_start.push_back(0.0); 
+  initial_start.push_back(0.0);   
+  std::vector<double> initial_goal; //Depen de la pendent (crear funció que doni les posicions)
+  initial_goal.push_back(0.1); 
+  initial_goal.push_back(0.1); 
+  initial_goal.push_back(0.1); 
+  initial_goal.push_back(0.1);
+  initial_goal.push_back(0.1); 
+  initial_goal.push_back(0.1); 
+  initial_goal.push_back(0.1); 
+  initial_goal.push_back(0.1);
+
+ // bool positions_only = true; 
+  //int trajectory_length = num_samples;
+
+  int num_rfs = num_samples;
+  const double activation = 0.204456; //extret a partir d'un test creat i guardat en un arxiu bag
+  
+//Si es no s'ha d'utilitzar el policy s'ha de comentar tot
+  int num_rollouts_policy = 5;
+  int num_reused_rollouts_policy = 3;
+  int first_trial_policy = 1; //by default
+  int last_trial_policy = 50;
+  std::vector<double> noise_stddev_policy; //Aquests són es valors que posa en l'article Learning Motion Primitive Goals for Robust Manipulation 20 per articulacions i 0.05 per goals (que ara mateix no esta implementat) i per sa gamma a tots dos 0.7
+  noise_stddev_policy.push_back(20.0); 
+  noise_stddev_policy.push_back(20.0); 
+  noise_stddev_policy.push_back(20.0); 
+  noise_stddev_policy.push_back(20.0);
+  noise_stddev_policy.push_back(20.0); 
+  noise_stddev_policy.push_back(20.0); 
+  noise_stddev_policy.push_back(20.0); 
+  noise_stddev_policy.push_back(20.0);
+  std::vector<double> noise_decay_policy;
+  noise_decay_policy.push_back(0.7); 
+  noise_decay_policy.push_back(0.7); 
+  noise_decay_policy.push_back(0.7); 
+  noise_decay_policy.push_back(0.7);
+  noise_decay_policy.push_back(0.7); 
+  noise_decay_policy.push_back(0.7); 
+  noise_decay_policy.push_back(0.7); 
+  noise_decay_policy.push_back(0.7);
+  node_handle.setParam("num_rollouts", num_rollouts_policy);
+  node_handle.setParam("num_reused_rollouts", num_reused_rollouts_policy);
+  node_handle.setParam("noise_stddev", noise_stddev_policy);
+  node_handle.setParam("noise_decay", noise_decay_policy);
+  node_handle.setParam("last_trial", last_trial_policy);
+
+  int num_time_steps_policy = 50;
+  bool write_to_file_policy = true;
+  int num_dimensions_policy = 8; //Tot i que quan s'hagi de posar l'angle canviarà
+
+  std::vector<std::string> start_policy; //Tot i que quan s'hagi de posar l'angle canviarà
+  for(int i=0; i<(int)initial_start.size(); i++)
+  {
+    std::ostringstream strs;
+    strs << initial_start[i];
+    std::string str = strs.str();
+    start_policy.push_back(str);
+  }
+
+  std::vector<std::string> goal_policy; //Tot i que quan s'hagi de posar l'angle canviarà
+  for(int i=0; i<(int)initial_goal.size(); i++)
+  {
+    std::ostringstream strs;
+    strs << initial_goal[i];
+    std::string str = strs.str();
+    goal_policy.push_back(str);
+  }
+  
+  //std::vector<std::string> waypoint_policy;
+
+  //double waypoint_time_policy;
+  double movement_time_policy = 3;
+
+  //double waypoint_cost_weight_policy;
+  double control_cost_weight_policy = 0.000001;
+  //double acceleration_cost_weight_policy = 0.0001;
+  double inclination_cost_weight_policy = 50;
+    
+  ROS_VERIFY(usc_utilities::write(node_handle, "start", start_policy));
+  ROS_VERIFY(usc_utilities::write(node_handle, "goal", goal_policy));
+  //ROS_VERIFY(readEigenVector(node_handle_, "waypoint", waypoint_policy));
+  //node_handle.setParam("start", start_policy);
+  //node_handle.setParam("goal", goal_policy);
+
+  //node_handle.setParam("waypoint_time", waypoint_time_policy);
+  node_handle.setParam("movement_time", movement_time_policy);
+
+  //node_handle.setParam("waypoint_cost_weight", waypoint_cost_weight_policy);
+  node_handle.setParam("control_cost_weight", control_cost_weight_policy);
+  node_handle.setParam("inclination_cost_weight", inclination_cost_weight_policy);
+  //node_handle.setParam("acceleration_cost_weight", acceleration_cost_weight_policy);
+
+  node_handle.setParam("num_dimensions", num_dimensions_policy);
+  node_handle.setParam("num_time_steps", num_time_steps_policy);
+  node_handle.setParam("write_to_file", write_to_file_policy);
+
+  node_handle.setParam("num_rollouts", num_rollouts_policy);
+  node_handle.setParam("num_reused_rollouts", num_reused_rollouts_policy);
+
+
+  lwr_lib::LWRParamPtr lwr_parameters(new lwr_lib::LWRParameters());
+  if(!lwr_parameters->initialize(num_rfs, activation,false)) //Separacions de forma exponencial desactivades
+  {
+    dmp_lib::Logger::logPrintf("Could not initialize lwr_param", dmp_lib::Logger::ERROR);
+    return false;
+  }
+
+  dmp_lib::ICRA2009DMPPtr dmp(new dmp_lib::ICRA2009DynamicMovementPrimitive()); //El nucli de la DMP
+
+  if(!dmp->initialize(variable_names, lwr_parameters, k_gain, d_gain))
+  {
+    dmp_lib::Logger::logPrintf("Could not initialize dmp", dmp_lib::Logger::ERROR);
+    return false;
+  }
+
+  dmp_lib::TrajectoryPtr debug_min_jerk_trajectory; //nose fins a quin punt es necessaria ja que aquesta seria la de debug i nose si s'hauria de posar o ens la podriem estalviar
+  if(!dmp->learnFromMinimumJerk(initial_start, initial_goal, sampling_frequency, initial_duration, debug_min_jerk_trajectory))
+  {
+    dmp_lib::Logger::logPrintf("Could not initialize trajectory with minium jerk", dmp_lib::Logger::ERROR);
+    return false;
+  }
+
+  if (!dmp->setup())
+  {
+    dmp_lib::Logger::logPrintf("Could not setup DMP.", dmp_lib::Logger::ERROR);
+    return false;
+  }
+ 
+  dmp_lib::ICRA2009CSPtr canonical(new dmp_lib::ICRA2009CS);
+  dmp_lib::ICRA2009DMPParamPtr icra2009parameters(new dmp_lib::ICRA2009DMPParam);
+  dmp_lib::ICRA2009DMPStatePtr icra2009state(new dmp_lib::ICRA2009DMPState);
+
+  dmp::ICRA2009DMPPtr icra2009dmp(new dmp::ICRA2009DynamicMovementPrimitive()); //Comunicador entre el nucli de la DMP i el ROS
+  
+  rosrt::init();
+  
+  //ros::Publisher dmp_command = node_handle.advertise<dynamic_movement_primitive_controller::DMPFiltered>("Aibo_execute/dmp_command", 1000);
+  //ros::Publisher dmp_command = node_handle.advertise<dmp::ICRA2009DMPMsg>("Aibo_execute/dmp", 1000);
+  
+  //dynamic_movement_primitive_controller::DMPFiltered DMPFiltered_msg;
+  //dmp::ICRA2009DMPMsg icra2009_dmp_msg;
+  
+  ros::Time time;
+  if(enable_policy_PI2)
+  {
+    /*// DMPController
+    boost::shared_ptr<dynamic_movement_primitive_controller::DMPJointPositionController> dmp_controller;
+    ROS_INFO("acabt de declarar");
+    if(!(*dmp_controller).init(variable_names, node_handle))
+    {   
+      dmp_lib::Logger::logPrintf("Could not initialize DMP joint controller", dmp_lib::Logger::ERROR);
+      return false;  
+    }
+    ROS_INFO("acabt d'inicialitzar");
+    (*dmp_controller).starting();
+    ROS_INFO("started controller");*/
+
+    //DMPWaypointTask::DMPWaypointTask task;//(new DMPWaypointTask::DMPWaypointTask());
+    policy_improvement_loop::PolicyImprovementLoop pi_loop;
+
+    ROS_VERIFY(pi_loop.first_init(node_handle));//, task));
+
+    rosrt::Publisher<dmp::ICRA2009DMPMsg> dmp_command(node_handle.advertise<dmp::ICRA2009DMPMsg>("Aibo_execute/dmp", 1000), 1000, dmp::ICRA2009DMPMsg());
+    boost::shared_ptr<dmp::ICRA2009DMPMsg> icra2009_dmp_msgPtr = dmp_command.allocate();
+    ros::Rate loop_rate(5);    
+
+    if(icra2009dmp->writeToMessage(dmp, *icra2009_dmp_msgPtr))
+    {
+      ROS_INFO("Publica DMP");
+      dmp_command.publish(icra2009_dmp_msgPtr);        
+    }
+
+    //std::string task_name = "policy_improvement_loop_test/DMPWaypointTask";
+    //ROS_VERIFY(pi_loop.initializeAndRunTaskByName(node_handle, task_name));
+    //ROS_VERIFY(task->initialize(node_handle));
+    //ROS_VERIFY(pi_loop.initialize(node_handle, task));
+    ROS_VERIFY(pi_loop.initialize());
+
+    //int first_trial, last_trial;
+
+    // first_trial defaults to 1:
+    //node_handle.param("first_trial", first_trial, 1);
+    //ROS_VERIFY(usc_utilities::read(node_handle, std::string("first_trial"), first_trial));
+    ROS_INFO("abans llegir last trial");
+    //ROS_VERIFY(usc_utilities::read(node_handle, std::string("last_trial"), last_trial));
+    ROS_INFO("abans de començar cicles de runSingleIterations");
+    
+    while (ros::ok())
+    {
+      for (int i=first_trial_policy; i<=last_trial_policy; ++i)
+      {
+            ROS_VERIFY(pi_loop.runSingleIteration(i));
+            ROS_INFO("runSingleIteration finished");
+            boost::shared_ptr<dmp::ICRA2009DMPMsg> dmp_policy_msgPtr(new dmp::ICRA2009DMPMsg);
+            if(icra2009dmp->writeToMessage((*pi_loop.task_.policy_).dmp_, *dmp_policy_msgPtr))
+            {
+              ROS_INFO("escrita DMP policy");
+              dmp_lib::ICRA2009DMPPtr dmp_policy;
+              icra2009dmp->createFromMessage(dmp_policy, *dmp_policy_msgPtr);
+
+              std::vector<double> aux_start_dmp_policy;
+              (*pi_loop.task_.policy_).dmp_->getStart(variable_names, aux_start_dmp_policy);
+              Eigen::VectorXd start_dmp_policy(aux_start_dmp_policy.size());
+              std::vector<double> aux_goal_dmp_policy;
+              (*pi_loop.task_.policy_).dmp_->getGoal(variable_names, aux_goal_dmp_policy);
+              
+              for (int i=0; i<aux_start_dmp_policy.size();i++){
+                ROS_INFO("Start %i: %f", i, aux_start_dmp_policy[i]);
+              }
+
+              for (int i=0; i<aux_goal_dmp_policy.size();i++){
+                ROS_INFO("Goal %i: %f", i, aux_goal_dmp_policy[i]);
+              }
+
+              Eigen::VectorXd goal_dmp_policy(aux_goal_dmp_policy.size());
+
+              dmp_policy->setupDuration(start_dmp_policy, goal_dmp_policy, movement_time_policy);
+
+              pi_loop.task_.dmp_controller_.dmp_joint_controller_.setDMP(dmp_policy, false);
+              ROS_INFO("DMP set");
+              pi_loop.task_.dmp_controller_.update();        
+            }
+            
+            //ros::spinOnce();
+            //loop_rate.sleep();
+      }
+      //pi_loop.task_.dmp_controller_.update();
+      ROS_INFO("spin");
+      ros::spinOnce();
+      loop_rate.sleep();
+    }
+  }
+  else
+  {
+    // DMPController
+    dynamic_movement_primitive_controller::DMPJointPositionController dmp_controller;
+    if(!dmp_controller.init(variable_names, node_handle))
+    {   
+      dmp_lib::Logger::logPrintf("Could not initialize DMP joint controller", dmp_lib::Logger::ERROR);
+      return false;  
+    }
+
+    dmp_controller.starting();
+
+    rosrt::Publisher<dmp::ICRA2009DMPMsg> dmp_command(node_handle.advertise<dmp::ICRA2009DMPMsg>("Aibo_execute/dmp", 1000), 1000, dmp::ICRA2009DMPMsg());
+    boost::shared_ptr<dmp::ICRA2009DMPMsg> icra2009_dmp_msgPtr = dmp_command.allocate();
+    ros::Rate loop_rate(5);  
+
+    if(icra2009dmp->writeToMessage(dmp, *icra2009_dmp_msgPtr))
+    {
+      ROS_INFO("Publica DMP");
+      dmp_command.publish(icra2009_dmp_msgPtr);
+        
+    }
+    
+    while (ros::ok())
+    {    
+      dmp_controller.update();
+
+      ros::spinOnce();
+      loop_rate.sleep();
+    }
+  }
+//  dmp_lib::Trajectory min_jerk_trajectory;
+//  if (!min_jerk_trajectory.initializeWithMinJerk(variable_names, sampling_frequency, initial_start, initial_goal, num_samples, positions_only, trajectory_length))
+//  {
+//    dmp_lib::Logger::logPrintf("Could not create minimum jerk trajectory for learning.", dmp_lib::Logger::ERROR);
+//    return false;
+//  }
+
+//  if(!icra2009dmp->propagateFull(min_jerk_trajectory, initial_duration, num_samples)) //Es fan totes les integrals i les posicions, velocitats i acceleracions que donen
+//  {
+//    return false;
+//  }
+}

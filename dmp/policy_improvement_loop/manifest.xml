@@ -1,0 +1,31 @@
+<package>
+  <description brief="policy_improvement_loop">
+
+     policy_improvement_loop
+
+  </description>
+  <author>Mrinal Kalakrishnan</author>
+  <license>BSD</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/policy_improvement_loop</url>
+
+  <!--<depend package="dynamic_movement_primitive_controller"/>-->
+  <depend package="policy_improvement" />
+  <depend package="policy_library" />
+  <!--<depend package="task_manager" />-->
+  <depend package="rosbag" />
+  <depend package="rosrt"/>
+  <depend package="filters" />
+
+  <depend package="aibo_server"/>
+
+  
+
+  <export>
+    <!--<task_manager plugin="${prefix}/task_plugins.xml" />-->
+    <cpp cflags="-I${prefix}/include -I${prefix}/srv/cpp -I${prefix}/msg/cpp" lflags="-Wl,-rpath,${prefix}/lib -L${prefix}/lib -lpolicy_improvement_loop"/>
+  </export>
+
+</package>
+
+

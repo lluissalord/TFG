@@ -1,0 +1,33 @@
+<package>
+  <description brief="dmp_execute">
+
+     dmp_execute
+
+  </description>
+  <author>Alex Herzog and Peter Pastor</author>
+  <license>BSD</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/pr2_dynamic_movement_primitive_controller</url>
+
+  <depend package="roscpp"/>
+  <depend package="rosrt"/>
+  <depend package="filters" />
+  <depend package="geometry_msgs"/>
+  <!--<depend package="pluginlib"/>-->
+
+  <depend package="aibo_server"/>
+  <depend package="dynamic_movement_primitive"/>
+  <!--<depend package="task_manager"/>-->
+  <depend package="policy_improvement" />
+  <depend package="policy_improvement_loop"/>
+  <!--<depend package="dynamic_movement_primitive_controller"/>-->
+
+  <export>
+    <!--<task_manager plugin="${prefix}/task_plugins.xml" />-->
+  </export>
+
+
+
+</package>
+
+

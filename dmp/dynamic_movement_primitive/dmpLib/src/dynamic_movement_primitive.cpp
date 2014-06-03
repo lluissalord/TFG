@@ -31,7 +31,7 @@ namespace dmp_lib
 
 /*! Minimum number of data points
  */
-static const int MIN_NUM_DATA_POINTS = 70;
+static const int MIN_NUM_DATA_POINTS = 15;//Abans era 70
 
 bool DynamicMovementPrimitive::initialize(DMPParamPtr parameters,
                                           DMPStatePtr state,

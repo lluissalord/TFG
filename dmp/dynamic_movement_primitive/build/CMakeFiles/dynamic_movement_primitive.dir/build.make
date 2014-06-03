@@ -505,6 +505,57 @@ CMakeFiles/dynamic_movement_primitive.dir/src/nc2010_canonical_system.cpp.o.prov
 
 CMakeFiles/dynamic_movement_primitive.dir/src/nc2010_canonical_system.cpp.o.provides.build: CMakeFiles/dynamic_movement_primitive.dir/src/nc2010_canonical_system.cpp.o
 
+CMakeFiles/dynamic_movement_primitive.dir/src/dynamic_movement_primitive_utilities.cpp.o: CMakeFiles/dynamic_movement_primitive.dir/flags.make
+CMakeFiles/dynamic_movement_primitive.dir/src/dynamic_movement_primitive_utilities.cpp.o: ../src/dynamic_movement_primitive_utilities.cpp
+CMakeFiles/dynamic_movement_primitive.dir/src/dynamic_movement_primitive_utilities.cpp.o: ../manifest.xml
+CMakeFiles/dynamic_movement_primitive.dir/src/dynamic_movement_primitive_utilities.cpp.o: /opt/ros/hydro/share/catkin/package.xml
+CMakeFiles/dynamic_movement_primitive.dir/src/dynamic_movement_primitive_utilities.cpp.o: /opt/ros/hydro/share/console_bridge/package.xml
+CMakeFiles/dynamic_movement_primitive.dir/src/dynamic_movement_primitive_utilities.cpp.o: /opt/ros/hydro/share/cpp_common/package.xml
+CMakeFiles/dynamic_movement_primitive.dir/src/dynamic_movement_primitive_utilities.cpp.o: /opt/ros/hydro/share/rostime/package.xml
+CMakeFiles/dynamic_movement_primitive.dir/src/dynamic_movement_primitive_utilities.cpp.o: /opt/ros/hydro/share/roscpp_traits/package.xml
+CMakeFiles/dynamic_movement_primitive.dir/src/dynamic_movement_primitive_utilities.cpp.o: /opt/ros/hydro/share/roscpp_serialization/package.xml
+CMakeFiles/dynamic_movement_primitive.dir/src/dynamic_movement_primitive_utilities.cpp.o: /opt/ros/hydro/share/genmsg/package.xml
+CMakeFiles/dynamic_movement_primitive.dir/src/dynamic_movement_primitive_utilities.cpp.o: /opt/ros/hydro/share/genpy/package.xml
+CMakeFiles/dynamic_movement_primitive.dir/src/dynamic_movement_primitive_utilities.cpp.o: /opt/ros/hydro/share/message_runtime/package.xml
+CMakeFiles/dynamic_movement_primitive.dir/src/dynamic_movement_primitive_utilities.cpp.o: /opt/ros/hydro/share/gencpp/package.xml
+CMakeFiles/dynamic_movement_primitive.dir/src/dynamic_movement_primitive_utilities.cpp.o: /opt/ros/hydro/share/genlisp/package.xml
+CMakeFiles/dynamic_movement_primitive.dir/src/dynamic_movement_primitive_utilities.cpp.o: /opt/ros/hydro/share/message_generation/package.xml
+CMakeFiles/dynamic_movement_primitive.dir/src/dynamic_movement_primitive_utilities.cpp.o: /opt/ros/hydro/share/rosbuild/package.xml
+CMakeFiles/dynamic_movement_primitive.dir/src/dynamic_movement_primitive_utilities.cpp.o: /opt/ros/hydro/share/rosconsole/package.xml
+CMakeFiles/dynamic_movement_primitive.dir/src/dynamic_movement_primitive_utilities.cpp.o: /opt/ros/hydro/share/std_msgs/package.xml
+CMakeFiles/dynamic_movement_primitive.dir/src/dynamic_movement_primitive_utilities.cpp.o: /opt/ros/hydro/share/rosgraph_msgs/package.xml
+CMakeFiles/dynamic_movement_primitive.dir/src/dynamic_movement_primitive_utilities.cpp.o: /opt/ros/hydro/share/xmlrpcpp/package.xml
+CMakeFiles/dynamic_movement_primitive.dir/src/dynamic_movement_primitive_utilities.cpp.o: /opt/ros/hydro/share/roscpp/package.xml
+CMakeFiles/dynamic_movement_primitive.dir/src/dynamic_movement_primitive_utilities.cpp.o: /opt/ros/hydro/share/rosbag_storage/package.xml
+CMakeFiles/dynamic_movement_primitive.dir/src/dynamic_movement_primitive_utilities.cpp.o: /opt/ros/hydro/share/rospack/package.xml
+CMakeFiles/dynamic_movement_primitive.dir/src/dynamic_movement_primitive_utilities.cpp.o: /opt/ros/hydro/share/roslib/package.xml
+CMakeFiles/dynamic_movement_primitive.dir/src/dynamic_movement_primitive_utilities.cpp.o: /opt/ros/hydro/share/rosgraph/package.xml
+CMakeFiles/dynamic_movement_primitive.dir/src/dynamic_movement_primitive_utilities.cpp.o: /opt/ros/hydro/share/rospy/package.xml
+CMakeFiles/dynamic_movement_primitive.dir/src/dynamic_movement_primitive_utilities.cpp.o: /opt/ros/hydro/share/topic_tools/package.xml
+CMakeFiles/dynamic_movement_primitive.dir/src/dynamic_movement_primitive_utilities.cpp.o: /opt/ros/hydro/share/rosbag/package.xml
+CMakeFiles/dynamic_movement_primitive.dir/src/dynamic_movement_primitive_utilities.cpp.o: /home/lluis/catkin_ws/src/usc-clmc-ros-pkg/dmp/locally_weighted_regression/manifest.xml
+CMakeFiles/dynamic_movement_primitive.dir/src/dynamic_movement_primitive_utilities.cpp.o: /home/lluis/catkin_ws/src/usc-clmc-ros-pkg/dmp/locally_weighted_regression/msg_gen/generated
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/lluis/catkin_ws/src/usc-clmc-ros-pkg/dmp/dynamic_movement_primitive/build/CMakeFiles $(CMAKE_PROGRESS_10)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/dynamic_movement_primitive.dir/src/dynamic_movement_primitive_utilities.cpp.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -o CMakeFiles/dynamic_movement_primitive.dir/src/dynamic_movement_primitive_utilities.cpp.o -c /home/lluis/catkin_ws/src/usc-clmc-ros-pkg/dmp/dynamic_movement_primitive/src/dynamic_movement_primitive_utilities.cpp
+
+CMakeFiles/dynamic_movement_primitive.dir/src/dynamic_movement_primitive_utilities.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/dynamic_movement_primitive.dir/src/dynamic_movement_primitive_utilities.cpp.i"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -E /home/lluis/catkin_ws/src/usc-clmc-ros-pkg/dmp/dynamic_movement_primitive/src/dynamic_movement_primitive_utilities.cpp > CMakeFiles/dynamic_movement_primitive.dir/src/dynamic_movement_primitive_utilities.cpp.i
+
+CMakeFiles/dynamic_movement_primitive.dir/src/dynamic_movement_primitive_utilities.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/dynamic_movement_primitive.dir/src/dynamic_movement_primitive_utilities.cpp.s"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -S /home/lluis/catkin_ws/src/usc-clmc-ros-pkg/dmp/dynamic_movement_primitive/src/dynamic_movement_primitive_utilities.cpp -o CMakeFiles/dynamic_movement_primitive.dir/src/dynamic_movement_primitive_utilities.cpp.s
+
+CMakeFiles/dynamic_movement_primitive.dir/src/dynamic_movement_primitive_utilities.cpp.o.requires:
+.PHONY : CMakeFiles/dynamic_movement_primitive.dir/src/dynamic_movement_primitive_utilities.cpp.o.requires
+
+CMakeFiles/dynamic_movement_primitive.dir/src/dynamic_movement_primitive_utilities.cpp.o.provides: CMakeFiles/dynamic_movement_primitive.dir/src/dynamic_movement_primitive_utilities.cpp.o.requires
+	$(MAKE) -f CMakeFiles/dynamic_movement_primitive.dir/build.make CMakeFiles/dynamic_movement_primitive.dir/src/dynamic_movement_primitive_utilities.cpp.o.provides.build
+.PHONY : CMakeFiles/dynamic_movement_primitive.dir/src/dynamic_movement_primitive_utilities.cpp.o.provides
+
+CMakeFiles/dynamic_movement_primitive.dir/src/dynamic_movement_primitive_utilities.cpp.o.provides.build: CMakeFiles/dynamic_movement_primitive.dir/src/dynamic_movement_primitive_utilities.cpp.o
+
 # Object files for target dynamic_movement_primitive
 dynamic_movement_primitive_OBJECTS = \
 "CMakeFiles/dynamic_movement_primitive.dir/src/dynamic_movement_primitive.cpp.o" \
@@ -515,7 +566,8 @@ dynamic_movement_primitive_OBJECTS = \
 "CMakeFiles/dynamic_movement_primitive.dir/src/icra2009_canonical_system.cpp.o" \
 "CMakeFiles/dynamic_movement_primitive.dir/src/nc2010_dynamic_movement_primitive.cpp.o" \
 "CMakeFiles/dynamic_movement_primitive.dir/src/nc2010_transformation_system.cpp.o" \
-"CMakeFiles/dynamic_movement_primitive.dir/src/nc2010_canonical_system.cpp.o"
+"CMakeFiles/dynamic_movement_primitive.dir/src/nc2010_canonical_system.cpp.o" \
+"CMakeFiles/dynamic_movement_primitive.dir/src/dynamic_movement_primitive_utilities.cpp.o"
 
 # External object files for target dynamic_movement_primitive
 dynamic_movement_primitive_EXTERNAL_OBJECTS =
@@ -529,6 +581,7 @@ dynamic_movement_primitive_EXTERNAL_OBJECTS =
 ../lib/libdynamic_movement_primitive.so: CMakeFiles/dynamic_movement_primitive.dir/src/nc2010_dynamic_movement_primitive.cpp.o
 ../lib/libdynamic_movement_primitive.so: CMakeFiles/dynamic_movement_primitive.dir/src/nc2010_transformation_system.cpp.o
 ../lib/libdynamic_movement_primitive.so: CMakeFiles/dynamic_movement_primitive.dir/src/nc2010_canonical_system.cpp.o
+../lib/libdynamic_movement_primitive.so: CMakeFiles/dynamic_movement_primitive.dir/src/dynamic_movement_primitive_utilities.cpp.o
 ../lib/libdynamic_movement_primitive.so: ../lib/libdmp++.so
 ../lib/libdynamic_movement_primitive.so: CMakeFiles/dynamic_movement_primitive.dir/build.make
 ../lib/libdynamic_movement_primitive.so: CMakeFiles/dynamic_movement_primitive.dir/link.txt
@@ -548,6 +601,7 @@ CMakeFiles/dynamic_movement_primitive.dir/requires: CMakeFiles/dynamic_movement_
 CMakeFiles/dynamic_movement_primitive.dir/requires: CMakeFiles/dynamic_movement_primitive.dir/src/nc2010_dynamic_movement_primitive.cpp.o.requires
 CMakeFiles/dynamic_movement_primitive.dir/requires: CMakeFiles/dynamic_movement_primitive.dir/src/nc2010_transformation_system.cpp.o.requires
 CMakeFiles/dynamic_movement_primitive.dir/requires: CMakeFiles/dynamic_movement_primitive.dir/src/nc2010_canonical_system.cpp.o.requires
+CMakeFiles/dynamic_movement_primitive.dir/requires: CMakeFiles/dynamic_movement_primitive.dir/src/dynamic_movement_primitive_utilities.cpp.o.requires
 .PHONY : CMakeFiles/dynamic_movement_primitive.dir/requires
 
 CMakeFiles/dynamic_movement_primitive.dir/clean:

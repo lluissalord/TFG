@@ -254,19 +254,6 @@ dmp++/fast:
 .PHONY : dmp++/fast
 
 #=============================================================================
-# Target rules for targets named dmp_execute
-
-# Build rule for target.
-dmp_execute: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 dmp_execute
-.PHONY : dmp_execute
-
-# fast build rule for target.
-dmp_execute/fast:
-	$(MAKE) -f CMakeFiles/dmp_execute.dir/build.make CMakeFiles/dmp_execute.dir/build
-.PHONY : dmp_execute/fast
-
-#=============================================================================
 # Target rules for targets named doxygen
 
 # Build rule for target.
@@ -1327,30 +1314,6 @@ dmpLib/test/test_trajectory.cpp.s:
 	$(MAKE) -f CMakeFiles/dynamic_movement_primitive_test.dir/build.make CMakeFiles/dynamic_movement_primitive_test.dir/dmpLib/test/test_trajectory.cpp.s
 .PHONY : dmpLib/test/test_trajectory.cpp.s
 
-script/dmp_execute.o: script/dmp_execute.cpp.o
-.PHONY : script/dmp_execute.o
-
-# target to build an object file
-script/dmp_execute.cpp.o:
-	$(MAKE) -f CMakeFiles/dmp_execute.dir/build.make CMakeFiles/dmp_execute.dir/script/dmp_execute.cpp.o
-.PHONY : script/dmp_execute.cpp.o
-
-script/dmp_execute.i: script/dmp_execute.cpp.i
-.PHONY : script/dmp_execute.i
-
-# target to preprocess a source file
-script/dmp_execute.cpp.i:
-	$(MAKE) -f CMakeFiles/dmp_execute.dir/build.make CMakeFiles/dmp_execute.dir/script/dmp_execute.cpp.i
-.PHONY : script/dmp_execute.cpp.i
-
-script/dmp_execute.s: script/dmp_execute.cpp.s
-.PHONY : script/dmp_execute.s
-
-# target to generate assembly for a file
-script/dmp_execute.cpp.s:
-	$(MAKE) -f CMakeFiles/dmp_execute.dir/build.make CMakeFiles/dmp_execute.dir/script/dmp_execute.cpp.s
-.PHONY : script/dmp_execute.cpp.s
-
 src/canonical_system.o: src/canonical_system.cpp.o
 .PHONY : src/canonical_system.o
 
@@ -1398,6 +1361,30 @@ src/dynamic_movement_primitive.s: src/dynamic_movement_primitive.cpp.s
 src/dynamic_movement_primitive.cpp.s:
 	$(MAKE) -f CMakeFiles/dynamic_movement_primitive.dir/build.make CMakeFiles/dynamic_movement_primitive.dir/src/dynamic_movement_primitive.cpp.s
 .PHONY : src/dynamic_movement_primitive.cpp.s
+
+src/dynamic_movement_primitive_utilities.o: src/dynamic_movement_primitive_utilities.cpp.o
+.PHONY : src/dynamic_movement_primitive_utilities.o
+
+# target to build an object file
+src/dynamic_movement_primitive_utilities.cpp.o:
+	$(MAKE) -f CMakeFiles/dynamic_movement_primitive.dir/build.make CMakeFiles/dynamic_movement_primitive.dir/src/dynamic_movement_primitive_utilities.cpp.o
+.PHONY : src/dynamic_movement_primitive_utilities.cpp.o
+
+src/dynamic_movement_primitive_utilities.i: src/dynamic_movement_primitive_utilities.cpp.i
+.PHONY : src/dynamic_movement_primitive_utilities.i
+
+# target to preprocess a source file
+src/dynamic_movement_primitive_utilities.cpp.i:
+	$(MAKE) -f CMakeFiles/dynamic_movement_primitive.dir/build.make CMakeFiles/dynamic_movement_primitive.dir/src/dynamic_movement_primitive_utilities.cpp.i
+.PHONY : src/dynamic_movement_primitive_utilities.cpp.i
+
+src/dynamic_movement_primitive_utilities.s: src/dynamic_movement_primitive_utilities.cpp.s
+.PHONY : src/dynamic_movement_primitive_utilities.s
+
+# target to generate assembly for a file
+src/dynamic_movement_primitive_utilities.cpp.s:
+	$(MAKE) -f CMakeFiles/dynamic_movement_primitive.dir/build.make CMakeFiles/dynamic_movement_primitive.dir/src/dynamic_movement_primitive_utilities.cpp.s
+.PHONY : src/dynamic_movement_primitive_utilities.cpp.s
 
 src/icra2009_canonical_system.o: src/icra2009_canonical_system.cpp.o
 .PHONY : src/icra2009_canonical_system.o
@@ -1606,7 +1593,6 @@ help:
 	@echo "... _catkin_empty_exported_target"
 	@echo "... clean_test_results"
 	@echo "... dmp++"
-	@echo "... dmp_execute"
 	@echo "... doxygen"
 	@echo "... dynamic_movement_primitive"
 	@echo "... dynamic_movement_primitive_test"
@@ -1732,15 +1718,15 @@ help:
 	@echo "... dmpLib/test/test_trajectory.o"
 	@echo "... dmpLib/test/test_trajectory.i"
 	@echo "... dmpLib/test/test_trajectory.s"
-	@echo "... script/dmp_execute.o"
-	@echo "... script/dmp_execute.i"
-	@echo "... script/dmp_execute.s"
 	@echo "... src/canonical_system.o"
 	@echo "... src/canonical_system.i"
 	@echo "... src/canonical_system.s"
 	@echo "... src/dynamic_movement_primitive.o"
 	@echo "... src/dynamic_movement_primitive.i"
 	@echo "... src/dynamic_movement_primitive.s"
+	@echo "... src/dynamic_movement_primitive_utilities.o"
+	@echo "... src/dynamic_movement_primitive_utilities.i"
+	@echo "... src/dynamic_movement_primitive_utilities.s"
 	@echo "... src/icra2009_canonical_system.o"
 	@echo "... src/icra2009_canonical_system.i"
 	@echo "... src/icra2009_canonical_system.s"

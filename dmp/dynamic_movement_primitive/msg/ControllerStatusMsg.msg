@@ -1,6 +1,7 @@
 int32 seq
 float64 percent_complete
 int32 status
+int32 id
 int32 IDLE=0
 int32 STARTED=1
 int32 PREEMPTED=2

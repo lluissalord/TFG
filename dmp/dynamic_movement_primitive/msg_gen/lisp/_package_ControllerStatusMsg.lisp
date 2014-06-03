@@ -5,6 +5,8 @@
           PERCENT_COMPLETE
           STATUS-VAL
           STATUS
+          ID-VAL
+          ID
           START_TIME-VAL
           START_TIME
           END_TIME-VAL

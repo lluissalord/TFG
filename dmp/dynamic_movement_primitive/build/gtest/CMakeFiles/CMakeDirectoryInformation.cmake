@@ -11,6 +11,10 @@ SET(CMAKE_FORCE_UNIX_PATHS 1)
 # The C and CXX include file search paths:
 SET(CMAKE_C_INCLUDE_PATH
   "/home/lluis/catkin_ws/src/usc-clmc-ros-pkg/dmp/dynamic_movement_primitive/include"
+  "/home/lluis/catkin_ws/src/usc-clmc-ros-pkg/dmp/locally_weighted_regression/include"
+  "/home/lluis/catkin_ws/src/usc-clmc-ros-pkg/dmp/locally_weighted_regression/lwrLib/include"
+  "/home/lluis/catkin_ws/src/usc-clmc-ros-pkg/dmp/locally_weighted_regression/msg_gen/cpp/include"
+  "/opt/ros/hydro/include"
   "/usr/src/gtest/include"
   "/usr/src/gtest"
   )

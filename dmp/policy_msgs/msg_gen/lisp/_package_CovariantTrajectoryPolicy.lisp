@@ -1,0 +1,14 @@
+(cl:in-package policy_msgs-msg)
+(cl:export '(DISCRETIZATION_INTERVAL-VAL
+          DISCRETIZATION_INTERVAL
+          DIMENSION_NAMES-VAL
+          DIMENSION_NAMES
+          POINTS-VAL
+          POINTS
+          DERIVATIVE_COSTS-VAL
+          DERIVATIVE_COSTS
+          COST_RIDGE_FACTOR-VAL
+          COST_RIDGE_FACTOR
+          NOMINAL_START_POSE-VAL
+          NOMINAL_START_POSE
+))

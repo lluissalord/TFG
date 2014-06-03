@@ -328,14 +328,6 @@ icra2009_test.h
 unistd.h
 -
 
-/home/lluis/catkin_ws/src/usc-clmc-ros-pkg/dmp/dynamic_movement_primitive/dmpLib/test/test_data.cpp
-cmath
--
-dmp_lib/logger.h
--
-test_data.h
-/home/lluis/catkin_ws/src/usc-clmc-ros-pkg/dmp/dynamic_movement_primitive/dmpLib/test/test_data.h
-
 /home/lluis/catkin_ws/src/usc-clmc-ros-pkg/dmp/dynamic_movement_primitive/dmpLib/test/test_data.h
 string
 -
@@ -365,20 +357,6 @@ dmp_lib/trajectory.h
 -
 dmp_lib/logger.h
 -
-
-/home/lluis/catkin_ws/src/usc-clmc-ros-pkg/dmp/dynamic_movement_primitive/dmpLib/test/test_trajectory.cpp
-string
--
-vector
--
-boost/filesystem.hpp
--
-Eigen/Core
--
-dmp_lib/logger.h
--
-test_trajectory.h
-/home/lluis/catkin_ws/src/usc-clmc-ros-pkg/dmp/dynamic_movement_primitive/dmpLib/test/test_trajectory.h
 
 /home/lluis/catkin_ws/src/usc-clmc-ros-pkg/dmp/dynamic_movement_primitive/dmpLib/test/test_trajectory.h
 dmp_lib/trajectory.h

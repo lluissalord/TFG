@@ -17,7 +17,8 @@
 #include <rosbag/view.h>
 #include <boost/foreach.hpp>
 
-#include <assert/assert.h>
+#include <usc_utilities/assert.h>
+#include <usc_utilities/param_server.h>
 
 // local includes
 #include <dynamic_movement_primitive/dynamic_movement_primitive.h>
@@ -26,7 +27,7 @@
 
 namespace dmp
 {
-/* Eliminat perque no s'utilitza el usc_utilities
+
 bool DynamicMovementPrimitive::initFromNodeHandle(dmp_lib::DMPPtr dmp,
                                                   ros::NodeHandle& node_handle)
 {
@@ -59,7 +60,7 @@ bool DynamicMovementPrimitive::initFromNodeHandle(dmp_lib::DMPPtr dmp,
   }
   return true;
 }
-*/
+
 bool DynamicMovementPrimitive::initFromMessage(dmp_lib::DMPPtr dmp,
                                                const DMPMsg& dmp_msg)
 {

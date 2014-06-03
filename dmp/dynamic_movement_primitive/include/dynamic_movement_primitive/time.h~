@@ -68,9 +68,9 @@ public:
   /*!
    * @param node_handle
    * @return True if initialization is successful, otherwise False
-   *//* Eliminat perque no s'utilitza el usc_utilities
+   */
   bool initFromNodeHandle(ros::NodeHandle& node_handle);
-*/
+
   /*!
    * @return
    */

@@ -13,6 +13,7 @@
  *********************************************************************/
 
 // system includes
+#include <usc_utilities/param_server.h>
 
 #include <dmp_lib/canonical_system_parameters.h>
 #include <dmp_lib/canonical_system_state.h>
@@ -23,7 +24,7 @@
 
 namespace dmp
 {
-/* Eliminat perque no s'utilitza el usc_utilities
+
 bool CanonicalSystem::initFromNodeHandle(dmp_lib::CSPtr canonical_system,
                                          ros::NodeHandle& node_handle)
 {
@@ -43,7 +44,7 @@ bool CanonicalSystem::initFromNodeHandle(dmp_lib::CSPtr canonical_system,
       return false;
     }
     return true;
-}*/
+}
 
 bool CanonicalSystem::initFromMessage(dmp_lib::CSPtr canonical_system,
                                       const CSMsg& cs_msg)

@@ -13,8 +13,8 @@
  *********************************************************************/
 
 // system includes
+#include <assert/assert.h>
 #include <usc_utilities/param_server.h>
-#include <usc_utilities/assert.h>
 
 #include <dmp_lib/icra2009_canonical_system_parameters.h>
 #include <dmp_lib/icra2009_canonical_system_state.h>

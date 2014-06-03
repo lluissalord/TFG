@@ -17,6 +17,7 @@
 #include <locally_weighted_regression/locally_weighted_regression.h>
 
 #include <assert/assert.h>
+#include <usc_utilities/param_server.h>
 
 // local includes
 #include <dynamic_movement_primitive/transformation_system.h>
@@ -26,7 +27,6 @@ using namespace std;
 
 namespace dmp
 {
-
 bool TransformationSystem::initFromNodeHandle(dmp_lib::TSParamPtr parameters,
                                               XmlRpc::XmlRpcValue& ts_xml,
                                               ros::NodeHandle& node_handle)

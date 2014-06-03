@@ -3,6 +3,7 @@
 
 CMakeFiles/locally_weighted_regression.dir/src/locally_weighted_regression.cpp.o: ../include/assert/assert.h
 CMakeFiles/locally_weighted_regression.dir/src/locally_weighted_regression.cpp.o: ../include/locally_weighted_regression/locally_weighted_regression.h
+CMakeFiles/locally_weighted_regression.dir/src/locally_weighted_regression.cpp.o: ../include/usc_utilities/param_server.h
 CMakeFiles/locally_weighted_regression.dir/src/locally_weighted_regression.cpp.o: ../lwrLib/include/lwr_lib/lwr.h
 CMakeFiles/locally_weighted_regression.dir/src/locally_weighted_regression.cpp.o: ../lwrLib/include/lwr_lib/lwr_parameters.h
 CMakeFiles/locally_weighted_regression.dir/src/locally_weighted_regression.cpp.o: ../lwrLib/include/lwr_lib/status.h
@@ -11,6 +12,11 @@ CMakeFiles/locally_weighted_regression.dir/src/locally_weighted_regression.cpp.o
 CMakeFiles/locally_weighted_regression.dir/src/locally_weighted_regression.cpp.o: /opt/ros/hydro/include/XmlRpcDecl.h
 CMakeFiles/locally_weighted_regression.dir/src/locally_weighted_regression.cpp.o: /opt/ros/hydro/include/XmlRpcValue.h
 CMakeFiles/locally_weighted_regression.dir/src/locally_weighted_regression.cpp.o: /opt/ros/hydro/include/console_bridge/console.h
+CMakeFiles/locally_weighted_regression.dir/src/locally_weighted_regression.cpp.o: /opt/ros/hydro/include/geometry_msgs/Point.h
+CMakeFiles/locally_weighted_regression.dir/src/locally_weighted_regression.cpp.o: /opt/ros/hydro/include/geometry_msgs/Pose.h
+CMakeFiles/locally_weighted_regression.dir/src/locally_weighted_regression.cpp.o: /opt/ros/hydro/include/geometry_msgs/Quaternion.h
+CMakeFiles/locally_weighted_regression.dir/src/locally_weighted_regression.cpp.o: /opt/ros/hydro/include/geometry_msgs/Vector3.h
+CMakeFiles/locally_weighted_regression.dir/src/locally_weighted_regression.cpp.o: /opt/ros/hydro/include/geometry_msgs/Wrench.h
 CMakeFiles/locally_weighted_regression.dir/src/locally_weighted_regression.cpp.o: /opt/ros/hydro/include/ros/advertise_options.h
 CMakeFiles/locally_weighted_regression.dir/src/locally_weighted_regression.cpp.o: /opt/ros/hydro/include/ros/advertise_service_options.h
 CMakeFiles/locally_weighted_regression.dir/src/locally_weighted_regression.cpp.o: /opt/ros/hydro/include/ros/assert.h

@@ -17,27 +17,27 @@
 #include <rosbag/bag.h>
 #include <rosbag/view.h>
 
-#include <assert/assert.h>
+#include <usc_utilities/assert.h>
+#include <usc_utilities/param_server.h>
 
 // local includes
 #include <dynamic_movement_primitive/icra2009_dynamic_movement_primitive.h>
 #include <dynamic_movement_primitive/icra2009_transformation_system.h>
 #include <dynamic_movement_primitive/icra2009_canonical_system.h>
 
-// Funcions que permeten escriure en arxius bag (no implementat actualment, ja que no hi ha l'arxiu dynamic_movement_primitive_io.h
-//#include <dynamic_movement_primitive/dynamic_movement_primitive_io.h>
+#include <dynamic_movement_primitive/dynamic_movement_primitive_io.h>
 
 using namespace std;
 
 namespace dmp
 {
-/* Eliminat perque no s'utilitza el usc_utilities
+
 bool ICRA2009DynamicMovementPrimitive::initFromNodeHandle(DMPPtr& dmp,
                                                           ros::NodeHandle& node_handle)
 {
   std::vector<std::string> empty_robot_part_names;
   return ICRA2009DynamicMovementPrimitive::initFromNodeHandle(dmp, empty_robot_part_names, node_handle);
-}*/
+}
 
 bool ICRA2009DynamicMovementPrimitive::initFromNodeHandle(DMPPtr& dmp,
                                                           const std::vector<std::string>& robot_part_names,
@@ -145,7 +145,7 @@ bool ICRA2009DynamicMovementPrimitive::writeToMessage(const DMPConstPtr dmp,
   ROS_VERIFY(ICRA2009CanonicalSystem::writeToMessage(canonical_system, icra2009_dmp_msg.canonical_system));
   return true;
 }
-/* Funcions que permeten escriure en arxius bag (no implementat actualment, ja que no hi ha l'arxiu dynamic_movement_primitive_io.h
+
 bool ICRA2009DynamicMovementPrimitive::writeToDisc(const DMPConstPtr dmp,
                                                    const std::string& abs_bag_file_name)
 {
@@ -158,7 +158,7 @@ bool ICRA2009DynamicMovementPrimitive::readFromDisc(DMPPtr& dmp,
                                                     const std::string& abs_bag_file_name)
 {
   return DynamicMovementPrimitiveIO<ICRA2009DMP, DMPMsg>::readFromDisc(dmp, abs_bag_file_name);
-}*/
+}
 
 }
 

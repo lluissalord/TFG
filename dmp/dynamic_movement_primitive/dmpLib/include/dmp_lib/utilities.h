@@ -58,11 +58,11 @@ template<class T>
   bool Utilities<T>::assign(boost::shared_ptr<T>& dest,
                             const boost::shared_ptr<T> src)
   {
-    if (!src.get())
+    /*if (!src.get())
     {
       Logger::logPrintf("Pointer not set. Cannot assign it!", Logger::FATAL);
       return false;
-    }
+    }*/
     dest.reset(new T());
     *dest = *src;
     return true;

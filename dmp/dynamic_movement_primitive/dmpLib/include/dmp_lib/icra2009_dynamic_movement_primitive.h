@@ -96,7 +96,7 @@ public:
     return "ICRA2009";
   }
 
-private:
+/*private:*/
 
   /*!
    */

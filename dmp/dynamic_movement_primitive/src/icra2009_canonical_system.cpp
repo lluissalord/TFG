@@ -13,7 +13,8 @@
  *********************************************************************/
 
 // system includes
-#include <assert/assert.h>
+#include <usc_utilities/assert.h>
+#include <usc_utilities/param_server.h>
 
 #include <dmp_lib/icra2009_canonical_system_parameters.h>
 #include <dmp_lib/icra2009_canonical_system_state.h>
@@ -23,7 +24,7 @@
 
 namespace dmp
 {
-/* Eliminat perque no s'utilitza el usc_utilities
+
 bool ICRA2009CanonicalSystem::initFromNodeHandle(dmp_lib::ICRA2009CSPtr& canonical_system,
                                                  ros::NodeHandle& node_handle)
 {
@@ -47,7 +48,7 @@ bool ICRA2009CanonicalSystem::initFromNodeHandle(dmp_lib::ICRA2009CSPtr& canonic
   // initialize base class
   return CanonicalSystem::initFromNodeHandle(canonical_system, node_handle);
 }
-*/
+
 bool ICRA2009CanonicalSystem::initFromMessage(dmp_lib::ICRA2009CSPtr& canonical_system,
                                               const ICRA2009CSMsg& cs_msg)
 {

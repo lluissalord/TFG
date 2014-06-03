@@ -18,19 +18,19 @@
 #include <rosbag/view.h>
 
 #include <assert/assert.h>
+#include <usc_utilities/param_server.h>
 
 // local includes
 #include <dynamic_movement_primitive/nc2010_dynamic_movement_primitive.h>
 #include <dynamic_movement_primitive/nc2010_transformation_system.h>
 #include <dynamic_movement_primitive/nc2010_canonical_system.h>
 
-//#include <dynamic_movement_primitive/dynamic_movement_primitive_io.h>
+#include <dynamic_movement_primitive/dynamic_movement_primitive_io.h>
 
 using namespace std;
 
 namespace dmp
 {
-/* Eliminat perque no s'utilitza el usc_utilities
 bool NC2010DynamicMovementPrimitive::initFromNodeHandle(DMPPtr& dmp,
                                                           const std::vector<std::string>& robot_part_names,
                                                           ros::NodeHandle& node_handle)
@@ -61,7 +61,7 @@ bool NC2010DynamicMovementPrimitive::initFromNodeHandle(DMPPtr& dmp,
   ROS_VERIFY(DynamicMovementPrimitive::initFromNodeHandle(dmp, node_handle));
   return true;
 }
-*/
+
 bool NC2010DynamicMovementPrimitive::createFromMessage(DMPPtr& dmp,
                                                          const DMPMsg& dmp_msg)
 {
@@ -134,7 +134,7 @@ bool NC2010DynamicMovementPrimitive::writeToMessage(const DMPConstPtr dmp,
   ROS_VERIFY(NC2010CanonicalSystem::writeToMessage(canonical_system, nc2010_dmp_msg.canonical_system));
   return true;
 }
-/* Funcions que permeten escriure en arxius bag (no implementat actualment, ja que no hi ha l'arxiu dynamic_movement_primitive_io.h
+
 bool NC2010DynamicMovementPrimitive::writeToDisc(const DMPConstPtr dmp,
                                                    const std::string& abs_bag_file_name)
 {
@@ -147,7 +147,7 @@ bool NC2010DynamicMovementPrimitive::readFromDisc(DMPPtr& dmp,
                                                     const std::string& abs_bag_file_name)
 {
   return DynamicMovementPrimitiveIO<NC2010DMP, DMPMsg>::readFromDisc(dmp, abs_bag_file_name);
-}*/
+}
 
 }
 

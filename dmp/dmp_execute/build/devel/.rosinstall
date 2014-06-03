@@ -1,0 +1,2 @@
+- setup-file:
+    local-name: /home/lluis/catkin_ws/src/usc-clmc-ros-pkg/dmp/dmp_execute/build/devel/setup.sh

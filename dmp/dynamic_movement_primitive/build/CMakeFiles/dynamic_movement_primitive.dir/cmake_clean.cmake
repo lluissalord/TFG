@@ -11,6 +11,7 @@ FILE(REMOVE_RECURSE
   "CMakeFiles/dynamic_movement_primitive.dir/src/nc2010_dynamic_movement_primitive.cpp.o"
   "CMakeFiles/dynamic_movement_primitive.dir/src/nc2010_transformation_system.cpp.o"
   "CMakeFiles/dynamic_movement_primitive.dir/src/nc2010_canonical_system.cpp.o"
+  "CMakeFiles/dynamic_movement_primitive.dir/src/dynamic_movement_primitive_utilities.cpp.o"
   "../lib/libdynamic_movement_primitive.pdb"
   "../lib/libdynamic_movement_primitive.so"
 )

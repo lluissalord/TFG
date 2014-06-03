@@ -13,7 +13,8 @@
  *********************************************************************/
 
 // system includes
-#include <assert/assert.h>
+#include <usc_utilities/assert.h>
+#include <usc_utilities/param_server.h>
 
 #include <dmp_lib/nc2010_canonical_system_parameters.h>
 #include <dmp_lib/nc2010_canonical_system_state.h>
@@ -23,7 +24,7 @@
 
 namespace dmp
 {
-/* Eliminat perque no s'utilitza el usc_utilities
+
 bool NC2010CanonicalSystem::initFromNodeHandle(dmp_lib::NC2010CSPtr& canonical_system,
                                                  ros::NodeHandle& node_handle)
 {
@@ -47,7 +48,7 @@ bool NC2010CanonicalSystem::initFromNodeHandle(dmp_lib::NC2010CSPtr& canonical_s
   // initialize base class
   return CanonicalSystem::initFromNodeHandle(canonical_system, node_handle);
 }
-*/
+
 bool NC2010CanonicalSystem::initFromMessage(dmp_lib::NC2010CSPtr& canonical_system,
                                               const NC2010CSMsg& cs_msg)
 {

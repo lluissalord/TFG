@@ -13,7 +13,8 @@
  *********************************************************************/
 
 // system includes
-#include <assert/assert.h>
+#include <usc_utilities/assert.h>
+#include <usc_utilities/param_server.h>
 
 // local includes
 #include <dynamic_movement_primitive/icra2009_transformation_system.h>
@@ -23,7 +24,7 @@ using namespace std;
 
 namespace dmp
 {
-/* Eliminat perque no s'utilitza el usc_utilities
+
 bool ICRA2009TransformationSystem::initOneDimensionalTransformationSystemHelper(std::vector<dmp_lib::ICRA2009TSPtr>& transformation_systems,
                                                                                 XmlRpc::XmlRpcValue transformation_systems_parameters_xml,
                                                                                 ros::NodeHandle& node_handle,
@@ -32,7 +33,7 @@ bool ICRA2009TransformationSystem::initOneDimensionalTransformationSystemHelper(
   ROS_ASSERT(transformation_systems_parameters_xml.getType() == XmlRpc::XmlRpcValue::TypeArray);
   for (int j = 0; j < transformation_systems_parameters_xml.size(); ++j)
   {
-    ROS_DEBUG("Initializing ICRA2009 transformation system number >%i< from node handle.",j);
+    ROS_INFO("Initializing ICRA2009 transformation system number >%i< from node handle.",j);
 
     // create transformation system
     dmp_lib::ICRA2009TSPtr transformation_system(new dmp_lib::ICRA2009TransformationSystem());
@@ -136,7 +137,7 @@ bool ICRA2009TransformationSystem::initFromNodeHandle(std::vector<dmp_lib::ICRA2
     return false;
   }
   return true;
-}*/
+}
 
 bool ICRA2009TransformationSystem::initFromNodeHandle(std::vector<dmp_lib::ICRA2009TSPtr>& transformation_systems,
                                                       const std::vector<std::string>& robot_part_names,

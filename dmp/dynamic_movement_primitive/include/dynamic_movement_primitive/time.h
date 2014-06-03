@@ -20,6 +20,7 @@
 #include <dmp_lib/time.h>
 
 #include <assert/assert.h>
+#include <usc_utilities/param_server.h>
 
 // local includes
 #include <dynamic_movement_primitive/TimeMsg.h>
@@ -67,9 +68,9 @@ public:
   /*!
    * @param node_handle
    * @return True if initialization is successful, otherwise False
-   *//* Eliminat perque no s'utilitza el usc_utilities
+   */
   bool initFromNodeHandle(ros::NodeHandle& node_handle);
-*/
+
   /*!
    * @return
    */
@@ -106,7 +107,7 @@ inline TimeMsg Time::toMessage() const
   ROS_VERIFY(writeToMessage(time));
   return time;
 }
-/* Eliminat perque no s'utilitza el usc_utilities
+
 inline bool Time::initFromNodeHandle(ros::NodeHandle& node_handle)
 {
   double tau = 0;
@@ -125,7 +126,7 @@ inline bool Time::initFromNodeHandle(ros::NodeHandle& node_handle)
   }
   ROS_VERIFY(setDeltaT(delta_t));
   return true;
-}*/
+}
 
 inline const dmp_lib::Time Time::getTime() const
 {

@@ -1,0 +1,118 @@
+/*********************************************************************
+  Computational Learning and Motor Control Lab
+  University of Southern California
+  Prof. Stefan Schaal
+ *********************************************************************
+  \remarks    ...
+
+  \file   dmp_controller.h
+
+  \author Alexander Herzog, Peter Pastor
+  \date   Mar 1, 2011
+
+ *********************************************************************/
+
+#ifndef DMP_JOINT_POSITION_CONTROLLER_H_
+#define DMP_JOINT_POSITION_CONTROLLER_H_
+
+// system includes
+#include <ros/ros.h>
+
+#include <usc_utilities/assert.h>
+
+//#include <dynamic_movement_primitive/dynamic_movement_primitive.h>
+//#include <dynamic_movement_primitive/icra2009_dynamic_movement_primitive.h>
+
+// local includes
+#include <dynamic_movement_primitive_controller/dmp_controller.h>
+#include <dynamic_movement_primitive_controller/dmp_controller_implementation.h>
+
+// system include
+#include <boost/shared_ptr.hpp>
+//#include <dynamic_movement_primitive/dynamic_movement_primitive.h>
+
+#include <Eigen/Eigen>
+#include <algorithm>
+#include <cmath>
+
+#include <aibo_driver/Joints.h>
+
+
+namespace dynamic_movement_primitive_controller
+{
+
+class DMPJointPositionController
+{
+
+public:
+    EIGEN_MAKE_ALIGNED_OPERATOR_NEW
+
+    /*! constructor
+     *
+     */
+    DMPJointPositionController() {};
+
+    /*! descructor
+     *
+     */
+    virtual ~DMPJointPositionController() {};
+
+    bool init(std::vector<std::string> controlled_joint_names, ros::NodeHandle& node_handle);
+    
+    // REAL-TIME REQUIREMENTS
+    void starting();
+    
+    // REAL-TIME REQUIREMENTS
+    void update();
+    
+    // REAL-TIME REQUIREMENTS
+    void setDesiredState();
+    
+
+//Si que és necessari perque sino el que fa és tornar a començar una DMP que tindra un transformation_system com abans (la demostracio) pero tot i ser el mateix goal ha de fer una forma semblant a la demo
+    // REAL-TIME REQUIREMENTS
+/*    void holdPositions()
+    {
+      getDesiredPosition();
+      desired_velocities_.setZero(num_joints_);
+      desired_accelerations_.setZero(num_joints_);
+      setDesiredState();
+    }
+
+    // REAL-TIME REQUIREMENTS
+    void getDesiredPosition()
+    {
+      for (int local_joint = 0; local_joint < num_joints_; ++local_joint)
+      {
+        desired_positions_(local_joint) = joint_position_controllers_[local_joint].getJointPosition();
+      }
+    }
+*/
+
+//Ja que s'han de poder modificar per ser controlat amb el PI2
+/*private:*/
+
+    double joint_state_;
+    int num_joints_;
+
+    std::vector<std::string> controlled_joint_names_;
+
+    Eigen::VectorXd desired_positions_;
+    Eigen::VectorXd desired_velocities_;
+    Eigen::VectorXd desired_accelerations_;
+
+    // DMPController
+    //boost::shared_ptr<DMPController> dmp_controller_;
+    dynamic_movement_primitive_controller::DMPControllerImplementation<dmp::ICRA2009DMP> dmp_joint_controller_;
+
+    ros::Publisher joint_command_;
+
+    aibo_driver::Joints joints_msg_;
+
+    ros::Time time_;
+};
+
+}
+
+#endif /* DMP_JOINT_POSITION_CONTROLLER_H_ */
+

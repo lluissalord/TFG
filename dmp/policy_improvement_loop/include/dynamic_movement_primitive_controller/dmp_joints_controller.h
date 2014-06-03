@@ -1,0 +1,296 @@
+/*********************************************************************
+  Computational Learning and Motor Control Lab
+  University of Southern California
+  Prof. Stefan Schaal
+ *********************************************************************
+  \remarks    ...
+
+  \file   dmp_controller.h
+
+  \author Alexander Herzog, Peter Pastor
+  \date   Mar 1, 2011
+
+ *********************************************************************/
+
+#ifndef DMP_JOINT_POSITION_CONTROLLER_H_
+#define DMP_JOINT_POSITION_CONTROLLER_H_
+
+// system includes
+#include <ros/ros.h>
+
+#include <usc_utilities/assert.h>
+
+#include <dynamic_movement_primitive/dynamic_movement_primitive.h>
+#include <dynamic_movement_primitive/icra2009_dynamic_movement_primitive.h>
+
+// local includes
+#include <dynamic_movement_primitive_controller/dmp_controller.h>
+#include <dynamic_movement_primitive_controller/dmp_controller_implementation.h>
+
+// system include
+#include <boost/shared_ptr.hpp>
+#include <dynamic_movement_primitive/dynamic_movement_primitive.h>
+
+#include <Eigen/Eigen>
+#include <algorithm>
+#include <cmath>
+
+#include <aibo_server/Joints.h>
+
+
+namespace dynamic_movement_primitive_controller
+{
+
+class DMPJointPositionController
+{
+
+public:
+    EIGEN_MAKE_ALIGNED_OPERATOR_NEW
+
+    /*! constructor
+     *
+     */
+    DMPJointPositionController() {};
+
+    /*! descructor
+     *
+     */
+    virtual ~DMPJointPositionController() {};
+
+    bool init(std::vector<std::string> controlled_joint_names, ros::NodeHandle& node_handle)
+    {
+      ROS_DEBUG("Initializing DMP joint position controller.");
+
+      /*for (int i = 0; i < (int)controlled_joint_names.size(); ++i)
+      {
+        ROS_INFO("Initializing DMP joint position controller. 1");
+        ros::NodeHandle joint_node_handle(node_handle, controlled_joint_names[i]);
+        ROS_INFO("Initializing DMP joint position controller. 1 i 2");
+      }*/
+
+      ROS_VERIFY(dmp_joint_controller_.initialize(node_handle.getNamespace(), controlled_joint_names));
+
+      num_joints_ = controlled_joint_names.size();
+      controlled_joint_names_ = controlled_joint_names;
+      desired_positions_ = Eigen::VectorXd::Zero(num_joints_); //Va be aixi perque nomes utilitjant joint 1 i joint 2 i la pos inicial es 0
+      desired_velocities_ = Eigen::VectorXd::Zero(num_joints_);
+      desired_accelerations_ = Eigen::VectorXd::Zero(num_joints_);
+
+      joint_command_ = node_handle.advertise<aibo_server::Joints>("aibo_server/aibo/subJoints", 1000);
+
+      time_ = time_.now();
+
+      joints_msg_.jointLF1 = 0;
+      joints_msg_.jointLF2 = 0;
+      joints_msg_.jointLF3 = 30;
+      joints_msg_.jointLH1 = 0;
+      joints_msg_.jointLH2 = 0;
+      joints_msg_.jointLH3 = 30;
+      joints_msg_.jointRF1 = 0;
+      joints_msg_.jointRF2 = 0;
+      joints_msg_.jointRF3 = 30;
+      joints_msg_.jointRH1 = 0;
+      joints_msg_.jointRH2 = 0;
+      joints_msg_.jointRH3 = 30;
+
+      ROS_DEBUG("Initialized DMPIcra2009 with >%i< joints.", num_joints_);
+      for (int i = 0; i < num_joints_; ++i)
+      {
+        ROS_DEBUG(">%s<", controlled_joint_names[i].c_str());
+      }     
+      
+      return true;
+    }
+
+
+    // REAL-TIME REQUIREMENTS
+    void starting()
+    {
+      ROS_DEBUG("Starting...");
+      
+      joint_command_.publish(joints_msg_);
+      
+      setDesiredState();
+
+      /*for (int i = 0; i < num_joints_ ; ++i)
+      {
+        joint_position_controllers_[i].starting();
+      }*/
+      //holdPositions();
+    }
+
+    // REAL-TIME REQUIREMENTS
+    void update()
+    {
+      ROS_INFO("update");
+      if (dmp_joint_controller_.newDMPReady())
+      {
+        // set start of DMP to current desired position
+        ROS_VERIFY(dmp_joint_controller_.changeDMPStart(desired_positions_));
+      }
+
+      if (dmp_joint_controller_.isRunning(desired_positions_, desired_velocities_, desired_accelerations_))
+      {
+        //if((time_.nsec - time_.now().nsec) > 10000) //10Hz
+        //{
+          setDesiredState();
+          time_ = time_.now();
+        //}
+      }
+      /*else
+      {
+        holdPositions();
+      }*/
+    }
+
+    // REAL-TIME REQUIREMENTS
+    void setDesiredState()
+    {
+      int i = 0;
+      //joint_position_controllers_[i].setCommand(desired_positions_(i));
+
+      if( std::find(controlled_joint_names_.begin(), controlled_joint_names_.end(), "legLF1") != controlled_joint_names_.end() ) {
+        if(std::abs(joints_msg_.jointLF1 - desired_positions_(i)) > 1)
+        {
+          joints_msg_.jointLF1 = desired_positions_(i);
+        }
+        i++;
+      }
+      
+      if( std::find(controlled_joint_names_.begin(), controlled_joint_names_.end(), "legLF2") != controlled_joint_names_.end() ) {
+        if(std::abs(joints_msg_.jointLF2 - desired_positions_(i)) > 1)
+        {
+          joints_msg_.jointLF2 = desired_positions_(i);
+        }
+        i++;
+      }
+
+      if( std::find(controlled_joint_names_.begin(), controlled_joint_names_.end(), "legLF3") != controlled_joint_names_.end() ) {
+        if(std::abs(joints_msg_.jointLF3 - desired_positions_(i)) > 1)
+        {        
+          joints_msg_.jointLF3 = desired_positions_(i);
+        }
+        i++;
+      }
+
+      if( std::find(controlled_joint_names_.begin(), controlled_joint_names_.end(), "legLH1") != controlled_joint_names_.end() ) {
+        if(std::abs(joints_msg_.jointLH1 - desired_positions_(i)) > 1)
+        {
+          joints_msg_.jointLH1 = desired_positions_(i);
+        }
+        i++;
+      }
+      
+      if( std::find(controlled_joint_names_.begin(), controlled_joint_names_.end(), "legLH2") != controlled_joint_names_.end() ) {
+        if(std::abs(joints_msg_.jointLH2 - desired_positions_(i)) > 1)
+        {
+          joints_msg_.jointLH2 = desired_positions_(i);
+        }
+        i++;
+      }
+
+      if( std::find(controlled_joint_names_.begin(), controlled_joint_names_.end(), "legLH3") != controlled_joint_names_.end() ) {
+        if(std::abs(joints_msg_.jointLH3 - desired_positions_(i)) > 1)
+        {
+          joints_msg_.jointLH3 = desired_positions_(i);
+        }
+        i++;
+      }
+    
+      if( std::find(controlled_joint_names_.begin(), controlled_joint_names_.end(), "legRF1") != controlled_joint_names_.end() ) {
+        if(std::abs(joints_msg_.jointRF1 - desired_positions_(i)) > 1)
+        {
+          joints_msg_.jointRF1 = desired_positions_(i);
+        }
+        i++;
+      }
+      
+      if( std::find(controlled_joint_names_.begin(), controlled_joint_names_.end(), "legRF2") != controlled_joint_names_.end() ) {
+        if(std::abs(joints_msg_.jointRF2 - desired_positions_(i)) > 1)
+        {
+          joints_msg_.jointRF2 = desired_positions_(i);
+        }
+        i++;
+      }
+
+      if( std::find(controlled_joint_names_.begin(), controlled_joint_names_.end(), "legRF3") != controlled_joint_names_.end() ) {
+        if(std::abs(joints_msg_.jointRF3 - desired_positions_(i)) > 1)
+        {
+          joints_msg_.jointRF3 = desired_positions_(i);
+        }
+        i++;
+      }
+
+      if( std::find(controlled_joint_names_.begin(), controlled_joint_names_.end(), "legRH1") != controlled_joint_names_.end() ) {
+        if(std::abs(joints_msg_.jointRH1 - desired_positions_(i)) > 1)
+        {
+          joints_msg_.jointRH1 = desired_positions_(i);
+        }
+        i++;
+      }
+      
+      if( std::find(controlled_joint_names_.begin(), controlled_joint_names_.end(), "legRH2") != controlled_joint_names_.end() ) {
+        if(std::abs(joints_msg_.jointRH2 - desired_positions_(i)) > 1)
+        {
+          joints_msg_.jointRH2 = desired_positions_(i);
+        }
+        i++;
+      }
+
+      if( std::find(controlled_joint_names_.begin(), controlled_joint_names_.end(), "legRH3") != controlled_joint_names_.end() ) {
+        if(std::abs(joints_msg_.jointRH3 - desired_positions_(i)) > 1)
+        {
+          joints_msg_.jointRH3 = desired_positions_(i);
+        }
+        i++;
+      }
+      joint_command_.publish(joints_msg_);
+    }
+
+//Si que és necessari perque sino el que fa és tornar a començar una DMP que tindra un transformation_system com abans (la demostracio) pero tot i ser el mateix goal ha de fer una forma semblant a la demo
+    // REAL-TIME REQUIREMENTS
+/*    void holdPositions()
+    {
+      getDesiredPosition();
+      desired_velocities_.setZero(num_joints_);
+      desired_accelerations_.setZero(num_joints_);
+      setDesiredState();
+    }
+
+    // REAL-TIME REQUIREMENTS
+    void getDesiredPosition()
+    {
+      for (int local_joint = 0; local_joint < num_joints_; ++local_joint)
+      {
+        desired_positions_(local_joint) = joint_position_controllers_[local_joint].getJointPosition();
+      }
+    }
+*/
+
+//Ja que s'han de poder modificar per ser controlat amb el PI2
+/*private:*/
+
+    double joint_state_;
+    int num_joints_;
+
+    std::vector<std::string> controlled_joint_names_;
+
+    Eigen::VectorXd desired_positions_;
+    Eigen::VectorXd desired_velocities_;
+    Eigen::VectorXd desired_accelerations_;
+
+    // DMPController
+    //boost::shared_ptr<DMPController> dmp_controller_;
+    dynamic_movement_primitive_controller::DMPControllerImplementation<dmp::ICRA2009DMP> dmp_joint_controller_;
+
+    ros::Publisher joint_command_;
+
+    aibo_server::Joints joints_msg_;
+
+    ros::Time time_;
+};
+
+}
+
+#endif /* DMP_JOINT_POSITION_CONTROLLER_H_ */
+

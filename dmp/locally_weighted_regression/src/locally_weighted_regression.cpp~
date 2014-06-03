@@ -17,7 +17,7 @@
 #include <rosbag/view.h>
 #include <boost/foreach.hpp>
 
-#include "assert/assert.h"
+#include <assert/assert.h>
 
 // local includes
 #include <locally_weighted_regression/locally_weighted_regression.h>

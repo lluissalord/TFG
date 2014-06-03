@@ -114,7 +114,7 @@ public:
     return dynamic_movement_primitive::DMPUtilitiesMsg::ICRA2009;
   }
 
-private:
+/*private:*/
 
   /*! Constructor
    */
