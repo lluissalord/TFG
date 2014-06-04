@@ -162,24 +162,24 @@ The estability of the robots...
 
 %Diferents plataformes mobils
 
-\paragraph{}En la branca d'investigació sobre l'estabilitat en robots, tant bípedes, com quadrúpedes, hi ha multitud de tesis, treballs, articles, etc. Tots ells centrant-se en un o altre aspecte com són: el punt de moment zero (\textit{ZMP}), modelat de robots, aprenentatge supervisat, per reforç o \textit{DMP}, generador de patrons centrals (\textit{CPG}), algorismes genètics (\textit{GA})\footnote{La majoria d'aquests conceptes seran explicats al llarg d'aquest apartat.}, i molts altres.
+\paragraph{}En la branca d'investigació sobre l'estabilitat en robots, tant bípedes, com quadrúpedes, hi ha multitud de tesis, treballs, articles, etc. Tots ells, centrant-se en un o altre aspecte com són: el punt de moment zero (\textit{ZMP}), modelat de robots, aprenentatge supervisat, per reforç o \textit{DMP}, generador de patrons centrals (\textit{CPG}), algorismes genètics (\textit{GA})\footnote{La majoria d'aquests conceptes seran explicats al llarg d'aquest apartat.}, i molts altres.
 
-\paragraph{}Tot seguit s'exposa un conjunt d'antecedents, organitzat en diferents àmbits, importants tots ells tant per realitzar l'experiència, com per entendre els factors que han conduït a cadascuna de les decisions preses.
+\paragraph{}Tot seguit, s'exposa un conjunt d'antecedents, organitzat en diferents àmbits, importants tots ells tant per realitzar l'experiència, com per entendre els factors que han conduït a cadascuna de les decisions preses.
 
 \label{Robots}
 \subsubsection*{(1) Robots}
 \addcontentsline{toc}{subsubsection}{Robots}
-
+%Afegit fotografies de cada un dels robots
 \paragraph{}Alguns dels robots sobre els que s'hi ha investigat, amb temàtiques relacionades amb el treball present són:
 \begin{description}
 
-\item[QRIO] Robot humanoide dissenyat i fabricat per Sony Corporation, és el successor de l'AIBO. Entre d'altres articles i investigacions que se n'ha fet, es troba \cite{Nagasaka2004} sobre l'estabilitat d'un robot bípede a l'hora de caminar, corre i saltar. Basat en la teoria del ZMP.
+\item[QRIO] Robot humanoide dissenyat i fabricat per Sony Corporation, és el successor de l'AIBO. Entre d'altres articles i investigacions que se n'ha fet es troba \cite{Nagasaka2004} sobre l'estabilitat d'un robot bípede a l'hora de caminar, corre i saltar. Basat en la teoria del \textit{ZMP}.
 
-\item[ASIMO] És un altre robot humanoide, aquest desenvolupat per HONDA, a partir de l'any 2000. Inicialment, en els seus predecessors, tan sols s'havia plantejat el fet de crear un robot mòbil bípede, però, poc a poc, s'hi han incorporat més facultats, fins arribar a ser un dels humanoides amb els moviments més semblants al dels humans\cite{ASIMO_History}. De les referències llegides en el moment de redactar el treball, de l'ASIMO hi ha estudis sobre la planificació dels passos per tal d'evitar obstacles \cite{Chestnutt2005} i sobre la interacció amb els humans \cite{Mutlu2006}.
+\item[ASIMO] És un altre robot humanoide, aquest desenvolupat per HONDA, a partir de l'any 2000. Inicialment, en els seus predecessors, tan sols s'havia plantejat el fet de crear un robot mòbil bípede, però, poc a poc, s'hi han incorporat més facultats, fins arribar a ser un dels humanoides amb els moviments més semblants al dels humans \cite{ASIMO_History}. De les referències llegides en el moment de redactar el treball, de l'ASIMO hi ha estudis sobre la planificació dels passos per tal d'evitar obstacles \cite{Chestnutt2005} i sobre la interacció amb els humans \cite{Mutlu2006}.
 
-\item[REEM-C] Aquest últim humanoide és el creat per PAL Robotics \cite{REEM_C}. Destaca pel fet de ser el primer bípede enfocat en la investigació i basat 100\% en ROS. El REEM-C està basat, entre d'altres teories, amb el ZMP i en el aprenentatge propi del robot. A més, les seves característiques de reconeixement de veu, manipulació d'objectes i d'interacció amb humans, és una eina educativa molt útil. \cite{Robotics}
+\item[REEM-C] Aquest últim humanoide és el creat per PAL Robotics \cite{REEM_C}. Destaca pel fet de ser el primer bípede enfocat en la investigació i basat 100\% en ROS. El REEM-C està basat, entre d'altres teories, amb el ZMP i en el aprenentatge propi del robot. A més, les seves característiques de reconeixement de veu, manipulació d'objectes i d'interacció amb humans, és una eina educativa molt útil \cite{Robotics}.
 
-\item[BigDog] És un dels grans robots que s'han creat al Boston Dinamics, prenent el que va ser inicialment desenvolupat en la DARPA\cite{Marc2008}. Aquest "\textit{gos}" va ser dissenyat per ús militar, en concret, per acompanyar als soldats portant la carga necessària en terrenys on no podria desplaçar-se un vehicle convencional. Aquest quadrúpede és dinàmicament estable\footnote{Sistema que és estable tenint en compte els efectes inercials i altres components dinàmiques que apareixen en el propi sistema \cite{Purushotham2009}.} gracies al gran conjunt de sensors i actuadors que arriba a tenir. A banda d'un sistema mecànic molt complert, també s'hi ha implementat algorismes d'aprenentatge per reforç (\textit{Reinforcement Learning}\footnote{Aprenentatge per reforç s'explica en detall en l'estat de l'art. En molts casos es abreviat com \textit{RL}.}), en concret DMP (\textit{Dynamic Movement Primitives}) \footnote{DMP (\textit{Dynamic Movement Primitives}) s'explica en detall en la secció \ref{Algorismes} } \cite{Playter2006}.
+\item[BigDog] És un dels grans robots que s'han creat al \textit{Boston Dynamics}, prenent el que va ser inicialment desenvolupat en la DARPA \cite{Marc2008}. Aquest "\textit{gos}" va ser dissenyat per ús militar, en concret, per acompanyar als soldats portant la carga necessària en terrenys on no podria desplaçar-se un vehicle convencional. Aquest quadrúpede és dinàmicament estable\footnote{Sistema que és estable tenint en compte els efectes inercials i altres components dinàmiques que apareixen en el propi sistema \cite{Purushotham2009}.} gracies al gran conjunt de sensors i actuadors que arriba a tenir. A banda d'un sistema mecànic molt complert, també s'hi ha implementat algorismes d'aprenentatge per reforç (\textit{Reinforcement Learning}\footnote{Aprenentatge per reforç s'explica en detall en l'estat de l'art. En molts casos es abreviat com \textit{RL}.}), en concret DMP (\textit{Dynamic Movement Primitives}) \footnote{DMP (\textit{Dynamic Movement Primitives}) s'explica en detall en la secció \ref{Algorismes} } \cite{Playter2006}.
 
 \item[LittleDog] Aquest quadrúpede és el predecessor del BigDog. Té la mateixa base que l'anterior, tot i que en aquest és on s'ha fet més estudi del aprenentatge del robot. La investigació que s'hi ha fet al damunt, tant d'aprenentatge, com de criteri de ZMP és pot entendre de forma genèrica en \cite{Kalakrishnan2010}. 
 
@@ -193,9 +193,9 @@ The estability of the robots...
 
 \paragraph{}Durant molt temps, per utilitzar un robot es requeria d'un model. D'aquesta manera, l'autòmat podia saber en quina posició es trobava, en tot moment, i reaccionar de forma correcte. Si no es feia seguint aquest procediment, l'única opció era que el programador tingués en compte totes les diferents possibilitats de fallada i les corregís, sent aquesta un tasca molt complicada.  
 
-\paragraph{}Un model d'un robot és un sistema virtual que representa de forma aproximada la cinemàtica i/o la dinàmica d'un robot, mitjançant formes geomètriques enllaçades entre elles amb una configuració determinada. Aquesta és la base d'un model, ara bé, se li poden afegir complements, com un aspecte visual més vistós, amb alguna textura o concretar quins són els actuadors o sensors i on situar-los, etc.
+\paragraph{}Un model d'un robot és un sistema virtual que representa de forma aproximada la cinemàtica i/o la dinàmica d'un robot, mitjançant formes geomètriques enllaçades entre elles amb una configuració determinada. Aquesta és la base d'un model, ara bé, se li poden afegir complements, com un aspecte visual més vistós, amb alguna textura o concretar quins són els actuadors o sensors, on situar-los, etc.
 
-\paragraph{}Per crear el model d'un robot existeixen diverses possibilitats. La més rudimentària és prenent les mesures del propi robot i introduir-les al programa, avui dia aquest mètode és molt poc utilitzat. El més típic és utilitzar el propi robot, amb una arquitectura d'aprenentatge òptima, per fer el model. Aquesta arquitectura es basa en un sistema realimentat amb (1) robot, (2) el model en construcció i (3) un controlador per la realimentació; s'arriba finalment a desenvolupar el model, s'il·lustra molt clarament en la figura .
+\paragraph{}Per crear el model d'un robot existeixen diverses possibilitats. La més rudimentària és prenent les mesures del propi robot i introduir-les al programa, avui dia aquest mètode és poc utilitzat quan es vol un model molt acurat. El més típic, en aquests casos, és utilitzar el propi robot, amb una arquitectura d'aprenentatge òptima, per fer el model. Aquesta arquitectura es basa en un sistema realimentat amb (1) robot, (2) el model en construcció i (3) un controlador per la realimentació; per així arribar finalment a desenvolupar el model,  està il·lustra molt clarament en la figura \ref{fig:esquema-arquitectures-models}.
 
 \paragraph{}Ara bé, existeixen tant diferents tipus de models, com també formes diferents de crear-los segons \cite{Nguyen-Tuong2011}:
 
@@ -206,9 +206,9 @@ The estability of the robots...
 
 \item[Directes] Aquest preveu el pròxim estat d'un sistema dinàmic, donada un acció i estat actual. Per tant, els models directes representen la relació causal entre estats i accions. Una de les seves utilitats és en el control automàtic clàssic, entre d'altres.
 
-\item[Indirectes] Per altre banda, aquests preveuen l'acció requerida pel sistema per passar d'un estat actual a desitja pel futur. A diferència dels directes, aquest representen una relació anticausal. Aquest és molt utilitzat en estudis de dinàmica inversa, ja que la relació inversa està ben definida.
+\item[Indirectes] Per altre banda, aquests preveuen l'acció requerida pel sistema per passar d'un estat actual al desitjat pel futur. A diferència dels directes, aquest representen una relació anticausal. Aquest és molt utilitzat en estudis de dinàmica inversa, ja que la relació inversa està ben definida.
 
-\item[Mixtes] La combinació dels dos models dona el model mixt. La idea és que la informació del model directe pugui ajudar en la manca d'unicitat del model indirecte. 
+\item[Mixtes] La combinació dels dos models dona el model mixt. La idea és que la informació del model directe pugui ajudar en la manca d'unicitat del model indirecte, ja que el model indirecte té infinitat de solucions. 
 
 \item[De predicció de múltiples passos] Finalment, aquest és principal utilitzat per la predicció d'una acció o estat futur concret, sense la disponibilitat de les mesures en del moment en qüestió.
 
@@ -256,7 +256,7 @@ The estability of the robots...
 
 \item[Modelatge directe] El model s'extreu a partir d'aprendre de l'observació dels \texttt{inputs} i els \texttt{outputs} del propi robot. Aquesta és probablement la tècnica d'aprenentatge més freqüent per aproximació de models.
 
-\item[Modelatge indirecte] Una de les tècniques per dur a terme modelatge indirecte és l'aprenentatge de l'error de realimentació. Aquest utilitza l'error creat per el controlador de realimentació per tal d'aprendre i crear així el model. 
+\item[Modelatge indirecte] Una de les tècniques per dur a terme modelatge indirecte és l'aprenentatge de l'error de realimentació. Aquest utilitza l'error creat pel controlador de realimentació per tal d'aprendre i crear així el model. 
 
 \item[Aprenentatge amb professor distal] La idea és crear un model invers, però guiat amb un model directe, per tal de minimitzar la manca d'unicitat del model invers.  
 
@@ -267,7 +267,7 @@ The estability of the robots...
 \begin{figure}[h]
 \begin{center}
 \includegraphics[scale=0.4]{Imatges/arquitectures-d'aprenentatge.png}
-\caption{Esquema de cada arquitectura d'aprenentatge \cite{Nguyen-Tuong2011}}
+\caption{Esquema de cada arquitectura d'aprenentatge \cite{Nguyen-Tuong2011}\label{fig:esquema-arquitectures-models}}
 \end{center}
 \end{figure}
 
@@ -277,7 +277,7 @@ The estability of the robots...
 \paragraph{}Ara bé, existeixen una gran multitud de simuladors cada un amb les seves peculiaritats. Alguns dels que s'ha pogut extreure informació i que podrien ser de més interès són els següents:
 
 \begin{description}
-\item[Webots\texttrademark] \cite{Michel2004} Simulador de robots mòbils desenvolupat per Cyberbotics Ltd. La física està basada en Open Dinamic Engine (\textit{ODE}), per així simular una dinàmica més acurada. Aquest \texttt{software} proveeix un entorn de treball per modelar i programar el teu propi robot, a més inclou models de diversos robots com són Sony Aibo, Khepera, Lego Mindstorms\texttrademark o Pioneer2.
+\item[Webots\texttrademark] \cite{Michel2004} Simulador de robots mòbils desenvolupat per Cyberbotics Ltd. La física està basada en Open Dinamic Engine (\textit{ODE}), per així simular una dinàmica més acurada. Aquest \texttt{software} proveeix un entorn de treball per modelar i programar el teu propi robot, a més inclou models de diversos robots com són Sony Aibo, Khepera, Lego Mindstorms\texttrademark o Pioneer2. Però té la desventatge que és un simulador de pagament.
 
 \item[SimRobot] \cite{Laue2006a} Aquest és un simulador genèric de robots en 3D. Com el Webots\texttrademark , el SimRobot també es basa en la física d'\textit{ODE}. Un dels inconvenients d'aquest simulador és que no es possible transferir els controladors de la simulació al robot real.
 
@@ -298,19 +298,19 @@ The estability of the robots...
 \subsubsection*{(3) Aprenentatge supervisat}
 \addcontentsline{toc}{subsubsection}{Aprenentatge supervisat}
 
-\paragraph{}En l'aprenentatge supervisat, un agent extern presenta una sèrie de dades d'exemple, prediccions correctes a fer en diferents situacions \cite{Kober2009}. A partir d'aquestes dades d'entrenament, s'ha d'extreure un model per tal que, en una situació desconeguda, s'esculli l'acció correcte. L'aprenentatge supervisat és, segons \cite{Cord2008}, la metodologia més important d'aprenentatge automàtic i amb molt pes en el processament de dades multimèdia.
+\paragraph{}En l'aprenentatge supervisat (en estadística anomenat \textit{anàlisi clúster}), un agent extern presenta una sèrie de dades d'exemple o d'entrenament, que són prediccions correctes a fer en diferents situacions \cite{Kober2009}. A partir d'aquestes dades d'entrenament, s'ha d'extreure un model estadístic per tal que, en una situació desconeguda, s'esculli l'acció correcte. L'aprenentatge supervisat és, segons \cite{Cord2008}, la metodologia més important d'aprenentatge automàtic i amb molt pes en el processament de dades multimèdia.
 
-\paragraph{}Les dades a estimar poden ser binaries,on s'escull si una dada desconeguda és d'un tipus (p. e. pertany a un grup o no), o numèriques, on s'utilitza la regressió per aproximar. Tant siguin unes o altres, les bases de l'aprenentatge supervisat són: (1) el model, (2) la funció de pèrdua i la d'error d'aproximació, i (3) procediment d'optimització \cite{Alpaydin2004}.
+\paragraph{}Les dades a estimar poden ser binaries, on s'escull si una dada desconeguda és d'un tipus (p. e. pertany a un grup o no), o numèriques, on s'utilitza la regressió per aproximar. Tant siguin unes o altres, les bases de l'aprenentatge supervisat són: (1) el model estadístic, (2) la funció de pèrdua i la d'error d'aproximació, i (3) procediment d'optimització \cite{Alpaydin2004}.
 
 \begin{enumerate}
 
-\item El model es representa com $g(x|\theta)$\footnote{La x són les entrades, mentre $\theta$ són els paràmetres}, on \textit{g}(·) és la classe d'hipòtesi i els valors de $\theta$ donen una hipòtesi en concret d'entre les possibles en el model.
+\item El model es representa com $g(x|\theta)$\footnote{La x són les entrades, mentre $\theta$ són els paràmetres}, on \textit{g}(·) és la classe d'hipòtesi i els valors de $\theta$ donen una hipòtesi en concret, d'entre les possibles en el model.
 
 \item La funció de pèrdua, \textit{L}(·), quantifica la diferència entre la sortida desitjada, $r^t$, i l'aproximació $g(x^t|\theta)$, mentre la suma de les pèrdues de cada cas és l'error d'aproximació \begin{equation} \label{eq:er-aprox}
 E(\theta|X)=\sum_{t} L(r^t,g(x^t|\theta))
 \end{equation}
 
-\item El procediment d'optimització per trobar $\theta^*$ que minimitza l'error total és:
+\item El procediment d'optimització per trobar $\theta^*$ que minimitza l'error total, $E(\theta|X)$, és:
 \begin{equation} \label{eq:theta-opt}
 \theta^*=arg\,\operatorname*{min}_\theta E(\theta|X)
 \end{equation}
@@ -332,13 +332,13 @@ Sent $x_{t}$ la dada a classificar i $x_{i}$ l'exemple més pròxim. Després de
 
 \paragraph{}En la robòtica, l'aprenentatge per reforç proveeix d'unes eines molt útils per tal de crear comportaments sofisticats i amb gran dificultat de disseny. Permet a un robot desenvolupar el seu propi comportament a base de prova i error. En aquest cas, el dissenyador, en lloc de donar unes dades per explícitament crear la solució al problema, tan sols proveeix una realimentació amb una funció objectiu de valors escalars que mesura la bondat de l'acció anterior. Per tant, un agent explora les possibles estratègies i després rep una recompensa per l'acció feta, intentant sempre maximitzar la recompensa acumulada durant el seu temps de vida \cite{Kober2009}.
 
-\paragraph{}Aquest agent i el seu entorn pot ser modelat com un estat \textit{s}$\in$\textit{S}\footnote{Un estat \textit{s} conté la informació necessaria per descriure la situació actual i futures.} i una acció \textit{a}$\in$\textit{A}\footnote{Un estat del sistema es controlat o carregat per una acció \textit{a}.}. Una recompensa es donada a l'agent, per cadascuna de les accions que desenvolupa, en funció de l'estat i les observacions. L'objectiu de \texttt{RL} és crear una política\footnote{Per política s'entén com en \cite{iec-dlc} "\textit{Manera de conduir un afer.}"} $\pi$ que maximitza la recompensa acumulada escollint unes accions \textit{a} en determinats estats \textit{s}.
+\paragraph{}Aquest agent i el seu entorn poden ser modelat com un estat \textit{s}$\in$\textit{S}\footnote{Un estat \textit{s} conté la informació necessaria per descriure la situació actual i futures.} i una acció \textit{a}$\in$\textit{A}\footnote{Un estat del sistema es controlat o carregat per una acció \textit{a}.}. Una recompensa es donada a l'agent, per cadascuna de les accions que desenvolupa, en funció de l'estat i les observacions. L'objectiu de \texttt{RL} és crear una política\footnote{Per política s'entén com en \cite{iec-dlc} "\textit{Manera de conduir un afer.}"} $\pi$ que maximitza la recompensa acumulada escollint unes accions \textit{a} en determinats estats \textit{s}.
 
 \paragraph{}La idea clàssica d'aprenentatge per reforç es prenia des del punt de vista que l'agent consistia en un procés de decisions de Markov (\textit{Markov Decsion Process} o \textit{MDP})\footnote{Conjunt d'estats \textit{S}, accions \textit{A}, recompenses \textit{R} i probabilitats de transició T, aquest últim defineix la dinàmica del sistema per predir l'efecte de l'acció en un estat donat.} on la propietat de Markov estableix que el següent estat \textit{s}$'$ i la recompensa estan definits tan sols per l'acció \textit{a} i l'estat \textit{s} \cite{Sutton1998}. %Actualment, no tots els estudis que es fan segueixen el concepte de \textit{MDP}, ja que s'utilitza el \texttt{RL} sense tenir definit el sistema dinàmic, per tant, sense saber l'efecte de l'acció sobre l'estat. 
 
 %S'hauria de posar la parta comentada anteriorment? Tot i que del sistema dinamic només se'n parla en el peu de pagina?
 
-\paragraph{}L'acumulació de recompensa és el que es maximitza, per tant segons el mètode d'atorgar-la definirà el comportament òptim \cite{Kober2009}. Existeixen diversos models, aquí se n'exposen tres:
+\paragraph{}L'acumulació de recompensa és el que es maximitza o minimitza segons l'algorisme utilitzat, aquí s'exemplifica maximitzant. Per tant segons el mètode d'atorgar la recompensa es defineix el comportament òptim \cite{Kober2009}. Existeixen diversos models, aquí se n'exposen tres:
 \begin{description}
 
 
@@ -383,10 +383,7 @@ J=\lim_{H \to \infty} E\left\{ \frac{1}{H}\sum_{h=0}^{H} R_{h} \right\}.
 
 \end{description}
 
-%Aprenentatges, alguns no necessiten d'un model per poder treballar tot i que si es té un model poden desenvolupar les tasques amb més facilitat i precisió (si el model ha estat creat correctament)
-%Aprenentatge supervisat i el no supervisat
-%Aprenentatge per reforç (Q-learning, R-learning, DMP, etc)
-%CPG i algorismes genètics
+%FALTA ALGORISME DE LES DMP MOLT BEN EXPLICAT
 
 
 \label{Objectius}
@@ -395,7 +392,7 @@ J=\lim_{H \to \infty} E\left\{ \frac{1}{H}\sum_{h=0}^{H} R_{h} \right\}.
 
 \paragraph{}L'objectiu principal del present TFG és l'optimització de l'adaptabilitat d'un robot quadrúpede, en aquest cas l'AIBO, a plans inclinats desconeguts pel robot. Per arribar a aquest objectiu s'han hagut de marcat uns objectius més concrets:
 \begin{itemize}
-\item Dissenyar un entorn de treball complert que permeti que l'algorisme utilitzat pugui ser processat en l'ordinador i enviar la informació necessària de forma remota a l'AIBO. En aquest cas l'entorn de treball tal que permeti això serà el ROS.
+\item Dissenyar un entorn de treball complert que permeti que l'algorisme utilitzat pugui ser processat en l'ordinador i enviar la informació necessària de forma remota a l'AIBO. En aquest cas l'entorn de treball tal que permeti això és el ROS.
 \item Utilització de l'algorisme més adequat, tenint en compte tant l'entorn del robot i ell mateix, com l'abast del treball. Per això s'haurà de fer un estudi dels diferents mètodes existents que podrien ser útils per l'objecte del treball.
 \item Dur a terme una fase d'aprenentatge pel robot. Per poder fer-ho, abans, s'haurà d'haver fet un estudi en profunditat del aprenentatge per reforç.
 \item Realització de diferents proves per comprovar el correcte funcionament. Tant per poder comprovar, com per fer la fase d'aprenentatge del robot, és necessita d'una plataforma mòbil que en aquest cas ja està construïda, pel Carlos Ramos (estudiant de la EPSEVG)\cite{TFG_Carlos_Ramos}, però s'ha de millorar per fer-la més robusta.
@@ -624,13 +621,15 @@ Rxgraph exposa visualment amb un gràfic com funcionen els processos de ROS i le
 \label{Estabilitat}
 \subsection{Estabilitat}
 %Com definirem estabilitat, diferents mètodes...
+%Explicar que s'ha proposat de fer el calcul del desplaçament del CoG, i que s'intentaria fer que aquest retornes a la posició inicial. Però finalment nomes es pot intentar que tingui horitzontalitat.
+%També explicar el sistema de solucio inicial de la DMP de com s'han de posar les potes per tal de tenir una posicio mitjanament estable.
 
 \label{Algorismes}
 \subsection{Algorismes de resposta davant pertorbacions}
 
 \paragraph{}En la robòtica, com en qualsevol àmbit, per un mateix problema poden ser utilitzades infinitat de solucions. Ara bé, el tret característic de l'enginyeria és que d'entre la multitud de possibilitats, s'esculli la més òptima segons les condicions del moment. Abans d'optar per una opció, s'ha de tenir una idea clara del que aporta cadascuna i observar com s'adapta a la problemàtica actual.
 
-\paragraph{}En l'estat de l'art, s'han esmentat algunes de les possibilitats per dur a terme els objectius fixats inicialment. Aquestes opcions han estat explicades anteriorment, amb una breu descripció i trets característics que podrien ser d'interès pel nostre cas. A continuació, s'exposa com cadascuna podria adaptar-se al problema, mencionant els seus avantatges i inconvenients. Al final, s'escull la més adient pel cas i se'n fa una descripció més acurada. 
+\paragraph{}En l'estat de l'art, s'han esmentat algunes de les possibilitats per dur a terme els objectius fixats inicialment. Aquestes opcions han estat explicades anteriorment, amb una breu descripció i trets característics que podrien ser d'interès pel nostre cas. A continuació, s'exposa com cadascuna podria adaptar-se al problema, mencionant els seus avantatges i inconvenients.
 
 \subsubsection{Model del robot}
 
@@ -640,12 +639,67 @@ Rxgraph exposa visualment amb un gràfic com funcionen els processos de ROS i le
 
 %Creació d'un model i fer estudi d'aquest model per saber davant una pertorbació com ha de ser les entrades dels actuadors per tal de estar en una posició d'estabilitat
 
+\subsubsection{Aprenentatge supervisat}
 %Supervised learning, a partir de moltes mostres d'indicacions i com ha de d'actuar per estar estable, pren una funció que aplicarà en els casos futurs.
 %Noise: (1) Pot haver-hi impresicions en la gravacio de atributs d'entrada (2) Pot haver-hi errors en el "labeling" dels punts de datos (3) Poden existir atributs adicionals que no s'han tingut en compte i que afecten al "labeling", aquests poden ser "hidden or latent" i pot ser que no siguin observables
-
+\subsubsection{Aprenentatge per reforç}
 %Reinforcement learning, Q-learning i DMP (learning by demostration)
 
+\subsubsection{DMP}
+%Explicar que és i despres dir quan la combinacio amb PI² que el que provoca es una unió entre DMP i aprenentatge per reforç
+
+\subsubsection{Affordance}
 %Affordance: Mes o menys es podria entendre com els sensors i actuaduadors serien moduls neuronals que envien informació ja filtrada als altres moduls neuronals de tal manera que vagi enfocat a fer una tasca determinada
+
+\subsubsection{Elecció final}
+%Explicar que es finalment s'escull per les DMPs juntament amb PI² que donarà la part de reinforcement learning que es necessita per tal de poder dur a terme el treball de la forma més adient possible, ja que aquesta part corregirà l'error que comet el goal de la DMP.
+
+\subsection{Codis amb DMPs implementades}
+%Es molt complex el fer el codi per implementar les DMPs ja que són un seguit de equacions diferencials amb transformacions de variables, us de Gaussianes, etc.
+%Per això s'implementa a partir de codis ja existents que funcionen, pero adaptant-lo al cas de treball.
+\subsubsection{DMPs de Scott Niekum}
+%Prenen com a codi original el de les dmps del package de ROS de DMP, creat per ell mateix, i l'implementa en robots en aquest package. Esta basat en el document ICRA2009 de Peter Pastor http://www-clmc.usc.edu/publications/P/pastor-ICRA2009.pdf
+%Es sencill i útil, va directe al gra, ara té el problema que no té implementat per posar-hi aprenentatge per reforç, la qual cosa és molt important per aquest projecte. Inicialment es va estudiar a fons el funcionament d'aquest codi i observar com es podria arribar a implementar en el cas actual, finalment es va veure que amb aquest codi no es podia implementar o seria complicat de posar l'algorisme de PI².
+
+\subsubsection{Package complert del robot PR2 del USC-CLMC}
+%Aqui es troben tots els diferents codis que utilitza el USC-CLMC (Computational Learning and Motor Control Lab at the University of Southern California). 
+%PACKAGES QUE HI HA I MITJANAMENT FUNCIONAMENT
+%Aquest package apart de ser pel robot PR2, confia en que es té un model del propi robot (per tant el robot sap on es troba en cada instant), utilitza aprenentatges que no es necessiten, utilitza cinematica inversa, visualització amb gui dels parametres, reconeixement i reproduccio d'audio i un llarg etcètera. Es per això que s'ha hagut de reduir molt i nomes quedar-se amb l'essencial que és:
+%DMPs (d'aquest s'ha tret tot el relacionat amb la propia demostracio ja que aquí s'impleneta a traves de codi i no pas desplaçant el propi robot, el controlador que envia les ordres de moviment al robot ja que aqui van a traves de ROS i es un sistema totalment diferents (tot i que s'ha pres com a referencia el que estava fet) i la visualitzacio en gui), el learning_policy (que és en essència el PI², d'aquí l'únic que s'ha tret ha estat algun tipus de policy que no era la que s'utilitzava per les dmps i algun test que no era necessari).
+%La part que s'ha deixat ha hagut de ser modificada en molts punts per tal que s'adaptes al nostre cas, aquests canvis i l'explicació del funcionament s'expliquen més endavant.
+
+\newpage
+\section{Disseny inicial}
+%La idea inicial va ser primer fer les simulacions inicials en el model a traves de l'ordinador per tal de després el que s'ha aprés amb el model aplicar-ho al robot per així tenir un comportament inicial que ja no es perillos per l'integritat del robot físic. Tot i que després d'això s'ha de seguir fent aprenentatge ja que el model no és perfecte i per tant té un cert error, que quan es posa en el robot físic aquest error es corregirà.
+%Per les DMPs es pensava de tan sols utilitzar el codi de Scott Niekum, es pensava que amb això hi hauria prou.
+%Es pensava utilitzar l'acceleròmetre del pròpi Aibo, a partir d'observar les mostres que es donaven es va comprovar com l'error era molt gran i per això es va comprar un accelerometres més precis MPU6050. Apart d'això també es fiava de treure el desplaçament del CoG (apart d'obviament l'angle d'inclinacio del robot).
+
+\subsection{Model de l'Aibo}
+%EXPLICAR TOT TOT LO DE ES MODEL
+
+\subsection{Acceleròmetre}
+%EXPLICAR TOT TOT LO DE S'ACCELEROMETRE
+
+\newpage
+\section{Disseny final}
+%ON FICAR MODIFICACIONS FETES AL CODI DEL USC-CLMC??? AQUI O QUAN INTRODUESC EL CODI EN L'ESTUDI PRELIMINAR??
+
+%Explicació general com queda finalment, que s'agafa les DMPs amb el PI², l'ús del accelerometre (que no se n'ha parlat per res), explicar quin seria el reward, el goal de la DMP inicialment, etc. Explicar el funcionament global del conjunt com afecta cada cosa etc. Amb això s'hauria d'entendre que és el meu treball
+%Després sub apartats amb explicacions exteses de cada cosa
+
+\subsection{Execució DMPs sense $\mathrm{PI^2}$}
+%Explicacions i esquema de blocs del codi i funcionament de les DMPs 
+\subsection{Execució DMPs amb $\mathrm{PI^2}$}
+%On es que afecta el PI² explicat tant amb paraules com esquemes de blocs
+\subsection{Plataforma}
+%Funcionament de la plataforma, com esta connectada a l'Arduino i alimentació i que és el que li faig fer.
+%Suposadament si s'estés utilitzant el PI² s'hauria de quedar fixa en una posició, ara bé, com que està implementat les DMPs i tan sols esta aprenent de la demostració, es pot moure en diferents direccions i l'Aibo es va adaptant a la inclinació.
+
+\newpage
+%Abans d'això he de posar PRESSUPOST?? Realment gastat només he gastat amb l'accelerometre la resta ha estat gratuït...
+%PLANIFICACIO TEMPORAL??
+%I IMPACTE MEDI AMBIENTAL??
+\section{Conclusions}
 
 \newpage
 \section*{Agraïments}

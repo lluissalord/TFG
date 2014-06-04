@@ -74,9 +74,25 @@
 \contentsline {paragraph}{}{25}{section*.68}
 \contentsline {paragraph}{}{26}{section*.69}
 \contentsline {subsubsection}{\numberline {1.4.1}Model del robot}{26}{subsubsection.1.4.1}
-\contentsline {section}{Agra\IeC {\@umlaut \i }ments}{27}{section*.70}
-\contentsline {section}{Refer\IeC {\`e}ncies}{28}{section*.70}
-\contentsline {section}{Annexos}{32}{section*.72}
-\contentsline {section}{\numberline {A}Instal\IeC {\textperiodcentered }laci\IeC {\'o} de ROS, llibreries d'Urbi i paquet aibo server}{32}{appendix.A}
-\contentsline {paragraph}{}{32}{section*.73}
-\contentsline {section}{\numberline {B}Bibliografia}{33}{appendix.B}
+\contentsline {subsubsection}{\numberline {1.4.2}Aprenentatge supervisat}{26}{subsubsection.1.4.2}
+\contentsline {subsubsection}{\numberline {1.4.3}Aprenentatge per refor\IeC {\c c}}{26}{subsubsection.1.4.3}
+\contentsline {subsubsection}{\numberline {1.4.4}DMP}{26}{subsubsection.1.4.4}
+\contentsline {subsubsection}{\numberline {1.4.5}Affordance}{26}{subsubsection.1.4.5}
+\contentsline {subsubsection}{\numberline {1.4.6}Elecci\IeC {\'o} final}{26}{subsubsection.1.4.6}
+\contentsline {subsection}{\numberline {1.5}Codis amb DMPs implementades}{26}{subsection.1.5}
+\contentsline {subsubsection}{\numberline {1.5.1}DMPs de Scott Niekum}{26}{subsubsection.1.5.1}
+\contentsline {subsubsection}{\numberline {1.5.2}Package complert del robot PR2 del USC-CLMC}{26}{subsubsection.1.5.2}
+\contentsline {section}{\numberline {2}Disseny inicial}{27}{section.2}
+\contentsline {subsection}{\numberline {2.1}Model de l'Aibo}{27}{subsection.2.1}
+\contentsline {subsection}{\numberline {2.2}Acceler\IeC {\`o}metre}{27}{subsection.2.2}
+\contentsline {section}{\numberline {3}Disseny final}{28}{section.3}
+\contentsline {subsection}{\numberline {3.1}Execuci\IeC {\'o} DMPs sense $\mathrm {PI^2}$}{28}{subsection.3.1}
+\contentsline {subsection}{\numberline {3.2}Execuci\IeC {\'o} DMPs amb $\mathrm {PI^2}$}{28}{subsection.3.2}
+\contentsline {subsection}{\numberline {3.3}Plataforma}{28}{subsection.3.3}
+\contentsline {section}{\numberline {4}Conclusions}{29}{section.4}
+\contentsline {section}{Agra\IeC {\@umlaut \i }ments}{30}{section*.70}
+\contentsline {section}{Refer\IeC {\`e}ncies}{31}{section*.70}
+\contentsline {section}{Annexos}{35}{section*.72}
+\contentsline {section}{\numberline {A}Instal\IeC {\textperiodcentered }laci\IeC {\'o} de ROS, llibreries d'Urbi i paquet aibo server}{35}{appendix.A}
+\contentsline {paragraph}{}{35}{section*.73}
+\contentsline {section}{\numberline {B}Bibliografia}{36}{appendix.B}
