@@ -8,41 +8,42 @@
 \BOOKMARK [2][-]{section*.19}{Estat de l'art}{section*.15}% 8
 \BOOKMARK [3][-]{section*.22}{Robots}{section*.19}% 9
 \BOOKMARK [3][-]{section*.25}{Modelatge de robots}{section*.19}% 10
-\BOOKMARK [3][-]{section*.37}{Aprenentatge supervisat}{section*.19}% 11
-\BOOKMARK [3][-]{section*.42}{Aprenentatge per refor\347}{section*.19}% 12
-\BOOKMARK [3][-]{section*.47}{Algorismes avan\347ats}{section*.19}% 13
-\BOOKMARK [2][-]{section*.50}{Objectius}{section*.15}% 14
-\BOOKMARK [2][-]{section*.52}{Abast del treball}{section*.15}% 15
-\BOOKMARK [2][-]{section*.53}{Estructura del treball}{section*.15}% 16
-\BOOKMARK [1][-]{section.1}{Estudis preliminars}{}% 17
-\BOOKMARK [2][-]{subsection.1.1}{AIBO}{section.1}% 18
-\BOOKMARK [3][-]{subsubsection.1.1.1}{Hardware}{subsection.1.1}% 19
-\BOOKMARK [3][-]{subsubsection.1.1.2}{Software}{subsection.1.1}% 20
-\BOOKMARK [2][-]{subsection.1.2}{ROS}{section.1}% 21
-\BOOKMARK [3][-]{subsubsection.1.2.1}{Estructura de ROS}{subsection.1.2}% 22
-\BOOKMARK [3][-]{subsubsection.1.2.2}{Objectius de ROS}{subsection.1.2}% 23
-\BOOKMARK [3][-]{subsubsection.1.2.3}{Eines de ROS}{subsection.1.2}% 24
-\BOOKMARK [2][-]{subsection.1.3}{Estabilitat}{section.1}% 25
-\BOOKMARK [2][-]{subsection.1.4}{Algorismes de resposta davant pertorbacions}{section.1}% 26
-\BOOKMARK [3][-]{subsubsection.1.4.1}{Model del robot}{subsection.1.4}% 27
-\BOOKMARK [3][-]{subsubsection.1.4.2}{Aprenentatge supervisat}{subsection.1.4}% 28
-\BOOKMARK [3][-]{subsubsection.1.4.3}{Aprenentatge per refor\347}{subsection.1.4}% 29
-\BOOKMARK [3][-]{subsubsection.1.4.4}{DMP}{subsection.1.4}% 30
-\BOOKMARK [3][-]{subsubsection.1.4.5}{Affordance}{subsection.1.4}% 31
-\BOOKMARK [3][-]{subsubsection.1.4.6}{Elecci\363 final}{subsection.1.4}% 32
-\BOOKMARK [2][-]{subsection.1.5}{Codis amb DMPs implementades}{section.1}% 33
-\BOOKMARK [3][-]{subsubsection.1.5.1}{DMPs de Scott Niekum}{subsection.1.5}% 34
-\BOOKMARK [3][-]{subsubsection.1.5.2}{Package complert del robot PR2 del USC-CLMC}{subsection.1.5}% 35
-\BOOKMARK [1][-]{section.2}{Disseny inicial}{}% 36
-\BOOKMARK [2][-]{subsection.2.1}{Model de l'Aibo}{section.2}% 37
-\BOOKMARK [2][-]{subsection.2.2}{Acceler\362metre}{section.2}% 38
-\BOOKMARK [1][-]{section.3}{Disseny final}{}% 39
-\BOOKMARK [2][-]{subsection.3.1}{Execuci\363 DMPs sense PI2}{section.3}% 40
-\BOOKMARK [2][-]{subsection.3.2}{Execuci\363 DMPs amb PI2}{section.3}% 41
-\BOOKMARK [2][-]{subsection.3.3}{Plataforma}{section.3}% 42
-\BOOKMARK [1][-]{section.4}{Conclusions}{}% 43
-\BOOKMARK [1][-]{section*.70}{Agra\357ments}{}% 44
-\BOOKMARK [1][-]{section*.70}{Refer\350ncies}{}% 45
-\BOOKMARK [1][-]{section*.72}{Annexos}{}% 46
-\BOOKMARK [1][-]{appendix.A}{Instal\267laci\363 de ROS, llibreries d'Urbi i paquet aibo server}{}% 47
-\BOOKMARK [1][-]{appendix.B}{Bibliografia}{}% 48
+\BOOKMARK [3][-]{section*.37}{Aprenentatge supervisat \(SL\)}{section*.19}% 11
+\BOOKMARK [3][-]{section*.42}{Aprenentatge per refor\347 \(RL\)}{section*.19}% 12
+\BOOKMARK [3][-]{section*.51}{DMP \(Dynamic Moviment Primitive\)}{section*.19}% 13
+\BOOKMARK [3][-]{section*.53}{Algorismes avan\347ats}{section*.19}% 14
+\BOOKMARK [2][-]{section*.56}{Objectius}{section*.15}% 15
+\BOOKMARK [2][-]{section*.58}{Abast del treball}{section*.15}% 16
+\BOOKMARK [2][-]{section*.59}{Estructura del treball}{section*.15}% 17
+\BOOKMARK [1][-]{section.1}{Estudis preliminars}{}% 18
+\BOOKMARK [2][-]{subsection.1.1}{AIBO}{section.1}% 19
+\BOOKMARK [3][-]{subsubsection.1.1.1}{Hardware}{subsection.1.1}% 20
+\BOOKMARK [3][-]{subsubsection.1.1.2}{Software}{subsection.1.1}% 21
+\BOOKMARK [2][-]{subsection.1.2}{ROS}{section.1}% 22
+\BOOKMARK [3][-]{subsubsection.1.2.1}{Estructura de ROS}{subsection.1.2}% 23
+\BOOKMARK [3][-]{subsubsection.1.2.2}{Objectius de ROS}{subsection.1.2}% 24
+\BOOKMARK [3][-]{subsubsection.1.2.3}{Eines de ROS}{subsection.1.2}% 25
+\BOOKMARK [2][-]{subsection.1.3}{Estabilitat}{section.1}% 26
+\BOOKMARK [2][-]{subsection.1.4}{Algorismes de resposta davant pertorbacions}{section.1}% 27
+\BOOKMARK [3][-]{subsubsection.1.4.1}{Model del robot}{subsection.1.4}% 28
+\BOOKMARK [3][-]{subsubsection.1.4.2}{Aprenentatge supervisat}{subsection.1.4}% 29
+\BOOKMARK [3][-]{subsubsection.1.4.3}{Aprenentatge per refor\347}{subsection.1.4}% 30
+\BOOKMARK [3][-]{subsubsection.1.4.4}{DMP}{subsection.1.4}% 31
+\BOOKMARK [3][-]{subsubsection.1.4.5}{Affordance}{subsection.1.4}% 32
+\BOOKMARK [3][-]{subsubsection.1.4.6}{Elecci\363 final}{subsection.1.4}% 33
+\BOOKMARK [2][-]{subsection.1.5}{Codis amb DMPs implementades}{section.1}% 34
+\BOOKMARK [3][-]{subsubsection.1.5.1}{DMPs de Scott Niekum}{subsection.1.5}% 35
+\BOOKMARK [3][-]{subsubsection.1.5.2}{Package complert del robot PR2 del USC-CLMC}{subsection.1.5}% 36
+\BOOKMARK [1][-]{section.2}{Disseny inicial}{}% 37
+\BOOKMARK [2][-]{subsection.2.1}{Model de l'Aibo}{section.2}% 38
+\BOOKMARK [2][-]{subsection.2.2}{Acceler\362metre}{section.2}% 39
+\BOOKMARK [1][-]{section.3}{Disseny final}{}% 40
+\BOOKMARK [2][-]{subsection.3.1}{Execuci\363 DMPs sense PI2}{section.3}% 41
+\BOOKMARK [2][-]{subsection.3.2}{Execuci\363 DMPs amb PI2}{section.3}% 42
+\BOOKMARK [2][-]{subsection.3.3}{Plataforma}{section.3}% 43
+\BOOKMARK [1][-]{section.4}{Conclusions}{}% 44
+\BOOKMARK [1][-]{section*.76}{Agra\357ments}{}% 45
+\BOOKMARK [1][-]{section*.76}{Refer\350ncies}{}% 46
+\BOOKMARK [1][-]{section*.78}{Annexos}{}% 47
+\BOOKMARK [1][-]{appendix.A}{Instal\267laci\363 de ROS, llibreries d'Urbi i paquet aibo server}{}% 48
+\BOOKMARK [1][-]{appendix.B}{Bibliografia}{}% 49
