@@ -379,7 +379,7 @@ J=\lim_{H \to \infty} E\left\{ \frac{1}{H}\sum_{h=0}^{H} R_{h} \right\}.
 \label{DMP-estat-de-l'art}
 
 
-Les \textit{DMPs} representen un moviment a partir d'un conjunt d'equacions diferencials, on la dinàmica del propi sistema corregeix les pertorbacions que puguin aparèixer, és per això que són considerats sistemes robusts davant pertorbacions. A més, és molt fàcil modificar l'objectiu (o \textit{goal}) del moviment al estar presentat com equacions. Aquesta robustesa i adaptabilitat que dona aquest tipus d'entorn de treball és molt favorable per millorar altres sistemes d'aprenentatge com és l'aprenentatge per demostració (\textit{learning from demostration} o \texttt{LfD}) on a partir de certs exemples s'apren el comportament.
+Les \textit{DMPs} representen un moviment a partir d'un conjunt d'equacions diferencials, on la dinàmica del propi sistema corregeix les pertorbacions que puguin aparèixer, és per això que són considerats sistemes robusts davant pertorbacions. A més, és molt fàcil modificar l'objectiu (o \textit{goal}) del moviment al estar presentat com equacions, ja que tan sols és modificar el paràmetre \textit{g} en l'equació . Aquesta robustesa i adaptabilitat que dona aquest tipus d'entorn de treball és molt favorable per millorar altres sistemes d'aprenentatge com és l'aprenentatge per demostració (\textit{learning from demostration} o \texttt{LfD}) on a partir de certs exemples s'aprén el comportament.
 
 \paragraph{}El \texttt{LfD} és podria estructurar en tres grans grups, segons la forma d'adquirir les dades de la demostració:
 \begin{description}
@@ -391,6 +391,15 @@ Les \textit{DMPs} representen un moviment a partir d'un conjunt d'equacions dife
 \item[Trajectòria programada] Per últim, la demostració pot ser donada per un seguit de coordenades d'una trajectòria preestablerta en el propi codi. Aquest cas, només es possible d'efectuar si el robot "\textit{sap}" en tot moment la posició de les seves articulacions, i per tant, és pot complir perfectament el recorregut. 
 
 \end{description}
+
+\paragraph{}El sistema dinàmic és pot interpretar com un PD\footnote{Controlador proporcional i derivatiu.}, amb els paràmetres \textit{K}, pel proporcional, i \textit{D}, pel derivatiu; o com si fos un sistema mecànic de molla lineal amb una força externa viscosa, en aquest cas, sent el coeficient de fregament i de la fricció viscosa respectivament. Per últim, la constant $\tau$ és el període del moviment i \textit{g} és el paràmtre d'atracció del sistema.
+
+\begin{align}
+\tau \dot{v} &= K(g - x) - Dv + (g - x_0)f(s)\label{eq:tau-v-dot-DMP}\\
+\tau \dot{x} &= v\label{eq:tau-x-dot=v}
+\end{align}
+
+Si s'estudia el sistema dinàmic unidimensional de les equacions \eqref{eq:tau-v-dot-DMP} \eqref{eq:tau-x-dot=v} és pot comprovar que aquest és estable, tendint sempre a la posició \textit{g}, per qualsevol valor de $f(s)$. 
 
 \subsubsection*{(6) Algorismes avançats}
 \addcontentsline{toc}{subsubsection}{Algorismes avançats}

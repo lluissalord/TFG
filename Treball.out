@@ -11,10 +11,10 @@
 \BOOKMARK [3][-]{section*.37}{Aprenentatge supervisat \(SL\)}{section*.19}% 11
 \BOOKMARK [3][-]{section*.42}{Aprenentatge per refor\347 \(RL\)}{section*.19}% 12
 \BOOKMARK [3][-]{section*.51}{DMP \(Dynamic Moviment Primitive\)}{section*.19}% 13
-\BOOKMARK [3][-]{section*.53}{Algorismes avan\347ats}{section*.19}% 14
-\BOOKMARK [2][-]{section*.56}{Objectius}{section*.15}% 15
-\BOOKMARK [2][-]{section*.58}{Abast del treball}{section*.15}% 16
-\BOOKMARK [2][-]{section*.59}{Estructura del treball}{section*.15}% 17
+\BOOKMARK [3][-]{section*.54}{Algorismes avan\347ats}{section*.19}% 14
+\BOOKMARK [2][-]{section*.57}{Objectius}{section*.15}% 15
+\BOOKMARK [2][-]{section*.59}{Abast del treball}{section*.15}% 16
+\BOOKMARK [2][-]{section*.60}{Estructura del treball}{section*.15}% 17
 \BOOKMARK [1][-]{section.1}{Estudis preliminars}{}% 18
 \BOOKMARK [2][-]{subsection.1.1}{AIBO}{section.1}% 19
 \BOOKMARK [3][-]{subsubsection.1.1.1}{Hardware}{subsection.1.1}% 20
@@ -42,8 +42,8 @@
 \BOOKMARK [2][-]{subsection.3.2}{Execuci\363 DMPs amb PI2}{section.3}% 42
 \BOOKMARK [2][-]{subsection.3.3}{Plataforma}{section.3}% 43
 \BOOKMARK [1][-]{section.4}{Conclusions}{}% 44
-\BOOKMARK [1][-]{section*.76}{Agra\357ments}{}% 45
-\BOOKMARK [1][-]{section*.76}{Refer\350ncies}{}% 46
-\BOOKMARK [1][-]{section*.78}{Annexos}{}% 47
+\BOOKMARK [1][-]{section*.77}{Agra\357ments}{}% 45
+\BOOKMARK [1][-]{section*.77}{Refer\350ncies}{}% 46
+\BOOKMARK [1][-]{section*.79}{Annexos}{}% 47
 \BOOKMARK [1][-]{appendix.A}{Instal\267laci\363 de ROS, llibreries d'Urbi i paquet aibo server}{}% 48
 \BOOKMARK [1][-]{appendix.B}{Bibliografia}{}% 49
