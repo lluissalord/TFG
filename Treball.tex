@@ -483,17 +483,42 @@ Es per això, que en l'article \cite{Pastor2009a} es proposa una modificació de
 \subsubsection*{(6) Path Integral Policy Improvement ($\mathrm{PI^2}$)}
 \addcontentsline{toc}{subsubsection}{Path Integral Policy Improvement ($\mathrm{PI^2}$)}
 
-L'algorisme $\mathrm{PI^2}$ \cite{Stulp2011} té com a principal objectiu polir el pesos $w_i$ (al llarg d'aquest apartat s'hi refereix amb paràmetres $\theta_t$), per tal que es minimitzi la funció de cost \eqref{eq:PI2-cost-function} de la trajectòria $\tau_i$. Ara bé, una bona solució inicial, per aconseguir una convergència més ràpida, és l'extreta a partir de l'apresa amb \texttt{LfD}, comentat en el punt anterior.
+L'algorisme $\mathrm{PI^2}$ \cite{Stulp2011} té com a principal objectiu polir el pesos $w_i$ (al llarg d'aquest apartat s'hi refereix com paràmetres $\theta_t$), per tal que es minimitzi la funció de cost \eqref{eq:PI2-cost-function} de la trajectòria $\tau_i$. Ara bé, una bona solució inicial, per aconseguir una convergència més ràpida, és l'extreta a partir del \texttt{LfD}, comentat en el punt anterior.
 
 \begin{equation}\label{eq:PI2-cost-function}
-J(\tau_i) = \phi_{t_N} + \int\limits_{t_i}^{t_N} (r_t + \frac{1}{2} \mathbf{\theta}_t^T R \theta_t) \mathrm{d}t
+J(\tau_i) = \phi_{t_N} + \int\limits_{t_i}^{t_N} (r_t + \frac{1}{2} \theta_t^T R \theta_t) \mathrm{d}t
 \end{equation}
 
-\paragraph{}La funció $J(\tau_i)$ és creada per l'usuari, segons la tasca que es vulgui desenvolupar, sent $\phi_{t_N}$ el cost final, $r_t$ el cost immediat i $\frac{1}{2} \mathbf{\theta}_t^T R \theta_t$ cost de control immediat\footnote{Regula el fet d'augmentar o disminuir els paràmetres $\theta_t$, envers el benefici de fer-ho \cite{Hennig2011}}. Aquests dos últims, determinen principalment els valors que prenen els diferents $\theta_t$ durant la trajectòria, mentre el cost final $\phi_{t_N}$ és el que decideix la bondat del resultat. Degut a la pròpia naturalesa d'aquests, el cost final ha de ser el més influent, ja que normalment el que interessa més és arribar a l'objectiu.
+\paragraph{}La funció $J(\tau_i)$ és creada per l'usuari, segons la tasca que es vulgui desenvolupar, sent $\phi_{t_N}$ el cost final, $r_t$ el cost immediat i $\frac{1}{2} \theta_t^T R \theta_t$ cost de control immediat\footnote{Regula el fet d'augmentar o disminuir els paràmetres $\theta_t$, envers el benefici de fer-ho \cite{Hennig2011}}. Aquests dos últims, determinen principalment els valors que prenen els diferents $\theta_t$ durant la trajectòria, mentre el cost final $\phi_{t_N}$ és el que decideix la bondat del resultat. Degut a la pròpia naturalesa d'aquests, el cost final ha de ser el més influent, ja que normalment el que interessa més és arribar a l'objectiu. Per això, quan la tasca que interessa és que en un determinat instant el robot passi per una coordenada en concret\footnote{Extret de \cite{Schaal2010} apartat 5.2 \textit{Learning Optimal Performance of a 1 DOF Via-Point Task}.}, els costos es presentarien d'una forma similar a \eqref{eq:funcio-costos-waypoint}. L'altre plantejament seria com un problema de \texttt{RL}, per exemple\footnote{Extret de \cite{Schaal2010} apartat 5.1 \textit{Learning Optimal Performance of a 1 DOF Reaching Task}.}, si es vol acabar en un punt (\textit{goal}), amb poca velocitat i durant el recorregut amb l'acceleració minimitzada seria de l'estil de \eqref{eq:funcio-costos-general}.
 
-\paragraph{}Els mètodes de millora de política, com és el $\mathrm{PI^2}$, consisteixen en un procés iteratiu d'exploració i actualització dels paràmetres. 
+\begin{equation}
+r_{300ms} = 100000000(G-y_{t_{300ms}})^2    \qquad {}  \phi_{t_N} = 0\label{eq:funcio-costos-waypoint}
+\end{equation}
 
+\begin{equation}
+r_t = 0.5\ddot{y_t}^2 + \frac{1}{2}10000( \theta_t^T \theta_t)    \qquad {}  \phi_{t_N} = 10000(y_{t_N}^2 + (g-y_t)^2)\label{eq:funcio-costos-general}
+\end{equation}
 
+\paragraph{}Els mètodes de millora de política, com és el $\mathrm{PI^2}$, consisteixen en un procés iteratiu d'exploració i actualització dels paràmetres. En l'exploració es proven $K$ DMPs diferenciades per prendre els $\theta^{init}$ inicials més un cert soroll $\epsilon_{t,k}^{\theta}$, d'aquests se'n calcula les respectives funcions de cost i a partir d'aquí s'actualizen els valors dels paràmetres per donar $\theta^{new}$ que són els actuals.
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.5\textwidth]{Imatges/policy-improvement-loop}
+\caption{Algorisme genèric dels mètodes de millora de política \cite{Stulp2011}}
+\label{fig:policy-improvement-loop}
+\end{figure}
+
+\paragraph{}Per últim, en el cas concret del $\mathrm{PI^2}$, l'algorisme segueix la següent estructura, segons \cite{Stulp2011} on està més detallat:
+
+\begin{enumerate}
+\item Determina el cost de cadascuna dels \texttt{trials}, per tant, du a terme cada DMP amb el respectiu paràmetre $\theta^{init} + \epsilon_{t,k}^{\theta}$.
+
+\item Calcula la probabilitat de cada un. La idea és que a menor cost, major probabilitat.
+
+\item Proceix a calcular el $\delta\theta$, primer és traient la mitjana respecte els \texttt{trials}, on es té en compte la probabilitat d'aquests, i després la mitjana respecte el temps.
+
+\item Finalment dona $\theta^{new} = \theta^{init} + \delta\theta$.
+\end{enumerate}
 
 \subsubsection*{(7) Algorismes avançats}
 \addcontentsline{toc}{subsubsection}{Algorismes avançats}

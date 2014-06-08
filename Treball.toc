@@ -55,57 +55,58 @@
 \contentsline {subsubsection}{Path Integral Policy Improvement ($\mathrm {PI^2}$)}{21}{section*.62}
 \contentsline {paragraph}{}{21}{section*.63}
 \contentsline {paragraph}{}{21}{section*.64}
-\contentsline {subsubsection}{Algorismes avan\IeC {\c c}ats}{21}{section*.65}
-\contentsline {paragraph}{}{21}{section*.66}
-\contentsline {paragraph}{}{21}{section*.67}
-\contentsline {subsection}{Objectius}{22}{section*.68}
+\contentsline {paragraph}{}{22}{section*.66}
+\contentsline {subsubsection}{Algorismes avan\IeC {\c c}ats}{22}{section*.67}
+\contentsline {paragraph}{}{22}{section*.68}
 \contentsline {paragraph}{}{22}{section*.69}
-\contentsline {subsection}{Abast del treball}{22}{section*.70}
-\contentsline {subsection}{Estructura del treball}{22}{section*.71}
-\contentsline {section}{\numberline {1}Estudis preliminars}{23}{section.1}
-\contentsline {subsection}{\numberline {1.1}AIBO}{23}{subsection.1.1}
-\contentsline {paragraph}{}{23}{section*.72}
-\contentsline {paragraph}{}{23}{section*.73}
-\contentsline {paragraph}{}{23}{section*.74}
-\contentsline {paragraph}{}{23}{section*.75}
-\contentsline {subsubsection}{\numberline {1.1.1}\textit {Hardware}}{24}{subsubsection.1.1.1}
+\contentsline {subsection}{Objectius}{23}{section*.70}
+\contentsline {paragraph}{}{23}{section*.71}
+\contentsline {subsection}{Abast del treball}{23}{section*.72}
+\contentsline {subsection}{Estructura del treball}{23}{section*.73}
+\contentsline {section}{\numberline {1}Estudis preliminars}{24}{section.1}
+\contentsline {subsection}{\numberline {1.1}AIBO}{24}{subsection.1.1}
+\contentsline {paragraph}{}{24}{section*.74}
+\contentsline {paragraph}{}{24}{section*.75}
 \contentsline {paragraph}{}{24}{section*.76}
+\contentsline {paragraph}{}{24}{section*.77}
+\contentsline {subsubsection}{\numberline {1.1.1}\textit {Hardware}}{25}{subsubsection.1.1.1}
 \contentsline {paragraph}{}{25}{section*.78}
-\contentsline {subsubsection}{\numberline {1.1.2}\textit {Software}}{26}{subsubsection.1.1.2}
-\contentsline {subsection}{\numberline {1.2}ROS}{26}{subsection.1.2}
 \contentsline {paragraph}{}{26}{section*.80}
-\contentsline {paragraph}{}{26}{section*.81}
-\contentsline {subsubsection}{\numberline {1.2.1}Estructura de ROS}{27}{subsubsection.1.2.1}
+\contentsline {subsubsection}{\numberline {1.1.2}\textit {Software}}{27}{subsubsection.1.1.2}
+\contentsline {subsection}{\numberline {1.2}ROS}{27}{subsection.1.2}
 \contentsline {paragraph}{}{27}{section*.82}
-\contentsline {subsubsection}{\numberline {1.2.2}Objectius de ROS}{28}{subsubsection.1.2.2}
-\contentsline {paragraph}{}{28}{section*.83}
+\contentsline {paragraph}{}{27}{section*.83}
+\contentsline {subsubsection}{\numberline {1.2.1}Estructura de ROS}{28}{subsubsection.1.2.1}
 \contentsline {paragraph}{}{28}{section*.84}
-\contentsline {subsubsection}{\numberline {1.2.3}Eines de ROS}{29}{subsubsection.1.2.3}
+\contentsline {subsubsection}{\numberline {1.2.2}Objectius de ROS}{29}{subsubsection.1.2.2}
 \contentsline {paragraph}{}{29}{section*.85}
-\contentsline {subsection}{\numberline {1.3}Estabilitat}{29}{subsection.1.3}
-\contentsline {subsection}{\numberline {1.4}Algorismes de resposta davant pertorbacions}{29}{subsection.1.4}
 \contentsline {paragraph}{}{29}{section*.86}
+\contentsline {subsubsection}{\numberline {1.2.3}Eines de ROS}{30}{subsubsection.1.2.3}
 \contentsline {paragraph}{}{30}{section*.87}
-\contentsline {subsubsection}{\numberline {1.4.1}Model del robot}{30}{subsubsection.1.4.1}
-\contentsline {subsubsection}{\numberline {1.4.2}Aprenentatge supervisat}{30}{subsubsection.1.4.2}
-\contentsline {subsubsection}{\numberline {1.4.3}Aprenentatge per refor\IeC {\c c}}{30}{subsubsection.1.4.3}
-\contentsline {subsubsection}{\numberline {1.4.4}DMP}{30}{subsubsection.1.4.4}
-\contentsline {subsubsection}{\numberline {1.4.5}Affordance}{30}{subsubsection.1.4.5}
-\contentsline {subsubsection}{\numberline {1.4.6}Elecci\IeC {\'o} final}{30}{subsubsection.1.4.6}
-\contentsline {subsection}{\numberline {1.5}Codis amb DMPs implementades}{30}{subsection.1.5}
-\contentsline {subsubsection}{\numberline {1.5.1}DMPs de Scott Niekum}{30}{subsubsection.1.5.1}
-\contentsline {subsubsection}{\numberline {1.5.2}Package complert del robot PR2 del USC-CLMC}{30}{subsubsection.1.5.2}
-\contentsline {section}{\numberline {2}Disseny inicial}{31}{section.2}
-\contentsline {subsection}{\numberline {2.1}Model de l'Aibo}{31}{subsection.2.1}
-\contentsline {subsection}{\numberline {2.2}Acceler\IeC {\`o}metre}{31}{subsection.2.2}
-\contentsline {section}{\numberline {3}Disseny final}{32}{section.3}
-\contentsline {subsection}{\numberline {3.1}Execuci\IeC {\'o} DMPs sense $\mathrm {PI^2}$}{32}{subsection.3.1}
-\contentsline {subsection}{\numberline {3.2}Execuci\IeC {\'o} DMPs amb $\mathrm {PI^2}$}{32}{subsection.3.2}
-\contentsline {subsection}{\numberline {3.3}Plataforma}{32}{subsection.3.3}
-\contentsline {section}{\numberline {4}Conclusions}{33}{section.4}
-\contentsline {section}{Agra\IeC {\@umlaut \i }ments}{34}{section*.88}
-\contentsline {section}{Refer\IeC {\`e}ncies}{35}{section*.88}
-\contentsline {section}{Annexos}{40}{section*.90}
-\contentsline {section}{\numberline {A}Instal\IeC {\textperiodcentered }laci\IeC {\'o} de ROS, llibreries d'Urbi i paquet aibo server}{40}{appendix.A}
-\contentsline {paragraph}{}{40}{section*.91}
-\contentsline {section}{\numberline {B}Bibliografia}{41}{appendix.B}
+\contentsline {subsection}{\numberline {1.3}Estabilitat}{30}{subsection.1.3}
+\contentsline {subsection}{\numberline {1.4}Algorismes de resposta davant pertorbacions}{30}{subsection.1.4}
+\contentsline {paragraph}{}{30}{section*.88}
+\contentsline {paragraph}{}{31}{section*.89}
+\contentsline {subsubsection}{\numberline {1.4.1}Model del robot}{31}{subsubsection.1.4.1}
+\contentsline {subsubsection}{\numberline {1.4.2}Aprenentatge supervisat}{31}{subsubsection.1.4.2}
+\contentsline {subsubsection}{\numberline {1.4.3}Aprenentatge per refor\IeC {\c c}}{31}{subsubsection.1.4.3}
+\contentsline {subsubsection}{\numberline {1.4.4}DMP}{31}{subsubsection.1.4.4}
+\contentsline {subsubsection}{\numberline {1.4.5}Affordance}{31}{subsubsection.1.4.5}
+\contentsline {subsubsection}{\numberline {1.4.6}Elecci\IeC {\'o} final}{31}{subsubsection.1.4.6}
+\contentsline {subsection}{\numberline {1.5}Codis amb DMPs implementades}{31}{subsection.1.5}
+\contentsline {subsubsection}{\numberline {1.5.1}DMPs de Scott Niekum}{31}{subsubsection.1.5.1}
+\contentsline {subsubsection}{\numberline {1.5.2}Package complert del robot PR2 del USC-CLMC}{31}{subsubsection.1.5.2}
+\contentsline {section}{\numberline {2}Disseny inicial}{32}{section.2}
+\contentsline {subsection}{\numberline {2.1}Model de l'Aibo}{32}{subsection.2.1}
+\contentsline {subsection}{\numberline {2.2}Acceler\IeC {\`o}metre}{32}{subsection.2.2}
+\contentsline {section}{\numberline {3}Disseny final}{33}{section.3}
+\contentsline {subsection}{\numberline {3.1}Execuci\IeC {\'o} DMPs sense $\mathrm {PI^2}$}{33}{subsection.3.1}
+\contentsline {subsection}{\numberline {3.2}Execuci\IeC {\'o} DMPs amb $\mathrm {PI^2}$}{33}{subsection.3.2}
+\contentsline {subsection}{\numberline {3.3}Plataforma}{33}{subsection.3.3}
+\contentsline {section}{\numberline {4}Conclusions}{34}{section.4}
+\contentsline {section}{Agra\IeC {\@umlaut \i }ments}{35}{section*.90}
+\contentsline {section}{Refer\IeC {\`e}ncies}{36}{section*.90}
+\contentsline {section}{Annexos}{41}{section*.92}
+\contentsline {section}{\numberline {A}Instal\IeC {\textperiodcentered }laci\IeC {\'o} de ROS, llibreries d'Urbi i paquet aibo server}{41}{appendix.A}
+\contentsline {paragraph}{}{41}{section*.93}
+\contentsline {section}{\numberline {B}Bibliografia}{42}{appendix.B}
