@@ -1,9 +1,12 @@
 \select@language {catalan}
-\contentsline {figure}{\numberline {1}{\ignorespaces REEM-C\relax }}{10}{figure.caption.24}
-\contentsline {figure}{\numberline {2}{\ignorespaces BigDog\relax }}{10}{figure.caption.26}
-\contentsline {figure}{\numberline {3}{\ignorespaces LittleDog\relax }}{11}{figure.caption.27}
-\contentsline {figure}{\numberline {4}{\ignorespaces Esquema de cada arquitectura d'aprenentatge \cite {Nguyen-Tuong2011}\relax }}{13}{figure.caption.37}
-\contentsline {figure}{\numberline {5}{\ignorespaces Gr\IeC {\`a}fics explicatius de la funci\IeC {\'o} no lineal $f(s)$\relax }}{19}{figure.caption.58}
-\contentsline {figure}{\numberline {6}{\ignorespaces Efecte dels pesos $w_i$ (representats per $\theta $) i de l'objectiu (\textit {goal}) en la traject\IeC {\`o}ria \cite {Stulp2011}\relax }}{20}{figure.caption.60}
-\contentsline {figure}{\numberline {7}{\ignorespaces Algorisme gen\IeC {\`e}ric dels m\IeC {\`e}todes de millora de pol\IeC {\'\i }tica \cite {Stulp2011}\relax }}{21}{figure.caption.65}
-\contentsline {figure}{\numberline {8}{\ignorespaces AIBO ERS-7 \cite {Aibo_Images}\relax }}{26}{figure.caption.79}
+\contentsline {figure}{\numberline {1}{\ignorespaces AIBO ERS-7 (vista frontal) \cite {Aibo_Images}\relax }}{12}{figure.caption.27}
+\contentsline {figure}{\numberline {2}{\ignorespaces AIBO ERS-7 (vista posterior) \cite {Aibo_Images}\relax }}{12}{figure.caption.28}
+\contentsline {figure}{\numberline {3}{\ignorespaces AIBO ERS-7 (vista inferior) \cite {Aibo_Images}\relax }}{13}{figure.caption.29}
+\contentsline {figure}{\numberline {4}{\ignorespaces REEM-C \cite {REEM_C}\relax }}{17}{figure.caption.39}
+\contentsline {figure}{\numberline {5}{\ignorespaces BigDog \cite {Raibert2008}\relax }}{18}{figure.caption.41}
+\contentsline {figure}{\numberline {6}{\ignorespaces LittleDog \cite {Kalakrishnan2010}\relax }}{18}{figure.caption.42}
+\contentsline {figure}{\numberline {7}{\ignorespaces Esquema de cada arquitectura d'aprenentatge \cite {Nguyen-Tuong2011}\relax }}{21}{figure.caption.50}
+\contentsline {figure}{\numberline {8}{\ignorespaces Gr\IeC {\`a}fics explicatius de la funci\IeC {\'o} no lineal $f(s)$\relax }}{27}{figure.caption.68}
+\contentsline {figure}{\numberline {9}{\ignorespaces Efecte dels pesos $w_i$ (representats per $\theta $) i de l'objectiu (\textit {goal})}}{28}{figure.caption.70}
+\contentsline {figure}{\numberline {10}{\ignorespaces Comparaci\IeC {\'o} de l'algorisme de DMP original (esquerra) i el modificat per \cite {Pastor2009a} (dreta)}}{28}{figure.caption.71}
+\contentsline {figure}{\numberline {11}{\ignorespaces Algorisme gen\IeC {\`e}ric dels m\IeC {\`e}todes de millora de pol\IeC {\'\i }tica \cite {Stulp2011}\relax }}{29}{figure.caption.76}

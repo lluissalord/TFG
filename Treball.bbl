@@ -1,4 +1,4 @@
-\begin{thebibliography}{42}
+\begin{thebibliography}{46}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -84,6 +84,13 @@ Gostai.
 \newblock {URBI Doc for Aibo ERS2xx ERS7 and URBI 1.0}.
 \newblock URL \url{http://www.gostai.com/doc/en/aibo/}.
 
+\bibitem[Hennig(2011)]{Hennig2011}
+Philipp Hennig.
+\newblock {Optimal Reinforcement Learning for Gaussian Systems.}
+\newblock \emph{NIPS}, pages 1--9, 2011.
+\newblock URL
+  \url{https://papers.nips.cc/paper/4410-optimal-reinforcement-learning-for-gaussian-systems.pdf}.
+
 \bibitem[Hohl et~al.(2006)Hohl, Tellez, Michel, and Ijspeert]{Hohl2006}
 Lukas Hohl, Ricardo Tellez, Olivier Michel, and Auke~Jan Ijspeert.
 \newblock {Aibo and Webots: Simulation, wireless remote control and controller
@@ -142,6 +149,15 @@ Jens Kober and Jan Peters.
 \newblock \emph{Reinforcement Learning}, 2012.
 \newblock URL
   \url{http://link.springer.com/chapter/10.1007/978-3-642-27645-3\_18}.
+
+\bibitem[Laud(2004)]{Laud2004}
+Adam~Daniel Laud.
+\newblock \emph{{Theory and Application of Reward Shaping in Reinforcement
+  Learning}}.
+\newblock PhD thesis, University of Illinois at Urbana-Champaign, 2004.
+\newblock URL
+  \url{https://www.ideals.illinois.edu/bitstream/handle/2142/10797/Theory and
+  Application of Reward Shaping in Reinforcement Learning.pdf?sequence=2}.
 
 \bibitem[Laue et~al.(2006)Laue, Spiess, and R\"{o}fer]{Laue2006a}
 Tim Laue, Kai Spiess, and T~R\"{o}fer.
@@ -233,6 +249,16 @@ Duy Nguyen-Tuong and Jan Peters.
 \newblock \doi{10.1007/s10339-011-0404-1}.
 \newblock URL \url{http://www.ncbi.nlm.nih.gov/pubmed/21487784}.
 
+\bibitem[Pastor et~al.(2009)Pastor, Hoffmann, Asfour, and Schaal]{Pastor2009a}
+Peter Pastor, Heiko Hoffmann, Tamim Asfour, and Stefan Schaal.
+\newblock {Learning and generalization of motor skills by learning from
+  demonstration}.
+\newblock \emph{2009 IEEE International Conference on Robotics and Automation},
+  pages 763--768, May 2009.
+\newblock \doi{10.1109/ROBOT.2009.5152385}.
+\newblock URL
+  \url{http://ieeexplore.ieee.org/lpdocs/epic03/wrapper.htm?arnumber=5152385}.
+
 \bibitem[Purushotham and Rao(2009)]{Purushotham2009}
 A.~Purushotham and G.~Venkata Rao.
 \newblock {Dynamic stability analysis of a quadruped robotic manipulator
@@ -245,6 +271,12 @@ Morgan Quigley, Brian Gerkey, Ken Conley, Josh Faust, Tully Foote, Jeremy
   Leibs, Eric Berger, Rob Wheeler, and Andrew Ng.
 \newblock {ROS: an open-source Robot Operating System}.
 \newblock \emph{ICRA Workshop on Open Source Software}, 2009.
+
+\bibitem[Raibert and Blankespoor(2008)]{Raibert2008}
+Marc Raibert and Kevin Blankespoor.
+\newblock {Bigdog, the rough-terrain quadruped robot}.
+\newblock \emph{Proceedings of the 17th IFAC World Congress}, 2008.
+\newblock URL \url{http://web.unair.ac.id/admin/file/f\_7773\_bigdog.pdf}.
 
 \bibitem[Rainsersen()]{Aibo_Images}
 Rainsersen.
@@ -262,16 +294,10 @@ Carlos~Mario {Ramos Olave}.
 \newblock {ROS.org}.
 \newblock URL \url{http://www.ros.org/core-components/}.
 
-\bibitem[Robotics({\natexlab{a}})]{REEM_C}
+\bibitem[Robotics()]{REEM_C}
 PAL Robotics.
-\newblock {REEM-C}, {\natexlab{a}}.
+\newblock {REEM-C}.
 \newblock URL \url{http://pal-robotics.com/en/robots/reem-c}.
-
-\bibitem[Robotics({\natexlab{b}})]{Robotics}
-PAL Robotics.
-\newblock {REEM-C | PAL Robotics Blog}, {\natexlab{b}}.
-\newblock URL
-  \url{http://blog.pal-robotics.com/blog/2013/11/21/unplug-play-reem-c/}.
 
 \bibitem[R\"{u}ckert and D'Avella(2013)]{Ruckert2013}
 Elmar R\"{u}ckert and Andrea D'Avella.
@@ -295,6 +321,15 @@ Elmar~a R\"{u}ckert, Gerhard Neumann, Marc Toussaint, and Wolfgang Maass.
 \newblock \doi{10.3389/fncom.2012.00097}.
 \newblock URL
   \url{http://www.pubmedcentral.nih.gov/articlerender.fcgi?artid=3534186\&tool=pmcentrez\&rendertype=abstract}.
+
+\bibitem[Schaal(2010)]{Schaal2010}
+Stefan Schaal.
+\newblock {A Generalized Path Integral Control Approach to Reinforcement
+  Learning}.
+\newblock \emph{Journal of Machine Learning Research}, 11:\penalty0 3137--3181,
+  2010.
+\newblock ISSN 15324435.
+\newblock URL \url{http://dl.acm.org/citation.cfm?id=1953033}.
 
 \bibitem[Stulp and Theodorou(2011)]{Stulp2011}
 Freek Stulp and Evangelos Theodorou.

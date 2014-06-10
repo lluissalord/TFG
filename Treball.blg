@@ -3,17 +3,14 @@ Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: Treball.aux
 The style file: plainnat.bst
 Database file #1: ./Bibliografia/library.bib
-Repeated entry---line 676 of file ./Bibliografia/library.bib
+Repeated entry---line 591 of file ./Bibliografia/library.bib
  : @article{Fujita2000
  :                    ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 845 of file ./Bibliografia/library.bib
+Repeated entry---line 716 of file ./Bibliografia/library.bib
  : @article{Tellez2005a
  :                     ,
 I'm skipping whatever remains of this entry
-Warning--I didn't find a database entry for "Marc2008"
-Warning--I didn't find a database entry for "Playter2006"
-Warning--I didn't find a database entry for "Laud2004"
 Warning--empty publisher in Alpaydin2004
 Warning--empty year in Arduino
 Warning--empty publisher in Cord2008
@@ -29,46 +26,45 @@ Warning--empty year in Aibo_Images
 Warning--empty journal in TFG_Carlos_Ramos
 Warning--empty year in ROS
 Warning--empty year in REEM_C
-Warning--empty year in Robotics
-You've used 42 entries,
+You've used 46 entries,
             2773 wiz_defined-function locations,
-            910 strings with 14125 characters,
-and the built_in function-call counts, 19127 in all, are:
-= -- 1761
-> -- 1102
-< -- 31
-+ -- 379
-- -- 336
-* -- 1548
-:= -- 3009
-add.period$ -- 178
-call.type$ -- 42
-change.case$ -- 233
-chr.to.int$ -- 41
-cite$ -- 100
-duplicate$ -- 838
-empty$ -- 1472
-format.name$ -- 394
-if$ -- 3972
-int.to.chr$ -- 2
+            939 strings with 15195 characters,
+and the built_in function-call counts, 21015 in all, are:
+= -- 1955
+> -- 1182
+< -- 36
++ -- 406
+- -- 360
+* -- 1682
+:= -- 3304
+add.period$ -- 197
+call.type$ -- 46
+change.case$ -- 252
+chr.to.int$ -- 46
+cite$ -- 107
+duplicate$ -- 933
+empty$ -- 1618
+format.name$ -- 424
+if$ -- 4376
+int.to.chr$ -- 1
 int.to.str$ -- 1
-missing$ -- 32
-newline$ -- 269
-num.names$ -- 168
-pop$ -- 450
+missing$ -- 36
+newline$ -- 296
+num.names$ -- 184
+pop$ -- 478
 preamble$ -- 1
-purify$ -- 196
+purify$ -- 212
 quote$ -- 0
-skip$ -- 683
+skip$ -- 759
 stack$ -- 0
-substring$ -- 523
-swap$ -- 102
-text.length$ -- 7
+substring$ -- 610
+swap$ -- 119
+text.length$ -- 9
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 447
-warning$ -- 16
-while$ -- 164
+type$ -- 491
+warning$ -- 15
+while$ -- 184
 width$ -- 0
-write$ -- 630
+write$ -- 695
 (There were 2 error messages)
