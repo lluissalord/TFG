@@ -820,6 +820,8 @@ r_t = 0.5\ddot{y_t}^2 + \frac{1}{2}10000( \theta_t^T \theta_t)    \qquad {}  \ph
 
 \label{Estabilitat}
 \subsection{Estabilitat}
+%Una de les millors formes de maxima estabilitat --> CdG retorn posicio origen. D'aqui en sortirà es dir que una altre opció no tan bona és horitzontal.
+
 %Com definirem estabilitat, diferents mètodes...
 %Explicar que s'ha proposat de fer el calcul del desplaçament del CoG, i que s'intentaria fer que aquest retornes a la posició inicial. Però finalment nomes es pot intentar que tingui horitzontalitat.
 %També explicar el sistema de solucio inicial de la DMP de com s'han de posar les potes per tal de tenir una posicio mitjanament estable.
@@ -905,14 +907,21 @@ J=E\left\{ \sum_{h=0}^{H} R_{h} \right\}.
 
 \subsection{Moviment del centre de gravetat}
 
+%ABANS D'AQUEST APARTAT S'HA D'HAVER PARLAT SOBRE:
+%Una de les millors formes de maxima estabilitat --> CdG retorn posicio origen. D'aqui en sortirà es dir que una altre opció no tan bona és horitzontal.
+%Hi ha una comunicacio entre robot i ordenador, que és on es desenvolupen els càlculs, que es ROS i és fa a traves de topics que porten missatges a dins.
 
-\paragraph{}Tal i com s'ha vist al llarg del treball, uns dels requisits per poder aconseguir recuperar l'estabilitat és tenir les mesures dels moviments del robot. La idea inicial s'ha pensat utilitzar el sensor triaxial d'accelerometria que porta el propi Aibo, per estudiar el moviment d'aquest. Per això, primer s'han fet unes comprovacions de la fiabilitat de les dades d'aquest sensor. Aquestes comprovacions es basen en l'observació de la variabilitat de les mesures i comprovar si l'angle d'inclinació extret a partir de l'acceleració és el mateix que el mesurat externament. Finalment ha resultat que no és gens precís per la tasca que ha de desenvolupar.
+\paragraph{}Tal i com s'ha vist al llarg del treball, uns dels requisits per poder aconseguir recuperar l'estabilitat és tenir les mesures dels moviments del robot. Com a idea inicial, s'ha pensat utilitzar el sensor triaxial d'accelerometria que porta incorporat el propi Aibo, i d'aquesta forma poder estudiar el moviment d'aquest. Però abans s'han fet unes comprovacions de la fiabilitat de les dades d'aquest sensor. Aquestes comprovacions es basen en l'observació de la variabilitat de les mesures i comprovar si l'angle d'inclinació extret a partir de l'acceleració és el mateix que el mesurat externament. Finalment ha resultat que no és gens precís per la tasca que ha de desenvolupar.
 
 \subsubsection{Acceleròmetre MPU6050 i giroscopi GY-521}
 
-\paragraph{}Al no ser el sensor del propi robot d'utilitat en el treball, s'ha decidit comprar un altre sensor triaxial d'accelerometria amb un giroscopi de tres eixos. En aquest cas, s'ha optat per una peça on hi ha integrat l'acceleròmetre \texttt{MPU6050} i el giroscopi \texttt{GY-521}. S'ha escollit aquest, en primera instancia, perquè està enfocat per a ser utilitzat amb Arduino, placa la qual es disposa en el departament i que es pensa utilitzar per altres motius. A més, existeix molta informació per la xarxa, com llibreries\footnote{Entre d'elles un de les més utilitzades i molt pràctica és la \texttt{i2cdevlib}, on a banda de per aquest conjunt acceleròmetre-giroscopi, també n'hi ha per molts altres \cite{Rowberg}} o aplicacions fetes, a banda de ser recomanat per la seva qualitat-preu.
+\paragraph{}Al no ser el sensor del propi robot d'utilitat en el treball, s'ha decidit comprar un altre sensor triaxial d'accelerometria amb un giroscopi de tres eixos. En aquest cas, s'ha optat per una peça on hi ha integrat l'acceleròmetre \texttt{MPU6050} i el giroscopi \texttt{GY-521}. S'ha escollit aquest, en primera instancia, perquè està enfocat per a ser utilitzat amb Arduino, que és un microcontrolador del que es disposa en el departament i que ja es pensa utilitzar per altres motius. A més, existeix molta informació per la xarxa, com llibreries\footnote{Entre d'elles un de les més utilitzades i molt pràctica és la \texttt{i2cdevlib}, on a banda de per aquest conjunt acceleròmetre-giroscopi, també n'hi ha per molts altres \cite{Rowberg}} o aplicacions fetes, a banda de ser recomanat per la seva qualitat-preu.
 
-\paragraph{}A partir de l'acceleròmetre es treu informació de les acceleracions que pateix aquest sensor, incloent la gravetat, aquest transmet les dades en RAW que s'han de dividir per $16384$ per a ser transformats a $G$s\footnote{Força $G$, per tant, el resultat de la divisió s'ha de multiplicar per $9,80665$ per passar-ho a $m/s^2$.}. Mentre, el giroscopi mesura la velocitat angular, abans d'utilitzar les dades que arriben directament d'aquest s'ha de passar del RAW a \textit{º/s} (graus per segon) divindint el primer per $131$.
+%IDEA: HAGUES POGUT ENVIAR PER ROS LA INFORMACIO DE L'ACCELEROMETRE I GYRO I FER EL FILTRE A L'ORDINADOR, PERO HAVES ESTAT PRACTICAMENT EL MATEIX, I PER COMODITAT D'ESTAR JA IMPLEMENTAT S'HA ESCOLLIT EL PRIMER MÈTODE, PERÒ PODRIA SER UNA PROVA A FER PER MILLORAR-NE LA QUALITAT. TOT I QUE D'AQUESTA FORMA HAGUES POGUT UTILITZAR EL FILTRE KALMAN, INCONVENIENT--> S'HA DE TENIR UN THREAD NOMÉS PEL CALCUL
+
+\paragraph{}Ara bé, el fet de formar part de l'Aibo crea la problemàtica d'haver d'implementar una comunicació entre el sensor i l'algorisme de control. Com que és té un entorn de treball, \texttt{ROS}, que ja s'està utilitzant per comunicar-se amb l'ordinador, és pot aprofitar aquest entorn per tal d'incorporar la informació que es vulgui enviar al robot. 
+
+\paragraph{}A partir de l'acceleròmetre es treu informació de les acceleracions que pateix aquest sensor, incloent la gravetat, aquest transmet les dades en RAW que s'han de dividir per $16384$ per a ser transformats a $G$s\footnote{Força $G$, per tant, el resultat de la divisió s'ha de multiplicar per $9,80665$ per passar-ho a $m/s^2$.}. Per altra banda, el giroscopi mesura la velocitat angular, abans d'utilitzar les dades que arriben directament d'aquest, s'ha de passar del RAW a \textit{º/s} (graus per segon) dividint-ho $131$.
 
 \subsubsection{Càlcul de la posició i de la inclinació}
 
@@ -922,14 +931,33 @@ J=E\left\{ \sum_{h=0}^{H} R_{h} \right\}.
 \vspace{20pt}
 \textbf{Càlcul de la inclinació}
 
-\paragraph{}En aquest càlcul, es requereix essencialment del giroscopi, perquè tant sols s'han d'integrar les dades subministrades per aquest. L'acceleròmetre només podria ser servir, per extreure la inclinació, si s'estigués estàtic o com és en aquest cas, per ajudar a filtrar les dades. Per tal de dur a terme aquest filtre, s'han trobat dos tipus de filtres que podrien ser útils, el filtre \texttt{Kalman} i el filtre \texttt{complementari}.
+\paragraph{}En aquest càlcul, es requereix essencialment del giroscopi, perquè tant sols s'han d'integrar les dades subministrades per aquest. L'acceleròmetre només podria ser servir, per extreure la inclinació, si s'estigués estàtic o, com és en aquest cas, per ajudar a filtrar les dades. Per tal de dur a terme aquest filtre, s'han trobat dos tipus de filtres que podrien ser útils, el filtre \texttt{Kalman} i el filtre \texttt{complementari}.
 
-\paragraph{}El filtre Kalman es basa en l'estimació de l'estat del sistema a partir de la informació de l'acceleròmetre i el giroscopi, en el moment anterior i en l'actual. Per altra banda, el filtre complementari és basa en l'ús de les dades del giroscopi per la mesura en temps curts i realitzar la correcció de la deriva amb les dades de l'acceleròmetre \cite{Gaydou2011}. Un filtre complementari és un filtre Kalman, però en unes condicions i restriccions determinades. Per això no difereixen gaire en els resultats donats, el Kalman és més precís, però requereix de més recursos computacionals.
+\paragraph{}El filtre Kalman es basa en l'estimació de l'estat del sistema a partir de la informació de l'acceleròmetre i el giroscopi, en el moment anterior i en l'actual. Per altra banda, el filtre complementari és basa en l'ús de les dades del giroscopi, per la mesura en temps curts, i realitzar la correcció de la deriva, amb les dades de l'acceleròmetre \cite{Gaydou2011}. Un filtre complementari és un filtre Kalman, però en unes condicions i restriccions determinades. Per això no difereixen gaire en els resultats donats, el Kalman és més precís, però requereix de més recursos computacionals.
 
-\paragraph{}Inicialment, s'ha plantejat utilitzar el filtre Kalman, ara bé
+\paragraph{}Inicialment, s'ha plantejat utilitzar el filtre Kalman, per això s'ha pres el codi de \cite{Lauszus2012}, on està l'algorisme del Kalman i del filtre complementari fets en un exemple per Arduino. El problema ha sorgit en intentar implementar tot el conjunt de filtre Kalman i les llibreries que permeten la comunicació de l'\textit{Arduino Uno} amb \texttt{ROS}, perquè la placa no té prou memòria per abarcar-ho tot. Pel que sembla, la llibreria de ROS ocupa pràcticament la meitat de la memòria del microcontrolador i la resta no és suficient per l'algorisme del filtre Kalman, tot i haver intentat optimitzar al màxim l'ús de memòria.
 
+\paragraph{}Una opció per solucionar el problema anterior hagués pogut ser transmetre per \texttt{ROS} tan sols les dades RAW dels sensors, i llavors fer el filtratge en l'ordinador, però s'hauria de tenir un procés més en paral·lel. Però s'ha cregut més convenient utilitzar el filtre complementari, que com s'ha dit requereix de menys recursos computacionals i s'ha provat que si que pot implementar tot el conjunt.
 
+\paragraph{}El filtre complementari matemàticament és molt simple \eqref{eq:filtre-complementari}, tant sols depèn d'un paràmetre $\lambda$ que determina quin percentatge es pren de l'angle calculat amb l'acceleració i la resta pel giroscopi. Ara bé, per tal de poder ser útil s'hi han hagut de fer algunes millores:
 
+\begin{itemize}
+\item Les dades que s'utilitzen són una mitja de quinze mostres RAW
+\item Només varia la publicació a ROS si la diferència entre l'angle anterior i l'actual és major a 0,02 º
+\end{itemize}
+
+\begin{equation} 
+\theta_{compl} = (1 - \lambda)(\theta_{compl} + w_{giro}\mathrm{d}t) + \lambda \theta_{accel} \label{eq:filtre-complementari}
+\end{equation}
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.8\textwidth]{Imatges/esquema-comunicacio-ROS-Aibo-ordenadora.pdf}
+\caption{Esquema de connexions entre Aibo-ROS i sensor-Arduino-ROS}
+\label{fig:connexions-Aibo-ROS-sensor-Arduino-ROS}
+\end{figure}
+
+%Arduino és compatible amb tota la família Arduino, amb l'excepció de l'\textit{Arduino Mega} i l'\textit{Arduino Leonardo} que s'han de desactivar els \texttt{pull-ups} de les entrades. Per això no s'ha utilitzat l'\textit{Arduino Mega} que es té en el departament, sino un \textit{Arduino Uno} prestat per un company.
 
 
 
