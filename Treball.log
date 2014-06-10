@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012/Debian) (format=pdflatex 2014.2.19)  10 JUN 2014 15:49
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012/Debian) (format=pdflatex 2014.2.19)  10 JUN 2014 18:46
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -795,25 +795,25 @@ Package pdftex.def Info: Imatges/ERS7.jpg used on input line 80.
 File: Imatges/etseib.png Graphic file (type png)
 
 <use Imatges/etseib.png>
-Package pdftex.def Info: Imatges/etseib.png used on input line 108.
+Package pdftex.def Info: Imatges/etseib.png used on input line 109.
 (pdftex.def)             Requested size: 32.52141pt x 42.51874pt.
 pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has 
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.108 \newpage
+l.109 \newpage
                [1
 
  <./Imatges/etseib.png>]
 File: Imatges/etseib.png Graphic file (type png)
  <use Imatges/etseib.png>
-Package pdftex.def Info: Imatges/etseib.png used on input line 109.
+Package pdftex.def Info: Imatges/etseib.png used on input line 110.
 (pdftex.def)             Requested size: 32.52141pt x 42.51874pt.
 pdfTeX warning (ext4): destination with the same identifier (name{page.2}) has 
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.109 \cleardoublepage
+l.110 \cleardoublepage
                        [2
 
 ] (./Treball.toc
@@ -837,7 +837,7 @@ LaTeX Font Info:    Font shape `OMS/cmr/bx/n' in size <12> not available
 File: Imatges/etseib.png Graphic file (type png)
 
 <use Imatges/etseib.png>
-Package pdftex.def Info: Imatges/etseib.png used on input line 112.
+Package pdftex.def Info: Imatges/etseib.png used on input line 113.
 (pdftex.def)             Requested size: 32.52141pt x 42.51874pt.
  [4] (./Treball.lof)
 \tf@lof=\write6
@@ -845,7 +845,7 @@ Package pdftex.def Info: Imatges/etseib.png used on input line 112.
 
 File: Imatges/etseib.png Graphic file (type png)
  <use Imatges/etseib.png>
-Package pdftex.def Info: Imatges/etseib.png used on input line 114.
+Package pdftex.def Info: Imatges/etseib.png used on input line 115.
 (pdftex.def)             Requested size: 32.52141pt x 42.51874pt.
  [5]
 (./Treball.lot)
@@ -854,57 +854,57 @@ Package pdftex.def Info: Imatges/etseib.png used on input line 114.
 
 File: Imatges/etseib.png Graphic file (type png)
  <use Imatges/etseib.png>
-Package pdftex.def Info: Imatges/etseib.png used on input line 116.
+Package pdftex.def Info: Imatges/etseib.png used on input line 117.
 (pdftex.def)             Requested size: 32.52141pt x 42.51874pt.
  [6]
 File: Imatges/etseib.png Graphic file (type png)
  <use Imatges/etseib.png>
-Package pdftex.def Info: Imatges/etseib.png used on input line 149.
+Package pdftex.def Info: Imatges/etseib.png used on input line 150.
 (pdftex.def)             Requested size: 32.52141pt x 42.51874pt.
  [7]
 File: Imatges/etseib.png Graphic file (type png)
 
 <use Imatges/etseib.png>
-Package pdftex.def Info: Imatges/etseib.png used on input line 152.
+Package pdftex.def Info: Imatges/etseib.png used on input line 153.
 (pdftex.def)             Requested size: 32.52141pt x 42.51874pt.
  [8]
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 168.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 169.
 File: Imatges/etseib.png Graphic file (type png)
  <use Imatges/etseib.png>
-Package pdftex.def Info: Imatges/etseib.png used on input line 172.
+Package pdftex.def Info: Imatges/etseib.png used on input line 173.
 (pdftex.def)             Requested size: 32.52141pt x 42.51874pt.
  [9]
 File: Imatges/etseib.png Graphic file (type png)
 
 <use Imatges/etseib.png>
-Package pdftex.def Info: Imatges/etseib.png used on input line 219.
+Package pdftex.def Info: Imatges/etseib.png used on input line 220.
 (pdftex.def)             Requested size: 32.52141pt x 42.51874pt.
  [10]
 <Imatges/ERS-7(front).jpg, id=400, 752.8125pt x 374.39874pt>
 File: Imatges/ERS-7(front).jpg Graphic file (type jpg)
 
 <use Imatges/ERS-7(front).jpg>
-Package pdftex.def Info: Imatges/ERS-7(front).jpg used on input line 246.
+Package pdftex.def Info: Imatges/ERS-7(front).jpg used on input line 247.
 (pdftex.def)             Requested size: 227.62206pt x 113.20598pt.
 
-Underfull \hbox (badness 6978) in paragraph at lines 252--253
+Underfull \hbox (badness 6978) in paragraph at lines 253--254
 []\OT1/cmr/m/n/12 Targeta in-ter-na de mem^^Roria lec-tu-
  []
 
 File: Imatges/etseib.png Graphic file (type png)
 <use Imatges/etseib.png>
-Package pdftex.def Info: Imatges/etseib.png used on input line 266.
+Package pdftex.def Info: Imatges/etseib.png used on input line 267.
 (pdftex.def)             Requested size: 32.52141pt x 42.51874pt.
  [11]
 <Imatges/ERS-7(back).jpg, id=415, 702.625pt x 346.29375pt>
 File: Imatges/ERS-7(back).jpg Graphic file (type jpg)
 
 <use Imatges/ERS-7(back).jpg>
-Package pdftex.def Info: Imatges/ERS-7(back).jpg used on input line 268.
+Package pdftex.def Info: Imatges/ERS-7(back).jpg used on input line 269.
 (pdftex.def)             Requested size: 227.62206pt x 112.18481pt.
 
-Underfull \hbox (badness 3601) in paragraph at lines 279--280
+Underfull \hbox (badness 3601) in paragraph at lines 280--281
 []\OT1/cmr/m/n/12 Resolucions: $208 \OMS/cmsy/m/n/12 ^^B \OT1/cmr/m/n/12 160\OM
 L/cmm/m/it/12 ; \OT1/cmr/m/n/12 104 \OMS/cmsy/m/n/12 ^^B
  []
@@ -913,7 +913,7 @@ L/cmm/m/it/12 ; \OT1/cmr/m/n/12 104 \OMS/cmsy/m/n/12 ^^B
 File: Imatges/ERS-7(stomach).pdf Graphic file (type pdf)
 
 <use Imatges/ERS-7(stomach).pdf>
-Package pdftex.def Info: Imatges/ERS-7(stomach).pdf used on input line 286.
+Package pdftex.def Info: Imatges/ERS-7(stomach).pdf used on input line 287.
 (pdftex.def)             Requested size: 227.62206pt x 209.27623pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
@@ -921,72 +921,72 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 File: Imatges/etseib.png Graphic file (type png)
 
 <use Imatges/etseib.png>
-Package pdftex.def Info: Imatges/etseib.png used on input line 298.
+Package pdftex.def Info: Imatges/etseib.png used on input line 299.
 (pdftex.def)             Requested size: 32.52141pt x 42.51874pt.
  [12 <./Imatges/ERS-7(front).jpg> <./Imatges/ERS-7(back).jpg>]
 File: Imatges/etseib.png Graphic file (type png)
  <use Imatges/etseib.png>
-Package pdftex.def Info: Imatges/etseib.png used on input line 347.
+Package pdftex.def Info: Imatges/etseib.png used on input line 348.
 (pdftex.def)             Requested size: 32.52141pt x 42.51874pt.
  [13 <./Imatges/ERS-7(stomach).pdf>]
 File: Imatges/etseib.png Graphic file (type png)
 
 <use Imatges/etseib.png>
-Package pdftex.def Info: Imatges/etseib.png used on input line 368.
+Package pdftex.def Info: Imatges/etseib.png used on input line 369.
 (pdftex.def)             Requested size: 32.52141pt x 42.51874pt.
  [14]
 File: Imatges/etseib.png Graphic file (type png)
  <use Imatges/etseib.png>
-Package pdftex.def Info: Imatges/etseib.png used on input line 393.
+Package pdftex.def Info: Imatges/etseib.png used on input line 394.
 (pdftex.def)             Requested size: 32.52141pt x 42.51874pt.
  [15]
 File: Imatges/etseib.png Graphic file (type png)
 
 <use Imatges/etseib.png>
-Package pdftex.def Info: Imatges/etseib.png used on input line 413.
+Package pdftex.def Info: Imatges/etseib.png used on input line 414.
 (pdftex.def)             Requested size: 32.52141pt x 42.51874pt.
  [16]
 <Imatges/REEM-C.jpg, id=476, 603.25375pt x 903.375pt>
 File: Imatges/REEM-C.jpg Graphic file (type jpg)
  <use Imatges/REEM-C.jpg>
-Package pdftex.def Info: Imatges/REEM-C.jpg used on input line 449.
+Package pdftex.def Info: Imatges/REEM-C.jpg used on input line 450.
 (pdftex.def)             Requested size: 88.07051pt x 131.8751pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 458--462
+Underfull \hbox (badness 10000) in paragraph at lines 459--463
 
  []
 
 File: Imatges/etseib.png Graphic file (type png)
 <use Imatges/etseib.png>
-Package pdftex.def Info: Imatges/etseib.png used on input line 463.
+Package pdftex.def Info: Imatges/etseib.png used on input line 464.
 (pdftex.def)             Requested size: 32.52141pt x 42.51874pt.
  [17 <./Imatges/REEM-C.jpg>]
 <Imatges/BigDog.png, id=492, 602.25pt x 395.4775pt>
 File: Imatges/BigDog.png Graphic file (type png)
  <use Imatges/BigDog.png>
-Package pdftex.def Info: Imatges/BigDog.png used on input line 467.
+Package pdftex.def Info: Imatges/BigDog.png used on input line 468.
 (pdftex.def)             Requested size: 120.0967pt x 78.85875pt.
 
 <Imatges/LittleDog.png, id=502, 486.81876pt x 337.26pt>
 File: Imatges/LittleDog.png Graphic file (type png)
 
 <use Imatges/LittleDog.png>
-Package pdftex.def Info: Imatges/LittleDog.png used on input line 477.
+Package pdftex.def Info: Imatges/LittleDog.png used on input line 478.
 (pdftex.def)             Requested size: 120.0967pt x 83.19807pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 474--482
+Underfull \hbox (badness 10000) in paragraph at lines 475--483
 
  []
 
 File: Imatges/etseib.png Graphic file (type png)
 <use Imatges/etseib.png>
-Package pdftex.def Info: Imatges/etseib.png used on input line 488.
+Package pdftex.def Info: Imatges/etseib.png used on input line 489.
 (pdftex.def)             Requested size: 32.52141pt x 42.51874pt.
  [18 <./Imatges/BigDog.png> <./Imatges/LittleDog.png>]
 File: Imatges/etseib.png Graphic file (type png)
 
 <use Imatges/etseib.png>
-Package pdftex.def Info: Imatges/etseib.png used on input line 510.
+Package pdftex.def Info: Imatges/etseib.png used on input line 511.
 (pdftex.def)             Requested size: 32.52141pt x 42.51874pt.
  [19]
 <Imatges/arquitectures-d'aprenentatge.png, id=547, 814.04124pt x 561.09625pt>
@@ -994,63 +994,63 @@ File: Imatges/arquitectures-d'aprenentatge.png Graphic file (type png)
 
 <use Imatges/arquitectures-d'aprenentatge.png>
 Package pdftex.def Info: Imatges/arquitectures-d'aprenentatge.png used on input
- line 565.
+ line 566.
 (pdftex.def)             Requested size: 407.01962pt x 280.54744pt.
 File: Imatges/etseib.png Graphic file (type png)
  <use Imatges/etseib.png>
-Package pdftex.def Info: Imatges/etseib.png used on input line 572.
+Package pdftex.def Info: Imatges/etseib.png used on input line 573.
 (pdftex.def)             Requested size: 32.52141pt x 42.51874pt.
 
 [20]
 File: Imatges/etseib.png Graphic file (type png)
  <use Imatges/etseib.png>
-Package pdftex.def Info: Imatges/etseib.png used on input line 581.
+Package pdftex.def Info: Imatges/etseib.png used on input line 582.
 (pdftex.def)             Requested size: 32.52141pt x 42.51874pt.
  [21 <./Imatges/arquitectures-d'aprenentatge.png>]
-Overfull \hbox (26.17276pt too wide) in paragraph at lines 583--584
+Overfull \hbox (26.17276pt too wide) in paragraph at lines 584--585
 \OT1/cmr/m/n/12 Ai-bo, dis-se-nyat en [[]]. Aquest t^^Se im-ple-men-tat l'es-tr
 uc-tu-ra ci-nem^^Ratica, pro-pi-e-tats din^^Ramiques[][][],
  []
 
 File: Imatges/etseib.png Graphic file (type png)
 <use Imatges/etseib.png>
-Package pdftex.def Info: Imatges/etseib.png used on input line 606.
+Package pdftex.def Info: Imatges/etseib.png used on input line 607.
 (pdftex.def)             Requested size: 32.52141pt x 42.51874pt.
  [22]
 File: Imatges/etseib.png Graphic file (type png)
  <use Imatges/etseib.png>
-Package pdftex.def Info: Imatges/etseib.png used on input line 624.
+Package pdftex.def Info: Imatges/etseib.png used on input line 625.
 (pdftex.def)             Requested size: 32.52141pt x 42.51874pt.
  [23]
 File: Imatges/etseib.png Graphic file (type png)
 
 <use Imatges/etseib.png>
-Package pdftex.def Info: Imatges/etseib.png used on input line 659.
+Package pdftex.def Info: Imatges/etseib.png used on input line 660.
 (pdftex.def)             Requested size: 32.52141pt x 42.51874pt.
  [24]
 File: Imatges/etseib.png Graphic file (type png)
  <use Imatges/etseib.png>
-Package pdftex.def Info: Imatges/etseib.png used on input line 672.
+Package pdftex.def Info: Imatges/etseib.png used on input line 673.
 (pdftex.def)             Requested size: 32.52141pt x 42.51874pt.
  [25]
 File: Imatges/etseib.png Graphic file (type png)
 
 <use Imatges/etseib.png>
-Package pdftex.def Info: Imatges/etseib.png used on input line 692.
+Package pdftex.def Info: Imatges/etseib.png used on input line 693.
 (pdftex.def)             Requested size: 32.52141pt x 42.51874pt.
  [26]
 <Imatges/gaussians-sum.png, id=675, 250.68657pt x 110.66344pt>
 File: Imatges/gaussians-sum.png Graphic file (type png)
 
 <use Imatges/gaussians-sum.png>
-Package pdftex.def Info: Imatges/gaussians-sum.png used on input line 699.
+Package pdftex.def Info: Imatges/gaussians-sum.png used on input line 700.
 (pdftex.def)             Requested size: 218.51521pt x 96.46552pt.
 
 <Imatges/DMP-with-gaussians.jpg, id=678, 289.08pt x 142.5325pt>
 File: Imatges/DMP-with-gaussians.jpg Graphic file (type jpg)
 
 <use Imatges/DMP-with-gaussians.jpg>
-Package pdftex.def Info: Imatges/DMP-with-gaussians.jpg used on input line 704.
+Package pdftex.def Info: Imatges/DMP-with-gaussians.jpg used on input line 705.
 
 (pdftex.def)             Requested size: 218.51521pt x 107.73859pt.
 
@@ -1059,7 +1059,7 @@ File: Imatges/effect-of-shape-parameters.png Graphic file (type png)
 
 <use Imatges/effect-of-shape-parameters.png>
 Package pdftex.def Info: Imatges/effect-of-shape-parameters.png used on input l
-ine 715.
+ine 716.
 (pdftex.def)             Requested size: 295.90588pt x 168.70424pt.
 
 
@@ -1070,25 +1070,25 @@ File: Imatges/DMP-modified-algorism.png Graphic file (type png)
 
 <use Imatges/DMP-modified-algorism.png>
 Package pdftex.def Info: Imatges/DMP-modified-algorism.png used on input line 7
-22.
+23.
 (pdftex.def)             Requested size: 227.62206pt x 156.25438pt.
 File: Imatges/etseib.png Graphic file (type png)
  <use Imatges/etseib.png>
-Package pdftex.def Info: Imatges/etseib.png used on input line 734.
+Package pdftex.def Info: Imatges/etseib.png used on input line 735.
 (pdftex.def)             Requested size: 32.52141pt x 42.51874pt.
  [27 <./Imatges/gaussians-sum.png (PNG copy)> <./Imatges/DMP-with-gaussians.jpg
 >]
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 745.
+(hyperref)                removing `math shift' on input line 746.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `superscript' on input line 745.
+(hyperref)                removing `superscript' on input line 746.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 745.
+(hyperref)                removing `math shift' on input line 746.
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
@@ -1096,7 +1096,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 File: Imatges/etseib.png Graphic file (type png)
 
 <use Imatges/etseib.png>
-Package pdftex.def Info: Imatges/etseib.png used on input line 748.
+Package pdftex.def Info: Imatges/etseib.png used on input line 749.
 (pdftex.def)             Requested size: 32.52141pt x 42.51874pt.
  [28 <./Imatges/effect-of-shape-parameters.png> <./Imatges/DMP-modified-algoris
 m.png>]
@@ -1105,91 +1105,104 @@ File: Imatges/policy-improvement-loop.png Graphic file (type png)
 
 <use Imatges/policy-improvement-loop.png>
 Package pdftex.def Info: Imatges/policy-improvement-loop.png used on input line
- 767.
+ 768.
 (pdftex.def)             Requested size: 227.62206pt x 65.35461pt.
 File: Imatges/etseib.png Graphic file (type png)
  <use Imatges/etseib.png>
-Package pdftex.def Info: Imatges/etseib.png used on input line 775.
+Package pdftex.def Info: Imatges/etseib.png used on input line 776.
 (pdftex.def)             Requested size: 32.52141pt x 42.51874pt.
  [29 <./Imatges/policy-improvement-loop.png>]
 File: Imatges/etseib.png Graphic file (type png)
  <use Imatges/etseib.png>
-Package pdftex.def Info: Imatges/etseib.png used on input line 803.
+Package pdftex.def Info: Imatges/etseib.png used on input line 804.
 (pdftex.def)             Requested size: 32.52141pt x 42.51874pt.
  [30]
 File: Imatges/etseib.png Graphic file (type png)
 
 <use Imatges/etseib.png>
-Package pdftex.def Info: Imatges/etseib.png used on input line 807.
+Package pdftex.def Info: Imatges/etseib.png used on input line 808.
 (pdftex.def)             Requested size: 32.52141pt x 42.51874pt.
  [31]
 File: Imatges/etseib.png Graphic file (type png)
  <use Imatges/etseib.png>
-Package pdftex.def Info: Imatges/etseib.png used on input line 841.
+Package pdftex.def Info: Imatges/etseib.png used on input line 842.
 (pdftex.def)             Requested size: 32.52141pt x 42.51874pt.
  [32]
 File: Imatges/etseib.png Graphic file (type png)
 
 <use Imatges/etseib.png>
-Package pdftex.def Info: Imatges/etseib.png used on input line 862.
+Package pdftex.def Info: Imatges/etseib.png used on input line 863.
 (pdftex.def)             Requested size: 32.52141pt x 42.51874pt.
  [33]
 File: Imatges/etseib.png Graphic file (type png)
  <use Imatges/etseib.png>
-Package pdftex.def Info: Imatges/etseib.png used on input line 896.
+Package pdftex.def Info: Imatges/etseib.png used on input line 897.
 (pdftex.def)             Requested size: 32.52141pt x 42.51874pt.
  [34]
 File: Imatges/etseib.png Graphic file (type png)
 
 <use Imatges/etseib.png>
-Package pdftex.def Info: Imatges/etseib.png used on input line 896.
+Package pdftex.def Info: Imatges/etseib.png used on input line 897.
 (pdftex.def)             Requested size: 32.52141pt x 42.51874pt.
  [35]
+
+Package natbib Warning: Citation `Rowberg' on page 36 undefined on input line 9
+13.
+
 File: Imatges/etseib.png Graphic file (type png)
- <use Imatges/etseib.png>
-Package pdftex.def Info: Imatges/etseib.png used on input line 908.
+<use Imatges/etseib.png>
+Package pdftex.def Info: Imatges/etseib.png used on input line 925.
 (pdftex.def)             Requested size: 32.52141pt x 42.51874pt.
  [36]
 
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 915.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `superscript' on input line 915.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 915.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 917.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `superscript' on input line 917.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 917.
+Package natbib Warning: Citation `Gaydou2011' on page 37 undefined on input lin
+e 927.
 
 File: Imatges/etseib.png Graphic file (type png)
 <use Imatges/etseib.png>
-Package pdftex.def Info: Imatges/etseib.png used on input line 923.
+Package pdftex.def Info: Imatges/etseib.png used on input line 937.
 (pdftex.def)             Requested size: 32.52141pt x 42.51874pt.
  [37]
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 944.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `superscript' on input line 944.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 944.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 946.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `superscript' on input line 946.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 946.
+
 File: Imatges/etseib.png Graphic file (type png)
- <use Imatges/etseib.png>
-Package pdftex.def Info: Imatges/etseib.png used on input line 929.
+<use Imatges/etseib.png>
+Package pdftex.def Info: Imatges/etseib.png used on input line 952.
 (pdftex.def)             Requested size: 32.52141pt x 42.51874pt.
  [38]
 File: Imatges/etseib.png Graphic file (type png)
+ <use Imatges/etseib.png>
+Package pdftex.def Info: Imatges/etseib.png used on input line 958.
+(pdftex.def)             Requested size: 32.52141pt x 42.51874pt.
+ [39]
+File: Imatges/etseib.png Graphic file (type png)
 
 <use Imatges/etseib.png>
-Package pdftex.def Info: Imatges/etseib.png used on input line 933.
+Package pdftex.def Info: Imatges/etseib.png used on input line 962.
 (pdftex.def)             Requested size: 32.52141pt x 42.51874pt.
- [39] (./Treball.bbl
+ [40] (./Treball.bbl
 Underfull \hbox (badness 1454) in paragraph at lines 19--27
 \OT1/cmr/m/it/12 Mac-hi-ne Le-ar-ning)\OT1/cmr/m/n/12 , vo-lu-me 5.  2004.  ISB
 N 0262012111.  doi: $10 . 1007 /
@@ -1235,7 +1248,7 @@ File: Imatges/etseib.png Graphic file (type png)
 <use Imatges/etseib.png>
 Package pdftex.def Info: Imatges/etseib.png used on input line 93.
 (pdftex.def)             Requested size: 32.52141pt x 42.51874pt.
- [40]
+ [41]
 Underfull \hbox (badness 1400) in paragraph at lines 154--161
 \OT1/cmr/m/it/12 ce-ment Le-ar-ning\OT1/cmr/m/n/12 .  PhD the-sis, Uni-ver-sity
  of Illi-nois at Urbana-Champaign,
@@ -1257,12 +1270,12 @@ File: Imatges/etseib.png Graphic file (type png)
 <use Imatges/etseib.png>
 Package pdftex.def Info: Imatges/etseib.png used on input line 169.
 (pdftex.def)             Requested size: 32.52141pt x 42.51874pt.
- [41]
+ [42]
 File: Imatges/etseib.png Graphic file (type png)
  <use Imatges/etseib.png>
 Package pdftex.def Info: Imatges/etseib.png used on input line 243.
 (pdftex.def)             Requested size: 32.52141pt x 42.51874pt.
- [42]
+ [43]
 Underfull \hbox (badness 2205) in paragraph at lines 315--324
 []\OT1/cmr/m/n/12 Elmar a R^^?uckert, Ger-hard Neu-mann, Marc Tous-saint, and W
 olf-gang Ma-
@@ -1290,62 +1303,82 @@ File: Imatges/etseib.png Graphic file (type png)
 <use Imatges/etseib.png>
 Package pdftex.def Info: Imatges/etseib.png used on input line 324.
 (pdftex.def)             Requested size: 32.52141pt x 42.51874pt.
- [43])
+ [44])
 File: Imatges/etseib.png Graphic file (type png)
  <use Imatges/etseib.png>
-Package pdftex.def Info: Imatges/etseib.png used on input line 942.
+Package pdftex.def Info: Imatges/etseib.png used on input line 971.
 (pdftex.def)             Requested size: 32.52141pt x 42.51874pt.
- [44]
+ [45]
 LaTeX Font Info:    Font shape `OMS/cmr/bx/n' in size <17.28> not available
-(Font)              Font shape `OMS/cmsy/b/n' tried instead on input line 946.
+(Font)              Font shape `OMS/cmsy/b/n' tried instead on input line 975.
 
-Overfull \hbox (6.3808pt too wide) in paragraph at lines 952--954
+Overfull \hbox (6.3808pt too wide) in paragraph at lines 981--983
 \OT1/cmtt/m/n/12 sudo sh -c 'echo "deb http://packages.ros.org/ros/ubuntu preci
 se main" 
  []
 
 
-Overfull \hbox (7.75209pt too wide) in paragraph at lines 978--978
+Overfull \hbox (7.75209pt too wide) in paragraph at lines 1007--1007
 [][][]$\OT1/cmtt/m/n/10 http : / / www . gostai . com / downloads / urbi / 1 . 
 5 / urbi-[]sdk-[]1 . 5-[]l0258c7a-[]i486-[]linux-[]gnu-[]gcc-[]4 .
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 978--979
+Underfull \hbox (badness 10000) in paragraph at lines 1007--1008
 
  []
 
 File: Imatges/etseib.png Graphic file (type png)
 <use Imatges/etseib.png>
-Package pdftex.def Info: Imatges/etseib.png used on input line 979.
+Package pdftex.def Info: Imatges/etseib.png used on input line 1008.
 (pdftex.def)             Requested size: 32.52141pt x 42.51874pt.
- [45
+ [46
 
 ]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 988.
+
+Package natbib Warning: There were undefined citations.
+
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1017.
 File: Imatges/etseib.png Graphic file (type png)
- <use Imatges/etseib.png>
-Package pdftex.def Info: Imatges/etseib.png used on input line 988.
+<use Imatges/etseib.png>
+Package pdftex.def Info: Imatges/etseib.png used on input line 1017.
 (pdftex.def)             Requested size: 32.52141pt x 42.51874pt.
- [46]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 988.
+ [47]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 1017.
  (./Treball.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 988.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 988.
-Package rerunfilecheck Info: File `Treball.out' has not changed.
-(rerunfilecheck)             Checksum: 2DD5C308C07D85858EA4545AE9A1F8C9;3393.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 988.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1017.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1017.
+
+
+
+Package rerunfilecheck Warning: File `Treball.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `Treball.out':
+(rerunfilecheck)             Before: 2DD5C308C07D85858EA4545AE9A1F8C9;3393
+(rerunfilecheck)             After:  20E752C8250914E8A3DC65BCA03309C6;3622.
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1017.
  ) 
 Here is how much of TeX's memory you used:
- 10135 strings out of 493493
- 145026 string characters out of 3143797
- 254263 words of memory out of 3000000
- 12964 multiletter control sequences out of 15000+200000
- 18204 words of font info for 70 fonts, out of 3000000 for 9000
+ 10152 strings out of 493493
+ 145244 string characters out of 3143797
+ 254288 words of memory out of 3000000
+ 12969 multiletter control sequences out of 15000+200000
+ 18512 words of font info for 71 fonts, out of 3000000 for 9000
  957 hyphenation exceptions out of 8191
  36i,15n,74p,1407b,578s stack positions out of 5000i,500n,10000p,200000b,50000s
-pdfTeX warning (dest): name{Hfootnote.28} has been referenced but does not ex
+pdfTeX warning (dest): name{Hfootnote.30} has been referenced but does not ex
 ist, replaced by a fixed one
+
+pdfTeX warning (dest): name{Hfootnote.29} has been referenced but does not exis
+t, replaced by a fixed one
+
+pdfTeX warning (dest): name{Hfootnote.28} has been referenced but does not exis
+t, replaced by a fixed one
 
 pdfTeX warning (dest): name{Hfootnote.27} has been referenced but does not exis
 t, replaced by a fixed one
@@ -1452,10 +1485,10 @@ s/cm/cmti12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/c
 mti7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti8.pf
 b></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></us
 r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
-Output written on Treball.pdf (48 pages, 2141058 bytes).
+Output written on Treball.pdf (49 pages, 2148778 bytes).
 PDF statistics:
- 1072 PDF objects out of 1200 (max. 8388607)
- 954 compressed objects within 10 object streams
- 297 named destinations out of 1000 (max. 500000)
+ 1093 PDF objects out of 1200 (max. 8388607)
+ 974 compressed objects within 10 object streams
+ 309 named destinations out of 1000 (max. 500000)
  471 words of extra memory for PDF output out of 10000 (max. 10000000)
 

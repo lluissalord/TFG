@@ -37,14 +37,16 @@
 \BOOKMARK [3][-]{subsubsection.2.4.2}{Package complert del robot PR2 del USC-CLMC}{subsection.2.4}% 37
 \BOOKMARK [1][-]{section.3}{Disseny inicial}{}% 38
 \BOOKMARK [2][-]{subsection.3.1}{Model de l'Aibo}{section.3}% 39
-\BOOKMARK [2][-]{subsection.3.2}{Acceler\362metre}{section.3}% 40
-\BOOKMARK [1][-]{section.4}{Disseny final}{}% 41
-\BOOKMARK [2][-]{subsection.4.1}{Execuci\363 DMPs sense PI2}{section.4}% 42
-\BOOKMARK [2][-]{subsection.4.2}{Execuci\363 DMPs amb PI2}{section.4}% 43
-\BOOKMARK [2][-]{subsection.4.3}{Plataforma}{section.4}% 44
-\BOOKMARK [1][-]{section.5}{Conclusions}{}% 45
-\BOOKMARK [1][-]{section*.95}{Agra\357ments}{}% 46
-\BOOKMARK [1][-]{section*.95}{Refer\350ncies}{}% 47
-\BOOKMARK [1][-]{section*.97}{Annexos}{}% 48
-\BOOKMARK [1][-]{appendix.A}{Instal\267laci\363 de ROS, llibreries d'Urbi i paquet aibo server}{}% 49
-\BOOKMARK [1][-]{appendix.B}{Bibliografia}{}% 50
+\BOOKMARK [2][-]{subsection.3.2}{Moviment del centre de gravetat}{section.3}% 40
+\BOOKMARK [3][-]{subsubsection.3.2.1}{Acceler\362metre MPU6050 i giroscopi GY-521}{subsection.3.2}% 41
+\BOOKMARK [3][-]{subsubsection.3.2.2}{C\340lcul de la posici\363 i de la inclinaci\363}{subsection.3.2}% 42
+\BOOKMARK [1][-]{section.4}{Disseny final}{}% 43
+\BOOKMARK [2][-]{subsection.4.1}{Execuci\363 DMPs sense PI2}{section.4}% 44
+\BOOKMARK [2][-]{subsection.4.2}{Execuci\363 DMPs amb PI2}{section.4}% 45
+\BOOKMARK [2][-]{subsection.4.3}{Plataforma}{section.4}% 46
+\BOOKMARK [1][-]{section.5}{Conclusions}{}% 47
+\BOOKMARK [1][-]{section*.102}{Agra\357ments}{}% 48
+\BOOKMARK [1][-]{section*.102}{Refer\350ncies}{}% 49
+\BOOKMARK [1][-]{section*.104}{Annexos}{}% 50
+\BOOKMARK [1][-]{appendix.A}{Instal\267laci\363 de ROS, llibreries d'Urbi i paquet aibo server}{}% 51
+\BOOKMARK [1][-]{appendix.B}{Bibliografia}{}% 52

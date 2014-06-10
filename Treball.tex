@@ -64,7 +64,7 @@
 \bibliographystyle{plainnat} 
 %Poso per ordre d'pració (així) o per ordre d'autors (plainnat)?
 
-\title{Aibo (títol provisional)}
+\title{Equilibri del robot Aibo utilitzant DMPs (millor?)}
 \author{Lluís Salord Quetglas\\
 		\texttt{l.salord.quetglas@gmail.com}\\}
 \date{\today}
@@ -81,6 +81,7 @@
 \end{figure}
 
 Cal indicar la titulació, que és un TFG, l'Escola.
+Realment es pensa canviar tota la portada i agafar la que està penjada a la pàgina d'ETSEIB que és la que s'ha d'entrega, aquesta es tan sols provisional.
 
 \newpage
 \paragraph{}
@@ -902,8 +903,36 @@ J=E\left\{ \sum_{h=0}^{H} R_{h} \right\}.
 \subsection{Model de l'Aibo}
 %EXPLICAR TOT TOT LO DE ES MODEL
 
-\subsection{Acceleròmetre}
-%EXPLICAR TOT TOT LO DE S'ACCELEROMETRE
+\subsection{Moviment del centre de gravetat}
+
+
+\paragraph{}Tal i com s'ha vist al llarg del treball, uns dels requisits per poder aconseguir recuperar l'estabilitat és tenir les mesures dels moviments del robot. La idea inicial s'ha pensat utilitzar el sensor triaxial d'accelerometria que porta el propi Aibo, per estudiar el moviment d'aquest. Per això, primer s'han fet unes comprovacions de la fiabilitat de les dades d'aquest sensor. Aquestes comprovacions es basen en l'observació de la variabilitat de les mesures i comprovar si l'angle d'inclinació extret a partir de l'acceleració és el mateix que el mesurat externament. Finalment ha resultat que no és gens precís per la tasca que ha de desenvolupar.
+
+\subsubsection{Acceleròmetre MPU6050 i giroscopi GY-521}
+
+\paragraph{}Al no ser el sensor del propi robot d'utilitat en el treball, s'ha decidit comprar un altre sensor triaxial d'accelerometria amb un giroscopi de tres eixos. En aquest cas, s'ha optat per una peça on hi ha integrat l'acceleròmetre \texttt{MPU6050} i el giroscopi \texttt{GY-521}. S'ha escollit aquest, en primera instancia, perquè està enfocat per a ser utilitzat amb Arduino, placa la qual es disposa en el departament i que es pensa utilitzar per altres motius. A més, existeix molta informació per la xarxa, com llibreries\footnote{Entre d'elles un de les més utilitzades i molt pràctica és la \texttt{i2cdevlib}, on a banda de per aquest conjunt acceleròmetre-giroscopi, també n'hi ha per molts altres \cite{Rowberg}} o aplicacions fetes, a banda de ser recomanat per la seva qualitat-preu.
+
+\paragraph{}A partir de l'acceleròmetre es treu informació de les acceleracions que pateix aquest sensor, incloent la gravetat, aquest transmet les dades en RAW que s'han de dividir per $16384$ per a ser transformats a $G$s\footnote{Força $G$, per tant, el resultat de la divisió s'ha de multiplicar per $9,80665$ per passar-ho a $m/s^2$.}. Mentre, el giroscopi mesura la velocitat angular, abans d'utilitzar les dades que arriben directament d'aquest s'ha de passar del RAW a \textit{º/s} (graus per segon) divindint el primer per $131$.
+
+\subsubsection{Càlcul de la posició i de la inclinació}
+
+\paragraph{}Com s'ha explicat en l'apartat \ref{Estabilitat} d'Estabilitat, una de les millors formes de cercar la màxima estabilitat, dins l'abast del TFG, és provocar que el CdG retorni a la posició d'origen. Per tant, es requereix saber en tot moment quan s'ha desplaçat respecte aquest origen, però per això es necessita tenir la informació de la inclinació del robot, per tal d'extreure tan sols la component de l'acceleració que ens interessa.
+
+
+\vspace{20pt}
+\textbf{Càlcul de la inclinació}
+
+\paragraph{}En aquest càlcul, es requereix essencialment del giroscopi, perquè tant sols s'han d'integrar les dades subministrades per aquest. L'acceleròmetre només podria ser servir, per extreure la inclinació, si s'estigués estàtic o com és en aquest cas, per ajudar a filtrar les dades. Per tal de dur a terme aquest filtre, s'han trobat dos tipus de filtres que podrien ser útils, el filtre \texttt{Kalman} i el filtre \texttt{complementari}.
+
+\paragraph{}El filtre Kalman es basa en l'estimació de l'estat del sistema a partir de la informació de l'acceleròmetre i el giroscopi, en el moment anterior i en l'actual. Per altra banda, el filtre complementari és basa en l'ús de les dades del giroscopi per la mesura en temps curts i realitzar la correcció de la deriva amb les dades de l'acceleròmetre \cite{Gaydou2011}. Un filtre complementari és un filtre Kalman, però en unes condicions i restriccions determinades. Per això no difereixen gaire en els resultats donats, el Kalman és més precís, però requereix de més recursos computacionals.
+
+\paragraph{}Inicialment, s'ha plantejat utilitzar el filtre Kalman, ara bé
+
+
+
+
+
+
 
 \newpage
 \section{Disseny final}
