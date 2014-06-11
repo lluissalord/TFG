@@ -1,4 +1,4 @@
-\begin{thebibliography}{46}
+\begin{thebibliography}{51}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -78,6 +78,14 @@ Masahiro Fujita.
   \penalty0 (April), 2000.
 \newblock URL
   \url{http://ieeexplore.ieee.org/xpls/abs\_all.jsp?arnumber=844149}.
+
+\bibitem[Gaydou et~al.(2011)Gaydou, Redolfi, and Henze]{Gaydou2011}
+David Gaydou, J~Redolfi, and A~Henze.
+\newblock {Filtro complementario para estimacion de actitud aplicado al
+  controlador embebido de un cuatrirrotor}.
+\newblock \emph{\ldots de Sist. Embebidos}, 2011.
+\newblock URL
+  \url{http://proyectos.ciii.frc.utn.edu.ar/cuadricoptero/export/9ed95816c90cc7d83e32fd2e13b032dc515c0d7a/documentacion/informe\_final/paper\_case.pdf}.
 
 \bibitem[Gostai()]{Urbi_Docs}
 Gostai.
@@ -166,6 +174,11 @@ Tim Laue, Kai Spiess, and T~R\"{o}fer.
 \newblock \emph{RoboCup 2005: Robot Soccer World Cup IX}, pages 173--183, 2006.
 \newblock URL \url{http://link.springer.com/chapter/10.1007/11780519\_16}.
 
+\bibitem[Lauszus(2012)]{Lauszus2012}
+Kristian Lauszus.
+\newblock {KalmanFilter - TKJElectronics}, 2012.
+\newblock URL \url{https://github.com/TKJElectronics/KalmanFilter}.
+
 \bibitem[Learned-Miller(2014)]{Learned-Miller2014}
 Erik~G. Learned-Miller.
 \newblock \emph{{Introduction to Supervised Learning}}.
@@ -249,7 +262,7 @@ Duy Nguyen-Tuong and Jan Peters.
 \newblock \doi{10.1007/s10339-011-0404-1}.
 \newblock URL \url{http://www.ncbi.nlm.nih.gov/pubmed/21487784}.
 
-\bibitem[Pastor et~al.(2009)Pastor, Hoffmann, Asfour, and Schaal]{Pastor2009a}
+\bibitem[Pastor et~al.(2009)Pastor, Hoffmann, Asfour, and Schaal]{Pastor2009}
 Peter Pastor, Heiko Hoffmann, Tamim Asfour, and Stefan Schaal.
 \newblock {Learning and generalization of motor skills by learning from
   demonstration}.
@@ -258,6 +271,12 @@ Peter Pastor, Heiko Hoffmann, Tamim Asfour, and Stefan Schaal.
 \newblock \doi{10.1109/ROBOT.2009.5152385}.
 \newblock URL
   \url{http://ieeexplore.ieee.org/lpdocs/epic03/wrapper.htm?arnumber=5152385}.
+
+\bibitem[Pfeiffer(2014)]{Pfeiffer2014}
+Sammy Pfeiffer.
+\newblock \emph{{Gesture learning and generation and execution of slightly
+  modified gestures}}.
+\newblock PhD thesis, Universitat Polit\`{e}cnica de Catalunya, 2014.
 
 \bibitem[Purushotham and Rao(2009)]{Purushotham2009}
 A.~Purushotham and G.~Venkata Rao.
@@ -299,6 +318,11 @@ PAL Robotics.
 \newblock {REEM-C}.
 \newblock URL \url{http://pal-robotics.com/en/robots/reem-c}.
 
+\bibitem[Rowberg()]{Rowberg}
+Jeff Rowberg.
+\newblock {I2C Device Library}.
+\newblock URL \url{http://www.i2cdevlib.com/}.
+
 \bibitem[R\"{u}ckert and D'Avella(2013)]{Ruckert2013}
 Elmar R\"{u}ckert and Andrea D'Avella.
 \newblock {Learned parametrized dynamic movement primitives with shared
@@ -331,6 +355,13 @@ Stefan Schaal.
 \newblock ISSN 15324435.
 \newblock URL \url{http://dl.acm.org/citation.cfm?id=1953033}.
 
+\bibitem[Shadmehr and Wise(2004)]{Shadmehr2004}
+R~Shadmehr and S.~P. Wise.
+\newblock {Minimum Jerk Trajectory}.
+\newblock In \emph{Computational Neurobiology of Reaching and Pointing}. 2004.
+\newblock URL
+  \url{http://www.shadmehrlab.org/book/minimum\_jerk/minimumjerk.htm}.
+
 \bibitem[Stulp and Theodorou(2011)]{Stulp2011}
 Freek Stulp and Evangelos Theodorou.
 \newblock {Learning motion primitive goals for robust manipulation}.
@@ -348,10 +379,11 @@ R~S Sutton and A~G Barto.
 \newblock \doi{10.1109/TNN.1998.712192}.
 
 \bibitem[T\'{e}llez et~al.(2005)T\'{e}llez, Angulo, and Pardo]{Tellez2005a}
-RA~T\'{e}llez, Cecilio Angulo, and DE~Pardo.
+RA~A T\'{e}llez, Cecilio Angulo, and DE~E Pardo.
 \newblock {Highly modular architecture for the general control of autonomous
   robots}.
-\newblock \emph{Computational Intelligence and \ldots}, pages 709--716, 2005.
+\newblock \emph{Computational Intelligence and \ldots}, \penalty0 (Figure
+  1):\penalty0 709--716, 2005.
 \newblock URL \url{http://link.springer.com/chapter/10.1007/11494669\_87}.
 
 \bibitem[Torrent-Fontbona et~al.(2013)Torrent-Fontbona, Mu\~{n}oz, and

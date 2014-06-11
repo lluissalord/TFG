@@ -192,7 +192,7 @@ The estability of the robots...
 
 %Dir que s'ha intentat implementar els fets més novedosos avui dia a la robotica, com és en el control de robots les DMPs o amb la comunicacio amb aquest el ROS, també esta molt a l'ordre del dia l'ús d'algorismes d'aprenentatge per això s'ha plantejat el supervisat i el pel reforç i s'ha cregut convenient crear un model per tal de millorar tant l'aprenentatge com el control d'un mateix a banda de prevenir davant possibles riscos que porta el fer-ho amb el robot físic.
 %Es basa en crear una trajectoria inicial de demostracio, per a cada articulació, que té com a posició final una depenent de la inclinació del propi robot. A partir d'aquesta s'apren la DMP, això vol dir extreure uns pesos per unes funcions gaussianes. En tenir apreses la DMPs, es pot modificar la inclinació del robot, al canviar aquest, el goal de cada articulacio (que té cadascun una DMP) es veu modificat segons quina articulació sigui i la inclinació, i el robot s'adapta en temps real a aquesta modificació de la pendent.
-%El que és voldria mirar d'aconseguir és prenent la solució anterior com a solució inicial, i millorar-ne els pesos i el goal amb l'algorisme PI^2, que requereix d'un aprenentatge per reforç i per tant a base de prova i error es milloren els pesos i el goal.
+%El que és voldria mirar d'aconseguir és prenent la solució anterior com a solució inicial, i millorar-ne els pesos i el goal amb l'algorisme PI^2, aquest pot prendre com a paràmetre influent algun que sigui extern al propi sistema dinàmic, com en aquest cas podria ser la pendent del robot, intentant que aquest estigui horitzontal, que requereix d'un aprenentatge per reforç i per tant a base de prova i error es milloren els pesos i el goal.
 
 \label{Abast}
 \subsection{Abast del treball}
@@ -374,7 +374,7 @@ mouth     &    range=[-58.000000,-3.000000]    & unit=deg & Mouth\\
 
 Aquesta capa intermèdia ofereix dos models de comunicació: (1) sistema de \textit{publicació/subscripció}; i (2) utilitzant \texttt{services}.
 \begin{enumerate}
-\item El sistema de \textit{publicació/subscripció} és anònim, asíncron i les dades poden ser capturades i rellegides sense canvis en el codi. Per tant, si per fer una certa tasca es requereix de les dades d'una altre tasca, com per exemple un sensor, llavors a partir de subscriure's al \texttt{topic} corresponent es poden llegir les dades que publica la tasca (sensor). Pot haver-hi múltiples publicadors i subscriptors per un únic \texttt{topic} i, en general, entre ells no saben de l'existència dels altres.
+\item El sistema de \textit{publicació/subscripció} és anònim, asíncron i les dades poden ser capturades i rellegides sense canvis en el codi. Per tant, si per fer una certa tasca es requereix de les dades d'una altra tasca, com per exemple un sensor, llavors a partir de subscriure's al \texttt{topic} corresponent es poden llegir les dades que publica la tasca (sensor). Pot haver-hi múltiples publicadors i subscriptors per un únic \texttt{topic} i, en general, entre ells no saben de l'existència dels altres.
 
 \item Els \texttt{services} estan definits per dos \texttt{messages}, un és la demanda que ha fet el \texttt{node} i l'altre és la resposta a aquesta demanda. Per tant, el seu ús és molt simple, en el moment que es crida un \texttt{service}, amb les dades que aquest requereixi, el procés dona una resposta al \texttt{node} segons les dades que s'han enviat.
 \end{enumerate}
@@ -383,9 +383,9 @@ Aquesta capa intermèdia ofereix dos models de comunicació: (1) sistema de \tex
 \vspace{20pt}
 \textbf{Objectius de ROS}
 
-\paragraph{}El principal objectiu de ROS és poder \textit{reutilitzar} el codi de desenvolupament i d'investigacions en robòtica. L'estructura de processos distribuïts permet aquest fet, ja que pot executar-se un procés (amb un codi determinat) de forma individual i acoblar-se fàcilment al conjunt. A més, aquests processos poden agrupar-se en \texttt{Packages} i \texttt{Stacks} i ser compartits de forma senzilla.
+\paragraph{}El principal objectiu de ROS és poder \textit{reutilitzar} el codi de desenvolupament i d'investigacions en robòtica. L'estructura de processos distribuïts permet aquest fet, ja que pot executar-se un procés (amb un codi determinat) de forma individual i acoblar-se fàcilment al conjunt. A més, aquests processos poden agrupar-se en \texttt{Packages} i \texttt{Stacks}, per ser compartits de forma senzilla.
 
-\paragraph{}D'altra banda, també és tenen unes altres finalitats \cite{Quigley}: (1) descentralització; (2) plurilingüisme; (3) estar basat en eines; (4) ser una capa intermèdia fina; (5) gratuïta i \texttt{open-source}.
+\paragraph{}D'altra banda, també és tenen altres finalitats \cite{Quigley}: (1) descentralització; (2) plurilingüisme; (3) estar basat en eines; (4) ser una capa intermèdia fina; (5) gratuïta i \texttt{open-source}.
 
 \begin{enumerate}
 
@@ -396,7 +396,7 @@ ROS està estructurat de forma que els processos estan distribuïts, amb la poss
 Cada programador és un món, cadascú té el seu llenguatge de programació preferit, sigui per la raó que sigui. Per això, ROS s'ha dissenyat per ser un llenguatge neutral. Actualment, ROS admet quatre llenguatges de programació: (1) \textit{C++}, (2) \textit{Python}, (3) \textit{Octave} i (4) \textit{LISP}, havent altres en desenvolupament.
 
 \item Basat en eines\\
-S'ha optat per dissenyar un nucli simple, on s'utilitzen multitud d'eines per construir i fer funcionar els diversos components de ROS, en vers, de dissenyar un enorme entorn de treball, tot en un. Tot i haver-se implementat alguns serveis en el propi nucli, s'ha intentat distribuir tot en mòduls separats. La pèrdua d'eficiència compensa els guanys en estabilitat i complexitat del conjunt.
+S'ha optat per dissenyar un nucli simple, on s'utilitzen multitud d'eines per construir i fer funcionar els diversos components de ROS, en lloc, de dissenyar un enorme entorn de treball, tot en un. Tot i haver-se implementat alguns serveis en el propi nucli, s'ha intentat distribuir tot en mòduls separats. La pèrdua d'eficiència compensa els guanys en estabilitat i complexitat del conjunt.
 
 \item Capa intermèdia fina\\
 En molts casos, és molts difícil \textit{"extreure"} la funcionalitat d'un codi, del seu context original, per a poder ser reutilitzat, això és degut a factors provocats pel propi entorn de treball d'origen. Per això, en ROS s'indueix a la independència dels algorismes, amb el nucli del ROS, creant-los en llibreries separades. Es facilita l'extracció de codi i la seva reutilització a traves d'aquest fet, entre d'altres característiques de la interfície.
@@ -469,7 +469,7 @@ Aquest humanoide és el creat per PAL Robotics \cite{REEM_C}. Destaca pel fet de
 		\includegraphics[width=0.30\textwidth]{Imatges/BigDog}
                 \caption{BigDog \cite{Raibert2008}}
 	\end{wrapfigure}
-És un dels grans robots que s'han creat a l'empresa \textit{Boston Dynamics}, prenent el que va ser inicialment desenvolupat en la DARPA \cite{Raibert2008}. Aquest ``\textit{gos}'' va ser dissenyat per ús militar, en concret, per acompanyar als soldats portant la càrrega necessària en terrenys on no podria desplaçar-se un vehicle convencional. Aquest quadrúpede és dinàmicament estable\footnote{Sistema que és estable tenint en compte els efectes inercials i altres components dinàmiques que apareixen en el propi sistema \cite{Purushotham2009}.} gràcies al gran conjunt de sensors i actuadors que arriba a tenir. A banda d'un sistema mecànic molt complert, també s'hi ha implementat algorismes d'aprenentatge per reforç (\textit{Reinforcement Learning}\footnote{Aprenentatge per reforç s'explica en detall en l'estat de l'art. En molts casos es abreviat com \textit{RL}.}), en concret DMP (\textit{Dynamic Movement Primitives})\footnote{DMP (\textit{Dynamic Movement Primitives}) s'explica en detall en l'estat de l'art a la pàgina \pageref{DMP-estat-de-l'art}. } \cite{Raibert2008}.
+És un dels grans robots que s'han creat a l'empresa \textit{Boston Dynamics}, prenent el que va ser inicialment desenvolupat en la DARPA \cite{Raibert2008}. Aquest ``\textit{gos}'' va ser dissenyat per ús militar, en concret, per acompanyar als soldats portant la càrrega necessària en terrenys on no podria desplaçar-se un vehicle convencional. Aquest quadrúpede és dinàmicament estable\footnote{Sistema que és estable tenint en compte els efectes inercials i altres components dinàmiques que apareixen en el propi sistema \cite{Purushotham2009}.} gràcies al gran conjunt de sensors i actuadors que arriba a tenir. A banda d'un sistema mecànic molt complert, també s'hi ha implementat algorismes d'aprenentatge per reforç (\textit{Reinforcement Learning}\footnote{Aprenentatge per reforç s'explica en detall en l'apartat \ref{RL-estat-de-l'art}. En molts casos es abreviat com \textit{RL}.}), en concret DMP (\textit{Dynamic Movement Primitives})\footnote{DMP (\textit{Dynamic Movement Primitives}) s'explica en detall en l'estat de l'art a l'apartat \ref{DMP-estat-de-l'art}. } \cite{Raibert2008}.
 \end{minipage}
 
 \item[LittleDog]
@@ -617,6 +617,7 @@ Sent $x_{t}$ la dada a classificar i $x_{i}$ l'exemple més pròxim. Després de
 
 
 \subsubsection{Aprenentatge per reforç \textit{(RL)}}
+\label{RL-estat-de-l'art}
 
 \paragraph{}En la robòtica, l'aprenentatge per reforç proveeix d'unes eines molt útils per tal de crear comportaments sofisticats i amb gran dificultat de disseny. Permet a un robot desenvolupar el seu propi comportament a base de prova i error. En aquest cas, el dissenyador, en lloc de donar unes dades per explícitament crear la solució al problema, tan sols proveeix una realimentació amb una funció objectiu de valors escalars que mesura la bondat de l'acció anterior. Per tant, un agent explora les possibles estratègies i després rep una recompensa per l'acció feta, intentant sempre maximitzar la recompensa acumulada durant el seu temps de vida \cite{Kober2009}. Però a diferència de l'aprenentatge supervisat, no es ``\textit{diu}"  quina acció hauria estat la millor a llarg plaç, a més de no haver d'explorar l'entorn, una altra diferència, en \texttt{RL} el fet de les accions ser en temps real és molt influent, ja que és concurrent amb l'aprenentatge \cite{Kaelbling1996}. 
 
@@ -720,7 +721,7 @@ Les $\psi_i(s)$ són funcions gaussianes expressades com $\psi_i(s)=exp(-h_i(s-c
 \end{figure}
 
 
-\paragraph{}Fins ara s'ha explicat l'algorisme original de les DMPs, ara bé, aquest porta inherents una sèrie d'inconvenients \cite{Pastor2009a}:
+\paragraph{}Fins ara s'ha explicat l'algorisme original de les DMPs, ara bé, aquest porta inherents una sèrie d'inconvenients \cite{Pastor2009}:
 
 \begin{itemize}
 \item Si la posició inicial $x_0$ i la posició \textit{g} són la mateixa, llavors la funció $f(s)$ no es capaç de desplaçar el sistema de l'estat inicial.
@@ -732,11 +733,11 @@ Les $\psi_i(s)$ són funcions gaussianes expressades com $\psi_i(s)=exp(-h_i(s-c
 \begin{wrapfigure}{r}{0.52\textwidth}
 \centering
 \includegraphics[width=0.5\textwidth]{Imatges/DMP-modified-algorism}
-\caption[Comparació de l'algorisme de DMP original (esquerra) i el modificat  per \cite{Pastor2009a} (dreta)]{Comparació de l'algorisme de DMP original (esquerra) i el modificat  per \cite{Pastor2009a} (dreta). S'utilitzen els mateixos moviment original i \textit{goals}, a dalt els goals són modificats a l'inici, mentre a la part de baix es modifiquen als 300 ms d'haver començat.}
+\caption[Comparació de l'algorisme de DMP original (esquerra) i el modificat  per \cite{Pastor2009} (dreta)]{Comparació de l'algorisme de DMP original (esquerra) i el modificat  per \cite{Pastor2009} (dreta). S'utilitzen els mateixos moviment original i \textit{goals}, a dalt els goals són modificats a l'inici, mentre a la part de baix es modifiquen als 300 ms d'haver començat.}
 \label{fig:DMP-modified-algorism}
 \end{wrapfigure}
 
-\paragraph{}Es per això, que en l'article \cite{Pastor2009a} es proposa una modificació de l'algorisme original. L'única equació que es veu retocada és \eqref{eq:tau-v-dot-DMP} que és substituïda per \eqref{eq:tau-v-dot-DMP-modified}. Els trets importants són que $g - x_0$ no multiplica a $f(s)$ i el terme $K(g - x_0)s$ és necessari per tal que en l'inici del moviment no es produeixin salts, la millora, respecte l'algorisme original, es veu reflectida en la figura \ref{fig:DMP-modified-algorism} de sobre.
+\paragraph{}Es per això, que en l'article \cite{Pastor2009} es proposa una modificació de l'algorisme original. L'única equació que es veu retocada és \eqref{eq:tau-v-dot-DMP} que és substituïda per \eqref{eq:tau-v-dot-DMP-modified}. Els trets importants són que $g - x_0$ no multiplica a $f(s)$ i el terme $K(g - x_0)s$ és necessari per tal que en l'inici del moviment no es produeixin salts, la millora, respecte l'algorisme original, es veu reflectida en la figura \ref{fig:DMP-modified-algorism} de sobre.
 
 \begin{equation}\label{eq:tau-v-dot-DMP-modified}
 \tau \dot{v} = K(g - x) - Dv - K(g - x_0)s + K f(s)
@@ -813,6 +814,7 @@ r_t = 0.5\ddot{y_t}^2 + \frac{1}{2}10000( \theta_t^T \theta_t)    \qquad {}  \ph
 
 \label{ROS-estudi-pre}
 \subsection{Comunicació amb ROS}
+\paragraph{}L'entorn de treball ROS és una eina que està a l'ordre del dia, en robòtica. Fins aquests moment, no existia la possibilitat de comunicació de l'Aibo a traves de ROS, al menys que s'hagués fet públic. Per això, el grup 
 
 %Urbi és amb que es comunica ROS i que aquí s'ha començat a utilitzar a partir del codi que es tenia de Ricardo Téllez, pero que s'ha modificat ja que inicialment no funcionava i quan van arribar a funcionar totes ses parts s'ha mirat d'optimitzar la frequencia per tal que funcioni millor (sense aturades pero al maxim)
 %Com està es tema de es codi, que fa i qui hi ha treballat amb cada part (sobretot diego, menys amb la part de camara que ha fet la Lucia), som un grup de treball que intenta que es tornin a reutilitzar els Aibos
@@ -873,11 +875,11 @@ J=E\left\{ \sum_{h=0}^{H} R_{h} \right\}.
 
 \paragraph{}El robot consta de diferents articulacions, cadascuna afecta d'una o altre manera el moviment del conjunt del robot. Per implementar l'algorisme, s'ha de crear una DMP per cadascuna de les articulacions, per tant el procés d'aprenentatge s'ha de repetir tants cops com nombre juntures. En la majoria de les explicacions següents és refereix en l'aprenentatge d'una individualment, per les altres seria el mateix procés.
 
-\paragraph{}El primer pas que s'ha de fer, per dur a terme la DMP, és tenir un moviment original. Aquest és podria extreure, com s'ha explicat en l'estat de l'art, a partir de: (1) imitació, (2) demostració amb el propi robot, (3) trajectòria programada. D'entre les tres, s'ha escollit la tercera, ja que les articulacions de l'Aibo són PIDs i, per tant, la posició que se li programi és segur que es durà a terme. A més, la imitació no tindria sentit, si no hi ha un altre robot a imitar, i la demostració no és una bona opció, perquè a banda de ser impossible donar el moviment a totes les articulacions alhora de forma manual, tampoc seria precís.
+\paragraph{}El primer pas que s'ha de fer, per dur a terme la DMP, és tenir un moviment original. Aquest és podria extreure, com s'ha explicat en l'apartat \ref{DMP-estat-de-l'art}, a partir de: (1) imitació, (2) demostració amb el propi robot, (3) trajectòria programada. D'entre les tres, s'ha escollit la tercera, ja que les articulacions de l'Aibo són PIDs i, per tant, la posició que se li programi és segur que es durà a terme. A més, la imitació no tindria sentit, si no hi ha un altre robot a imitar, i la demostració no és una bona opció, perquè a banda de ser impossible donar el moviment a totes les articulacions alhora de forma manual, tampoc seria precís.
 
 \paragraph{}Havent escollit el mètode per donar el moviment original, s'ha de saber com ha de ser aquest. Un tipus de trajectòria molt utilitzat és la de mínim \texttt{jerk}\footnote{\texttt{Jerk} és la derivada de l'acceleració}. Aquesta és una trajectòria suavitzada calculada a partir d'una posició inicial, final i el temps requerit per arriba-hi, minimitzant el \texttt{jerk}. Es deixen els detalls d'aquest tipus de trajectòria per \cite{Shadmehr2004}.
 
-\paragraph{}Un cop es té la trajectòria, a partir d'aquesta es poden extreure els pesos $w_i$ aproximant mínims quadrats amb gaussianes i, per tant, la funció no lineal $f(s)$ queda definida amb una primera solució, figura \ref{fig:LdF-trajectories}. Amb tan sols aquesta primera solució és factible el dur a terme les DMPs de forma correcta. Ara bé, en el treball és desitja que s'arribi a la posició de màxima estabilitat de la forma més precisa. Per això, s'han de poder modificar els pesos $w_i$ i el $goals$ de les articulacions, de tal manera que la posició final sigui l'adequada. Una bona opció és l'algorisme $\mathrm{PI^2}$, que et permet millorar tan els pesos, com els $goals$ depenent de paràmetres externs a la dinàmic del sistema, com podria ser el CdG o la inclinació. 
+\paragraph{}Un cop es té la trajectòria, a partir d'aquesta es poden extreure els pesos $w_i$ aproximant mínims quadrats amb gaussianes i, per tant, la funció no lineal $f(s)$ queda definida amb una primera solució, figura \ref{fig:LdF-trajectories}. Amb tan sols aquesta primera solució és factible el dur a terme les DMPs de forma correcta. Ara bé, en el treball és desitja que s'arribi a la posició de màxima estabilitat de la forma més precisa. Per això, s'han de poder modificar els pesos $w_i$ i el $goals$ de les articulacions, de tal manera que la posició final sigui l'adequada. Una bona opció és l'algorisme $\mathrm{PI^2}$, que et permet millorar tan els pesos, com els $goals$ depenent de paràmetres externs a la dinàmic del sistema, com podria ser el desplaçament del CdG o la inclinació. 
 \begin{figure}[h]
 \centering
 \includegraphics[width=0.97\textwidth]{Imatges/Aprenentatge-per-demostracio.pdf}
@@ -891,16 +893,26 @@ J=E\left\{ \sum_{h=0}^{H} R_{h} \right\}.
 %Affordance: Mes o menys es podria entendre com els sensors i actuaduadors serien moduls neuronals que envien informació ja filtrada als altres moduls neuronals de tal manera que vagi enfocat a fer una tasca determinada
 
 \subsubsection{Elecció final}
-En conclusió, el mètode utilitzat és la DMP conjuntament amb l'algorisme $\mathrm{PI^2}$. Per una banda, la DMP dona una solució inicial bastant encertada\footnote{La bondat d'aquesta solució depèn de la qualitat del goal per les articulacions que s'ha suposat.}
+En conclusió, el mètode utilitzat és la DMP conjuntament amb l'algorisme $\mathrm{PI^2}$. Per una banda, la DMP dona una solució inicial bastant encertada\footnote{La bondat d'aquesta solució depèn de la qualitat del $goal$ per les articulacions que s'ha estimat.}. Per l'altra banda, el $\mathrm{PI^2}$ millora tant els pesos com els $goals$ de les articulacions, depenent dels paràmetres externs com són el desplaçament del CdG o la inclinació del robot.
 
 %Explicar que es finalment s'escull per les DMPs juntament amb PI² que donarà la part de reinforcement learning que es necessita per tal de poder dur a terme el treball de la forma més adient possible, ja que aquesta part corregirà l'error que comet el goal de la DMP.
 
 \subsection{Codis amb DMPs implementades}
 
-
+\paragraph{}La creació de l'algorisme de DMPs és un fet que no troba dins l'abast del treball, degut a la gran complexitat d'aquest. Està basat en equacions diferencials, canvis de variables, ús de Gaussianes, aproximacions per Fourier o per mínims quadrats, etc. Per una banda, estaria la dificultat de crear el codi, però més complicada és el treball que porta el depurar-lo. Per això, s'ha optat per cercar codis que portin implementades les DMPs, d'entre els que s'han trobat només s'han plantejat els dos que es troben a continuació perquè són uns dels que utilitzen la DMP modificada que s'ha plantejat en l'apartat \ref{DMP-estat-de-l'art} de l'estat de l'art.
 %Es molt complex el fer el codi per implementar les DMPs ja que són un seguit d'equacions diferencials amb transformacions de variables, us de Gaussianes, etc.
 %Per això s'implementa a partir de codis ja existents que funcionen, pero adaptant-lo al cas de treball.
 \subsubsection{DMPs de Scott Niekum}
+
+\paragraph{}El package creat per Scott Niekum està basat en l'article \cite{Pastor2009}. Inicialment, s'ha optat per aquest codi perquè és senzill i útil, figura \ref{fig:diagrama-sniekum}. S'ha estudiat el seu funcionament, on a diferència de l'algorisme explicat en l'apartat \ref{DMP-estat-de-l'art}, aquest l'aproximació es fa amb $Fourier$, en lloc d'utilitzar $gaussianes$. Aquest codi crea les DMPs sense problemes, com s'ha demostrat en \cite{Pfeiffer2014}, però té el problema que no porta implementat cap tipus d'algorisme de millora de la política a partir de paràmetres externs a la pròpia dinàmica del sistema. Per això, s'ha preferit utilitzar el \texttt{package} que s'explica a continuació.
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.95\textwidth]{Imatges/diagrama-sniekum.pdf}
+\caption[Diagrama fluxos del codi de Scott Niekum]{Diagrama de fluxos del suposat funcionament en aquest cas del codi de Scott Niekum.}
+\label{fig:diagrama-sniekum}
+\end{figure}
+
 %Prenen com a codi original el de les dmps del package de ROS de DMP, creat per ell mateix, i l'implementa en robots en aquest package. Esta basat en el document ICRA2009 de Peter Pastor http://www-clmc.usc.edu/publications/P/pastor-ICRA2009.pdf
 %Es sencill i útil, va directe al gra, ara té el problema que no té implementat per posar-hi aprenentatge per reforç, la qual cosa és molt important per aquest projecte. Inicialment es va estudiar a fons el funcionament d'aquest codi i observar com es podria arribar a implementar en el cas actual, finalment es va veure que amb aquest codi no es podia implementar o seria complicat de posar l'algorisme de PI².
 

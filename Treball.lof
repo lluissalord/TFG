@@ -8,7 +8,8 @@
 \contentsline {figure}{\numberline {7}{\ignorespaces Esquema de cada arquitectura d'aprenentatge \cite {Nguyen-Tuong2011}\relax }}{21}{figure.caption.50}
 \contentsline {figure}{\numberline {8}{\ignorespaces Gr\IeC {\`a}fics explicatius de la funci\IeC {\'o} no lineal $f(s)$\relax }}{27}{figure.caption.68}
 \contentsline {figure}{\numberline {9}{\ignorespaces Efecte dels pesos $w_i$ (representats per $\theta $) i de l'objectiu (\textit {goal})}}{28}{figure.caption.70}
-\contentsline {figure}{\numberline {10}{\ignorespaces Comparaci\IeC {\'o} de l'algorisme de DMP original (esquerra) i el modificat per \cite {Pastor2009a} (dreta)}}{28}{figure.caption.72}
+\contentsline {figure}{\numberline {10}{\ignorespaces Comparaci\IeC {\'o} de l'algorisme de DMP original (esquerra) i el modificat per \cite {Pastor2009} (dreta)}}{28}{figure.caption.72}
 \contentsline {figure}{\numberline {11}{\ignorespaces Algorisme gen\IeC {\`e}ric dels m\IeC {\`e}todes de millora de pol\IeC {\'\i }tica \cite {Stulp2011}\relax }}{29}{figure.caption.76}
-\contentsline {figure}{\numberline {12}{\ignorespaces DMP a partir una traject\IeC {\`o}ria de demostraci\IeC {\'o}}}{35}{figure.caption.97}
-\contentsline {figure}{\numberline {13}{\ignorespaces Esquema de connexions entre Aibo-ROS i sensor-Arduino-ROS\relax }}{39}{figure.caption.108}
+\contentsline {figure}{\numberline {12}{\ignorespaces DMP a partir una traject\IeC {\`o}ria de demostraci\IeC {\'o}}}{35}{figure.caption.98}
+\contentsline {figure}{\numberline {13}{\ignorespaces Diagrama fluxos del codi de Scott Niekum}}{36}{figure.caption.101}
+\contentsline {figure}{\numberline {14}{\ignorespaces Esquema de connexions entre Aibo-ROS i sensor-Arduino-ROS\relax }}{39}{figure.caption.112}
