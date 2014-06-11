@@ -73,12 +73,12 @@
 \contentsline {paragraph}{}{26}{section*.66}
 \contentsline {paragraph}{}{26}{section*.67}
 \contentsline {paragraph}{}{27}{section*.69}
-\contentsline {paragraph}{}{27}{section*.72}
+\contentsline {paragraph}{}{27}{section*.71}
 \contentsline {paragraph}{}{28}{section*.73}
-\contentsline {subsubsection}{\numberline {1.6.8}Path Integral Policy Improvement ($\mathrm {PI^2}$)}{29}{subsubsection.1.6.8}
+\contentsline {subsubsection}{\numberline {1.6.8}Path Integral Policy Improvement ($\mathrm {PI^2}$)}{28}{subsubsection.1.6.8}
 \contentsline {paragraph}{}{29}{section*.74}
 \contentsline {paragraph}{}{29}{section*.75}
-\contentsline {paragraph}{}{30}{section*.77}
+\contentsline {paragraph}{}{29}{section*.77}
 \contentsline {subsubsection}{\numberline {1.6.9}Algorismes avan\IeC {\c c}ats}{30}{subsubsection.1.6.9}
 \contentsline {paragraph}{}{30}{section*.78}
 \contentsline {paragraph}{}{30}{section*.79}
@@ -105,33 +105,35 @@
 \contentsline {paragraph}{}{34}{section*.92}
 \contentsline {paragraph}{}{34}{section*.93}
 \contentsline {paragraph}{}{34}{section*.94}
+\contentsline {paragraph}{}{35}{section*.95}
+\contentsline {paragraph}{}{35}{section*.96}
 \contentsline {subsubsection}{\numberline {2.3.5}Elecci\IeC {\'o} final}{35}{subsubsection.2.3.5}
-\contentsline {subsection}{\numberline {2.4}Codis amb DMPs implementades}{35}{subsection.2.4}
-\contentsline {subsubsection}{\numberline {2.4.1}DMPs de Scott Niekum}{35}{subsubsection.2.4.1}
-\contentsline {subsubsection}{\numberline {2.4.2}Package complert del robot PR2 del USC-CLMC}{35}{subsubsection.2.4.2}
-\contentsline {section}{\numberline {3}Disseny inicial}{36}{section.3}
-\contentsline {subsection}{\numberline {3.1}Model de l'Aibo}{36}{subsection.3.1}
-\contentsline {subsection}{\numberline {3.2}Moviment del centre de gravetat}{36}{subsection.3.2}
-\contentsline {paragraph}{}{36}{section*.95}
-\contentsline {subsubsection}{\numberline {3.2.1}Acceler\IeC {\`o}metre MPU6050 i giroscopi GY-521}{36}{subsubsection.3.2.1}
-\contentsline {paragraph}{}{36}{section*.96}
-\contentsline {paragraph}{}{36}{section*.97}
-\contentsline {paragraph}{}{36}{section*.98}
-\contentsline {subsubsection}{\numberline {3.2.2}C\IeC {\`a}lcul de la posici\IeC {\'o} i de la inclinaci\IeC {\'o}}{37}{subsubsection.3.2.2}
+\contentsline {subsection}{\numberline {2.4}Codis amb DMPs implementades}{36}{subsection.2.4}
+\contentsline {subsubsection}{\numberline {2.4.1}DMPs de Scott Niekum}{36}{subsubsection.2.4.1}
+\contentsline {subsubsection}{\numberline {2.4.2}Package complert del robot PR2 del USC-CLMC}{36}{subsubsection.2.4.2}
+\contentsline {section}{\numberline {3}Disseny inicial}{37}{section.3}
+\contentsline {subsection}{\numberline {3.1}Model de l'Aibo}{37}{subsection.3.1}
+\contentsline {subsection}{\numberline {3.2}Moviment del centre de gravetat}{37}{subsection.3.2}
+\contentsline {paragraph}{}{37}{section*.98}
+\contentsline {subsubsection}{\numberline {3.2.1}Acceler\IeC {\`o}metre MPU6050 i giroscopi GY-521}{37}{subsubsection.3.2.1}
 \contentsline {paragraph}{}{37}{section*.99}
 \contentsline {paragraph}{}{37}{section*.100}
 \contentsline {paragraph}{}{37}{section*.101}
-\contentsline {paragraph}{}{37}{section*.102}
-\contentsline {paragraph}{}{37}{section*.103}
+\contentsline {subsubsection}{\numberline {3.2.2}C\IeC {\`a}lcul de la posici\IeC {\'o} i de la inclinaci\IeC {\'o}}{38}{subsubsection.3.2.2}
+\contentsline {paragraph}{}{38}{section*.102}
+\contentsline {paragraph}{}{38}{section*.103}
 \contentsline {paragraph}{}{38}{section*.104}
-\contentsline {section}{\numberline {4}Disseny final}{39}{section.4}
-\contentsline {subsection}{\numberline {4.1}Execuci\IeC {\'o} DMPs sense $\mathrm {PI^2}$}{39}{subsection.4.1}
-\contentsline {subsection}{\numberline {4.2}Execuci\IeC {\'o} DMPs amb $\mathrm {PI^2}$}{39}{subsection.4.2}
-\contentsline {subsection}{\numberline {4.3}Plataforma}{39}{subsection.4.3}
-\contentsline {section}{\numberline {5}Conclusions}{40}{section.5}
-\contentsline {section}{Agra\IeC {\@umlaut \i }ments}{41}{section*.106}
-\contentsline {section}{Refer\IeC {\`e}ncies}{42}{section*.106}
-\contentsline {section}{Annexos}{47}{section*.108}
-\contentsline {section}{\numberline {A}Instal\IeC {\textperiodcentered }laci\IeC {\'o} de ROS, llibreries d'Urbi i paquet aibo server}{47}{appendix.A}
-\contentsline {paragraph}{}{47}{section*.109}
-\contentsline {section}{\numberline {B}Bibliografia}{48}{appendix.B}
+\contentsline {paragraph}{}{38}{section*.105}
+\contentsline {paragraph}{}{38}{section*.106}
+\contentsline {paragraph}{}{39}{section*.107}
+\contentsline {section}{\numberline {4}Disseny final}{40}{section.4}
+\contentsline {subsection}{\numberline {4.1}Execuci\IeC {\'o} DMPs sense $\mathrm {PI^2}$}{40}{subsection.4.1}
+\contentsline {subsection}{\numberline {4.2}Execuci\IeC {\'o} DMPs amb $\mathrm {PI^2}$}{40}{subsection.4.2}
+\contentsline {subsection}{\numberline {4.3}Plataforma}{40}{subsection.4.3}
+\contentsline {section}{\numberline {5}Conclusions}{41}{section.5}
+\contentsline {section}{Agra\IeC {\@umlaut \i }ments}{42}{section*.109}
+\contentsline {section}{Refer\IeC {\`e}ncies}{43}{section*.109}
+\contentsline {section}{Annexos}{48}{section*.111}
+\contentsline {section}{\numberline {A}Instal\IeC {\textperiodcentered }laci\IeC {\'o} de ROS, llibreries d'Urbi i paquet aibo server}{48}{appendix.A}
+\contentsline {paragraph}{}{48}{section*.112}
+\contentsline {section}{\numberline {B}Bibliografia}{49}{appendix.B}

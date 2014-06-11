@@ -191,7 +191,8 @@ The estability of the robots...
 \subsection{Metodologia}
 
 %Dir que s'ha intentat implementar els fets més novedosos avui dia a la robotica, com és en el control de robots les DMPs o amb la comunicacio amb aquest el ROS, també esta molt a l'ordre del dia l'ús d'algorismes d'aprenentatge per això s'ha plantejat el supervisat i el pel reforç i s'ha cregut convenient crear un model per tal de millorar tant l'aprenentatge com el control d'un mateix a banda de prevenir davant possibles riscos que porta el fer-ho amb el robot físic.
-%Per dur-ho a terme ha sigut necessari 
+%Es basa en crear una trajectoria inicial de demostracio, per a cada articulació, que té com a posició final una depenent de la inclinació del propi robot. A partir d'aquesta s'apren la DMP, això vol dir extreure uns pesos per unes funcions gaussianes. En tenir apreses la DMPs, es pot modificar la inclinació del robot, al canviar aquest, el goal de cada articulacio (que té cadascun una DMP) es veu modificat segons quina articulació sigui i la inclinació, i el robot s'adapta en temps real a aquesta modificació de la pendent.
+%El que és voldria mirar d'aconseguir és prenent la solució anterior com a solució inicial, i millorar-ne els pesos i el goal amb l'algorisme PI^2, que requereix d'un aprenentatge per reforç i per tant a base de prova i error es milloren els pesos i el goal.
 
 \label{Abast}
 \subsection{Abast del treball}
@@ -718,13 +719,6 @@ Les $\psi_i(s)$ són funcions gaussianes expressades com $\psi_i(s)=exp(-h_i(s-c
 \label{fig:ffect-of-shape-parameters}
 \end{figure}
 
-\begin{wrapfigure}{R}{0.52\textwidth}
-\centering
-\includegraphics[width=0.5\textwidth]{Imatges/DMP-modified-algorism}
-\caption[Comparació de l'algorisme de DMP original (esquerra) i el modificat  per \cite{Pastor2009a} (dreta)]{Comparació de l'algorisme de DMP original (esquerra) i el modificat  per \cite{Pastor2009a} (dreta). S'utilitzen els mateixos moviment original i \textit{goals}, a dalt els goals són modificats a l'inici, mentre a la part de baix es modifiquen als 300 ms d'haver començat.}
-\label{fig:DMP-modified-algorism}
-\vspace{-35pt}
-\end{wrapfigure}
 
 \paragraph{}Fins ara s'ha explicat l'algorisme original de les DMPs, ara bé, aquest porta inherents una sèrie d'inconvenients \cite{Pastor2009a}:
 
@@ -735,6 +729,12 @@ Les $\psi_i(s)$ són funcions gaussianes expressades com $\psi_i(s)=exp(-h_i(s-c
 
 \item Finalment, s'ha de tenir en compte el fet que si el signe de $g_new - x_0$ és canviat respecte $g_{original} - x_0$ l'efecte de la funció no lineal és reflectit.
 \end{itemize}
+\begin{wrapfigure}{r}{0.52\textwidth}
+\centering
+\includegraphics[width=0.5\textwidth]{Imatges/DMP-modified-algorism}
+\caption[Comparació de l'algorisme de DMP original (esquerra) i el modificat  per \cite{Pastor2009a} (dreta)]{Comparació de l'algorisme de DMP original (esquerra) i el modificat  per \cite{Pastor2009a} (dreta). S'utilitzen els mateixos moviment original i \textit{goals}, a dalt els goals són modificats a l'inici, mentre a la part de baix es modifiquen als 300 ms d'haver començat.}
+\label{fig:DMP-modified-algorism}
+\end{wrapfigure}
 
 \paragraph{}Es per això, que en l'article \cite{Pastor2009a} es proposa una modificació de l'algorisme original. L'única equació que es veu retocada és \eqref{eq:tau-v-dot-DMP} que és substituïda per \eqref{eq:tau-v-dot-DMP-modified}. Els trets importants són que $g - x_0$ no multiplica a $f(s)$ i el terme $K(g - x_0)s$ és necessari per tal que en l'inici del moviment no es produeixin salts, la millora, respecte l'algorisme original, es veu reflectida en la figura \ref{fig:DMP-modified-algorism} de sobre.
 
@@ -871,18 +871,33 @@ J=E\left\{ \sum_{h=0}^{H} R_{h} \right\}.
 \subsubsection{DMP}
 \paragraph{}L'algorisme de DMP és el que s'adapta millor a la situació, ja que està dissenyat per tractar sistemes dinàmics, com és el cas. A més, té una gran robustesa davant pertorbacions, que és el que justament es necessita, considerant que el moviment de la plataforma és una pertorbació. Per altra banda, s'adapta perfectament a noves situacions, com pot ser un inici diferent al original i/o acabar en una posició que difereixi de la posició final primera.
 
+\paragraph{}El robot consta de diferents articulacions, cadascuna afecta d'una o altre manera el moviment del conjunt del robot. Per implementar l'algorisme, s'ha de crear una DMP per cadascuna de les articulacions, per tant el procés d'aprenentatge s'ha de repetir tants cops com nombre juntures. En la majoria de les explicacions següents és refereix en l'aprenentatge d'una individualment, per les altres seria el mateix procés.
+
 \paragraph{}El primer pas que s'ha de fer, per dur a terme la DMP, és tenir un moviment original. Aquest és podria extreure, com s'ha explicat en l'estat de l'art, a partir de: (1) imitació, (2) demostració amb el propi robot, (3) trajectòria programada. D'entre les tres, s'ha escollit la tercera, ja que les articulacions de l'Aibo són PIDs i, per tant, la posició que se li programi és segur que es durà a terme. A més, la imitació no tindria sentit, si no hi ha un altre robot a imitar, i la demostració no és una bona opció, perquè a banda de ser impossible donar el moviment a totes les articulacions alhora de forma manual, tampoc seria precís.
 
-\paragraph{}Havent escollit el mètode per donar el moviment original, s'ha de saber com ha de ser aquest.
+\paragraph{}Havent escollit el mètode per donar el moviment original, s'ha de saber com ha de ser aquest. Un tipus de trajectòria molt utilitzat és la de mínim \texttt{jerk}\footnote{\texttt{Jerk} és la derivada de l'acceleració}. Aquesta és una trajectòria suavitzada calculada a partir d'una posició inicial, final i el temps requerit per arriba-hi, minimitzant el \texttt{jerk}. Es deixen els detalls d'aquest tipus de trajectòria per \cite{Shadmehr2004}.
+
+\paragraph{}Un cop es té la trajectòria, a partir d'aquesta es poden extreure els pesos $w_i$ aproximant mínims quadrats amb gaussianes i, per tant, la funció no lineal $f(s)$ queda definida amb una primera solució, figura \ref{fig:LdF-trajectories}. Amb tan sols aquesta primera solució és factible el dur a terme les DMPs de forma correcta. Ara bé, en el treball és desitja que s'arribi a la posició de màxima estabilitat de la forma més precisa. Per això, s'han de poder modificar els pesos $w_i$ i el $goals$ de les articulacions, de tal manera que la posició final sigui l'adequada. Una bona opció és l'algorisme $\mathrm{PI^2}$, que et permet millorar tan els pesos, com els $goals$ depenent de paràmetres externs a la dinàmic del sistema, com podria ser el CdG o la inclinació. 
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.97\textwidth]{Imatges/Aprenentatge-per-demostracio.pdf}
+\caption[DMP a partir una trajectòria de demostració]{Donada una trajectòria de demostració (esquerra), aquesta és aproximada a partir de la suma del sistema dinàmic, definit per $K$ i $D$ preestablertes, i d'unes gaussianes (centre), que són les que s'han aproximat per mínims quadrats. La suma resulta en la trajectòria apresa (dreta).}
+\label{fig:LdF-trajectories}
+\end{figure}
+
 %Explicar que és i despres dir quan la combinacio amb PI² que el que provoca es una unió entre DMP i aprenentatge per reforç
 
 %\subsubsection{Affordance}
 %Affordance: Mes o menys es podria entendre com els sensors i actuaduadors serien moduls neuronals que envien informació ja filtrada als altres moduls neuronals de tal manera que vagi enfocat a fer una tasca determinada
 
 \subsubsection{Elecció final}
+En conclusió, el mètode utilitzat és la DMP conjuntament amb l'algorisme $\mathrm{PI^2}$. Per una banda, la DMP dona una solució inicial bastant encertada\footnote{La bondat d'aquesta solució depèn de la qualitat del goal per les articulacions que s'ha suposat.}
+
 %Explicar que es finalment s'escull per les DMPs juntament amb PI² que donarà la part de reinforcement learning que es necessita per tal de poder dur a terme el treball de la forma més adient possible, ja que aquesta part corregirà l'error que comet el goal de la DMP.
 
 \subsection{Codis amb DMPs implementades}
+
+
 %Es molt complex el fer el codi per implementar les DMPs ja que són un seguit d'equacions diferencials amb transformacions de variables, us de Gaussianes, etc.
 %Per això s'implementa a partir de codis ja existents que funcionen, pero adaptant-lo al cas de treball.
 \subsubsection{DMPs de Scott Niekum}
