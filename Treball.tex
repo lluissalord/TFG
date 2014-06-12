@@ -137,8 +137,8 @@ The estability of the robots...
 \label{Definicio-del-TFG}
 \subsection*{Definició del \textit{TFG}}
 \addcontentsline{toc}{subsection}{Definició del \textit{TFG}}
-%Amb un o dos paràgraf definir que és exactament el que s'intenta aconseguir: Utilitzant el robot Aibo, que es troba sobre una plataforma mòbil, el robot ha de ser capaç a reaccionar al moviment de la plataforma de tal manera que aconseguesqui una posició més adequada a tal objectiu de no caure.
-%Tambe dir que aquest projecte forma part d'un conjunt en que s'intenta dur a terme un proces de reutilització dels Aibos que des de fa un temps estan practicament en total desús
+%Amb un o dos paràgraf definir que és exactament el que s'intenta aconseguir: Utilitzant el robot AIBO, que es troba sobre una plataforma mòbil, el robot ha de ser capaç a reaccionar al moviment de la plataforma de tal manera que aconseguesqui una posició més adequada a tal objectiu de no caure.
+%Tambe dir que aquest projecte forma part d'un conjunt en que s'intenta dur a terme un proces de reutilització dels AIBOs que des de fa un temps estan practicament en total desús
 
 \label{Requeriments}
 \subsection*{Requeriments previs}
@@ -215,7 +215,7 @@ The estability of the robots...
 \label{AIBO}
 \subsubsection{Robot AIBO}
 
-\paragraph{}L'AIBO (\textit{\texttt{A}rtificial \texttt{I}ntelligence Ro\texttt{BO}t}) és un robot quadrúpede dissenyat i fabricat per Sony Corporation, amb aparença canina. El primer model, que va ser tret al mercat, fou el \textit{ERS-110} l'any 1999, a partir d'aquest, i després de tres generacions, el 2003 s'arribà al \textit{ERS-7}, molt més sofisticat que els seus predecessors, tot i que en el 2006 s'aturà la producció de la família Aibo. L'\textit{ERS-7} és el model que s'estudia i s'utilitza en el present treball.
+\paragraph{}L'AIBO (\textit{\texttt{A}rtificial \texttt{I}ntelligence Ro\texttt{BO}t}) és un robot quadrúpede dissenyat i fabricat per Sony Corporation, amb aparença canina. El primer model, que va ser tret al mercat, fou el \textit{ERS-110} l'any 1999, a partir d'aquest, i després de tres generacions, el 2003 s'arribà al \textit{ERS-7}, molt més sofisticat que els seus predecessors, tot i que en el 2006 s'aturà la producció de la família AIBO. L'\textit{ERS-7} és el model que s'estudia i s'utilitza en el present treball.
 
 \paragraph{}Aquest és considerat un robot autònom, per tant, és capaç d'extreure informació del seu entorn, funcionar per un període llarg sense la intervenció humana, moure alguna o totes les parts d'ell mateix dins d'un entorn de treball sense l'ajut d'un humà i, finalment, evitar situacions de perill per les persones, els bens o ell mateix, si no és per especificacions del propi disseny.
 
@@ -578,7 +578,7 @@ Aquest humanoide és el creat per PAL Robotics \cite{REEM_C}. Destaca pel fet de
 \paragraph{}Ara bé, existeixen una gran multitud de simuladors cada un amb les seves peculiaritats. Alguns dels que s'ha pogut extreure informació i que podrien ser de més interès són els següents:
 
 \begin{description}
-\item[Webots\texttrademark] \cite{Michel2004} Simulador de robots mòbils desenvolupat per Cyberbotics Ltd. La física està basada en Open Dinamic Engine (\textit{ODE}), per així simular una dinàmica més acurada. Aquest \textit{software} proveeix un entorn de treball per modelar i programar el teu propi robot, a més inclou models de diversos robots com són Sony Aibo, Khepera, Lego Mindstorms\texttrademark o Pioneer2. Però té la desventatge que és un simulador de pagament.
+\item[Webots\texttrademark] \cite{Michel2004} Simulador de robots mòbils desenvolupat per Cyberbotics Ltd. La física està basada en Open Dinamic Engine (\textit{ODE}), per així simular una dinàmica més acurada. Aquest \textit{software} proveeix un entorn de treball per modelar i programar el teu propi robot, a més inclou models de diversos robots com són Sony AIBO, Khepera, Lego Mindstorms\texttrademark o Pioneer2. Però té la desventatge que és un simulador de pagament.
 
 \item[SimRobot] \cite{Laue2006a} Aquest és un simulador genèric de robots en 3D. Com el Webots\texttrademark , el SimRobot també es basa en la física d'\textit{ODE}. Un dels inconvenients d'aquest simulador és que no es possible transferir els controladors de la simulació al robot real.
 
@@ -818,20 +818,20 @@ r_t = 0.5\ddot{y_t}^2 + \frac{1}{2}10000( \theta_t^T \theta_t)    \qquad {}  \ph
 
 \label{ROS-estudi-pre}
 \subsection{Comunicació mitjançant \textit{ROS}}
-\paragraph{}L'entorn de treball \textit{ROS} és una eina que està a l'ordre del dia, en robòtica. Fins aquest moment, no existia la possibilitat de comunicació del robot AIBO a través de \textit{ROS}, al menys que s'hagués fet públic. Per això, el doctor Ricardo Téllez va tenir la iniciativa de crear un primer \texttt{package}. Tot seguit, el Departament d'Automàtica de la Universitat Politècnica de Catalunya ha promogut la continuació d'aquest \texttt{package} per permetre que l'Aibo pugui treballar amb \textit{ROS}. Per això, dos Projecte de Final de Carrera i aquest mateix Treball Final de Grau, han millorat de forma conjunta aquesta eina. Aquest ara permet la transferència de video i so, el control de les articulacions del robot, s'ha optimitzat la freqüència de treball, etc. 
+\paragraph{}L'entorn de treball \textit{ROS} és una eina que està a l'ordre del dia en robòtica. Fins aquest moment, no existia la possibilitat de comunicació del robot AIBO a través de \textit{ROS}, al menys que s'hagués fet públic. Per això, el doctor Ricardo Téllez va tenir la iniciativa de crear un primer \texttt{package}. Tot seguit, el Departament d'Automàtica de la Universitat Politècnica de Catalunya ha promogut la continuació d'aquest \texttt{package} per permetre que l'AIBO pugui treballar amb \textit{ROS}. Per això, dos Projecte de Final de Carrera i aquest mateix Treball Final de Grau, han millorat de forma conjunta aquesta eina. Aquest ara permet la transferència de video i so, el control de les articulacions del robot, s'ha optimitzat la freqüència de treball, etc. 
 
 
 \subsubsection{Entre l'AIBO i \textit{ROS}}
 
-\paragraph{}El funcionament actual de la comunicació entre AIBO i ROS es basa en Urbi, ja que la informació que es publica en els \texttt{topics} de \textit{ROS}, en realitat, són les dades extretes d'Urbi. De la mateixa manera, les accions de control que són publicades a \textit{ROS} s'interpreten i es transformen en comandes d'Urbi. Aquests conceptes s'expliquen a continuació en detall i es veuen il·lustrats en la figura \ref{fig:Comunicacio-ROS-Urbi-Aibo}.
+\paragraph{}El funcionament actual de la comunicació entre AIBO i \textit{ROS} es basa en Urbi, ja que la informació que es publica en els \texttt{topics} de \textit{ROS}, en realitat, són les dades extretes d'Urbi. De la mateixa manera, les accions de control que són publicades a \textit{ROS} s'interpreten i es transformen en comandes d'Urbi. Aquests conceptes s'expliquen a continuació en detall i es veuen il·lustrats en la figura \ref{fig:Comunicacio-ROS-Urbi-AIBO}. Aquests dos tipus de tasques es desenvolupen en paral·lel per dos clients d'Urbi separats: (1) client publicador, és aquell que introdueix les dades de l'AIBO en els \texttt{topics}; (2) client subscriptor, on la seva funció és recollir el que s'ha publicat en el \texttt{topic} de comandes.
 
 \begin{description}
 
-\item[Publicació a \textit{ROS}] d'informació de l'Aibo a traves d'Urbi
+\item[Publicació a \textit{ROS}] d'informació de l'AIBO a traves d'Urbi
 \begin{enumerate}
-\item Per una banda, Urbi demana la informació a l'Aibo, en forma de \texttt{callbacks}.
+\item Per una banda, Urbi demana la informació a l'AIBO, en forma de \texttt{callbacks}.
 \item Per l'altra banda, Urbi publica continuament en els \texttt{topics}, on hi ha subscriptors, el missatge respectiu segons el \texttt{topic}.
-\item En el moment en que la informació de l'Aibo és rebuda per Urbi, és modifica el missatge que es publica a \textit{ROS}.
+\item En el moment en que la informació de l'AIBO és rebuda per Urbi, és modifica el missatge que aquest publica a \textit{ROS}.
 \end{enumerate}
 
 \item[Control de les articulacions] a partir d'un \texttt{topic}
@@ -845,8 +845,8 @@ r_t = 0.5\ddot{y_t}^2 + \frac{1}{2}10000( \theta_t^T \theta_t)    \qquad {}  \ph
 \begin{figure}[tb]
 \centering
 \includegraphics[width=0.95\textwidth]{Imatges/Comunicacio-ROS-Urbi-Aibo.pdf}
-\caption{Comunicació entre l'Aibo, Urbi i \textit{ROS}}
-\label{fig:Comunicacio-ROS-Urbi-Aibo}
+\caption{Comunicació entre l'AIBO, Urbi i \textit{ROS}}
+\label{fig:Comunicacio-ROS-Urbi-AIBO}
 \end{figure}
 
 
@@ -857,7 +857,10 @@ r_t = 0.5\ddot{y_t}^2 + \frac{1}{2}10000( \theta_t^T \theta_t)    \qquad {}  \ph
 
 \subsubsection{Entre el conjunt acceleròmetre-giroscopi i \textit{ROS}}
 
-\paragraph{}El conjunt està connectat a l'Arduino, per tant, ha de ser aquest el que creï el \texttt{topic} on es publica la informació que ha de transmetre per \textit{ROS} a l'algorisme de control. A tal efecte existeix un \texttt{package} que permet aconseguir-ho.
+%POSAR EN ANNEXOS COM INSTAL·LAR I EXECUTAR EL ROSSERIAL
+%\footnote{En els Annexos està explicada la instal·lació i l'execució}.
+
+\paragraph{}El conjunt està connectat a l'Arduino, per tant, ha de ser aquest el que creï el \texttt{topic} on es publica la informació que ha de transmetre per \textit{ROS} a l'algorisme de control. A tal efecte existeix un \texttt{package} que permet aconseguir-ho, \texttt{rosserial}. A banda d'haver-se d'instl·lar i executar quan és el cas, també es requereix que en el codi es carreguin la llibreria \texttt{ros.h} i les corresponents al tipus de \texttt{message} al que s'hagi de subscriure o de publicar. Aquestes llibreries, juntament amb les variables que es requereixen com el \texttt{node}, el publicador i el \texttt{message}, ocupen una gran quantitat de memòria del microcontrolador i pot arribar a donar algun que altre problema, com s'explica en l'apartat \ref{Calcul-posicio-inclinacio}. 
 
 %Urbi és amb que es comunica ROS i que aquí s'ha començat a utilitzar a partir del codi que es tenia de Ricardo Téllez, pero que s'ha modificat ja que inicialment no funcionava i quan van arribar a funcionar totes ses parts s'ha mirat d'optimitzar la frequencia per tal que funcioni millor (sense aturades pero al maxim)
 %Com està es tema de es codi, que fa i qui hi ha treballat amb cada part (sobretot diego, menys amb la part de camara que ha fet la Lucia), som un grup de treball que intenta que es tornin a reutilitzar els Aibos
@@ -878,7 +881,7 @@ r_t = 0.5\ddot{y_t}^2 + \frac{1}{2}10000( \theta_t^T \theta_t)    \qquad {}  \ph
 \paragraph{}En l'estat de l'art, s'han esmentat algunes de les possibilitats per dur a terme els objectius fixats inicialment. Aquestes opcions han estat explicades anteriorment, amb una breu descripció i trets característics que podrien ser d'interès pel nostre cas. A continuació, s'exposa com cadascuna podria adaptar-se al problema, mencionant els seus avantatges i inconvenients.
 
 \subsubsection{Model del robot}
-\paragraph{}Una de les possibilitats podria ser la creació d'un model del l'Aibo. D'aquesta forma davant una pertorbació, com és el canvi d'inclinació de la plataforma, es podria saber les accions de control que portarien el robot a l'estat desitjat.
+\paragraph{}Una de les possibilitats podria ser la creació d'un model del l'AIBO. D'aquesta forma davant una pertorbació, com és el canvi d'inclinació de la plataforma, es podria saber les accions de control que portarien el robot a l'estat desitjat.
 
 \paragraph{}A banda de beneficiar-se de la cinemàtica inversa\footnote{Tècnica permet determinar el moviment d'unes articulacions per portar el cos a una posició concreta}, un model permetria aplicar els algorismes, de forma virtual, en un simulador. L'algorisme simulat donaria una solució, que podria servir com a punt de partida per aplicar-ho al model físic, així la probabilitat de provocar algun risc seria molt més baixa.
 
@@ -891,7 +894,7 @@ r_t = 0.5\ddot{y_t}^2 + \frac{1}{2}10000( \theta_t^T \theta_t)    \qquad {}  \ph
 
 \item Pot haver-hi impressicions en la gravació d'atributs d'entrada. En aquest cas és l'error que tenen els sensors de les articulacions i l'aparell que mesura l'angle d'inclinació.
 
-\item Possibles errors a l'hora d'etiquetar la resposta, ja que és difícil, a banda d'infinites solucions\footnote{Existeixen infinites solucions ja que en cada pota hi ha dues articulacions que permeten desplaçar o inclinar el robot de forma longitudinal.}, encertar a mà quines han de ser les posicions exactes perquè l'Aibo es trobi horitzontal. A més, no hi ha una mesura exacta de com d'estable es troba el robot, l'únic que es té es la inclinació, però podria estar desplaçat.
+\item Possibles errors a l'hora d'etiquetar la resposta, ja que és difícil, a banda d'infinites solucions\footnote{Existeixen infinites solucions ja que en cada pota hi ha dues articulacions que permeten desplaçar o inclinar el robot de forma longitudinal.}, encertar a mà quines han de ser les posicions exactes perquè l'AIBO es trobi horitzontal. A més, no hi ha una mesura exacta de com d'estable es troba el robot, l'únic que es té es la inclinació, però podria estar desplaçat.
 
 \item Per últim, poden existir factors que no s'han tingut en compte, però que influeixin la resposta, com podria ser el desplaçament lateral o longitudinal, o l'acceleració.
 \end{itemize}
@@ -909,7 +912,7 @@ r_t = 0.5\ddot{y_t}^2 + \frac{1}{2}10000( \theta_t^T \theta_t)    \qquad {}  \ph
 J=E\left\{ \sum_{h=0}^{H} R_{h} \right\}.
 \end{equation}
 
-\paragraph{}Els algorismes d'aprenentatge per reforç es basen en gran part en l'exploració dels estats, ara bé, en un sistema com és l'Aibo existeixen massa possibles estats per poder explorar-los de forma física, a banda que són continus, i per tant, s'haurien de discretitzar per utilitzar algorismes com \texttt{Q-learning}. Per això, si s'hagués de fer s'utilitzaria l'aprenentatge de forma jeràrquica, per tal de primer només aplicar-ho a unes poques articulacions, mentre les altres estan fixes i aquestes s'afegirien de forma progressiva quan les primeres ja hagin aprés. 
+\paragraph{}Els algorismes d'aprenentatge per reforç es basen en gran part en l'exploració dels estats, ara bé, en un sistema com és l'AIBO existeixen massa possibles estats per poder explorar-los de forma física, a banda que són continus, i per tant, s'haurien de discretitzar per utilitzar algorismes com \texttt{Q-learning}. Per això, si s'hagués de fer s'utilitzaria l'aprenentatge de forma jeràrquica, per tal de primer només aplicar-ho a unes poques articulacions, mentre les altres estan fixes i aquestes s'afegirien de forma progressiva quan les primeres ja hagin aprés. 
 
 \paragraph{}Ara bé, tot i poder-se dur a terme seguint aquest procediment, és creu més convenient utilitzar algun altre mètode que convergeixi de forma més ràpida, i si escau, fer ús del \texttt{RL} per millorar el comportament del que s'hagi aconseguit.
 
@@ -918,7 +921,7 @@ J=E\left\{ \sum_{h=0}^{H} R_{h} \right\}.
 
 \paragraph{}El robot consta de diferents articulacions, cadascuna afecta d'una o altre manera el moviment del conjunt del robot. Per implementar l'algorisme, s'ha de crear una \textit{DMP} per cadascuna de les articulacions, per tant el procés d'aprenentatge s'ha de repetir tants cops com nombre juntures. En la majoria de les explicacions següents és refereix en l'aprenentatge d'una individualment, per les altres seria el mateix procés.
 
-\paragraph{}El primer pas que s'ha de fer, per dur a terme la DMP, és tenir un moviment original. Aquest és podria extreure, com s'ha explicat en l'apartat \ref{DMP-estat-de-l'art}, a partir de: (1) imitació, (2) demostració amb el propi robot, (3) trajectòria programada. D'entre les tres, s'ha escollit la tercera, ja que les articulacions de l'Aibo són \textit{PIDs} i, per tant, la posició que se li programi és segur que es durà a terme. A més, la imitació no tindria sentit, si no hi ha un altre robot a imitar, i la demostració no és una bona opció, perquè a banda de ser impossible donar el moviment a totes les articulacions alhora de forma manual, tampoc seria precís.
+\paragraph{}El primer pas que s'ha de fer, per dur a terme la DMP, és tenir un moviment original. Aquest és podria extreure, com s'ha explicat en l'apartat \ref{DMP-estat-de-l'art}, a partir de: (1) imitació, (2) demostració amb el propi robot, (3) trajectòria programada. D'entre les tres, s'ha escollit la tercera, ja que les articulacions de l'AIBO són \textit{PIDs} i, per tant, la posició que se li programi és segur que es durà a terme. A més, la imitació no tindria sentit, si no hi ha un altre robot a imitar, i la demostració no és una bona opció, perquè a banda de ser impossible donar el moviment a totes les articulacions alhora de forma manual, tampoc seria precís.
 
 \paragraph{}Havent escollit el mètode per donar el moviment original, s'ha de saber com ha de ser aquest. Un tipus de trajectòria molt utilitzat és la de mínim \texttt{jerk}\footnote{\texttt{Jerk} és la derivada de l'acceleració}. Aquesta és una trajectòria suavitzada calculada a partir d'una posició inicial, final i el temps requerit per arriba-hi, minimitzant el \texttt{jerk}. Es deixen els detalls d'aquest tipus de trajectòria per \cite{Shadmehr2004}.
 
@@ -981,7 +984,7 @@ En conclusió, el mètode utilitzat és la \textit{DMP} conjuntament amb l'algor
 %Una de les millors formes de maxima estabilitat --> CdG retorn posicio origen. D'aqui en sortirà es dir que una altre opció no tan bona és horitzontal.
 %Hi ha una comunicacio entre robot i ordenador, que és on es desenvolupen els càlculs, que es ROS i és fa a traves de topics que porten missatges a dins.
 
-\paragraph{}Tal i com s'ha vist al llarg del treball, uns dels requisits per poder aconseguir recuperar l'estabilitat és tenir les mesures dels moviments del robot. Com a idea inicial, s'ha pensat utilitzar el sensor triaxial d'accelerometria que porta incorporat el propi Aibo, i d'aquesta forma poder estudiar el moviment d'aquest. Però abans s'han fet unes comprovacions de la fiabilitat de les dades d'aquest sensor. Aquestes comprovacions es basen en l'observació de la variabilitat de les mesures i comprovar si l'angle d'inclinació extret a partir de l'acceleració és el mateix que el mesurat externament. Finalment ha resultat que no és gens precís per la tasca que ha de desenvolupar.
+\paragraph{}Tal i com s'ha vist al llarg del treball, uns dels requisits per poder aconseguir recuperar l'estabilitat és tenir les mesures dels moviments del robot. Com a idea inicial, s'ha pensat utilitzar el sensor triaxial d'accelerometria que porta incorporat el propi AIBO, i d'aquesta forma poder estudiar el moviment d'aquest. Però abans s'han fet unes comprovacions de la fiabilitat de les dades d'aquest sensor. Aquestes comprovacions es basen en l'observació de la variabilitat de les mesures i comprovar si l'angle d'inclinació extret a partir de l'acceleració és el mateix que el mesurat externament. Finalment ha resultat que no és gens precís per la tasca que ha de desenvolupar.
 
 \subsubsection{Acceleròmetre MPU6050 i giroscopi GY-521}
 
@@ -989,11 +992,12 @@ En conclusió, el mètode utilitzat és la \textit{DMP} conjuntament amb l'algor
 
 %IDEA: HAGUES POGUT ENVIAR PER ROS LA INFORMACIO DE L'ACCELEROMETRE I GYRO I FER EL FILTRE A L'ORDINADOR, PERO HAVES ESTAT PRACTICAMENT EL MATEIX, I PER COMODITAT D'ESTAR JA IMPLEMENTAT S'HA ESCOLLIT EL PRIMER MÈTODE, PERÒ PODRIA SER UNA PROVA A FER PER MILLORAR-NE LA QUALITAT. TOT I QUE D'AQUESTA FORMA HAGUES POGUT UTILITZAR EL FILTRE KALMAN, INCONVENIENT--> S'HA DE TENIR UN THREAD NOMÉS PEL CALCUL
 
-\paragraph{}Ara bé, el fet de formar part de l'Aibo crea la problemàtica d'haver d'implementar una comunicació entre el sensor i l'algorisme de control. Com que és té un entorn de treball, \textit{ROS}, que ja s'està utilitzant per comunicar-se amb l'ordinador, és pot aprofitar aquest entorn per tal d'incorporar la informació que es vulgui enviar al robot. 
+\paragraph{}Ara bé, el fet de formar part de l'AIBO crea la problemàtica d'haver d'implementar una comunicació entre el sensor i l'algorisme de control. Com que és té un entorn de treball, \textit{ROS}, que ja s'està utilitzant per comunicar-se amb l'ordinador, és pot aprofitar aquest entorn per tal d'incorporar la informació que es vulgui enviar al robot. 
 
 \paragraph{}A partir de l'acceleròmetre es treu informació de les acceleracions que pateix aquest sensor, incloent la gravetat, aquest transmet les dades en RAW que s'han de dividir per $16384$ per a ser transformats a $G$s\footnote{Força $G$, per tant, el resultat de la divisió s'ha de multiplicar per $9,80665$ per passar-ho a $m/s^2$.}. Per altra banda, el giroscopi mesura la velocitat angular, abans d'utilitzar les dades que arriben directament d'aquest, s'ha de passar del RAW a \textit{º/s} (graus per segon) dividint-ho $131$.
 
 \subsubsection{Càlcul de la posició i de la inclinació}
+\label{Calcul-posicio-inclinacio}
 
 \paragraph{}Com s'ha explicat en l'apartat \ref{Estabilitat} d'Estabilitat, una de les millors formes de cercar la màxima estabilitat, dins l'abast del \textit{TFG}, és provocar que el CdG retorni a la posició d'origen. Per tant, es requereix saber en tot moment quan s'ha desplaçat respecte aquest origen, però per això es necessita tenir la informació de la inclinació del robot, per tal d'extreure tan sols la component de l'acceleració que ens interessa.
 
@@ -1023,7 +1027,7 @@ En conclusió, el mètode utilitzat és la \textit{DMP} conjuntament amb l'algor
 \begin{figure}[tb]
 \centering
 \includegraphics[width=0.8\textwidth]{Imatges/esquema-comunicacio-ROS-Aibo-ordenadora.pdf}
-\caption{Esquema de connexions entre Aibo-\textit{ROS} i sensor-Arduino-\textit{ROS}}
+\caption{Esquema de connexions entre AIBO-\textit{ROS} i sensor-Arduino-\textit{ROS}}
 \label{fig:connexions-Aibo-ROS-sensor-Arduino-ROS}
 \end{figure}
 
@@ -1070,7 +1074,7 @@ En conclusió, el mètode utilitzat és la \textit{DMP} conjuntament amb l'algor
 \addappheadtotoc
 \appendixpage
 
-\section{Instal·lació de \textit{ROS}, llibreries d'Urbi i paquet aibo server}
+\section{Instal·lació de \textit{ROS}, llibreries d'Urbi i paquet aibo$\_$server}
 
 \paragraph{}Tot seguit es mostren els passos a seguir per tal d'instal·lar \textit{ROS} i com afegir una carpeta al la variable \texttt{ROS$\_$PACKAGE$\_$PATH}\footnote{Aquí es troben les direccions de les carpetes on \textit{ROS} cerca els \texttt{packages}.}.
 
@@ -1104,7 +1108,7 @@ source $\sim$/.bashrc}
 
 \item Tot seguit, s'ha d'instal·lar la llibreria d'urbi. En aquest cas, tan sols s'ha descarregar l'arxiu comprimit\footnote{\url{http://www.gostai.com/downloads/urbi/1.5/urbi-sdk-1.5-l0258c7a-i486-linux-gnu-gcc-4.1.tar.gz}} i extreure'l en \textbackslash .\\
 
-\item Finalment per instal·lar el paquet d'Aibo server, s'ha de copiar la carpeta en alguna de les direccions de \texttt{ROS$\_$PACKAGE$\_$PATH} i compilar seguint aquest procediment:\\
+\item Finalment per instal·lar el paquet aibo$\_$server, s'ha de copiar la carpeta en alguna de les direccions de \texttt{ROS$\_$PACKAGE$\_$PATH} i compilar seguint aquest procediment:\\
 \texttt{roscd aibo$\_$server/}\\
 \texttt{rosmake --pre-clean}
 
