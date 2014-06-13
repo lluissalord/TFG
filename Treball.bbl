@@ -1,4 +1,4 @@
-\begin{thebibliography}{51}
+\begin{thebibliography}{58}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -40,6 +40,17 @@ Muh. Anshar and Mary-Anne Williams.
 Arduino.
 \newblock {Arduino - HomePage}.
 \newblock URL \url{http://www.arduino.cc/}.
+
+\bibitem[Bohren et~al.(2011)Bohren, Rusu, Jones, Marder-Eppstein, Pantofaru,
+  Wise, M\"{o}senlechner, Meeussen, and Holzer]{Bohren2011}
+Jonathan Bohren, Radu~Bogdan Rusu, E.~Gil Jones, Eitan Marder-Eppstein,
+  Caroline Pantofaru, Melonee Wise, Lorenz M\"{o}senlechner, Wim Meeussen, and
+  Stefan Holzer.
+\newblock {Towards autonomous robotic butlers: Lessons learned with the PR2}.
+\newblock In \emph{Proceedings - IEEE International Conference on Robotics and
+  Automation}, pages 5568--5575, 2011.
+\newblock ISBN 9781612843865.
+\newblock \doi{10.1109/ICRA.2011.5980058}.
 
 \bibitem[Chestnutt et~al.(2005)Chestnutt, Lau, Cheung, Kuffner, Hodgins, and
   Kanade]{Chestnutt2005}
@@ -114,6 +125,14 @@ Lukas Hohl, Ricardo Tellez, Olivier Michel, and Auke~Jan Ijspeert.
 HONDA.
 \newblock {History of ASIMO Robotics | ASIMO Innovations by Honda}.
 \newblock URL \url{http://asimo.honda.com/asimo-history/}.
+
+\bibitem[Hugel and Blazevic(1999)]{Hugel1999}
+Vincent Hugel and P~Blazevic.
+\newblock {Towards efficient implementation of quadruped gaits with duty factor
+  of 0.75}.
+\newblock \emph{Robotics and Automation, 1999. \ldots}, \penalty0 (May), 1999.
+\newblock URL
+  \url{http://ieeexplore.ieee.org/xpls/abs\_all.jsp?arnumber=770458}.
 
 \bibitem[{International Organization for Standaritzacion}(2012)]{ISO_Robot}
 {International Organization for Standaritzacion}.
@@ -262,6 +281,16 @@ Duy Nguyen-Tuong and Jan Peters.
 \newblock \doi{10.1007/s10339-011-0404-1}.
 \newblock URL \url{http://www.ncbi.nlm.nih.gov/pubmed/21487784}.
 
+\bibitem[Okada()]{Okada}
+Kei Okada.
+\newblock {Roseus - ROS package}.
+\newblock URL \url{http://wiki.ros.org/roseus}.
+
+\bibitem[Pastor and {Mrinal Kalakrishnan}()]{USC-CLMC-package}
+Peter Pastor and {Mrinal Kalakrishnan}.
+\newblock {ROS packages from the USC-CLMC}.
+\newblock URL \url{https://github.com/usc-clmc/usc-clmc-ros-pkg}.
+
 \bibitem[Pastor et~al.(2009)Pastor, Hoffmann, Asfour, and Schaal]{Pastor2009}
 Peter Pastor, Heiko Hoffmann, Tamim Asfour, and Stefan Schaal.
 \newblock {Learning and generalization of motor skills by learning from
@@ -317,6 +346,14 @@ Carlos~Mario {Ramos Olave}.
 PAL Robotics.
 \newblock {REEM-C}.
 \newblock URL \url{http://pal-robotics.com/en/robots/reem-c}.
+
+\bibitem[R\"{o}fer and Laue(2013)]{Rofer2013}
+T~R\"{o}fer and Tim Laue.
+\newblock {On B-Human's code releases in the Standard Platform League-software
+  architecture and impact}.
+\newblock 2013.
+\newblock URL
+  \url{http://www.informatik.uni-bremen.de/kogrob/papers/RC-Roefer-Laue-14.pdf}.
 
 \bibitem[Rowberg()]{Rowberg}
 Jeff Rowberg.
@@ -396,5 +433,22 @@ F.~Torrent-Fontbona, V.~Mu\~{n}oz, and B.~L\'{o}pez.
   2013.
 \newblock ISSN 09574174.
 \newblock \doi{10.1016/j.eswa.2013.01.065}.
+
+\bibitem[Vukobratovi\'{c} and Borovac(2004)]{Vukobratovic2004}
+M~Vukobratovi\'{c} and Branislav Borovac.
+\newblock {Zero-moment point—thirty five years of its life}.
+\newblock \emph{International Journal of Humanoid \ldots}, 1\penalty0
+  (1):\penalty0 157--173, 2004.
+\newblock URL
+  \url{http://www.worldscientific.com/doi/abs/10.1142/S0219843604000083}.
+
+\bibitem[Yazdani et~al.(2012)Yazdani, {Johari Majd}, and Oftadeh]{Yazdani2012}
+Reza Yazdani, Vahid {Johari Majd}, and Reza Oftadeh.
+\newblock {Dynamically stable trajectory planning for a quadruped robot}.
+\newblock \emph{20th Iranian Conference on Electrical Engineering (ICEE2012)},
+  pages 845--850, May 2012.
+\newblock \doi{10.1109/IranianCEE.2012.6292471}.
+\newblock URL
+  \url{http://ieeexplore.ieee.org/lpdocs/epic03/wrapper.htm?arnumber=6292471}.
 
 \end{thebibliography}

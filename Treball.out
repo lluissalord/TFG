@@ -3,8 +3,8 @@
 \BOOKMARK [1][-]{section*.2}{Abstract}{}% 3
 \BOOKMARK [1][-]{section*.6}{Prefaci}{}% 4
 \BOOKMARK [2][-]{section*.7}{Motivaci\363}{section*.6}% 5
-\BOOKMARK [2][-]{section*.11}{Definici\363 del TFG}{section*.6}% 6
-\BOOKMARK [2][-]{section*.12}{Requeriments previs}{section*.6}% 7
+\BOOKMARK [2][-]{section*.9}{Definici\363 del TFG}{section*.6}% 6
+\BOOKMARK [2][-]{section*.10}{Requeriments previs}{section*.6}% 7
 \BOOKMARK [1][-]{section.1}{Introducci\363}{}% 8
 \BOOKMARK [2][-]{subsection.1.1}{Objectius}{section.1}% 9
 \BOOKMARK [2][-]{subsection.1.2}{Planificaci\363}{section.1}% 10
@@ -38,18 +38,17 @@
 \BOOKMARK [2][-]{subsection.2.4}{Codis amb DMPs implementades}{section.2}% 38
 \BOOKMARK [3][-]{subsubsection.2.4.1}{DMPs de Scott Niekum}{subsection.2.4}% 39
 \BOOKMARK [3][-]{subsubsection.2.4.2}{Package complert del robot PR2 del USC-CLMC}{subsection.2.4}% 40
-\BOOKMARK [1][-]{section.3}{Disseny inicial}{}% 41
+\BOOKMARK [1][-]{section.3}{Disseny}{}% 41
 \BOOKMARK [2][-]{subsection.3.1}{Model de l'Aibo}{section.3}% 42
 \BOOKMARK [2][-]{subsection.3.2}{Moviment del centre de gravetat}{section.3}% 43
 \BOOKMARK [3][-]{subsubsection.3.2.1}{Acceler\362metre MPU6050 i giroscopi GY-521}{subsection.3.2}% 44
 \BOOKMARK [3][-]{subsubsection.3.2.2}{C\340lcul de la posici\363 i de la inclinaci\363}{subsection.3.2}% 45
-\BOOKMARK [1][-]{section.4}{Disseny final}{}% 46
-\BOOKMARK [2][-]{subsection.4.1}{Execuci\363 DMPs sense PI2}{section.4}% 47
-\BOOKMARK [2][-]{subsection.4.2}{Execuci\363 DMPs amb PI2}{section.4}% 48
-\BOOKMARK [2][-]{subsection.4.3}{Plataforma}{section.4}% 49
-\BOOKMARK [1][-]{section.5}{Conclusions}{}% 50
-\BOOKMARK [1][-]{section*.120}{Agra\357ments}{}% 51
-\BOOKMARK [1][-]{section*.120}{Refer\350ncies}{}% 52
-\BOOKMARK [1][-]{section*.122}{Annexos}{}% 53
-\BOOKMARK [1][-]{appendix.A}{Instal\267laci\363 de ROS, llibreries d'Urbi i paquet aibo\137server}{}% 54
-\BOOKMARK [1][-]{appendix.B}{Bibliografia}{}% 55
+\BOOKMARK [2][-]{subsection.3.3}{Plataforma}{section.3}% 46
+\BOOKMARK [2][-]{subsection.3.4}{Execuci\363 DMPs sense PI2}{section.3}% 47
+\BOOKMARK [2][-]{subsection.3.5}{Execuci\363 DMPs amb PI2}{section.3}% 48
+\BOOKMARK [1][-]{section.4}{Conclusions}{}% 49
+\BOOKMARK [1][-]{section*.60}{Agra\357ments}{}% 50
+\BOOKMARK [1][-]{section*.61}{Refer\350ncies}{}% 51
+\BOOKMARK [1][-]{section*.62}{Annexos}{}% 52
+\BOOKMARK [1][-]{appendix.A}{Instal\267laci\363 de ROS, llibreries d'Urbi i paquet aibo\137server}{}% 53
+\BOOKMARK [1][-]{appendix.B}{Bibliografia}{}% 54

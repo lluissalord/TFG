@@ -3,11 +3,11 @@ Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: Treball.aux
 The style file: plainnat.bst
 Database file #1: ./Bibliografia/library.bib
-Repeated entry---line 32 of file ./Bibliografia/library.bib
+Repeated entry---line 382 of file ./Bibliografia/library.bib
  : @article{Tellez2005a
  :                     ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 810 of file ./Bibliografia/library.bib
+Repeated entry---line 952 of file ./Bibliografia/library.bib
  : @article{Fujita2000
  :                    ,
 I'm skipping whatever remains of this entry
@@ -18,56 +18,60 @@ Warning--empty year in iec-dlc
 Warning--there's a number but no volume in Fujita2000
 Warning--empty year in Urbi_Docs
 Warning--empty year in ASIMO_History
+Warning--there's a number but no volume in Hugel1999
 Warning--empty year in Ion
 Warning--empty year in Ion
 Warning--can't use both volume and number fields in Nguyen-Tuong2011
 Warning--empty publisher in Nguyen-Tuong2011
+Warning--empty year in Okada
+Warning--empty year in USC-CLMC-package
 Warning--empty year in Aibo_Images
 Warning--empty journal in TFG_Carlos_Ramos
 Warning--empty year in ROS
 Warning--empty year in REEM_C
+Warning--empty journal in Rofer2013
 Warning--empty year in Rowberg
 Warning--empty publisher in Shadmehr2004
 Warning--there's a number but no volume in Tellez2005a
-You've used 51 entries,
+You've used 58 entries,
             2773 wiz_defined-function locations,
-            967 strings with 16068 characters,
-and the built_in function-call counts, 22646 in all, are:
-= -- 2097
-> -- 1263
-< -- 39
-+ -- 435
-- -- 384
-* -- 1797
-:= -- 3571
-add.period$ -- 215
-call.type$ -- 51
-change.case$ -- 274
-chr.to.int$ -- 51
-cite$ -- 120
-duplicate$ -- 1014
-empty$ -- 1770
-format.name$ -- 455
-if$ -- 4708
+            1014 strings with 17683 characters,
+and the built_in function-call counts, 26151 in all, are:
+= -- 2421
+> -- 1471
+< -- 46
++ -- 505
+- -- 447
+* -- 2067
+:= -- 4096
+add.period$ -- 243
+call.type$ -- 58
+change.case$ -- 316
+chr.to.int$ -- 58
+cite$ -- 138
+duplicate$ -- 1167
+empty$ -- 2038
+format.name$ -- 533
+if$ -- 5456
 int.to.chr$ -- 1
 int.to.str$ -- 1
-missing$ -- 38
-newline$ -- 323
-num.names$ -- 204
-pop$ -- 533
+missing$ -- 43
+newline$ -- 365
+num.names$ -- 232
+pop$ -- 621
 preamble$ -- 1
-purify$ -- 230
+purify$ -- 265
 quote$ -- 0
-skip$ -- 814
+skip$ -- 955
 stack$ -- 0
-substring$ -- 613
-swap$ -- 115
-text.length$ -- 8
+substring$ -- 724
+swap$ -- 143
+text.length$ -- 10
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 546
-warning$ -- 18
-while$ -- 198
+type$ -- 623
+warning$ -- 22
+while$ -- 227
 width$ -- 0
-write$ -- 759
+write$ -- 858
 (There were 2 error messages)
