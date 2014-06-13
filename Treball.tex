@@ -69,8 +69,18 @@
 		\texttt{l.salord.quetglas@gmail.com}\\}
 \date{\today}
 
-
-
+\usepackage{chngcntr}
+\counterwithin{figure}{section}%Permet que el comptatge de les figures sigui segons secció
+\counterwithin{table}{section}%Permet que el comptatge de les taules sigui segons secció
+\counterwithin{equation}{section}%Permet que el comptatge de les equacions sigui segons secció
+\counterwithin{footnote}{section}%Permet que el comptatge dels peus de nota sigui segons secció
+%PLANTEJAR TEMA DE \autoref{} ja que així l'hiperenllaç es també per la paraula i no sols el numero.
+%\renewcommand{\figurename}{figura}% Per canviar noms dels captions
+%\captionsetup[wrapfigure]{name=Fig.}
+\renewcommand{\thefigure}{\arabic{section}.\arabic{figure}}
+\renewcommand{\thetable}{\arabic{section}.\arabic{table}}
+\renewcommand{\theequation}{\arabic{section}.\arabic{equation}}
+\renewcommand{\thefootnote}{\arabic{footnote}}
 
 \begin{document}
 \maketitle
@@ -163,7 +173,7 @@ The estability of the robots...
 \label{Objectius}
 \subsection{Objectius}
 
-%S'han de posar un objectius quantificables, de tal manera que el tribunal pugui valorar com de bé s'han aconseguit. Estil adaptar-se fins a certs graus, temps de resposta, implementar ROS, implementar DMPs, implementar aprenentatge per reforç, fer un model, utilitza sistemes de filtratge per l'entrada de dades de l'acceleròmetre, 
+%S'han de posar un objectius quantificables, de tal manera que el tribunal pugui valorar com de bé s'han aconseguit. Estil adaptar-se fins a certs graus de pendent de la plataforma, temps de resposta, implementar ROS, implementar DMPs, implementar aprenentatge per reforç, fer un model, utilitza sistemes de filtratge per l'entrada de dades de l'acceleròmetre, 
 \paragraph{}L'objectiu principal del present \textit{TFG} és l'optimització de l'adaptabilitat d'un robot quadrúpede, en aquest cas l'AIBO, a plans inclinats desconeguts pel robot. Per arribar a aquest objectiu s'han hagut de marcat uns objectius més concrets:
 \begin{itemize}
 \item Dissenyar un entorn de treball complert que permeti que l'algorisme utilitzat pugui ser processat en l'ordinador i enviar la informació necessària de forma remota a l'AIBO. En aquest cas l'entorn de treball tal que permeti això és el \textit{ROS}.
@@ -818,7 +828,10 @@ r_t = 0.5\ddot{y_t}^2 + \frac{1}{2}10000( \theta_t^T \theta_t)    \qquad {}  \ph
 
 \label{ROS-estudi-pre}
 \subsection{Comunicació mitjançant \textit{ROS}}
-\paragraph{}L'entorn de treball \textit{ROS} és una eina que està a l'ordre del dia en robòtica. Fins aquest moment, no existia la possibilitat de comunicació del robot AIBO a través de \textit{ROS}, al menys que s'hagués fet públic. Per això, el doctor Ricardo Téllez va tenir la iniciativa de crear un primer \texttt{package}. Tot seguit, el Departament d'Automàtica de la Universitat Politècnica de Catalunya ha promogut la continuació d'aquest \texttt{package} per permetre que l'AIBO pugui treballar amb \textit{ROS}. Per això, dos Projecte de Final de Carrera i aquest mateix Treball Final de Grau, han millorat de forma conjunta aquesta eina. Aquest ara permet la transferència de video i so, el control de les articulacions del robot, s'ha optimitzat la freqüència de treball, etc. 
+
+%NO ES LA PRIMERA VEGADA, N'HI HA HAGUT D'ALTRES QUE HO HAN INTENTAT, NO A TRAVES D'URBI PERO PER ALTRES BANDES SI, mail de'n cecilio
+
+\paragraph{}L'entorn de treball \textit{ROS} és una eina que està a l'ordre del dia en robòtica. Fins aquest moment, no existia la possibilitat de comunicació del robot AIBO a través de \textit{ROS}, al menys que s'hagués fet públic. Per això, tot seguint una iniciativa del Departament d'Automàtica de la Universitat Politècnica de Catalunya, el doctor Ricardo Téllez va fer-se-la seva i va començar a crear un primer \texttt{package}. Des del Departament, i a través de diversos TFGs, s'ha promogut la continuació d'aquest \texttt{package} per permetre que l'AIBO pugui treballar amb \textit{ROS}. Per això, dos Projecte de Final de Carrera i aquest mateix Treball Final de Grau, han millorat de forma conjunta aquesta eina. Aquest ara permet la transferència de video i so, el control de les articulacions del robot, s'ha optimitzat la freqüència de treball, etc. 
 
 
 \subsubsection{Entre l'AIBO i \textit{ROS}}
@@ -852,6 +865,8 @@ r_t = 0.5\ddot{y_t}^2 + \frac{1}{2}10000( \theta_t^T \theta_t)    \qquad {}  \ph
 
 \subsubsection{Entre l'algorisme de control i \textit{ROS}}
 
+\paragraph{}En parlar d'algorisme de control es refereix al codi que processa els càlculs que es requereixen per dur a terme tot el procés d'estabilització. Aquest codi és executat en un ordinador o servidor, on està instal·lat tot el \textit{software} requerit\footnote{El procés d'instal·lació està explicat en els Annexos}. 
+
 \paragraph{}L'algorisme de control només depèn de \textit{ROS} per recollir la informació del conjunt acceleròmetre-giroscopi i per executar el moviment de les articulacions de l'AIBO. Per tant, el \texttt{node} d'execució és tant subscriptor del \texttt{topic} del sensor, com, alhora, és publicador del \texttt{topic} de les comandes per les articulacions.
 
 
@@ -868,6 +883,20 @@ r_t = 0.5\ddot{y_t}^2 + \frac{1}{2}10000( \theta_t^T \theta_t)    \qquad {}  \ph
 
 \label{Estabilitat}
 \subsection{Estabilitat}
+
+\paragraph{}El concepte d'estabilitat és molt genèric, s'ha definit de múltiples maneres al llarg del temps, sense mai tenir una única interpretació. Dins el concepte d'estabilitat es pot diferenciar entre dues:
+\begin{description}
+
+\item[Estàtica] és aquella que assumeix que la projecció vertical del CdG està, en tot moment, dins el polígon d'estabilitat\footnote{El polígon d'estabilitat esta definit pels punts de suport del robot.} amb un marge d'estabilitat\footnote{El marge d'estabilitat assegura que per qualsevol velocitat que el robot pot arribar, no caurà degut al seu propi moment \cite{Hugel1999}.} adequat \cite{Hugel1999}.
+
+\item[Dinàmica], en aquest cas, es tenen en compte els efectes de paràmetres dinàmics com la velocitat i l'acceleració de diferents parts del robot \cite{Yazdani2012}.
+
+\end{description}
+
+\paragraph{}El fet d'estudiar l'estabilitat dinàmica es sortiria de l'abast d'aquest treball, per la seva gran complexitat, tot i existir conceptes com el \textit{ZMP}, explicat en detall en \cite{Vukobratovic2004}, que permeten aquests tipus d'estudis, fins i tot per robots bípedes. Però en aquest cas, tan sols es treballa amb l'estabilitat estàtica. Per tant, s'estableix que l'objectiu de l'algorisme de control és mantenir el CdG del robot a dintre del polígon d'estabilitat en tot moment. Aquesta tasca es podria aconseguir realitzar de diferents formes, però la majoria d'aquestes probablement queden fora de l'abast d'aquest treball. Per això, l'idea és fer-ne una aproximació, s'assumeix que la plataforma no arriba, en cap cas, a certes pendents molt elevades\footnote{Aquesta pendent màxima s'estableix en els objectius del \textit{TFG}.}.
+
+%ANAR A PROVAR AMB s'AIBO QUE NO ESTIC SEGUR SI LI ESTIC DONANT SA MILLOR POSICIÓ POSSIBLE!!!!!
+
 %Una de les millors formes de maxima estabilitat --> CdG retorn posicio origen. D'aqui en sortirà es dir que una altre opció no tan bona és horitzontal.
 
 %Com definirem estabilitat, diferents mètodes...
