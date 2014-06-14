@@ -13,4 +13,6 @@
 \contentsline {figure}{\numberline {2.1}{\ignorespaces Comunicaci\IeC {\'o} entre l'AIBO, Urbi i \textit {ROS}\relax }}{33}{figure.caption.40}
 \contentsline {figure}{\numberline {2.2}{\ignorespaces \textit {DMP} a partir una traject\IeC {\`o}ria de demostraci\IeC {\'o}}}{38}{figure.caption.49}
 \contentsline {figure}{\numberline {2.3}{\ignorespaces Diagrama fluxos del codi de Scott Niekum}}{39}{figure.caption.53}
-\contentsline {figure}{\numberline {3.1}{\ignorespaces Esquema de connexions entre AIBO-\textit {ROS} i sensor-Arduino-\textit {ROS}\relax }}{44}{figure.caption.59}
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Mesures en \textit {mm} de l'AIBO \cite {Blueprint}\relax }}{43}{figure.caption.56}
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Models de l'AIBO en l'entorn \texttt {rviz}\relax }}{44}{figure.caption.57}
+\contentsline {figure}{\numberline {3.3}{\ignorespaces Esquema de connexions entre AIBO-\textit {ROS} i sensor-Arduino-\textit {ROS}\relax }}{47}{figure.caption.61}

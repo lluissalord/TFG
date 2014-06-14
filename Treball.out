@@ -27,7 +27,7 @@
 \BOOKMARK [2][-]{subsection.2.1}{Comunicaci\363 mitjan\347ant ROS}{section.2}% 27
 \BOOKMARK [3][-]{subsubsection.2.1.1}{Entre l'AIBO i ROS}{subsection.2.1}% 28
 \BOOKMARK [3][-]{subsubsection.2.1.2}{Entre l'algorisme de control i ROS}{subsection.2.1}% 29
-\BOOKMARK [3][-]{subsubsection.2.1.3}{Entre el conjunt acceler\362metre-giroscopi i ROS}{subsection.2.1}% 30
+\BOOKMARK [3][-]{subsubsection.2.1.3}{Entre l'Arduino i ROS}{subsection.2.1}% 30
 \BOOKMARK [2][-]{subsection.2.2}{Estabilitat}{section.2}% 31
 \BOOKMARK [2][-]{subsection.2.3}{Algorismes de resposta davant pertorbacions}{section.2}% 32
 \BOOKMARK [3][-]{subsubsection.2.3.1}{Model del robot}{subsection.2.3}% 33
@@ -39,16 +39,20 @@
 \BOOKMARK [3][-]{subsubsection.2.4.1}{DMPs de Scott Niekum}{subsection.2.4}% 39
 \BOOKMARK [3][-]{subsubsection.2.4.2}{Package complert del robot PR2 del USC-CLMC}{subsection.2.4}% 40
 \BOOKMARK [1][-]{section.3}{Disseny}{}% 41
-\BOOKMARK [2][-]{subsection.3.1}{Model de l'Aibo}{section.3}% 42
+\BOOKMARK [2][-]{subsection.3.1}{Model de l'AIBO}{section.3}% 42
 \BOOKMARK [2][-]{subsection.3.2}{Moviment del centre de gravetat}{section.3}% 43
 \BOOKMARK [3][-]{subsubsection.3.2.1}{Acceler\362metre MPU6050 i giroscopi GY-521}{subsection.3.2}% 44
 \BOOKMARK [3][-]{subsubsection.3.2.2}{C\340lcul de la posici\363 i de la inclinaci\363}{subsection.3.2}% 45
 \BOOKMARK [2][-]{subsection.3.3}{Plataforma}{section.3}% 46
-\BOOKMARK [2][-]{subsection.3.4}{Execuci\363 DMPs sense PI2}{section.3}% 47
-\BOOKMARK [2][-]{subsection.3.5}{Execuci\363 DMPs amb PI2}{section.3}% 48
-\BOOKMARK [1][-]{section.4}{Conclusions}{}% 49
-\BOOKMARK [1][-]{section*.60}{Agra\357ments}{}% 50
-\BOOKMARK [1][-]{section*.61}{Refer\350ncies}{}% 51
-\BOOKMARK [1][-]{section*.62}{Annexos}{}% 52
-\BOOKMARK [1][-]{appendix.A}{Instal\267laci\363 de ROS, llibreries d'Urbi i paquet aibo\137server}{}% 53
-\BOOKMARK [1][-]{appendix.B}{Bibliografia}{}% 54
+\BOOKMARK [1][-]{section.4}{Funcionament i execuci\363}{}% 47
+\BOOKMARK [2][-]{subsection.4.1}{Connexions a establir}{section.4}% 48
+\BOOKMARK [3][-]{subsubsection.4.1.1}{Conjunt acceler\362metre-giroscopi}{subsection.4.1}% 49
+\BOOKMARK [2][-]{subsection.4.2}{Processos previs}{section.4}% 50
+\BOOKMARK [2][-]{subsection.4.3}{Funcionament de DMPs sense PI2}{section.4}% 51
+\BOOKMARK [2][-]{subsection.4.4}{Funcionament de DMPs amb PI2}{section.4}% 52
+\BOOKMARK [1][-]{section.5}{Conclusions}{}% 53
+\BOOKMARK [1][-]{section*.65}{Agra\357ments}{}% 54
+\BOOKMARK [1][-]{section*.66}{Refer\350ncies}{}% 55
+\BOOKMARK [1][-]{section*.67}{Annexos}{}% 56
+\BOOKMARK [1][-]{appendix.A}{Instal\267laci\363 de ROS, llibreries d'Urbi i paquet aibo\137server}{}% 57
+\BOOKMARK [1][-]{appendix.B}{Bibliografia}{}% 58

@@ -3,16 +3,17 @@ Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: Treball.aux
 The style file: plainnat.bst
 Database file #1: ./Bibliografia/library.bib
-Repeated entry---line 382 of file ./Bibliografia/library.bib
+Repeated entry---line 243 of file ./Bibliografia/library.bib
  : @article{Tellez2005a
  :                     ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 952 of file ./Bibliografia/library.bib
+Repeated entry---line 819 of file ./Bibliografia/library.bib
  : @article{Fujita2000
  :                    ,
 I'm skipping whatever remains of this entry
 Warning--empty publisher in Alpaydin2004
 Warning--empty year in Arduino
+Warning--empty year in Blueprint
 Warning--empty publisher in Cord2008
 Warning--empty year in iec-dlc
 Warning--there's a number but no volume in Fujita2000
@@ -33,45 +34,45 @@ Warning--empty journal in Rofer2013
 Warning--empty year in Rowberg
 Warning--empty publisher in Shadmehr2004
 Warning--there's a number but no volume in Tellez2005a
-You've used 58 entries,
+You've used 59 entries,
             2773 wiz_defined-function locations,
-            1014 strings with 17683 characters,
-and the built_in function-call counts, 26151 in all, are:
-= -- 2421
-> -- 1471
-< -- 46
-+ -- 505
-- -- 447
-* -- 2067
-:= -- 4096
-add.period$ -- 243
-call.type$ -- 58
-change.case$ -- 316
-chr.to.int$ -- 58
-cite$ -- 138
-duplicate$ -- 1167
-empty$ -- 2038
-format.name$ -- 533
-if$ -- 5456
+            1019 strings with 17797 characters,
+and the built_in function-call counts, 26447 in all, are:
+= -- 2446
+> -- 1481
+< -- 47
++ -- 509
+- -- 450
+* -- 2082
+:= -- 4140
+add.period$ -- 246
+call.type$ -- 59
+change.case$ -- 320
+chr.to.int$ -- 59
+cite$ -- 141
+duplicate$ -- 1182
+empty$ -- 2070
+format.name$ -- 537
+if$ -- 5519
 int.to.chr$ -- 1
 int.to.str$ -- 1
 missing$ -- 43
-newline$ -- 365
-num.names$ -- 232
-pop$ -- 621
+newline$ -- 370
+num.names$ -- 236
+pop$ -- 634
 preamble$ -- 1
-purify$ -- 265
+purify$ -- 268
 quote$ -- 0
-skip$ -- 955
+skip$ -- 969
 stack$ -- 0
-substring$ -- 724
-swap$ -- 143
+substring$ -- 726
+swap$ -- 144
 text.length$ -- 10
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 623
-warning$ -- 22
-while$ -- 227
+type$ -- 634
+warning$ -- 23
+while$ -- 230
 width$ -- 0
-write$ -- 858
+write$ -- 869
 (There were 2 error messages)

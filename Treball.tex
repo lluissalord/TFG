@@ -530,7 +530,7 @@ A banda dels nombrats anteriorment, existeixen molts altres robots amb potes que
 
 
 \subsubsection{Modelat de robots}
-\label{Modelat de robots}
+\label{Modelat-de-robots}
 
 \paragraph{}Un model d'un robot és un sistema virtual que representa de forma aproximada la cinemàtica i/o la dinàmica d'un robot, mitjançant formes geomètriques enllaçades entre elles amb una configuració determinada. Aquesta és la base d'un model, ara bé, se li poden afegir complements, com un aspecte visual més vistós, amb alguna textura o concretar quins són els actuadors o sensors, on situar-los, etc.
 
@@ -804,6 +804,7 @@ Els trets importants són que $g - x_0$ no multiplica a $f(s)$ i el terme $K(g -
 
 
 \subsubsection{\textbf{P}ath \textbf{I}ntegral \textbf{P}olicy \textbf{I}mprovement ($\mathrm{PI^2}$)}
+\label{PI2-estat-de-l'art}
 
 \paragraph{}L'algorisme $\mathrm{PI^2}$ \cite{Stulp2011} té com a principal objectiu polir el pesos $w_i$ (al llarg d'aquest apartat s'hi refereix com paràmetres $\theta_t$), per tal que es minimitzi la funció de cost \eqref{eq:PI2-cost-function} de la trajectòria $\tau_i$. Ara bé, una bona solució inicial, per aconseguir una convergència més ràpida, és l'extreta a partir del \texttt{LfD}, comentat en el punt anterior.
 
@@ -915,12 +916,13 @@ Per poder dur a terme aquesta arquitectura es requereixen de dos tipus d'algoris
 L'algorisme de control només depèn de \textit{ROS} per recollir la informació del conjunt acceleròmetre-giroscopi i per executar el moviment de les articulacions de l'AIBO. Per tant, el \texttt{node} d'execució és tant subscriptor del \texttt{topic} del sensor, com, alhora, és publicador del \texttt{topic} de les comandes per les articulacions.
 
 
-\subsubsection{Entre el conjunt acceleròmetre-giroscopi i \textit{ROS}}
+\subsubsection{Entre l'Arduino i \textit{ROS}}
+\label{comunicacio-ROS-Arduino}
 
 %POSAR EN ANNEXOS COM INSTAL·LAR I EXECUTAR EL ROSSERIAL
 %\footnote{En els Annexos està explicada la instal·lació i l'execució}.
 
-\paragraph{}El conjunt està connectat a l'Arduino, per tant, ha de ser aquest el que creï el \texttt{topic} on es publica la informació que ha de transmetre per \textit{ROS} a l'algorisme de control. A tal efecte existeix un \texttt{package} que permet aconseguir-ho, \texttt{rosserial}. A banda d'haver-se d'instal·lar i executar quan és el cas, també es requereix que en el codi es carreguin la llibreria \texttt{ros.h} i les corresponents al tipus de \texttt{message} al que s'hagi de subscriure o de publicar. Aquestes llibreries, juntament amb les variables que es requereixen com el \texttt{node}, el publicador i el \texttt{message}, ocupen una gran quantitat de memòria del microcontrolador i pot arribar a donar algun que altre problema, com s'explica en la Secció \ref{Calcul-posicio-inclinacio}. 
+\paragraph{}El conjunt està connectat a l'Arduino, per tant, ha de ser aquest el que creï el \texttt{topic} on es publica la informació que ha de transmetre per \textit{ROS} a l'algorisme de control. A tal efecte existeix un \texttt{package} que permet aconseguir-ho, \texttt{rosserial}. A banda d'haver-se d'instal·lar i executar quan és el cas, també es requereix que en el codi es carreguin la llibreria \texttt{ros.h} i les corresponents al tipus de \texttt{message} al que s'hagi de subscriure o de publicar. Aquestes llibreries, juntament amb les variables que es requereixen com el \texttt{node}, el publicador i el \texttt{message}, ocupen una gran quantitat de memòria del microcontrolador i pot arribar a donar algun que altre problema, com s'explica més endavant en l'apartat \ref{Calcul-posicio-inclinacio}. 
 
 %Urbi és amb que es comunica ROS i que aquí s'ha començat a utilitzar a partir del codi que es tenia de Ricardo Téllez, pero que s'ha modificat ja que inicialment no funcionava i quan van arribar a funcionar totes ses parts s'ha mirat d'optimitzar la frequencia per tal que funcioni millor (sense aturades pero al maxim)
 %Com està es tema de es codi, que fa i qui hi ha treballat amb cada part (sobretot diego, menys amb la part de camara que ha fet la Lucia), som un grup de treball que intenta que es tornin a reutilitzar els Aibos
@@ -957,7 +959,7 @@ En l'estat de l'art, s'han esmentat algunes de les possibilitats per dur a terme
 
 \subsubsection{Model del robot}
 
-\paragraph{}Una de les possibilitats podria ser la creació d'un model del l'AIBO. D'aquesta forma davant una pertorbació, com és el canvi d'inclinació de la plataforma, es podria saber les accions de control que portarien el robot a l'estat desitjat.
+\paragraph{}Una de les possibilitats podria ser la creació d'un model del l'AIBO. D'aquesta forma davant una pertorbació, com és el canvi d'inclinació de la plataforma, es podrien saber les accions de control que portarien el robot a l'estat desitjat.
 
 A banda de beneficiar-se de la cinemàtica inversa\footnote{Tècnica permet determinar el moviment d'unes articulacions per portar el cos a una posició concreta}, un model permetria aplicar els algorismes, de forma virtual, en un simulador. L'algorisme simulat donaria una solució, que podria servir com a punt de partida per aplicar-ho al model físic, així la probabilitat de provocar algun risc seria molt més baixa.
 
@@ -1065,12 +1067,21 @@ El \texttt{package} de les \textit{DMPs} és el nucli de tot l'algorisme de cont
 
 %ENTR MÉS EN DETALL EN TEMA DE CÀLCUL DE LA POSICIÓ I VELOCITAT O DE COM FA L'APROXIMACIÓ PER MÍNIMS QUADRATS???
 
-Per altra banda, el \texttt{subpackage} locally$\_$weighted$\_$regression és el que s'encarrega de la transformació la trajectòria programada de mínim \textit{jerk}\footnote{Aquesta trajectòria és creada pel propi \texttt{subpackage} dynamic$\_$movement$\_$primitive} en la suma del sistema dinàmic amb el conjunt de gaussianes, explicat a l'apartat \ref{DMP-estudis-preliminars}. Tot aquest procés és requereix perquè la \textit{DMP} de cada articulació pugui ser creada. La classe principal és \texttt{LWR} que permet definir el conjunt de gaussianes. En aquest cas, s'utilitzen les funcions gaussianes per a fer l'aproximació, a diferència del codi de Niekum que utilitza la sèrie de Fourier amb base cosinus. 
+Per altra banda, el \texttt{subpackage} locally$\_$weighted$\_$regression és el que s'encarrega de la transformació la trajectòria programada de mínim \textit{jerk}\footnote{Aquesta trajectòria és creada pel propi \texttt{subpackage} dynamic$\_$movement$\_$primitive.} en la suma del sistema dinàmic amb el conjunt de gaussianes, explicat a l'apartat \ref{DMP-estudis-preliminars}. Tot aquest procés és requereix perquè la \textit{DMP} de cada articulació pugui ser creada. La classe principal és \texttt{LWR} que permet definir el conjunt de gaussianes. En aquest cas, s'utilitzen les funcions gaussianes per a fer l'aproximació, a diferència del codi de Niekum que utilitza la sèrie de Fourier amb base cosinus. 
 
 \vspace{20pt}
 \textbf{Policy$\_$learning}
 
-Fins aquest punt s'ha explicat la base de les \textit{DMPs}, sense qualsevol de les parts anteriors no seria possible dur-les a terme. Ara bé, la integració de l'algorisme $\mathrm{PI^2}$ és, en realitat, un complement, per millorar-ne l'eficàcia. 
+Fins aquest punt s'ha explicat la base de les \textit{DMPs}, sense qualsevol de les parts anteriors no seria possible dur-les a terme. Ara bé, la integració de l'algorisme $\mathrm{PI^2}$ és, en realitat, un complement, per millorar-ne l'eficàcia. Aquest \texttt{package} integra $\mathrm{PI^2}$, juntament amb varies derivacions d'aquest, que poden ser utilitzats en altres casos.
+
+La interacció entre aquest i les \textit{DMPs} és produeix a partir d'haver-se fet l'aproximació per gaussianes. En aquest moment, comença el procés iteratiu exemplificat en la figura \ref{fig:policy-improvement-loop} de l'apartat \ref{PI2-estat-de-l'art}, on es modifiquen els pesos per tal de minimitzar una funció objectiu. Per tant, si la funció és l'adequada, el moviment dut a terme pel robot millora. Si es desitja modificar la funció objectiu s'ha d'accedir a l'arxiu \texttt{dmp$\_$waypoint$\_$task.cpp} al \texttt{subpackage} policy$\_$improvement$\_$loop.
+
+
+
+%MEDITAR SI POSAR LO DE SES MODIFICACIONS O NO!!!
+
+
+
 
 %Aqui es troben tots els diferents codis que utilitza l'USC-CLMC (Computational Learning and Motor Control Lab at the University of Southern California). 
 %PACKAGES QUE HI HA I MITJANAMENT FUNCIONAMENT
@@ -1084,16 +1095,57 @@ Fins aquest punt s'ha explicat la base de les \textit{DMPs}, sense qualsevol de 
 
 \paragraph{}Inicialment, s'ha plantejat un disseny amb un model del robot que serviria per simular tot el conjunt amb l'ordinador. D'aquí en sortiria un solució inicial per implementar al robot físic, i a partir d'aquest arribar a la solució final. La solució primera estalviaria possibles perills, tant pel propi robot com per l'entorn, i ajudaria a aconseguir la convergència a una solució final més ràpidament. En referència a les \textit{DMPs}, com s'ha explicat en l'apartat \ref{Package-USC-CLMC}, el codi utilitzat és el creat per \textit{USC-CLMC}, però modificat per l'adaptació a aquest treball. Ara bé, aquest dona dues opció d'execució a escollir segons l'algorisme: (1) \textit{DMPs} conjuntament amb l'algorisme $\mathrm{PI^2}$, (2) \textit{DMPs} sense el $\mathrm{PI^2}$; el funcionament dels dos tipus es troben explicats en aquest mateix apartat. Per altra banda, en aquest apartat també s'explica l'ús del conjunt acceleròmetre-giroscopi, en l'algorisme de control, i de influència i control de la plataforma.
 
+
 %SI ES FINAL NO ES CONTROLA SA PLATAFORMA S'HA DE MODIFICAR AÇO.
+
 
 %ON FICAR MODIFICACIONS FETES AL CODI DEL USC-CLMC??? AQUI O QUAN INTRODUESC EL CODI EN L'ESTUDI PRELIMINAR??
 
 %Explicació general com queda finalment, que s'agafa les DMPs amb el PI², l'ús del accelerometre, explicar quin seria el reward, el goal de la DMP inicialment, etc. Explicar el funcionament global del conjunt com afecta cada cosa etc. Amb això s'hauria d'entendre que és el meu treball
 %Després sub apartats amb explicacions exteses de cada cosa
 
-\subsection{Model de l'Aibo}
+\subsection{Model de l'AIBO}
 %EXPLICAR TOT TOT LO DE ES MODEL
 %Dir que tot i que després de la solucio inicial s'ha de seguir fent aprenentatge ja que el model no és perfecte i per tant té un cert error, que quan es posa en el robot físic aquest error es corregirà.
+
+Com s'ha explicat en l'apartat \ref{Modelat-de-robots}, hi ha una gran multitud de possibles formes de fer un model per un robot. Ara bé, tots aquests mètodes són complexos i requereixen de bastant temps. Per això, s'ha considerat que fer el model seguint algun d'aquests mètodes no es trobava dins l'abast del treball i, per tant, s'ha escollit fer el model escrivint el codi de forma manual. Per dur a terme el model s'ha pres com a referència les mesures aproximades de la figurar \ref{fig:mesures-aibo-model}.
+
+\begin{figure}[tb]
+\centering
+\includegraphics[width=0.8\textwidth]{Imatges/aibo-4.pdf}
+\caption{Mesures en \textit{mm} de l'AIBO \cite{Blueprint}}
+\label{fig:mesures-aibo-model}
+\end{figure}
+
+A l'hora de fer el model es poden escollir diferents formats d'arxiu, tals com \texttt{urdf}, \texttt{model} o \texttt{sdf}. Ara bé, d'aquests l'únic que tan és compatible amb \texttt{rviz}\footnote{Mencionat en l'apartat \ref{ROS}.} i com amb \texttt{Gazebo}\footnote{Mencionat en l'apartat \ref{Modelat-de-robots}.}, pel control de robots mòbils, és l'\texttt{urdf}. Tot i que amb aquest format al ser utilitzat en \texttt{Gazebo} existeix un petit retard a diferència del \texttt{sdf}, que és el format òptim, s'ha escollit per fer el model en \texttt{urdf} \cite{Sucan}.
+
+El model inicial que s'ha fet consta de nou cilindres, un pel cos, quatre per les parts superiors de les potes i quatre més per les parts inferiors. A més de quatre esferes pels punts de contacte amb el terra. Les unions entre les potes o entre el cos i les potes són de tipus \texttt{revolute}, aquest tipus defineix una articulació que gira entorn de l'eix indicat i en la posició donada. Per altra banda, els punts de contacte al terra són fixos i, a més, amb fricció molt alta\footnote{La fricció alta ha sigut posada perquè es pugui provar el model en \texttt{Gazebo}, tot i que realment en el model final no s'ha de posar d'aquesta manera.}. Un fet a tenir en compte en aquest model és que no s'ha tingut en compte la inèrcia de cadascuna de les parts del robot, deguda al temps que requeriria fer el càlculs. 
+
+\begin{figure}[tb]
+\centering
+\begin{subfigure}[b]{0.45\textwidth}
+    \centering
+    \includegraphics[width=0.95\textwidth]{Imatges/aibo-model-inicial.png}
+    \caption{Model inicial de l'AIBO en l'entorn \texttt{Rviz} i amb el control de les articulacions (esquerra).}
+    \label{fig:aibo-model-inicial}
+\end{subfigure}
+~
+\begin{subfigure}[b]{0.45\textwidth}
+    \centering
+    \includegraphics[width=0.95\textwidth]{Imatges/aibo-model-final.png}
+    \caption{Model final de l'AIBO en l'entorn \texttt{Rviz} i amb el control de les articulacions (esquerra).}
+    \label{fig:aibo-model-final}
+\end{subfigure}
+\caption{Models de l'AIBO en l'entorn \texttt{rviz}}
+\end{figure}
+
+En un model es poden diferenciar dues estructures molt clares. Per una banda, existeix la part física, que és la que es té en compte a l'hora de fer les col·lisions, i en general tots els càlculs. Per altra banda, està la part visual que és la decorativa, la veu l'usuari en simular el robot. La idea per fer en el model final ha estat recrear aquest tant amb la part física com visual que té el robot, de tal manera que els càlculs i la visualització siguin molt més realistes. Per dur a terme aquesta tasca s'han hagut de descarregar les textures de l'AIBO de tipus \texttt{Sketchup} de \cite{SeaGate}, prendre cada part del robot per separat i guardar-les en arxius separats. 
+
+%SI ES VOL ES POT EXPLICAR ES TEMA DE ARXIUS .STL o .DAE, diferencies, explicar com seria es tema de posar les unions en els punts adequats
+
+Finalment, s'ha deixat la continuïtat de la construcció del model, quedant-se amb el model inicial, tot i haver fet algunes proves d'introduir les textures de l'AIBO. La causa és que s'ha vist que el benefici que comporta la creació d'un model, amb els algorismes que s'estan plantejant a utilitzar, no és rendible pel temps que s'hi ha de dedicar. En gran part és degut a la no necessitat d'un model per part dels algorismes, ja que poden treballar perfectament sense aquest.
+
+Ara bé, el projecte del model es continuat, en l'estat que s'ha deixat en aquest treball (model inicial amb control de les articulacions, textures classificades i preparades per ser implementades), per l'estudiant Diego Muñoz, veure figura \ref{fig:aibo-model-final}. Aquest l'utilitza per veure l'estat del robot físic a través de l'aplicació \texttt{rviz}. A més, el model està també en el Github del \textit{TFG}\footnote{https://github.com/lluissalord/TFG/}, amb el nom d'\texttt{aibo$\_$model}, i pot ser utilitzat i millorat per qualsevol persona que s'hi vulgui dedicar.
 
 
 \subsection{Moviment del centre de gravetat}
@@ -1156,9 +1208,28 @@ El filtre complementari matemàticament és molt simple \eqref{eq:filtre-complem
 %Funcionament de la plataforma, com esta connectada a l'Arduino i alimentació i que és el que li faig fer.
 %Suposadament si s'estés utilitzant el PI² s'hauria de quedar fixa en una posició, ara bé, com que està implementat les DMPs i tan sols esta aprenent de la demostració, es pot moure en diferents direccions i l'Aibo es va adaptant a la inclinació.
 
-\subsection{Execució \textit{DMPs} sense $\mathrm{PI^2}$}
+\section{Funcionament i execució}
+
+\paragraph{}En aquest apartat es pensa explicar quins són els passos que s'han de seguir per tal d'aconseguir dur a terme l'execució del conjunt.
+
+\subsection{Connexions a establir}
+
+\paragraph{}Un dels aspectes que fins aquest instant no ha sigut esmentat és la configuració de les connexions. Per tal de poder transmetre tota la informació que requereix l'algorisme de control s'ha de donar un canal de comunicació amb conjunt acceleròmetre-giroscopi, com també un altre amb les articulacions del propi AIBO.
+
+\subsubsection{Conjunt acceleròmetre-giroscopi}
+
+En l'apartat \ref{comunicacio-ROS-Arduino} s'ha explicat per sobre com es transmet la informació des de l'Arduino a \textit{ROS}. Aquí s'exposa la comunicació entre el sensor i el microcontrolador. 
+
+
+
+\subsection{Processos previs}
+
+\paragraph{}En primer terme, pel bon funcionament de les \textit{DMPs} cal engegar una sèrie de processos per permetre l'intercanvi d'informació i per dur a terme el control de la plataforma, si escau.
+
+
+\subsection{Funcionament de \textit{DMPs} sense $\mathrm{PI^2}$}
 %Explicacions i esquema de blocs del codi i funcionament de les DMPs 
-\subsection{Execució \textit{DMPs} amb $\mathrm{PI^2}$}
+\subsection{Funcionament de \textit{DMPs} amb $\mathrm{PI^2}$}
 %On es que afecta el PI² explicat tant amb paraules com esquemes de blocs
 
 
