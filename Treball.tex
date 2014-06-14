@@ -536,9 +536,12 @@ A banda dels nombrats anteriorment, existeixen molts altres robots amb potes que
 
 Durant molt temps, per utilitzar un robot es requeria d'un model. D'aquesta manera, l'autòmat podia saber en quina posició es trobava, en tot moment, i reaccionar de forma correcte. Si no es feia seguint aquest procediment, l'única opció era que el programador tingués en compte totes les diferents possibilitats de fallada i les corregís, sent aquesta un tasca molt complicada.  
 
+\vspace{20pt}
+\textbf{Classificació de models}
+
 Per crear el model d'un robot existeixen diverses possibilitats. La més rudimentària és prenent les mesures del propi robot i introduir-les al programa, avui dia aquest mètode és poc utilitzat quan es vol un model molt acurat. El més típic, en aquests casos, és utilitzar el propi robot, amb una arquitectura d'aprenentatge òptima, per fer el model. Aquesta arquitectura es basa en un sistema realimentat amb (1) robot, (2) el model en construcció i (3) un controlador per la realimentació; per així arribar finalment a desenvolupar el model,  està il·lustra molt clarament a la Figura \ref{fig:esquema-arquitectures-models}.
 
-Ara bé, existeixen tant diferents tipus de models, com també formes diferents de crear-los segons \cite{Nguyen-Tuong2011}:
+Ara bé, existeixen tants tipus diferents de models, com també formes diferents de crear-los segons \cite{Nguyen-Tuong2011}:
 
 \begin{itemize}
 \item Tipus de models:
@@ -611,6 +614,8 @@ Ara bé, existeixen tant diferents tipus de models, com també formes diferents 
 \end{center}
 \end{figure}
 
+\vspace{20pt}
+\textbf{Simulació amb models}
 
 Un dels beneficis de tenir el model d'un robot és poder fer simulacions virtuals del robot, de tal manera que no es provoca cap desgast al robot real, ni es poden donar situacions de perill. Tot i ser de gran utilitat, els simuladors també tenen les seves limitacions, és difícil simular la física d'un robot (actuadors, interaccions amb l'entorn, sensors\dots) de manera realista. A més, passar de simulacions a un robot real no sempre és fàcil \cite{Hohl2006}.
 
@@ -726,6 +731,9 @@ El \texttt{LfD} és podria estructurar en tres grans grups, segons la forma d'ad
 
 \end{description}
 
+\vspace{20pt}
+\textbf{\textit{Transformation system}}
+
 El sistema dinàmic és pot interpretar com un PD\footnote{Controlador proporcional i derivatiu.}, amb els paràmetres \textit{K}, pel coeficient proporcional, i \textit{D}, pel derivatiu; o com si fos un sistema mecànic de molla lineal amb una força externa viscosa, en aquest cas, sent el coeficient de fregament i de la fricció viscosa respectivament. Per últim, la \textit{x} i \textit{v} són la posició i la velocitat, la constant $\tau$ és el període del moviment i \textit{g} és el paràmtre d'atracció del sistema.
 
 \begin{align}
@@ -766,6 +774,9 @@ Realment, en les \textit{DMPs}, el que determina la trajectòria duta a terme é
 \label{fig:ffect-of-shape-parameters}
 \end{figure}
 
+
+\vspace{20pt}
+\textbf{Modificació de l'algorisme}
 
 Fins ara s'ha explicat l'algorisme original de les \textit{DMPs}, ara bé, aquest porta inherents una sèrie d'inconvenients \cite{Pastor2009}:
 
@@ -984,14 +995,21 @@ Els algorismes d'aprenentatge per reforç es basen en gran part en l'exploració
 Ara bé, tot i poder-se dur a terme seguint aquest procediment, és creu més convenient utilitzar algun altre mètode que convergeixi de forma més ràpida, i si escau, fer ús del \texttt{RL} per millorar el comportament del que s'hagi aconseguit.
 
 \subsubsection{\textit{DMP}}
+\label{DMP-estudis-preliminars}
 
 \paragraph{}L'algorisme de \textit{DMP} és el que s'adapta millor a la situació, ja que està dissenyat per tractar sistemes dinàmics, com és el cas. A més, té una gran robustesa davant pertorbacions, que és el que justament es necessita, considerant que el moviment de la plataforma és una pertorbació. Per altra banda, s'adapta perfectament a noves situacions, com pot ser un inici diferent al original i/o acabar en una posició que difereixi de la posició final primera.
 
 El robot consta de diferents articulacions, cadascuna afecta d'una o altre manera el moviment del conjunt del robot. Per implementar l'algorisme, s'ha de crear una \textit{DMP} per cadascuna de les articulacions, per tant el procés d'aprenentatge s'ha de repetir tants cops com nombre juntures. En la majoria de les explicacions següents és refereix en l'aprenentatge d'una individualment, per les altres seria el mateix procés.
 
+\vspace{20pt}
+\textbf{Moviment original}
+
 El primer pas que s'ha de fer, per dur a terme la DMP, és tenir un moviment original. Aquest és podria extreure, com s'ha explicat en l'apartat \ref{DMP-estat-de-l'art}, a partir de: (1) imitació, (2) demostració amb el propi robot, (3) trajectòria programada. D'entre les tres, s'ha escollit la tercera, ja que les articulacions de l'AIBO són \textit{PIDs} i, per tant, la posició que se li programi és segur que es durà a terme. A més, la imitació no tindria sentit, si no hi ha un altre robot a imitar, i la demostració no és una bona opció, perquè a banda de ser impossible donar el moviment a totes les articulacions alhora de forma manual, tampoc seria precís.
 
-Havent escollit el mètode per donar el moviment original, s'ha de saber com ha de ser aquest. Un tipus de trajectòria molt utilitzat és la de mínim \texttt{jerk}\footnote{\texttt{Jerk} és la derivada de l'acceleració}. Aquesta és una trajectòria suavitzada calculada a partir d'una posició inicial, final i el temps requerit per arriba-hi, minimitzant el \texttt{jerk}. Es deixen els detalls d'aquest tipus de trajectòria per \cite{Shadmehr2004}.
+Havent escollit el mètode per donar el moviment original, s'ha de saber com ha de ser aquest. Un tipus de trajectòria molt utilitzat és la de mínim \textit{jerk}\footnote{\textit{Jerk} és la derivada de l'acceleració}. Aquesta és una trajectòria suavitzada calculada a partir d'una posició inicial, final i el temps requerit per arriba-hi, minimitzant el \textit{jerk}. Es deixen els detalls d'aquest tipus de trajectòria per \cite{Shadmehr2004}.
+
+\vspace{20pt}
+\textbf{Pesos de la funció $f(s)$}
 
 Un cop es té la trajectòria, a partir d'aquesta es poden extreure els pesos $w_i$ aproximant mínims quadrats amb gaussianes i, per tant, la funció no lineal $f(s)$ queda definida amb una primera solució, figura \ref{fig:LdF-trajectories}. Amb tan sols aquesta primera solució és factible el dur a terme les \textit{DMPs} de forma correcta. Ara bé, en el treball és desitja que s'arribi a la posició de màxima estabilitat de la forma més precisa. Per això, s'han de poder modificar els pesos $w_i$ i el $goals$ de les articulacions, de tal manera que la posició final sigui l'adequada. Una bona opció és l'algorisme $\mathrm{PI^2}$, que et permet millorar tan els pesos, com els $goals$ depenent de paràmetres externs a la dinàmic del sistema, com podria ser el desplaçament del CdG o la inclinació. 
 \begin{figure}[tb]
@@ -1014,7 +1032,7 @@ Un cop es té la trajectòria, a partir d'aquesta es poden extreure els pesos $w
 \subsection{Codis amb \textit{DMPs} implementades}
 \label{codis-amb-DMPs-implementades}
 
-\paragraph{}La creació de l'algorisme de \textit{DMPs} és un fet que no troba dins l'abast del treball, degut a la gran complexitat d'aquest. Està basat en equacions diferencials, canvis de variables, ús de Gaussianes, aproximacions per Fourier o per mínims quadrats, etc. Per una banda, estaria la dificultat de crear el codi, però més complicada és el treball que porta el depurar-lo. Per això, s'ha optat per cercar codis que portin implementades les \textit{DMPs}, d'entre els que s'han trobat només s'han plantejat els dos que es troben a continuació perquè són uns dels que utilitzen la \textit{DMP} modificada que s'ha plantejat en l'apartat \ref{DMP-estat-de-l'art} de l'estat de l'art.
+\paragraph{}La creació de l'algorisme de \textit{DMPs} és un fet que no troba dins l'abast del treball, degut a la gran complexitat d'aquest. Està basat en equacions diferencials, canvis de variables, ús de Gaussianes o Fourier (segons la implementació), aproximacions per mínims quadrats, etc. Per una banda, estaria la dificultat de crear el codi, però més complicada és el treball que porta el depurar-lo. Per això, s'ha optat per cercar codis que portin implementades les \textit{DMPs}, d'entre els que s'han trobat només s'han plantejat els dos que es troben a continuació perquè són uns dels que utilitzen la \textit{DMP} modificada que s'ha plantejat en l'apartat \ref{DMP-estat-de-l'art} de l'estat de l'art.
 %Es molt complex el fer el codi per implementar les DMPs ja que són un seguit d'equacions diferencials amb transformacions de variables, us de Gaussianes, etc.
 %Per això s'implementa a partir de codis ja existents que funcionen, pero adaptant-lo al cas de treball.
 \subsubsection{\textit{DMPs} de Scott Niekum}
@@ -1038,14 +1056,21 @@ Un cop es té la trajectòria, a partir d'aquesta es poden extreure els pesos $w
 
 El fet d'eliminar els \texttt{package} pot semblar una tasca fàcil, però al darrera hi ha hagut un gran treball d'entendre un conjunt de codis, creats per altres persones i de tal magnitud. Per altra banda, a mesura que s'ha avançat en el coneixement del conjunt del \texttt{package} i en la creació del codi d'execució, s'ha anat modificant el conjunt per permetre el funcionament global. En aquest apartat, inicialment s'explica els trets més importants dels \texttt{packages} que finalment s'han utilitzat, i cap el final s'esmenten alguns dels canvis respecte el codi original i el perquè d'aquests.
 
+%SI ES FINAL NO ES DIU ES PERQUE AÇO S'HAURA DE MODIFICAR
+
 \vspace{20pt}
 \textbf{\textit{DMP}}
 
-El \texttt{package} de les \textit{DMPs} és nucli de l'algorisme. En la seva base funciona de la mateixa forma que el codi presentat anteriorment de Scott Niekum, ara bé, canvia en que la comunicació amb el propi codi és fa des de \textit{ROS}. D'aquesta manera permet modificar els paràmetres de la DMP sense la necessitat de modificar el codi, sinó que és pot fer modificant les propietats del node d'execució\footnote{Això és pot fer amb la comanda \texttt{node$\_$handle.setParam("nom$\_$paràmetre", valor$\_$paràmetre)} o amb \texttt{usc$\_$utilities::write(node, "nom$\_$paràmetre", valor$\_$paràmetre)} si és un vector.}. En el codi d'execució d'aquest treball aquests paràmetres estan donats de forma automàtica dins el codi. Una altre gran avantatja de la comunicació mitjançant \textit{ROS} és el poder publicar l'estat de la \textit{DMP} en tot moment a través d'un \texttt{topic} i la facilitat d'intercanviar informació amb l'exterior.
+El \texttt{package} de les \textit{DMPs} és el nucli de tot l'algorisme de control. En la seva base, el \texttt{subpackage} dynamic$\_$movement$\_$primitive, funciona de la mateixa forma que el codi presentat anteriorment de Scott Niekum, ara bé, canvia en que la comunicació amb el propi codi és fa des de \textit{ROS}. D'aquesta manera permet modificar els paràmetres de la DMP sense la necessitat de modificar el codi, sinó que és pot fer modificant les propietats del node d'execució\footnote{Això és pot fer amb la comanda \texttt{node$\_$handle.setParam("nom$\_$paràmetre", valor$\_$paràmetre)} o amb \texttt{usc$\_$utilities::write(node, "nom$\_$paràmetre", valor$\_$paràmetre)} si és un vector.}. En el codi d'execució d'aquest treball, aquests paràmetres estan donats de forma automàtica dins el codi. Altres grans avantatges de la comunicació mitjançant \textit{ROS} són el poder publicar l'estat de la \textit{DMP}, en tot moment, a través d'un \texttt{topic} i la facilitat d'intercanviar informació amb l'exterior.
 
+%ENTR MÉS EN DETALL EN TEMA DE CÀLCUL DE LA POSICIÓ I VELOCITAT O DE COM FA L'APROXIMACIÓ PER MÍNIMS QUADRATS???
 
+Per altra banda, el \texttt{subpackage} locally$\_$weighted$\_$regression és el que s'encarrega de la transformació la trajectòria programada de mínim \textit{jerk}\footnote{Aquesta trajectòria és creada pel propi \texttt{subpackage} dynamic$\_$movement$\_$primitive} en la suma del sistema dinàmic amb el conjunt de gaussianes, explicat a l'apartat \ref{DMP-estudis-preliminars}. Tot aquest procés és requereix perquè la \textit{DMP} de cada articulació pugui ser creada. La classe principal és \texttt{LWR} que permet definir el conjunt de gaussianes. En aquest cas, s'utilitzen les funcions gaussianes per a fer l'aproximació, a diferència del codi de Niekum que utilitza la sèrie de Fourier amb base cosinus. 
 
-%SI ES FINAL NO ES DIU ES PERQUE AÇO S'HAURA DE MODIFICAR
+\vspace{20pt}
+\textbf{Policy$\_$learning}
+
+Fins aquest punt s'ha explicat la base de les \textit{DMPs}, sense qualsevol de les parts anteriors no seria possible dur-les a terme. Ara bé, la integració de l'algorisme $\mathrm{PI^2}$ és, en realitat, un complement, per millorar-ne l'eficàcia. 
 
 %Aqui es troben tots els diferents codis que utilitza l'USC-CLMC (Computational Learning and Motor Control Lab at the University of Southern California). 
 %PACKAGES QUE HI HA I MITJANAMENT FUNCIONAMENT

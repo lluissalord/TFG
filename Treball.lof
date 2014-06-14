@@ -7,10 +7,10 @@
 \contentsline {figure}{\numberline {1.6}{\ignorespaces LittleDog \cite {Kalakrishnan2010}\relax }}{18}{figure.caption.25}
 \contentsline {figure}{\numberline {1.7}{\ignorespaces Esquema de cada arquitectura d'aprenentatge \cite {Nguyen-Tuong2011}\relax }}{21}{figure.caption.29}
 \contentsline {figure}{\numberline {1.8}{\ignorespaces Gr\IeC {\`a}fics explicatius de la funci\IeC {\'o} no lineal $f(s)$\relax }}{27}{figure.caption.33}
-\contentsline {figure}{\numberline {1.9}{\ignorespaces Efecte dels pesos $w_i$ (representats per $\theta $) i de l'objectiu (\textit {goal})}}{27}{figure.caption.34}
+\contentsline {figure}{\numberline {1.9}{\ignorespaces Efecte dels pesos $w_i$ (representats per $\theta $) i de l'objectiu (\textit {goal})}}{28}{figure.caption.34}
 \contentsline {figure}{\numberline {1.10}{\ignorespaces Comparaci\IeC {\'o} de l'algorisme de \textit {DMP} original (esquerra) i el modificat per \cite {Pastor2009} (dreta)}}{28}{figure.caption.35}
-\contentsline {figure}{\numberline {1.11}{\ignorespaces Algorisme gen\IeC {\`e}ric dels m\IeC {\`e}todes de millora de pol\IeC {\'\i }tica \cite {Stulp2011}\relax }}{29}{figure.caption.37}
-\contentsline {figure}{\numberline {2.1}{\ignorespaces Comunicaci\IeC {\'o} entre l'AIBO, Urbi i \textit {ROS}\relax }}{32}{figure.caption.40}
-\contentsline {figure}{\numberline {2.2}{\ignorespaces \textit {DMP} a partir una traject\IeC {\`o}ria de demostraci\IeC {\'o}}}{37}{figure.caption.49}
-\contentsline {figure}{\numberline {2.3}{\ignorespaces Diagrama fluxos del codi de Scott Niekum}}{38}{figure.caption.53}
-\contentsline {figure}{\numberline {3.1}{\ignorespaces Esquema de connexions entre AIBO-\textit {ROS} i sensor-Arduino-\textit {ROS}\relax }}{43}{figure.caption.59}
+\contentsline {figure}{\numberline {1.11}{\ignorespaces Algorisme gen\IeC {\`e}ric dels m\IeC {\`e}todes de millora de pol\IeC {\'\i }tica \cite {Stulp2011}\relax }}{30}{figure.caption.37}
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Comunicaci\IeC {\'o} entre l'AIBO, Urbi i \textit {ROS}\relax }}{33}{figure.caption.40}
+\contentsline {figure}{\numberline {2.2}{\ignorespaces \textit {DMP} a partir una traject\IeC {\`o}ria de demostraci\IeC {\'o}}}{38}{figure.caption.49}
+\contentsline {figure}{\numberline {2.3}{\ignorespaces Diagrama fluxos del codi de Scott Niekum}}{39}{figure.caption.53}
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Esquema de connexions entre AIBO-\textit {ROS} i sensor-Arduino-\textit {ROS}\relax }}{44}{figure.caption.59}
