@@ -1,4 +1,4 @@
-\begin{thebibliography}{59}
+\begin{thebibliography}{62}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -398,6 +398,12 @@ Stefan Schaal.
 \newblock ISSN 15324435.
 \newblock URL \url{http://dl.acm.org/citation.cfm?id=1953033}.
 
+\bibitem[SeaGate()]{SeaGate}
+SeaGate.
+\newblock {AIBO ERS-7 - 3D Warehouse}.
+\newblock URL
+  \url{https://3dwarehouse.sketchup.com/model.html?id=2bd7ed5ef2d55ced9461312eb423574c}.
+
 \bibitem[Shadmehr and Wise(2004)]{Shadmehr2004}
 R~Shadmehr and S.~P. Wise.
 \newblock {Minimum Jerk Trajectory}.
@@ -412,6 +418,11 @@ Freek Stulp and Evangelos Theodorou.
   IV):\penalty0 1--7, 2011.
 \newblock URL
   \url{http://ieeexplore.ieee.org/xpls/abs\_all.jsp?arnumber=6094877}.
+
+\bibitem[Sucan()]{Sucan}
+Ioan Sucan.
+\newblock {urdf - ROS Wiki}.
+\newblock URL \url{http://wiki.ros.org/urdf/}.
 
 \bibitem[Sutton and Barto(1998)]{Sutton1998}
 R~S Sutton and A~G Barto.
@@ -428,6 +439,13 @@ RA~A T\'{e}llez, Cecilio Angulo, and DE~E Pardo.
 \newblock \emph{Computational Intelligence and \ldots}, \penalty0 (Figure
   1):\penalty0 709--716, 2005.
 \newblock URL \url{http://link.springer.com/chapter/10.1007/11494669\_87}.
+
+\bibitem[Tellez(2004)]{Tellez2004}
+Ricardo Tellez.
+\newblock {Aibo Quickstart Manual}.
+\newblock Technical report, Grup de Recerca en Enginyeria del Coneixement
+  (GREC), 2004.
+\newblock URL \url{http://www.ouroboros.org/AIBO-quickstart.pdf}.
 
 \bibitem[Torrent-Fontbona et~al.(2013)Torrent-Fontbona, Mu\~{n}oz, and
   L\'{o}pez]{Torrent-Fontbona2013}

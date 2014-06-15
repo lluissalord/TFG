@@ -71,12 +71,12 @@
 
 \usepackage{chngcntr}
 \counterwithin{figure}{section}%Permet que el comptatge de les figures sigui segons secció
-\counterwithin{table}{section}%Permet que el comptatge de les taules sigui segons secció
-\counterwithin{equation}{section}%Permet que el comptatge de les equacions sigui segons secció
-\counterwithin{footnote}{section}%Permet que el comptatge dels peus de nota sigui segons secció
+\counterwithin{table}{section}
+\counterwithin{equation}{section}
+\counterwithin{footnote}{section}
+
 %PLANTEJAR TEMA DE \autoref{} ja que així l'hiperenllaç es també per la paraula i no sols el numero.
-%\renewcommand{\figurename}{figura}% Per canviar noms dels captions
-%\captionsetup[wrapfigure]{name=Fig.}
+
 \renewcommand{\thefigure}{\arabic{section}.\arabic{figure}}
 \renewcommand{\thetable}{\arabic{section}.\arabic{table}}
 \renewcommand{\theequation}{\arabic{section}.\arabic{equation}}
@@ -85,6 +85,7 @@
 \usepackage{parskip}
 
 \setlength{\parindent}{1em}
+\usepackage{indentfirst}
 
 \begin{document}
 \maketitle
@@ -143,7 +144,7 @@ The estability of the robots...
 \addcontentsline{toc}{subsection}{Motivació}
 \label{Motivacio}
 
-\paragraph{}A moltes persones que tenen devoció pel món de la robòtica, aquesta els hi ha vingut des de ben joves; aquest no és el meu cas. A mi m'agradava la informàtica. Essent un escolar vaig aprendre de forma autodidacta a programar en \textit{C++} i crear un servidor propi. Fet que ajudà, en arribar a la \textit{UPC}, a divertir-me amb assignatures relacionades amb programació, però em faltava veure reflectit el meu treball amb alguna utilitat física. No va ser fins que a l'assignatura de ``Projectes II'' vam controlar un mecanisme a través d'un microcontrolador \textit{Arduino}\footnote{\textit{Arduino} és la marca d'una família de microcontroladors.}, amb programació basada en \textit{Wiring} \cite{Arduino}, que vaig veure clar cap on volia enfocar el meu futur, la robòtica.
+A moltes persones que tenen devoció pel món de la robòtica, aquesta els hi ha vingut des de ben joves; aquest no és el meu cas. A mi m'agradava la informàtica. Essent un escolar vaig aprendre de forma autodidacta a programar en \textit{C++} i crear un servidor propi. Fet que ajudà, en arribar a la \textit{UPC}, a divertir-me amb assignatures relacionades amb programació, però em faltava veure reflectit el meu treball amb alguna utilitat física. No va ser fins que a l'assignatura de ``Projectes II'' vam controlar un mecanisme a través d'un microcontrolador \textit{Arduino}\footnote{\textit{Arduino} és la marca d'una família de microcontroladors.}, amb programació basada en \textit{Wiring} \cite{Arduino}, que vaig veure clar cap on volia enfocar el meu futur, la robòtica.
 
 D'aquesta motivació, que ha crescut poc a poc, n'ha sorgit el perquè de desenvolupar aquest \textit{TFG} (\textit{\textbf{T}reball \textbf{F}inal de \textbf{G}rau}). A més, a cada pas que he fet en el treball, com més he vist i entès la gran complexitat d'altres robots, com el \textit{Big Dog} de \textit{Boston Dinamics} o el \textit{NAO} d'\textit{Aldebaran Robotics}\footnote{En l'estat de l'art es dona una breu explicació d'aquests i altres robots.}, entre d'altres, més estímuls tenia per avançar i millorar.
 
@@ -162,7 +163,7 @@ Ara bé, deixant de banda les pròpies ganes de treballar en robòtica, també h
 \addcontentsline{toc}{subsection}{Requeriments previs}
 \label{Requeriments}
 
-\paragraph{}Per fer el seguiment del \textit{TFG} que es presenta, tot i que s'ha intentat donar explicació als conceptes que podrien ser més complicats d'entendre, és necessari disposar d'uns certs coneixements previs o nocions en \textit{ROS} (per \textit{\textbf{R}obot \textbf{O}perative \textbf{S}ystem})\footnote{S'explica detalladament en l'apartat \ref{ROS}.}, Control Automàtic, llenguatge de programació \textit{Python}, Mecànica i Xarxes de dades.
+Per fer el seguiment del \textit{TFG} que es presenta, tot i que s'ha intentat donar explicació als conceptes que podrien ser més complicats d'entendre, és necessari disposar d'uns certs coneixements previs o nocions en \textit{ROS} (per \textit{\textbf{R}obot \textbf{O}perative \textbf{S}ystem})\footnote{S'explica detalladament en l'apartat \ref{ROS}.}, Control Automàtic, llenguatge de programació \textit{Python}, Mecànica i Xarxes de dades.
 
 A banda del que s'ha esmentat anteriorment, per reproduir de nou l'experiència és molt recomanable llegir articles sobre aprenentatge de robots, tant per reforç, com utilitzant \textit{DMPs} (per \textit{\textbf{D}ynamic \textbf{M}ovement \textbf{P}rimitives}). Algunes devles referències més recomanades es poden trobar a l'apartat de Referències o Bibliografia.
 
@@ -173,7 +174,7 @@ Finalment, el més necessari de tot és tenir molta motivació i paciència, per
 \section{Introducció}
 \label{Introduccio}
 
-\paragraph{}Els robots són mecanismes programables i accionats per dos o més eixos amb cert grau d'autonomia, movent-se en el seu entorn, per realitzar les tasques previstes \cite{ISO_Robot}. Actualment, els robots s'utilitzen principalment a nivell industrial, per la realització d'accions de forma més exacte i barata o per treballs perillosos o repetitius. Ara bé, també existeix el cas de robots com l'AIBO, de Sony, entre d'altres robots, que poden ser utilitzats tant per entreteniment de l'usuari, com robot social o per la investigació o millora dels robots actuals.
+Els robots són mecanismes programables i accionats per dos o més eixos amb cert grau d'autonomia, movent-se en el seu entorn, per realitzar les tasques previstes \cite{ISO_Robot}. Actualment, els robots s'utilitzen principalment a nivell industrial, per la realització d'accions de forma més exacte i barata o per treballs perillosos o repetitius. Ara bé, també existeix el cas de robots com l'AIBO, de Sony, entre d'altres robots, que poden ser utilitzats tant per entreteniment de l'usuari, com robot social o per la investigació o millora dels robots actuals.
 
 Els estudis en robòtica es poden centrar tant en el \textit{hardware}, com en el \textit{software}. Tot i només enfocar-se en una de les dues branques, sempre es requereix de l'altre en més o menys proporció. El fet és que el dissenyar i fabricar el \textit{hardware} necessari s'emporta una gran partida del pressupost. Per això, en les investigacions que no compten amb grans pressuposts, com ara estudis universitaris, és comú l'ús de robots comercials en que es pot modificar el codi intern, com és el cas de l'AIBO.
 
@@ -184,7 +185,7 @@ A banda d'aquest robot, n'hi ha molts més que són utilitzats per dur a terme i
 \label{Objectius}
 
 %S'han de posar un objectius quantificables, de tal manera que el tribunal pugui valorar com de bé s'han aconseguit. Estil adaptar-se fins a certs graus de pendent de la plataforma, temps de resposta, implementar ROS, implementar DMPs, implementar aprenentatge per reforç, fer un model, utilitza sistemes de filtratge per l'entrada de dades de l'acceleròmetre, 
-\paragraph{}L'objectiu principal del present \textit{TFG} és l'optimització de l'adaptabilitat d'un robot quadrúpede, en aquest cas l'AIBO, a plans inclinats desconeguts pel robot. Per arribar a aquest objectiu s'han hagut de marcat uns objectius més concrets:
+L'objectiu principal del present \textit{TFG} és l'optimització de l'adaptabilitat d'un robot quadrúpede, en aquest cas l'AIBO, a plans inclinats desconeguts pel robot. Per arribar a aquest objectiu s'han hagut de marcat uns objectius més concrets:
 \begin{itemize}
 \item Dissenyar un entorn de treball complert que permeti que l'algorisme utilitzat pugui ser processat en l'ordinador i enviar la informació necessària de forma remota a l'AIBO. En aquest cas l'entorn de treball tal que permeti això és el \textit{ROS}.
 \item Utilització de l'algorisme més adequat, tenint en compte tant l'entorn del robot i ell mateix, com l'abast del treball. Per això s'haurà de fer un estudi dels diferents mètodes existents que podrien ser útils per l'objecte del treball.
@@ -224,11 +225,10 @@ A banda d'aquest robot, n'hi ha molts més que són utilitzats per dur a terme i
 
 %cercar articles o memories que utilitzin robots i que siguin sobre estabilitat tant sigui de quadrupedes, bipedes com de Zero Moment Point
 %També cercar sobre com tractar el tema del centre de gravetat (COG)
-%I també parlar de les referencies dels diferents Learnings
 
 %Diferents plataformes mobils
 
-\paragraph{}En la branca d'investigació sobre l'estabilitat en robots, tant bípedes, com quadrúpedes, hi ha multitud de tesis, treballs, articles, etc. Tots ells, centrant-se en un o altre aspecte com són: el punt de moment zero (\textit{ZMP}, per \textit{\textbf{Z}ero \textbf{M}oment \textbf{P}oint}), modelat de robots, aprenentatge supervisat, per reforç o \textit{DMP}, generador de patrons centrals (\textit{CPG}, per \textit{\textbf{C}entral \textbf{P}attern \textbf{G}enerator}), algorismes genètics (\textit{GA}, er \textit{\textbf{G}enetic \textbf{A}lgorithms})\footnote{La majoria d'aquests conceptes seran explicats al llarg d'aquest apartat.}, i molts altres.
+En la branca d'investigació sobre l'estabilitat en robots, tant bípedes, com quadrúpedes, hi ha multitud de tesis, treballs, articles, etc. Tots ells, centrant-se en un o altre aspecte com són: el punt de moment zero (\textit{ZMP}, per \textit{\textbf{Z}ero \textbf{M}oment \textbf{P}oint}), modelat de robots, aprenentatge supervisat, per reforç o \textit{DMP}, generador de patrons centrals (\textit{CPG}, per \textit{\textbf{C}entral \textbf{P}attern \textbf{G}enerator}), algorismes genètics (\textit{GA}, er \textit{\textbf{G}enetic \textbf{A}lgorithms})\footnote{La majoria d'aquests conceptes seran explicats al llarg d'aquest apartat.}, i molts altres.
 
 Tot seguit, s'exposa un conjunt d'antecedents, organitzat en diferents àmbits, importants tots ells tant per realitzar l'experiència, com per entendre els factors que han conduït a cadascuna de les decisions preses.
 
@@ -236,7 +236,7 @@ Tot seguit, s'exposa un conjunt d'antecedents, organitzat en diferents àmbits, 
 \subsubsection{Robot AIBO}
 \label{AIBO}
 
-\paragraph{}L'AIBO (\textit{\texttt{A}rtificial \texttt{I}ntelligence Ro\texttt{BO}t}) és un robot quadrúpede dissenyat i fabricat per Sony Corporation, amb aparença canina. El primer model, que va ser tret al mercat, fou el \textit{ERS-110} l'any 1999, a partir d'aquest, i després de tres generacions, el 2003 s'arribà al \textit{ERS-7}, molt més sofisticat que els seus predecessors, tot i que en el 2006 s'aturà la producció de la família AIBO. L'\textit{ERS-7} és el model que s'estudia i s'utilitza en el present treball.
+L'AIBO (\textit{\texttt{A}rtificial \texttt{I}ntelligence Ro\texttt{BO}t}) és un robot quadrúpede dissenyat i fabricat per Sony Corporation, amb aparença canina. El primer model, que va ser tret al mercat, fou el \textit{ERS-110} l'any 1999, a partir d'aquest, i després de tres generacions, el 2003 s'arribà al \textit{ERS-7}, molt més sofisticat que els seus predecessors, tot i que en el 2006 s'aturà la producció de la família AIBO. L'\textit{ERS-7} és el model que s'estudia i s'utilitza en el present treball.
 
 Aquest és considerat un robot autònom, per tant, és capaç d'extreure informació del seu entorn, funcionar per un període llarg sense la intervenció humana, moure alguna o totes les parts d'ell mateix dins d'un entorn de treball sense l'ajut d'un humà i, finalment, evitar situacions de perill per les persones, els bens o ell mateix, si no és per especificacions del propi disseny.
 
@@ -377,7 +377,7 @@ mouth     &    range=[-58.000000,-3.000000]    & unit=deg & Mouth\\
 \subsubsection{\textit{ROS}}
 \label{ROS}
 
-\paragraph{}\textit{\texttt{R}obot \texttt{O}perating \texttt{S}ystem} \cite{ROS} és un entorn de treball \textit{open-source} i flexible per la programació de robots. Les bases d'aquest projecte s'iniciaren en unes investigacions a Stanford el 2007, on es varen dur a terme diferents prototips d'entorns de treball per programari de robots, com ara \textit{\textbf{ST}anford \textbf{A}rtificial \textbf{I}ntelligence \textbf{R}obot} (\textit{STAIR}) o \textit{\textbf{P}ersonal \textbf{R}obotics} (\textit{PR}). Més endavant, \textit{Willow Garage}, una empresa inversora en robòtica, va proveir recursos per tal de millorar el concepte i permetre crear implementacions correctament testejades. Finalment, amb la col·laboració desinteressada d'incomptables investigadors, millorant el nucli de \textit{ROS} i les eines principals que proveeix, s'ha arribat al que és ara, una plataforma àmpliament utilitzada en les investigacions de robòtica.
+\textit{\texttt{R}obot \texttt{O}perating \texttt{S}ystem} \cite{ROS} és un entorn de treball \textit{open-source} i flexible per la programació de robots. Les bases d'aquest projecte s'iniciaren en unes investigacions a Stanford el 2007, on es varen dur a terme diferents prototips d'entorns de treball per programari de robots, com ara \textit{\textbf{ST}anford \textbf{A}rtificial \textbf{I}ntelligence \textbf{R}obot} (\textit{STAIR}) o \textit{\textbf{P}ersonal \textbf{R}obotics} (\textit{PR}). Més endavant, \textit{Willow Garage}, una empresa inversora en robòtica, va proveir recursos per tal de millorar el concepte i permetre crear implementacions correctament testejades. Finalment, amb la col·laboració desinteressada d'incomptables investigadors, millorant el nucli de \textit{ROS} i les eines principals que proveeix, s'ha arribat al que és ara, una plataforma àmpliament utilitzada en les investigacions de robòtica.
 
 En el moment de la redacció d'aquest treball, la versió més actual de \textit{ROS} és la \textit{ROS Hydro Medusa}, publicada el setembre de 2013, i pròximament es publicarà la \textit{ROS Indigo Igloo}. La Hydro està dissenyada especialment per Ubuntu 12.04 LTS (\textit{Precise}), tot i suportà també altres sistemes Linux, Mac OS X, Android i Windows en altres graus.
 
@@ -466,16 +466,14 @@ Com s'ha comentat breument en l'apartat anterior, \textit{ROS} és basa, en gran
 %http://docs.ros.org/api/control_msgs/html/action/FollowJointTrajectory.html
 %http://docs.ros.org/api/trajectory_msgs/html/msg/JointTrajectoryPoint.html
 
-%Fins ara no s'ha donat suport oficial a AIBO en ROS...
-%topics que té l'AIBO actualment
-%Ricardo Téllez
+
 
 
 \subsubsection{Robots}
 \label{Robots}
 
 %Afegit fotografies de cada un dels robots
-\paragraph{}Alguns dels robots sobre els que s'hi ha investigat, amb temàtiques relacionades amb el treball present són:
+Alguns dels robots sobre els que s'hi ha investigat, amb temàtiques relacionades amb el treball present són:
 \begin{description}
 \item[QRIO]
 \begin{minipage}[t]{0.94\linewidth}
@@ -532,7 +530,7 @@ A banda dels nombrats anteriorment, existeixen molts altres robots amb potes que
 \subsubsection{Modelat de robots}
 \label{Modelat-de-robots}
 
-\paragraph{}Un model d'un robot és un sistema virtual que representa de forma aproximada la cinemàtica i/o la dinàmica d'un robot, mitjançant formes geomètriques enllaçades entre elles amb una configuració determinada. Aquesta és la base d'un model, ara bé, se li poden afegir complements, com un aspecte visual més vistós, amb alguna textura o concretar quins són els actuadors o sensors, on situar-los, etc.
+Un model d'un robot és un sistema virtual que representa de forma aproximada la cinemàtica i/o la dinàmica d'un robot, mitjançant formes geomètriques enllaçades entre elles amb una configuració determinada. Aquesta és la base d'un model, ara bé, se li poden afegir complements, com un aspecte visual més vistós, amb alguna textura o concretar quins són els actuadors o sensors, on situar-los, etc.
 
 Durant molt temps, per utilitzar un robot es requeria d'un model. D'aquesta manera, l'autòmat podia saber en quina posició es trobava, en tot moment, i reaccionar de forma correcte. Si no es feia seguint aquest procediment, l'única opció era que el programador tingués en compte totes les diferents possibilitats de fallada i les corregís, sent aquesta un tasca molt complicada.  
 
@@ -558,7 +556,7 @@ Ara bé, existeixen tants tipus diferents de models, com també formes diferents
 
 \end{description}
 
-\paragraph{}Cadascun dels models té unes característiques que el defineixen, però aquestes delimiten els diferents modes d'aprenentatge que poden ser utilitzats per crear-los. Per tant, no tots els models poden ser creats a partir de qualsevol arquitectura d'aprenentatge. Aquest fet s'exemplifica a la Taula \ref{T_model-arquitectura}.
+Cadascun dels models té unes característiques que el defineixen, però aquestes delimiten els diferents modes d'aprenentatge que poden ser utilitzats per crear-los. Per tant, no tots els models poden ser creats a partir de qualsevol arquitectura d'aprenentatge. Aquest fet s'exemplifica a la Taula \ref{T_model-arquitectura}.
 
 \end{itemize}
 
@@ -634,7 +632,7 @@ Com s'ha mencionat, Webots\texttrademark inclou un model del Sony AIBO, dissenya
 
 \subsubsection{Aprenentatge supervisat \textit{(SL)}}
 
-\paragraph{}En l'aprenentatge supervisat (en estadística anomenat \textit{anàlisi clúster}), un agent extern presenta una sèrie de dades d'exemple o d'entrenament, que són prediccions correctes a fer en diferents situacions \cite{Kober2009}. A partir d'aquestes dades d'entrenament, s'ha d'extreure un model estadístic per tal que, en una situació desconeguda, s'esculli l'acció correcte. L'aprenentatge supervisat és, segons \cite{Cord2008}, la metodologia més important d'aprenentatge automàtic i amb molt pes en el processament de dades multimèdia.
+En l'aprenentatge supervisat (en estadística anomenat \textit{anàlisi clúster}), un agent extern presenta una sèrie de dades d'exemple o d'entrenament, que són prediccions correctes a fer en diferents situacions \cite{Kober2009}. A partir d'aquestes dades d'entrenament, s'ha d'extreure un model estadístic per tal que, en una situació desconeguda, s'esculli l'acció correcte. L'aprenentatge supervisat és, segons \cite{Cord2008}, la metodologia més important d'aprenentatge automàtic i amb molt pes en el processament de dades multimèdia.
 
 Les dades a estimar poden ser binàries, on s'escull si una dada desconeguda és d'un tipus (p. e. pertany a un grup o no), o numèriques, on s'utilitza la regressió per aproximar. Tant siguin unes o altres, les bases de l'aprenentatge supervisat són: (1) el model estadístic, (2) la funció de pèrdua i la d'error d'aproximació, i (3) procediment d'optimització \cite{Alpaydin2004}.
 
@@ -671,7 +669,7 @@ Sent $x_{t}$ la dada a classificar i $x_{i}$ l'exemple més pròxim. Després de
 \subsubsection{Aprenentatge per reforç \textit{(RL)}}
 \label{RL-estat-de-l'art}
 
-\paragraph{}En la robòtica, l'aprenentatge per reforç proveeix d'unes eines molt útils per tal de crear comportaments sofisticats i amb gran dificultat de disseny. Permet a un robot desenvolupar el seu propi comportament a base de prova i error. En aquest cas, el dissenyador, en lloc de donar unes dades per explícitament crear la solució al problema, tan sols proveeix una realimentació amb una funció objectiu de valors escalars que mesura la bondat de l'acció anterior. Per tant, un agent explora les possibles estratègies i després rep una recompensa per l'acció feta, intentant sempre maximitzar la recompensa acumulada durant el seu temps de vida \cite{Kober2009}. Però a diferència de l'aprenentatge supervisat, no es ``\textit{diu}"  quina acció hauria estat la millor a llarg plaç, a més de no haver d'explorar l'entorn, una altra diferència, en \textit{RL} el fet de les accions ser en temps real és molt influent, ja que és concurrent amb l'aprenentatge \cite{Kaelbling1996}. 
+En la robòtica, l'aprenentatge per reforç proveeix d'unes eines molt útils per tal de crear comportaments sofisticats i amb gran dificultat de disseny. Permet a un robot desenvolupar el seu propi comportament a base de prova i error. En aquest cas, el dissenyador, en lloc de donar unes dades per explícitament crear la solució al problema, tan sols proveeix una realimentació amb una funció objectiu de valors escalars que mesura la bondat de l'acció anterior. Per tant, un agent explora les possibles estratègies i després rep una recompensa per l'acció feta, intentant sempre maximitzar la recompensa acumulada durant el seu temps de vida \cite{Kober2009}. Però a diferència de l'aprenentatge supervisat, no es ``\textit{diu}"  quina acció hauria estat la millor a llarg plaç, a més de no haver d'explorar l'entorn, una altra diferència, en \textit{RL} el fet de les accions ser en temps real és molt influent, ja que és concurrent amb l'aprenentatge \cite{Kaelbling1996}. 
 
 Aquest agent i el seu entorn poden ser modelat com un estat\footnote{Un estat $s$ conté la informació necessària per descriure la situació actual i futures.}  $s\in S $ i una acció\footnote{Un estat del sistema es controlat o carregat per una acció $a$.}  $a \in A$. Una recompensa es donada a l'agent, per cadascuna de les accions que desenvolupa, en funció de l'estat i les observacions. L'objectiu de \textit{RL} és crear una política\footnote{Per política s'entén com en \cite{iec-dlc} ``\textit{Manera de conduir un afer.}''} $\pi$ que maximitza la recompensa acumulada escollint unes accions $a$ en determinats estats $s$.
 
@@ -718,7 +716,7 @@ Per altra banda, dur a terme experiments en el món físic és car, la comunicac
 \subsubsection{\textit{DMP} (\textit{\textbf{D}ynamic \textbf{M}oviment \textbf{P}rimitive})}
 \label{DMP-estat-de-l'art}
 
-\paragraph{}Les \textit{DMPs} representen un moviment a partir d'un conjunt d'equacions diferencials, on la dinàmica del propi sistema corregeix les pertorbacions que puguin aparèixer, és per això que són considerats sistemes robusts davant pertorbacions. A més, és molt fàcil modificar l'objectiu (o \textit{goal}) del moviment al estar presentat com equacions, ja que tan sols és modificar el paràmetre \textit{g} en l'equació . Aquesta robustesa i adaptabilitat que dona aquest tipus d'entorn de treball és molt favorable per millorar altres sistemes d'aprenentatge com és l'aprenentatge per demostració (\textit{learning from demostration} o \textit{LfD}) on a partir de certs exemples s'aprén el comportament.
+Les \textit{DMPs} representen un moviment a partir d'un conjunt d'equacions diferencials, on la dinàmica del propi sistema corregeix les pertorbacions que puguin aparèixer, és per això que són considerats sistemes robusts davant pertorbacions. A més, és molt fàcil modificar l'objectiu (o \textit{goal}) del moviment al estar presentat com equacions, ja que tan sols és modificar el paràmetre \textit{g} en l'equació . Aquesta robustesa i adaptabilitat que dona aquest tipus d'entorn de treball és molt favorable per millorar altres sistemes d'aprenentatge com és l'aprenentatge per demostració (\textit{learning from demostration} o \textit{LfD}) on a partir de certs exemples s'aprén el comportament.
 
 El \texttt{LfD} és podria estructurar en tres grans grups, segons la forma d'adquirir les dades de la demostració:
 \begin{description}
@@ -806,7 +804,7 @@ Els trets importants són que $g - x_0$ no multiplica a $f(s)$ i el terme $K(g -
 \subsubsection{\textbf{P}ath \textbf{I}ntegral \textbf{P}olicy \textbf{I}mprovement ($\mathrm{PI^2}$)}
 \label{PI2-estat-de-l'art}
 
-\paragraph{}L'algorisme $\mathrm{PI^2}$ \cite{Stulp2011} té com a principal objectiu polir el pesos $w_i$ (al llarg d'aquest apartat s'hi refereix com paràmetres $\theta_t$), per tal que es minimitzi la funció de cost \eqref{eq:PI2-cost-function} de la trajectòria $\tau_i$. Ara bé, una bona solució inicial, per aconseguir una convergència més ràpida, és l'extreta a partir del \texttt{LfD}, comentat en el punt anterior.
+L'algorisme $\mathrm{PI^2}$ \cite{Stulp2011} té com a principal objectiu polir el pesos $w_i$ (al llarg d'aquest apartat s'hi refereix com paràmetres $\theta_t$), per tal que es minimitzi la funció de cost \eqref{eq:PI2-cost-function} de la trajectòria $\tau_i$. Ara bé, una bona solució inicial, per aconseguir una convergència més ràpida, és l'extreta a partir del \texttt{LfD}, comentat en el punt anterior.
 
 \begin{equation}\label{eq:PI2-cost-function}
 J(\tau_i) = \phi_{t_N} + \int\limits_{t_i}^{t_N} (r_t + \frac{1}{2} \theta_t^T R \theta_t) \mathrm{d}t
@@ -875,14 +873,42 @@ Per poder dur a terme aquesta arquitectura es requereixen de dos tipus d'algoris
 \subsection{Comunicació mitjançant \textit{ROS}}
 \label{ROS-estudi-pre}
 
-%NO ES LA PRIMERA VEGADA, N'HI HA HAGUT D'ALTRES QUE HO HAN INTENTAT, NO A TRAVES D'URBI PERO PER ALTRES BANDES SI, mail de'n cecilio
+L'entorn de treball \textit{ROS} és una eina que està a l'ordre del dia en robòtica. Fins aquest moment, no existia la possibilitat de comunicació del robot AIBO a través de \textit{ROS}, tot i que han existit intents, però no serveixen pel nostre cas\footnote{Per una banda, el cas del \texttt{roseus package} \cite{Okada} que utilitza l'entorn de treball \texttt{EusLisp}, no ha tingut gaire èxit. Per l'altra banda, s'ha enfocat des de perspectives diferents, a les establertes en aquest treball, com en el cas de \cite{Rofer2013}.}. Per això, tot seguint una iniciativa del Departament d'Automàtica de la Universitat Politècnica de Catalunya, el doctor Ricardo Téllez va fer-se-la seva i va començar a crear un primer \texttt{package}. Des del Departament, i a través de diversos TFGs, s'ha promogut la continuació d'aquest \texttt{package} per permetre que l'AIBO pugui treballar amb \textit{ROS}. Per això, dos Projecte de Final de Carrera i aquest mateix Treball Final de Grau, han millorat de forma conjunta aquesta eina. 
 
-\paragraph{}L'entorn de treball \textit{ROS} és una eina que està a l'ordre del dia en robòtica. Fins aquest moment, no existia la possibilitat de comunicació del robot AIBO a través de \textit{ROS}, tot i que han existit intents, però no serveixen pel nostre cas\footnote{Per una banda, el cas del \texttt{roseus package} \cite{Okada} que utilitza l'entorn de treball \texttt{EusLisp}, no ha tingut gaire èxit. Per l'altra banda, s'ha enfocat des de perspectives diferents, a les establertes en aquest treball, com en el cas de \cite{Rofer2013}.}. Per això, tot seguint una iniciativa del Departament d'Automàtica de la Universitat Politècnica de Catalunya, el doctor Ricardo Téllez va fer-se-la seva i va començar a crear un primer \texttt{package}. Des del Departament, i a través de diversos TFGs, s'ha promogut la continuació d'aquest \texttt{package} per permetre que l'AIBO pugui treballar amb \textit{ROS}. Per això, dos Projecte de Final de Carrera i aquest mateix Treball Final de Grau, han millorat de forma conjunta aquesta eina. Aquest ara permet la transferència de video i so, el control de les articulacions del robot, s'ha optimitzat la freqüència de treball, etc. 
+Gracies a aquests ara permet la transferència de video i so, el control de les articulacions del robot, s'ha optimitzat la freqüència de treball, etc. Actualment la connexió amb AIBO comporta la creació de sis \texttt{topics} on aquest publica i dos al que està com a subscriptor, la llista és:
+
+\begin{itemize}
+
+\item Publicador en els \texttt{topics}:
+\begin{description}
+
+\item[/aibo/infrared] on dona la informació de cada sensor d'infrarojos (\texttt{distanceChest}, \texttt{distanceNear}, \texttt{distanceFar}), la distancia que ha calculat fins un obstacle en cadascun.
+\item[/aibo/image] en aquest \texttt{topic} publica les imatges de la càmara frontal de l'AIBO, en format \texttt{sensor$\_$msgs::Image}.
+\item[/aibo/joints] en aquest \texttt{topic} es publiquen les posicions de cadascuna de les articulacions en unitats de graus.
+\item[/aibo/accel] les acceleracions de l'acceleròmetre que porta incorporat l'AIBO en unitats de $m/s^2$.
+\item[/aibo/paws] els sensors de les potes són binàris, per tant els valors d'aquest \texttt{topic} varien entre 1 i 0 segons si estan presionats o no.
+\item[/aibo/touch] en aquest cas els sensors són de pressió, excepte el quint valor que també és binàri.
+
+%MIRAR SI ES CERT QUE ÉS ES QUINT VALOR
+
+\end{description}
+
+\item Subscriptor dels \texttt{topics}:
+
+\begin{description}
+
+\item[/aibo/sound] en aquest \texttt{topic} s'hi publiquen els sons que desitgen ser reproduïts per l'AIBO.
+\item[/aibo/subJoints] quan es desitja que l'AIBO prengui una determinada posició, definida per l'estat de les articulacions, s'ha de publicar en aquest \texttt{topic} un missatge de tipus \texttt{aibo$\_$server::Joints}\footnote{Aquest tipus de missatge està inclòs en el \texttt{package} \texttt{aibo$\_$server}.} amb les unitats de graus restringit dins el rang determinat en la taula \ref{Taula-rangs-articulacions}.
+
+\end{description}
+
+
+\end{itemize}
 
 
 \subsubsection{Entre l'AIBO i \textit{ROS}}
 
-\paragraph{}El funcionament actual de la comunicació entre AIBO i \textit{ROS} es basa en Urbi, ja que la informació que es publica en els \texttt{topics} de \textit{ROS}, en realitat, són les dades extretes d'Urbi 1.5\footnote{S'ha de remarcar el fet que és l'Urbi 1.5 perquè per a versions posteriors ja existeix la comunicació entre Urbi i \textit{ROS}.}. De la mateixa manera, les accions de control que són publicades a \textit{ROS} s'interpreten i es transformen en comandes d'Urbi. Aquests conceptes s'expliquen a continuació en detall i es veuen il·lustrats en la Figura \ref{fig:Comunicacio-ROS-Urbi-AIBO}. Aquests dos tipus de tasques es desenvolupen en paral·lel per dos clients d'Urbi separats: (1) client publicador, és aquell que introdueix les dades de l'AIBO en els \texttt{topics}; (2) client subscriptor, on la seva funció és recollir el que s'ha publicat en el \texttt{topic} de comandes.
+El funcionament actual de la comunicació entre AIBO i \textit{ROS} es basa en Urbi, ja que la informació que es publica en els \texttt{topics} de \textit{ROS}, en realitat, són les dades extretes d'Urbi 1.5\footnote{S'ha de remarcar el fet que és l'Urbi 1.5 perquè per a versions posteriors ja existeix la comunicació entre Urbi i \textit{ROS}.}. De la mateixa manera, les accions de control que són publicades a \textit{ROS} s'interpreten i es transformen en comandes d'Urbi. Aquests conceptes s'expliquen a continuació en detall i es veuen il·lustrats en la Figura \ref{fig:Comunicacio-ROS-Urbi-AIBO}. Aquests dos tipus de tasques es desenvolupen en paral·lel per dos clients d'Urbi separats: (1) client publicador, és aquell que introdueix les dades de l'AIBO en els \texttt{topics}; (2) client subscriptor, on la seva funció és recollir el que s'ha publicat en el \texttt{topic} de comandes.
 
 \begin{description}
 
@@ -911,7 +937,7 @@ Per poder dur a terme aquesta arquitectura es requereixen de dos tipus d'algoris
 
 \subsubsection{Entre l'algorisme de control i \textit{ROS}}
 
-\paragraph{}En parlar d'algorisme de control es refereix al codi que processa els càlculs que es requereixen per dur a terme tot el procés d'estabilització. Aquest codi és executat en un ordinador o servidor, on està instal·lat tot el \textit{software} requerit\footnote{El procés d'instal·lació està explicat en els Annexos.}. 
+En parlar d'algorisme de control es refereix al codi que processa els càlculs que es requereixen per dur a terme tot el procés d'estabilització. Aquest codi és executat en un ordinador o servidor, on està instal·lat tot el \textit{software} requerit\footnote{El procés d'instal·lació està explicat en els Annexos.}. 
 
 L'algorisme de control només depèn de \textit{ROS} per recollir la informació del conjunt acceleròmetre-giroscopi i per executar el moviment de les articulacions de l'AIBO. Per tant, el \texttt{node} d'execució és tant subscriptor del \texttt{topic} del sensor, com, alhora, és publicador del \texttt{topic} de les comandes per les articulacions.
 
@@ -919,10 +945,10 @@ L'algorisme de control només depèn de \textit{ROS} per recollir la informació
 \subsubsection{Entre l'Arduino i \textit{ROS}}
 \label{comunicacio-ROS-Arduino}
 
-%POSAR EN ANNEXOS COM INSTAL·LAR I EXECUTAR EL ROSSERIAL
+%POSAR EN ANNEXOS COM INSTAL·LAR I EXECUTAR EL ROSSERIAL o posar-ho en apartat de funcionament
 %\footnote{En els Annexos està explicada la instal·lació i l'execució}.
 
-\paragraph{}El conjunt està connectat a l'Arduino, per tant, ha de ser aquest el que creï el \texttt{topic} on es publica la informació que ha de transmetre per \textit{ROS} a l'algorisme de control. A tal efecte existeix un \texttt{package} que permet aconseguir-ho, \texttt{rosserial}. A banda d'haver-se d'instal·lar i executar quan és el cas, també es requereix que en el codi es carreguin la llibreria \texttt{ros.h} i les corresponents al tipus de \texttt{message} al que s'hagi de subscriure o de publicar. Aquestes llibreries, juntament amb les variables que es requereixen com el \texttt{node}, el publicador i el \texttt{message}, ocupen una gran quantitat de memòria del microcontrolador i pot arribar a donar algun que altre problema, com s'explica més endavant en l'apartat \ref{Calcul-posicio-inclinacio}. 
+El conjunt està connectat a l'Arduino, per tant, ha de ser aquest el que creï el \texttt{topic} on es publica la informació que ha de transmetre per \textit{ROS} a l'algorisme de control. A tal efecte existeix un \texttt{package} que permet aconseguir-ho, \texttt{rosserial}. A banda d'haver-se d'instal·lar i executar quan és el cas, també es requereix que en el codi es carreguin la llibreria \texttt{ros.h} i les corresponents al tipus de \texttt{message} al que s'hagi de subscriure o de publicar. Aquestes llibreries, juntament amb les variables que es requereixen com el \texttt{node}, el publicador i el \texttt{message}, ocupen una gran quantitat de memòria del microcontrolador i pot arribar a donar algun que altre problema, com s'explica més endavant en l'apartat \ref{Calcul-posicio-inclinacio}. 
 
 %Urbi és amb que es comunica ROS i que aquí s'ha començat a utilitzar a partir del codi que es tenia de Ricardo Téllez, pero que s'ha modificat ja que inicialment no funcionava i quan van arribar a funcionar totes ses parts s'ha mirat d'optimitzar la frequencia per tal que funcioni millor (sense aturades pero al maxim)
 %Com està es tema de es codi, que fa i qui hi ha treballat amb cada part (sobretot diego, menys amb la part de camara que ha fet la Lucia), som un grup de treball que intenta que es tornin a reutilitzar els Aibos
@@ -931,7 +957,7 @@ L'algorisme de control només depèn de \textit{ROS} per recollir la informació
 \subsection{Estabilitat}
 \label{Estabilitat}
 
-\paragraph{}El concepte d'estabilitat és molt genèric, s'ha definit de múltiples maneres al llarg del temps, sense mai tenir una única interpretació. Dins el concepte d'estabilitat es pot diferenciar entre dues:
+El concepte d'estabilitat és molt genèric, s'ha definit de múltiples maneres al llarg del temps, sense mai tenir una única interpretació. Dins el concepte d'estabilitat es pot diferenciar entre dues:
 \begin{description}
 
 \item[Estàtica] és aquella que assumeix que la projecció vertical del CdG està, en tot moment, dins el polígon d'estabilitat\footnote{El polígon d'estabilitat esta definit pels punts de suport del robot.} amb un marge d'estabilitat\footnote{El marge d'estabilitat assegura que per qualsevol velocitat que el robot pot arribar, no caurà degut al seu propi moment \cite{Hugel1999}.} adequat \cite{Hugel1999}.
@@ -953,19 +979,19 @@ El fet d'estudiar l'estabilitat dinàmica es sortiria de l'abast d'aquest trebal
 \subsection{Algorismes de resposta davant pertorbacions}
 \label{Algorismes}
 
-\paragraph{}En la robòtica, com en qualsevol àmbit, per un mateix problema poden ser utilitzades infinitat de solucions. Ara bé, el tret característic de l'enginyeria és que d'entre la multitud de possibilitats, s'esculli la més òptima segons les condicions del moment. Abans d'optar per una opció, s'ha de tenir una idea clara del que aporta cadascuna i observar com s'adapta a la problemàtica actual.
+En la robòtica, com en qualsevol àmbit, per un mateix problema poden ser utilitzades infinitat de solucions. Ara bé, el tret característic de l'enginyeria és que d'entre la multitud de possibilitats, s'esculli la més òptima segons les condicions del moment. Abans d'optar per una opció, s'ha de tenir una idea clara del que aporta cadascuna i observar com s'adapta a la problemàtica actual.
 
 En l'estat de l'art, s'han esmentat algunes de les possibilitats per dur a terme els objectius fixats inicialment. Aquestes opcions han estat explicades anteriorment, amb una breu descripció i trets característics que podrien ser d'interès pel nostre cas. A continuació, s'exposa com cadascuna podria adaptar-se al problema, mencionant els seus avantatges i inconvenients.
 
 \subsubsection{Model del robot}
 
-\paragraph{}Una de les possibilitats podria ser la creació d'un model del l'AIBO. D'aquesta forma davant una pertorbació, com és el canvi d'inclinació de la plataforma, es podrien saber les accions de control que portarien el robot a l'estat desitjat.
+Una de les possibilitats podria ser la creació d'un model del l'AIBO. D'aquesta forma davant una pertorbació, com és el canvi d'inclinació de la plataforma, es podrien saber les accions de control que portarien el robot a l'estat desitjat.
 
 A banda de beneficiar-se de la cinemàtica inversa\footnote{Tècnica permet determinar el moviment d'unes articulacions per portar el cos a una posició concreta}, un model permetria aplicar els algorismes, de forma virtual, en un simulador. L'algorisme simulat donaria una solució, que podria servir com a punt de partida per aplicar-ho al model físic, així la probabilitat de provocar algun risc seria molt més baixa.
 
 \subsubsection{Aprenentatge supervisat}
 
-\paragraph{}Per altra banda, per no continuar amb la forma típica de controlar els robots com és el fer un model, es podria utilitzar l'aprenentatge supervisat. Per tant, a partir d'un conjunt de mostres d'exemple que utilitzi com a variables explicatives l'estat del robot i com a resposta la posició final de les articulacions. Com estat del robot s'hauria d'interpretar com el conjunt de posicions de les articulacions i inclinacions, en l'eix x i l'eix y, actuals. S'han d'utilitzar tant posicions com inclinacions, ja que sinó un mateix estat tindria més d'una solució possible.
+Per altra banda, per no continuar amb la forma típica de controlar els robots com és el fer un model, es podria utilitzar l'aprenentatge supervisat. Per tant, a partir d'un conjunt de mostres d'exemple que utilitzi com a variables explicatives l'estat del robot i com a resposta la posició final de les articulacions. Com estat del robot s'hauria d'interpretar com el conjunt de posicions de les articulacions i inclinacions, en l'eix x i l'eix y, actuals. S'han d'utilitzar tant posicions com inclinacions, ja que sinó un mateix estat tindria més d'una solució possible.
 
 Es cert que si s'aconsegueix determinar de forma correcte l'espai de solucions, aquest model podria ser molt útil. Ara bé, hi ha cert inconvenients a l'hora de crear les mostres d'exemple segons \cite{Alpaydin2004}:
 
@@ -982,7 +1008,7 @@ Per la pròpia motivació que es té en el treball de voler aprendre nous coneix
 
 \subsubsection{Aprenentatge per reforç}
 
-\paragraph{}D'entre les possibilitats que s'han plantejat fins aquí en aquest apartat, aquesta és la que més ha atret. Això és degut a que és una eina molt potent, però amb una lògica interna mitjanament simple. S'hauria de plantejar el mètode que més s'adapti al cas, i llavors crear la funció a minimitzar o maximitzar per tal de dur a terme la tasca d'estabilitat.
+D'entre les possibilitats que s'han plantejat fins aquí en aquest apartat, aquesta és la que més ha atret. Això és degut a que és una eina molt potent, però amb una lògica interna mitjanament simple. S'hauria de plantejar el mètode que més s'adapti al cas, i llavors crear la funció a minimitzar o maximitzar per tal de dur a terme la tasca d'estabilitat.
 
 En aquest treball, no es té un model del robot prou acurat, per tant, es requereix d'un algorisme apta per ser utilitzat sense model. D'entre els possibles, s'escolliria el \texttt{Q-learning}, ja que és del que es disposa de més informació i, a més, l'algorisme no és molt difícil d'implementar. El \texttt{Q-learning} es basa en augmentar o disminuir la probabilitat d'una acció en un estat concret, segons el \texttt{reward} que s'ha concedit quan s'ha fet aquesta acció en aquell estat en un instant del passat\footnote{Per tant, en tornar al mateix estat hi ha més probabilitats de fer l'acció correcte, o com a mínim, menys probabilitat d'equivocar-se de nou.}.
 
@@ -999,7 +1025,7 @@ Ara bé, tot i poder-se dur a terme seguint aquest procediment, és creu més co
 \subsubsection{\textit{DMP}}
 \label{DMP-estudis-preliminars}
 
-\paragraph{}L'algorisme de \textit{DMP} és el que s'adapta millor a la situació, ja que està dissenyat per tractar sistemes dinàmics, com és el cas. A més, té una gran robustesa davant pertorbacions, que és el que justament es necessita, considerant que el moviment de la plataforma és una pertorbació. Per altra banda, s'adapta perfectament a noves situacions, com pot ser un inici diferent al original i/o acabar en una posició que difereixi de la posició final primera.
+L'algorisme de \textit{DMP} és el que s'adapta millor a la situació, ja que està dissenyat per tractar sistemes dinàmics, com és el cas. A més, té una gran robustesa davant pertorbacions, que és el que justament es necessita, considerant que el moviment de la plataforma és una pertorbació. Per altra banda, s'adapta perfectament a noves situacions, com pot ser un inici diferent al original i/o acabar en una posició que difereixi de la posició final primera.
 
 El robot consta de diferents articulacions, cadascuna afecta d'una o altre manera el moviment del conjunt del robot. Per implementar l'algorisme, s'ha de crear una \textit{DMP} per cadascuna de les articulacions, per tant el procés d'aprenentatge s'ha de repetir tants cops com nombre juntures. En la majoria de les explicacions següents és refereix en l'aprenentatge d'una individualment, per les altres seria el mateix procés.
 
@@ -1011,7 +1037,7 @@ El primer pas que s'ha de fer, per dur a terme la DMP, és tenir un moviment ori
 Havent escollit el mètode per donar el moviment original, s'ha de saber com ha de ser aquest. Un tipus de trajectòria molt utilitzat és la de mínim \textit{jerk}\footnote{\textit{Jerk} és la derivada de l'acceleració}. Aquesta és una trajectòria suavitzada calculada a partir d'una posició inicial, final i el temps requerit per arriba-hi, minimitzant el \textit{jerk}. Es deixen els detalls d'aquest tipus de trajectòria per \cite{Shadmehr2004}.
 
 \vspace{20pt}
-\textbf{Pesos de la funció $f(s)$}
+\textbf{Pesos de la funció \textit{f(s)}}
 
 Un cop es té la trajectòria, a partir d'aquesta es poden extreure els pesos $w_i$ aproximant mínims quadrats amb gaussianes i, per tant, la funció no lineal $f(s)$ queda definida amb una primera solució, figura \ref{fig:LdF-trajectories}. Amb tan sols aquesta primera solució és factible el dur a terme les \textit{DMPs} de forma correcta. Ara bé, en el treball és desitja que s'arribi a la posició de màxima estabilitat de la forma més precisa. Per això, s'han de poder modificar els pesos $w_i$ i el $goals$ de les articulacions, de tal manera que la posició final sigui l'adequada. Una bona opció és l'algorisme $\mathrm{PI^2}$, que et permet millorar tan els pesos, com els $goals$ depenent de paràmetres externs a la dinàmic del sistema, com podria ser el desplaçament del CdG o la inclinació. 
 \begin{figure}[tb]
@@ -1021,53 +1047,101 @@ Un cop es té la trajectòria, a partir d'aquesta es poden extreure els pesos $w
 \label{fig:LdF-trajectories}
 \end{figure}
 
-%Explicar que és i despres dir quan la combinacio amb PI² que el que provoca es una unió entre DMP i aprenentatge per reforç
-
-%\subsubsection{Affordance}
-%Affordance: Mes o menys es podria entendre com els sensors i actuaduadors serien moduls neuronals que envien informació ja filtrada als altres moduls neuronals de tal manera que vagi enfocat a fer una tasca determinada
-
 \subsubsection{Elecció final}
-\paragraph{}En conclusió, el mètode utilitzat és la \textit{DMP} conjuntament amb l'algorisme $\mathrm{PI^2}$. Per una banda, la \textit{DMP} dona una solució inicial bastant encertada\footnote{La bondat d'aquesta solució depèn de la qualitat del $goal$ per les articulacions que s'ha estimat.}. Per l'altra banda, el $\mathrm{PI^2}$ millora tant els pesos com els $goals$ de les articulacions, depenent dels paràmetres externs com són el desplaçament del CdG o la inclinació del robot.
+En conclusió, el mètode utilitzat és la \textit{DMP} conjuntament amb l'algorisme $\mathrm{PI^2}$. Per una banda, la \textit{DMP} dona una solució inicial bastant encertada\footnote{La bondat d'aquesta solució depèn de la qualitat del $goal$ per les articulacions que s'ha estimat.}. Per l'altra banda, el $\mathrm{PI^2}$ millora tant els pesos com els $goals$ de les articulacions, depenent dels paràmetres externs com són el desplaçament del CdG o la inclinació del robot.
 
-%Explicar que es finalment s'escull per les DMPs juntament amb PI² que donarà la part de reinforcement learning que es necessita per tal de poder dur a terme el treball de la forma més adient possible, ja que aquesta part corregirà l'error que comet el goal de la DMP.
 
 \subsection{Codis amb \textit{DMPs} implementades}
 \label{codis-amb-DMPs-implementades}
 
-\paragraph{}La creació de l'algorisme de \textit{DMPs} és un fet que no troba dins l'abast del treball, degut a la gran complexitat d'aquest. Està basat en equacions diferencials, canvis de variables, ús de Gaussianes o Fourier (segons la implementació), aproximacions per mínims quadrats, etc. Per una banda, estaria la dificultat de crear el codi, però més complicada és el treball que porta el depurar-lo. Per això, s'ha optat per cercar codis que portin implementades les \textit{DMPs}, d'entre els que s'han trobat només s'han plantejat els dos que es troben a continuació perquè són uns dels que utilitzen la \textit{DMP} modificada que s'ha plantejat en l'apartat \ref{DMP-estat-de-l'art} de l'estat de l'art.
-%Es molt complex el fer el codi per implementar les DMPs ja que són un seguit d'equacions diferencials amb transformacions de variables, us de Gaussianes, etc.
-%Per això s'implementa a partir de codis ja existents que funcionen, pero adaptant-lo al cas de treball.
+La creació de l'algorisme de \textit{DMPs} és un fet que no troba dins l'abast del treball, degut a la gran complexitat d'aquest. Està basat en equacions diferencials, canvis de variables, ús de Gaussianes o Fourier (segons la implementació), aproximacions per mínims quadrats, etc. Per una banda, estaria la dificultat de crear el codi, però més complicada és el treball que porta el depurar-lo. Per això, s'ha optat per cercar codis que portin implementades les \textit{DMPs}, d'entre els que s'han trobat només s'han plantejat els dos que es troben a continuació perquè són uns dels que utilitzen la \textit{DMP} modificada que s'ha plantejat en l'apartat \ref{DMP-estat-de-l'art} de l'estat de l'art.
+
 \subsubsection{\textit{DMPs} de Scott Niekum}
 
-\paragraph{}El package creat per Scott Niekum està basat en l'article \cite{Pastor2009}. Inicialment, s'ha optat per aquest codi perquè és senzill i útil, figura \ref{fig:diagrama-sniekum}. S'ha estudiat el seu funcionament, on a diferència de l'algorisme explicat en l'apartat \ref{DMP-estat-de-l'art}, aquest l'aproximació es fa amb $Fourier$, en lloc d'utilitzar $gaussianes$. Aquest codi crea les \textit{DMPs} sense problemes, com s'ha demostrat en \cite{Pfeiffer2014}, però té el problema que no porta implementat cap tipus d'algorisme de millora de la política a partir de paràmetres externs a la pròpia dinàmica del sistema. Per això, s'ha preferit utilitzar el \texttt{package} que s'explica a continuació.
+El package creat per Scott Niekum està basat en l'article \cite{Pastor2009}. Inicialment, s'ha optat per aquest codi perquè és senzill i útil, figura \ref{fig:diagrama-sniekum}. S'ha estudiat el seu funcionament, on a diferència de l'algorisme explicat en l'apartat \ref{DMP-estat-de-l'art}, aquest l'aproximació es fa amb $Fourier$, en lloc d'utilitzar $gaussianes$. D'aquest codi, se'n poden diferenciar dues grans parts: (1) l'aprenentatge dels pesos a partir de la trajectòria donada, (2) el càlcul de les accions de control del robot, com són posicions i velocitats suposades les articulacions en cada instant.
 
-\begin{figure}[tb]
+\vspace{20pt}
+\textbf{Aprenentatge dels pesos}
+
+A l'hora de fer l'aprenentatge es prenen un seguit de $m$ mostres de la trajectòria, d'on de cada trajectòria $j$ s'extreu la posició $x_j$ i velocitat $v_j$ en l'instant $t_j$. A partir d'aquestes variables es calcula la $f_{target}(s_j)$ en \eqref{eq:f(s)-segons-trajectoria} que és el valor de $f(s_j)$ per dur a terme la mateixa trajectòria que la d'exemple. El valor de $s_j$, calculat en \eqref{eq:s-donat-temps}, sorgeix de solucionar l'equació diferencial \eqref{eq:2-canonical-system}. Per altra banda, en aquest codi s'aproxima amb \textit{Fourier} en base cosinus \eqref{eq:psi-scott-niekum}. 
+
+\begin{align}
+s_j &= exp(-\frac{\alpha}{\tau}  t_j)\label{eq:s-donat-temps}\\
+f_{target}(s_j) &= \dfrac{\tau \dot{v_j} + D v_j}{K} - (g - x_j) + (g - x_0)s_j \label{eq:f(s)-segons-trajectoria} \\
+\psi_i(s_j) &= \cos(\pi n s_j)\label{eq:psi-scott-niekum}
+\end{align}
+
+L'aproximació és per mínims quadrats, prenent les matrius de l'equació \eqref{eq:conjunt-matrius-pesos} per tal d'extreure els valors de $w_i$. Aquests pesos es calculen resolent el sistema matricial \eqref{eq:aproximacio-minims-quadrats}.
+
+\begin{equation}
+A_{m,n} = \begin{pmatrix}
+  \psi_1(s_1) & \psi_2(s_1) & \cdots & \psi_n(s_1) \\
+  \psi_1(s_2) & \psi_2(s_2) & \cdots & \psi_n(s_2) \\
+  \vdots  & \vdots  & \ddots & \vdots  \\
+  \psi_1(s_m) & \psi_2(s_m) & \cdots & \psi_n(s_m)
+\end{pmatrix}
+~
+W_m = \begin{pmatrix}
+  w_1\\
+  w_2\\
+  \vdots \\
+  w_m
+\end{pmatrix}
+~
+Y_m = \begin{pmatrix}
+  f(s_1)\\
+  f(s_2)\\
+  \vdots \\
+  f(s_m)
+\end{pmatrix}
+\label{eq:conjunt-matrius-pesos}
+\end{equation}
+
+\begin{equation}
+(A_{m,n}^T A_{m,n}) W_m = A_{m,n}^T Y_m
+\label{eq:aproximacio-minims-quadrats}
+\end{equation}
+
+\vspace{20pt}
+\textbf{Càlcul de les accions de control}
+
+A l'hora de dur a terme el control del robot, s'han d'utilitzar els pesos $w_i$ calculats anteriorment i tan sols depenent del valor de $s$ de l'equació \eqref{eq:2-canonical-system} i del \textit{transformation system} de les \textit{DMPs} expressat per les equacions \eqref{eq:2-tau-v-dot-DMP-modified} i \eqref{eq:2-tau-x-dot=v}.
+
+\begin{align}
+\tau \dot{v} &= K(g - x) - Dv - K(g - x_0)s + K f(s)\label{eq:2-tau-v-dot-DMP-modified}\\
+\tau \dot{x} &= v\label{eq:2-tau-x-dot=v}\\
+\tau \dot{s} &= - \alpha s \label{eq:2-canonical-system}
+\end{align}
+
+
+Aquest codi crea les \textit{DMPs} sense problemes, com s'ha es veu en \cite{Pfeiffer2014} que també l'utilitza. Ara bé, té el problema que no porta implementat cap tipus d'algorisme de millora de la política a partir de paràmetres externs a la pròpia dinàmica del sistema. Per això, s'ha preferit utilitzar el \texttt{package} que s'explica a continuació.
+
+\begin{figure}[bt]
 \centering
 \includegraphics[width=0.95\textwidth]{Imatges/diagrama-sniekum.pdf}
 \caption[Diagrama fluxos del codi de Scott Niekum]{Diagrama de fluxos del suposat funcionament en aquest cas del codi de Scott Niekum.}
 \label{fig:diagrama-sniekum}
 \end{figure}
 
-%Prenen com a codi original el de les dmps del package de ROS de DMP, creat per ell mateix, i l'implementa en robots en aquest package. Esta basat en el document ICRA2009 de Peter Pastor http://www-clmc.usc.edu/publications/P/pastor-ICRA2009.pdf
-%Es sencill i útil, va directe al gra, ara té el problema que no té implementat per posar-hi aprenentatge per reforç, la qual cosa és molt important per aquest projecte. Inicialment es va estudiar a fons el funcionament d'aquest codi i observar com es podria arribar a implementar en el cas actual, finalment es va veure que amb aquest codi no es podia implementar o seria complicat de posar l'algorisme de PI².
 
 \subsubsection{Package complert del robot PR2 del \textit{USC-CLMC}}
 \label{Package-USC-CLMC}
 
-\paragraph{}A continuació es presenta un conjunt de  \texttt{packages} públics, es poden trobar en aquesta web \cite{USC-CLMC-package} del \textit{USC-CLMC} (\textit{\textbf{C}omputational \textbf{L}earning and \textbf{M}otor \textbf{C}ontrol \textbf{L}ab at the \textbf{U}niversity of \textbf{S}outhern \textbf{C}alifornia}). Aquests permeten l'ús de les DMPs amb l'algorisme $\mathrm{PI^2}$, en el robot PR2 de Willow Garage \cite{Bohren2011}, incloent el control en temps real per interfície gràfica, l'ús de percepció auditiva, etc. Per tant, ha hagut de ser adaptat al cas del treball, enfocat per l'AIBO i amb molts menys complements. Per fer-ho s'han eliminat molts dels \texttt{packages} que s'hi inclouen, perquè no s'han d'utilitzar. A més, s'ha hagut de crear un codi d'execució, perquè realment el \texttt{package} és la base sobre la que pot funciona l'algorisme, però es necessita un codi que l'engegui. 
+A continuació es presenta un conjunt de  \texttt{packages} públics, es poden trobar en aquesta web \cite{USC-CLMC-package} del \textit{USC-CLMC} (\textit{\textbf{C}omputational \textbf{L}earning and \textbf{M}otor \textbf{C}ontrol \textbf{L}ab at the \textbf{U}niversity of \textbf{S}outhern \textbf{C}alifornia}). Aquests permeten l'ús de les DMPs amb l'algorisme $\mathrm{PI^2}$, en el robot PR2 de Willow Garage \cite{Bohren2011}, incloent el control en temps real per interfície gràfica, l'ús de percepció auditiva, etc. Per tant, ha hagut de ser adaptat al cas del treball, enfocat per l'AIBO, amb molts menys complements. Per fer-ho, s'han eliminat molts dels \texttt{packages} que s'hi inclouen, perquè no s'han d'utilitzar. A més, s'ha hagut de crear un codi d'execució, perquè realment el \texttt{package} és la base sobre la que pot funciona l'algorisme, però es necessita un codi que l'engegui. 
 
-El fet d'eliminar els \texttt{package} pot semblar una tasca fàcil, però al darrera hi ha hagut un gran treball d'entendre un conjunt de codis, creats per altres persones i de tal magnitud. Per altra banda, a mesura que s'ha avançat en el coneixement del conjunt del \texttt{package} i en la creació del codi d'execució, s'ha anat modificant el conjunt per permetre el funcionament global. En aquest apartat, inicialment s'explica els trets més importants dels \texttt{packages} que finalment s'han utilitzat, i cap el final s'esmenten alguns dels canvis respecte el codi original i el perquè d'aquests.
+El fet d'eliminar els \texttt{package} pot semblar una tasca fàcil, però al darrera hi ha hagut un gran treball d'entendre un conjunt de codis, creats per altres persones i, a més, de gran complexitat\footnote{Es considera de gran complexitat tant per la grandària, com per estar pensat per usuaris de coneixements avançats en el llenguatge de programació \textit{C++}.}. Per altra banda, a mesura que s'ha avançat en el coneixement del conjunt del \texttt{package} i en la creació del codi d'execució, s'ha anat modificant el conjunt per permetre el funcionament global. En aquest apartat, inicialment s'explica els trets més importants dels \texttt{packages} que finalment s'han utilitzat, i cap el final s'esmenten alguns dels canvis respecte el codi original i el perquè d'aquests.
 
 %SI ES FINAL NO ES DIU ES PERQUE AÇO S'HAURA DE MODIFICAR
 
 \vspace{20pt}
 \textbf{\textit{DMP}}
 
-El \texttt{package} de les \textit{DMPs} és el nucli de tot l'algorisme de control. En la seva base, el \texttt{subpackage} dynamic$\_$movement$\_$primitive, funciona de la mateixa forma que el codi presentat anteriorment de Scott Niekum, ara bé, canvia en que la comunicació amb el propi codi és fa des de \textit{ROS}. D'aquesta manera permet modificar els paràmetres de la DMP sense la necessitat de modificar el codi, sinó que és pot fer modificant les propietats del node d'execució\footnote{Això és pot fer amb la comanda \texttt{node$\_$handle.setParam("nom$\_$paràmetre", valor$\_$paràmetre)} o amb \texttt{usc$\_$utilities::write(node, "nom$\_$paràmetre", valor$\_$paràmetre)} si és un vector.}. En el codi d'execució d'aquest treball, aquests paràmetres estan donats de forma automàtica dins el codi. Altres grans avantatges de la comunicació mitjançant \textit{ROS} són el poder publicar l'estat de la \textit{DMP}, en tot moment, a través d'un \texttt{topic} i la facilitat d'intercanviar informació amb l'exterior.
+El \texttt{package} de les \textit{DMPs} és el nucli de tot l'algorisme de control. En la seva base, el \texttt{subpackage} dynamic$\_$movement$\_$primitive juntament amb locally$\_$weighted$\_$regression, funcionen de la mateixa forma que el codi presentat anteriorment de Scott Niekum. Ara bé, canvien dos aspectes respecte l'anterior: (1) treballa amb funcions gaussianes, del tipus $\psi_i(s)=exp(-h_i(s-c_i)^2)$, en lloc d'utilitzar \textit{Fourier} \eqref{eq:psi-scott-niekum}; (2) la comunicació amb el propi codi és fa des de \textit{ROS}. 
 
-%ENTR MÉS EN DETALL EN TEMA DE CÀLCUL DE LA POSICIÓ I VELOCITAT O DE COM FA L'APROXIMACIÓ PER MÍNIMS QUADRATS???
+El \texttt{subpackage} dynamic$\_$movement$\_$primitive s'encarrega del càlcul de les accions de control i de concedir la comunicació de \textit{ROS} al conjunt. Amb aquest tipus de comunicació es permet modificar els paràmetres de la \textit{DMP} sense la necessitat de modificar el codi, sinó que és pot fer modificant les propietats del node d'execució\footnote{Això és pot fer amb la comanda \texttt{node$\_$handle.setParam("nom$\_$paràmetre", valor$\_$paràmetre)} o amb \texttt{usc$\_$utilities::write(node, "nom$\_$paràmetre", valor$\_$paràmetre)} si és un vector.}. En el codi d'execució d'aquest treball, aquests paràmetres estan donats de forma automàtica dins el codi. Altres grans avantatges de la comunicació mitjançant \textit{ROS} són el poder publicar l'estat de la \textit{DMP}, en tot moment, a través d'un \texttt{topic} i la facilitat d'intercanviar informació amb l'exterior.
 
-Per altra banda, el \texttt{subpackage} locally$\_$weighted$\_$regression és el que s'encarrega de la transformació la trajectòria programada de mínim \textit{jerk}\footnote{Aquesta trajectòria és creada pel propi \texttt{subpackage} dynamic$\_$movement$\_$primitive.} en la suma del sistema dinàmic amb el conjunt de gaussianes, explicat a l'apartat \ref{DMP-estudis-preliminars}. Tot aquest procés és requereix perquè la \textit{DMP} de cada articulació pugui ser creada. La classe principal és \texttt{LWR} que permet definir el conjunt de gaussianes. En aquest cas, s'utilitzen les funcions gaussianes per a fer l'aproximació, a diferència del codi de Niekum que utilitza la sèrie de Fourier amb base cosinus. 
+
+Per altra banda, el \texttt{subpackage} locally$\_$weighted$\_$regression és el que s'encarrega de la transformació la trajectòria programada de mínim \textit{jerk}\footnote{Aquesta trajectòria és creada pel propi \texttt{subpackage} dynamic$\_$movement$\_$primitive.} en la suma del sistema dinàmic amb el conjunt de gaussianes, explicat a l'apartat \ref{DMP-estudis-preliminars}. Tot aquest procés és requereix perquè la \textit{DMP} de cada articulació pugui ser creada. La classe principal és \texttt{LWR}, que permet definir el conjunt de gaussianes, aquesta és característica per cada articulació. Tot i ser un codi diferent al de Niekum, realment els dos duen a terme els mateixos càlculs, però expressats de forma diferent i utilitzant gaussianes.
 
 \vspace{20pt}
 \textbf{Policy$\_$learning}
@@ -1075,7 +1149,6 @@ Per altra banda, el \texttt{subpackage} locally$\_$weighted$\_$regression és el
 Fins aquest punt s'ha explicat la base de les \textit{DMPs}, sense qualsevol de les parts anteriors no seria possible dur-les a terme. Ara bé, la integració de l'algorisme $\mathrm{PI^2}$ és, en realitat, un complement, per millorar-ne l'eficàcia. Aquest \texttt{package} integra $\mathrm{PI^2}$, juntament amb varies derivacions d'aquest, que poden ser utilitzats en altres casos.
 
 La interacció entre aquest i les \textit{DMPs} és produeix a partir d'haver-se fet l'aproximació per gaussianes. En aquest moment, comença el procés iteratiu exemplificat en la figura \ref{fig:policy-improvement-loop} de l'apartat \ref{PI2-estat-de-l'art}, on es modifiquen els pesos per tal de minimitzar una funció objectiu. Per tant, si la funció és l'adequada, el moviment dut a terme pel robot millora. Si es desitja modificar la funció objectiu s'ha d'accedir a l'arxiu \texttt{dmp$\_$waypoint$\_$task.cpp} al \texttt{subpackage} policy$\_$improvement$\_$loop.
-
 
 
 %MEDITAR SI POSAR LO DE SES MODIFICACIONS O NO!!!
@@ -1093,7 +1166,7 @@ La interacció entre aquest i les \textit{DMPs} és produeix a partir d'haver-se
 \newpage
 \section{Disseny}
 
-\paragraph{}Inicialment, s'ha plantejat un disseny amb un model del robot que serviria per simular tot el conjunt amb l'ordinador. D'aquí en sortiria un solució inicial per implementar al robot físic, i a partir d'aquest arribar a la solució final. La solució primera estalviaria possibles perills, tant pel propi robot com per l'entorn, i ajudaria a aconseguir la convergència a una solució final més ràpidament. En referència a les \textit{DMPs}, com s'ha explicat en l'apartat \ref{Package-USC-CLMC}, el codi utilitzat és el creat per \textit{USC-CLMC}, però modificat per l'adaptació a aquest treball. Ara bé, aquest dona dues opció d'execució a escollir segons l'algorisme: (1) \textit{DMPs} conjuntament amb l'algorisme $\mathrm{PI^2}$, (2) \textit{DMPs} sense el $\mathrm{PI^2}$; el funcionament dels dos tipus es troben explicats en aquest mateix apartat. Per altra banda, en aquest apartat també s'explica l'ús del conjunt acceleròmetre-giroscopi, en l'algorisme de control, i de influència i control de la plataforma.
+Inicialment, s'ha plantejat un disseny amb un model del robot que serviria per simular tot el conjunt amb l'ordinador. D'aquí en sortiria un solució inicial per implementar al robot físic, i a partir d'aquest arribar a la solució final. La solució primera estalviaria possibles perills, tant pel propi robot com per l'entorn, i ajudaria a aconseguir la convergència a una solució final més ràpidament. En referència a les \textit{DMPs}, com s'ha explicat en l'apartat \ref{Package-USC-CLMC}, el codi utilitzat és el creat per \textit{USC-CLMC}, però modificat per l'adaptació a aquest treball. Ara bé, aquest dona dues opció d'execució a escollir segons l'algorisme: (1) \textit{DMPs} conjuntament amb l'algorisme $\mathrm{PI^2}$, (2) \textit{DMPs} sense el $\mathrm{PI^2}$; el funcionament dels dos tipus es troben explicats en aquest mateix apartat. Per altra banda, en aquest apartat també s'explica l'ús del conjunt acceleròmetre-giroscopi, en l'algorisme de control, i de influència i control de la plataforma.
 
 
 %SI ES FINAL NO ES CONTROLA SA PLATAFORMA S'HA DE MODIFICAR AÇO.
@@ -1105,8 +1178,6 @@ La interacció entre aquest i les \textit{DMPs} és produeix a partir d'haver-se
 %Després sub apartats amb explicacions exteses de cada cosa
 
 \subsection{Model de l'AIBO}
-%EXPLICAR TOT TOT LO DE ES MODEL
-%Dir que tot i que després de la solucio inicial s'ha de seguir fent aprenentatge ja que el model no és perfecte i per tant té un cert error, que quan es posa en el robot físic aquest error es corregirà.
 
 Com s'ha explicat en l'apartat \ref{Modelat-de-robots}, hi ha una gran multitud de possibles formes de fer un model per un robot. Ara bé, tots aquests mètodes són complexos i requereixen de bastant temps. Per això, s'ha considerat que fer el model seguint algun d'aquests mètodes no es trobava dins l'abast del treball i, per tant, s'ha escollit fer el model escrivint el codi de forma manual. Per dur a terme el model s'ha pres com a referència les mesures aproximades de la figurar \ref{fig:mesures-aibo-model}.
 
@@ -1155,11 +1226,11 @@ Ara bé, el projecte del model es continuat, en l'estat que s'ha deixat en aques
 
 %Es pensava utilitzar l'acceleròmetre del pròpi Aibo, a partir d'observar les mostres que es donaven es va comprovar com l'error era molt gran i per això es va comprar un accelerometres més precis MPU6050. Apart d'això també es fiava de treure el desplaçament del CoG (apart d'obviament l'angle d'inclinacio del robot).
 
-\paragraph{}Tal i com s'ha vist al llarg del treball, uns dels requisits per poder aconseguir recuperar l'estabilitat és tenir les mesures dels moviments del robot. Com a idea inicial, s'ha pensat utilitzar el sensor triaxial d'accelerometria que porta incorporat el propi AIBO, i d'aquesta forma poder estudiar el moviment d'aquest. Però abans s'han fet unes comprovacions de la fiabilitat de les dades d'aquest sensor. Aquestes comprovacions es basen en l'observació de la variabilitat de les mesures i comprovar si l'angle d'inclinació extret a partir de l'acceleració és el mateix que el mesurat externament. Finalment ha resultat que no és gens precís per la tasca que ha de desenvolupar.
+Tal i com s'ha vist al llarg del treball, uns dels requisits per poder aconseguir recuperar l'estabilitat és tenir les mesures dels moviments del robot. Com a idea inicial, s'ha pensat utilitzar el sensor triaxial d'accelerometria que porta incorporat el propi AIBO, i d'aquesta forma poder estudiar el moviment d'aquest. Però abans s'han fet unes comprovacions de la fiabilitat de les dades d'aquest sensor. Aquestes comprovacions es basen en l'observació de la variabilitat de les mesures i comprovar si l'angle d'inclinació extret a partir de l'acceleració és el mateix que el mesurat externament. Finalment ha resultat que no és gens precís per la tasca que ha de desenvolupar.
 
 \subsubsection{Acceleròmetre MPU6050 i giroscopi GY-521}
 
-\paragraph{}Al no ser el sensor del propi robot d'utilitat en el treball, s'ha decidit comprar un altre sensor triaxial d'accelerometria amb un giroscopi de tres eixos. En aquest cas, s'ha optat per una peça on hi ha integrat l'acceleròmetre \texttt{MPU6050} i el giroscopi \texttt{GY-521}. S'ha escollit aquest, en primera instancia, perquè està enfocat per a ser utilitzat amb Arduino, que és un microcontrolador del que es disposa en el departament i que ja es pensa utilitzar per altres motius. A més, existeix molta informació per la xarxa, com llibreries\footnote{Entre d'elles un de les més utilitzades i molt pràctica és la \texttt{i2cdevlib}, on a banda de per aquest conjunt acceleròmetre-giroscopi, també n'hi ha per molts altres \cite{Rowberg}} o aplicacions fetes, a banda de ser recomanat per la seva qualitat-preu.
+Al no ser el sensor del propi robot d'utilitat en el treball, s'ha decidit comprar un altre sensor triaxial d'accelerometria amb un giroscopi de tres eixos. En aquest cas, s'ha optat per una peça on hi ha integrat l'acceleròmetre \texttt{MPU6050} i el giroscopi \texttt{GY-521}. S'ha escollit aquest, en primera instancia, perquè està enfocat per a ser utilitzat amb Arduino, que és un microcontrolador del que es disposa en el departament i que ja es pensa utilitzar per altres motius. A més, existeix molta informació per la xarxa, com llibreries\footnote{Entre d'elles un de les més utilitzades i molt pràctica és la \texttt{i2cdevlib}, on a banda de per aquest conjunt acceleròmetre-giroscopi, també n'hi ha per molts altres \cite{Rowberg}} o aplicacions fetes, a banda de ser recomanat per la seva qualitat-preu.
 
 %IDEA: HAGUES POGUT ENVIAR PER ROS LA INFORMACIO DE L'ACCELEROMETRE I GYRO I FER EL FILTRE A L'ORDINADOR, PERO HAVES ESTAT PRACTICAMENT EL MATEIX, I PER COMODITAT D'ESTAR JA IMPLEMENTAT S'HA ESCOLLIT EL PRIMER MÈTODE, PERÒ PODRIA SER UNA PROVA A FER PER MILLORAR-NE LA QUALITAT. TOT I QUE D'AQUESTA FORMA HAGUES POGUT UTILITZAR EL FILTRE KALMAN, INCONVENIENT--> S'HA DE TENIR UN THREAD NOMÉS PEL CALCUL
 
@@ -1170,7 +1241,7 @@ A partir de l'acceleròmetre es treu informació de les acceleracions que pateix
 \subsubsection{Càlcul de la posició i de la inclinació}
 \label{Calcul-posicio-inclinacio}
 
-\paragraph{}Com s'ha explicat en l'apartat \ref{Estabilitat} d'Estabilitat, una de les millors formes de cercar la màxima estabilitat, dins l'abast del \textit{TFG}, és provocar que el CdG retorni a la posició d'origen. Per tant, es requereix saber en tot moment quan s'ha desplaçat respecte aquest origen, però per això es necessita tenir la informació de la inclinació del robot, per tal d'extreure tan sols la component de l'acceleració que ens interessa.
+Com s'ha explicat en l'apartat \ref{Estabilitat} d'Estabilitat, una de les millors formes de cercar la màxima estabilitat, dins l'abast del \textit{TFG}, és provocar que el CdG retorni a la posició d'origen. Per tant, es requereix saber en tot moment quan s'ha desplaçat respecte aquest origen, però per això es necessita tenir la informació de la inclinació del robot, per tal d'extreure tan sols la component de l'acceleració que ens interessa.
 
 
 \vspace{20pt}
@@ -1195,14 +1266,11 @@ El filtre complementari matemàticament és molt simple \eqref{eq:filtre-complem
 \theta_{compl} = (1 - \lambda)(\theta_{compl} + w_{giro}\mathrm{d}t) + \lambda \theta_{accel} \label{eq:filtre-complementari}
 \end{equation}
 
-\begin{figure}[tb]
-\centering
-\includegraphics[width=0.8\textwidth]{Imatges/esquema-comunicacio-ROS-Aibo-ordenadora.pdf}
-\caption{Esquema de connexions entre AIBO-\textit{ROS} i sensor-Arduino-\textit{ROS}}
-\label{fig:connexions-Aibo-ROS-sensor-Arduino-ROS}
-\end{figure}
-
 %Arduino és compatible amb tota la família Arduino, amb l'excepció de l'\textit{Arduino Mega} i l'\textit{Arduino Leonardo} que s'han de desactivar els \texttt{pull-ups} de les entrades. Per això no s'ha utilitzat l'\textit{Arduino Mega} que es té en el departament, sino un \textit{Arduino Uno} prestat per un company.
+
+\subsection{\textit{Goals} de les \textit{DMPs} i funció recompensa}
+%Explicar quins són els goals de les DMPs
+%Com es plantejaria la funció recompensa
 
 \subsection{Plataforma}
 %Funcionament de la plataforma, com esta connectada a l'Arduino i alimentació i que és el que li faig fer.
@@ -1210,21 +1278,87 @@ El filtre complementari matemàticament és molt simple \eqref{eq:filtre-complem
 
 \section{Funcionament i execució}
 
-\paragraph{}En aquest apartat es pensa explicar quins són els passos que s'han de seguir per tal d'aconseguir dur a terme l'execució del conjunt.
+En aquest apartat es pensa explicar quins són els passos que s'han de seguir per tal d'aconseguir dur a terme l'execució del conjunt.
 
 \subsection{Connexions a establir}
 
-\paragraph{}Un dels aspectes que fins aquest instant no ha sigut esmentat és la configuració de les connexions. Per tal de poder transmetre tota la informació que requereix l'algorisme de control s'ha de donar un canal de comunicació amb conjunt acceleròmetre-giroscopi, com també un altre amb les articulacions del propi AIBO.
+Un dels aspectes que fins aquest instant no s'ha esmentat és la configuració de les connexions. Per tal de poder transmetre tota la informació que requereix l'algorisme de control s'ha de donar un canal de comunicació amb el conjunt acceleròmetre-giroscopi, com també un altre amb les articulacions del propi AIBO.
 
 \subsubsection{Conjunt acceleròmetre-giroscopi}
 
-En l'apartat \ref{comunicacio-ROS-Arduino} s'ha explicat per sobre com es transmet la informació des de l'Arduino a \textit{ROS}. Aquí s'exposa la comunicació entre el sensor i el microcontrolador. 
+En l'apartat \ref{comunicacio-ROS-Arduino} s'ha explicat per sobre com es transmet la informació des de l'Arduino a \textit{ROS}. Aquí s'exposa la comunicació entre el sensor i el microcontrolador. Aquesta es basa en el bus de comunicació $\mathrm{I^2C}$, la principal característica és que utilitza dues lines, una per la informació \texttt{SDA} i una per la senyal de rellotge \texttt{SCL}, a banda d'una línia de terra. 
 
+L'$\mathrm{I^2C}$ és un bus de comunicació bidireccional, però no permet enviar i rebre informació de forma simultànea. El seu funcionament comença i acaba amb unes combinacions determinades dels nivells de la linia \texttt{SDA} i \texttt{SCL}. A l'inici de la transmissió, s'envia la direcció\footnote{Aquesta direcció és única per cada dispositiu connectat} del dispositiu al que va dirigida la informació amb un indicador de lectura o escriptura. A més, aquest bus després de cada \texttt{byte} es validat amb un bit de reconeixement \textit{ACK} (\textit{\textbf{A}cknowledge \textbf{C}loc\textbf{k}}). Tot aquest procés es pot veure exemplificat tant per escriptura, figura \ref{fig:i2c-write-transmission}, com per lectura, figura \ref{fig:i2c-read-transmission}.
+
+%REFERENCIA A APUNTS D'UNA ASSIGNATURA???
+
+\begin{figure}[tb]
+
+\centering
+\begin{subfigure}[b]{\textwidth}
+\centering
+\includegraphics[width=\textwidth]{Imatges/i2c-write-transmission.png}
+\caption{Escriptura amb $\mathrm{I^2C}$.}
+\label{fig:i2c-write-transmission}
+\end{subfigure}
+~
+\begin{subfigure}[b]{\textwidth}
+\centering
+\includegraphics[width=\textwidth]{Imatges/i2c-read-transmission.png}
+\caption{Lectura amb $\mathrm{I^2C}$.}
+\label{fig:i2c-read-transmission}
+\end{subfigure}
+\caption{Esquemes del funcionament del bus $\mathrm{I^2C}$ d'escriptura (dalt) i de lectura (baix).}
+\end{figure}
+
+En el cas del sensor és facilment distingir cadascun dels pins corresponents, ja que els noms corresponen amb la nomenclatura de la placa. Ara bé, en el microcontrolador Arduino Uno els pins \texttt{SDA} i \texttt{SCL} no es troben designats sobre aquesta placa, tot i que s'hagin d'utilitzar uns en concret. Aquests pins són el \texttt{A4} pel \texttt{SDA} i el \texttt{A5} pel \texttt{SCL}. Per últim, cal a dir que l'alimentació del conjunt acceleròmetre-giroscopi ha de ser la de 3 V, per tant, les connexions quedarien com es veu en la figura \ref{fig:connexions-sensor-Arduino}. 
+
+
+\begin{figure}[bt]
+\centering
+\includegraphics[width=0.7\textwidth]{Imatges/connexions-sensor-Arduino.eps}
+\caption{Connexions del conjunt acceleròmetre-giroscopi amb l'Arduino.}
+\label{fig:connexions-sensor-Arduino}
+\end{figure}
+
+
+\subsubsection{AIBO a través d'\texttt{}\textit{Access Point} (\textit{AP})}
+
+Si es desitja establir una comunicació entre l'algorisme de control i l'AIBO de forma continua, no hi ha altra solució que fer-ho amb una connexió sense fils. Ara bé, hi ha dos modes de connexió: (1) a través d'\textit{Access Point}, (2) sense \textit{Access Point}. En aquest treball s'ha utilitzat la primera, ja que en el moment de fer les proves l'altre mètode ha donat problemes per establir la connexió.
+
+Abans de començar amb la descripció del procediment de connexió amb \textit{AP}, s'ha de tenir em compte que el tipus de xifratge de la contrasenya ha de ser \texttt{WEP} o sense contrasenya. Per altra banda, en aquest apartat es suposen uns coneixements bàsics en nomenclatura de protocols TCP/IP.
+
+Per tal de configurar la targeta de xarxa de l'AIBO s'ha d'accedir al fitxer de configuració de la targeta de memòria \texttt{OPEN-R\textbackslash SYSTEM\textbackslash CONF\textbackslash WLANDFLT.TXT}. Una possible configuració és la que s'exposa a continuació, suposant que la porta d'enllaç predeterminada és la 192.168.10.1, la mascara de subred és 255.255.255.0, canal de connexió numero 3 i amb AIBONET i AIBO2 com a nom de xarxa i contrasenya, respectivament. Si és desitja informació més detallada o fer la connexió sense \textit{Acces Point} es pot trobar en \cite{Tellez2004}.
+
+%MIRAR SI ES MEU AIBO ES ES 124 o 125.
+
+\begin{verbatim}
+HOSTNAME=AIBO
+ETHER_IP=192.168.10.124
+ETHER_NETMASK=255.255.255.0
+IP_GATEWAY=192.168.10.1
+ESSID=AIBONET
+WEPENABLE=1
+WEPKEY=AIBO2
+APMODE=2 # this mode indicates auto-mode
+CHANNEL=3
+\end{verbatim}
+
+Havent configurat la targeta de xarxa, en engegar-se l'AIBO busca la xarxa del nom que se li ha donat i s'hi connecta. Finalment, tan sols quedaria crear la comunicació \textit{ROS}, que es crea a partir d'un script, explicat en el següent apartat, però que abans requereix que l'AIBO estigui en la mateixa xarxa que l'algorisme.
+
+\begin{figure}[tb]
+\centering
+\includegraphics[width=0.8\textwidth]{Imatges/esquema-comunicacio-ROS-Aibo-ordenadora.pdf}
+\caption{Esquema de connexions entre AIBO-\textit{ROS} i sensor-Arduino-\textit{ROS}}
+\label{fig:connexions-Aibo-ROS-sensor-Arduino-ROS}
+\end{figure}
+
+%SI ES FA LA CONNEXIO DE LA PLATAFORMA POSAR COM ES CONNECTA
 
 
 \subsection{Processos previs}
 
-\paragraph{}En primer terme, pel bon funcionament de les \textit{DMPs} cal engegar una sèrie de processos per permetre l'intercanvi d'informació i per dur a terme el control de la plataforma, si escau.
+En primer terme, pel bon funcionament de les \textit{DMPs} cal engegar una sèrie de processos per permetre l'intercanvi d'informació i per dur a terme el control de la plataforma, si escau.
 
 
 \subsection{Funcionament de \textit{DMPs} sense $\mathrm{PI^2}$}
@@ -1234,9 +1368,6 @@ En l'apartat \ref{comunicacio-ROS-Arduino} s'ha explicat per sobre com es transm
 
 
 \newpage
-%Abans d'això he de posar PRESSUPOST?? Realment gastat només he gastat amb l'accelerometre la resta ha estat gratuït...
-%PLANIFICACIO TEMPORAL??
-%I IMPACTE MEDI AMBIENTAL??
 \section{Conclusions}
 
 \newpage
@@ -1259,7 +1390,7 @@ En l'apartat \ref{comunicacio-ROS-Arduino} s'ha explicat per sobre com es transm
 
 \section{Instal·lació de \textit{ROS}, llibreries d'Urbi i paquet aibo$\_$server}
 
-\paragraph{}Tot seguit es mostren els passos a seguir per tal d'instal·lar \textit{ROS} i com afegir una carpeta al la variable \texttt{ROS$\_$PACKAGE$\_$PATH}\footnote{Aquí es troben les direccions de les carpetes on \textit{ROS} cerca els \texttt{packages}.}.
+Tot seguit es mostren els passos a seguir per tal d'instal·lar \textit{ROS} i com afegir una carpeta al la variable \texttt{ROS$\_$PACKAGE$\_$PATH}\footnote{Aquí es troben les direccions de les carpetes on \textit{ROS} cerca els \texttt{packages}.}.
 
 \begin{enumerate}
 
