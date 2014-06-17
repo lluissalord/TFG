@@ -1,0 +1,77 @@
+%% Creator: Inkscape inkscape 0.48.3.1, www.inkscape.org
+%% PDF/EPS/PS + LaTeX output extension by Johan Engelen, 2010
+%% Accompanies image file 'diagrama-sniekum.pdf' (pdf, eps, ps)
+%%
+%% To include the image in your LaTeX document, write
+%%   \input{<filename>.pdf_tex}
+%%  instead of
+%%   \includegraphics{<filename>.pdf}
+%% To scale the image, write
+%%   \def\svgwidth{<desired width>}
+%%   \input{<filename>.pdf_tex}
+%%  instead of
+%%   \includegraphics[width=<desired width>]{<filename>.pdf}
+%%
+%% Images with a different path to the parent latex file can
+%% be accessed with the `import' package (which may need to be
+%% installed) using
+%%   \usepackage{import}
+%% in the preamble, and then including the image with
+%%   \import{<path to file>}{<filename>.pdf_tex}
+%% Alternatively, one can specify
+%%   \graphicspath{{<path to file>/}}
+%% 
+%% For more information, please see info/svg-inkscape on CTAN:
+%%   http://tug.ctan.org/tex-archive/info/svg-inkscape
+%%
+\begingroup%
+  \makeatletter%
+  \providecommand\color[2][]{%
+    \errmessage{(Inkscape) Color is used for the text in Inkscape, but the package 'color.sty' is not loaded}%
+    \renewcommand\color[2][]{}%
+  }%
+  \providecommand\transparent[1]{%
+    \errmessage{(Inkscape) Transparency is used (non-zero) for the text in Inkscape, but the package 'transparent.sty' is not loaded}%
+    \renewcommand\transparent[1]{}%
+  }%
+  \providecommand\rotatebox[2]{#2}%
+  \ifx\svgwidth\undefined%
+    \setlength{\unitlength}{708.198737bp}%
+    \ifx\svgscale\undefined%
+      \relax%
+    \else%
+      \setlength{\unitlength}{\unitlength * \real{\svgscale}}%
+    \fi%
+  \else%
+    \setlength{\unitlength}{\svgwidth}%
+  \fi%
+  \global\let\svgwidth\undefined%
+  \global\let\svgscale\undefined%
+  \makeatother%
+  \begin{picture}(1,0.45256669)%
+    \put(0,0){\includegraphics[width=\unitlength]{Imatges/diagrama-sniekum.pdf}}%
+    \put(0.11941995,0.40798762){\color[rgb]{0,0,0}\makebox(0,0)[b]{\smash{Execució de l'algorisme}}}%
+    \put(0.37033545,0.40836098){\color[rgb]{0,0,0}\makebox(0,0)[b]{\smash{dims, dt, K, D, num$\_$bases}}}%
+    \put(0.51494343,0.30203857){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{Moviment del dt}}}%
+    \put(0.52592637,0.2800727){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{corresponent}}}%
+    \put(0.70241385,0.13362758){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{Ha canviat}}}%
+    \put(0.70790535,0.11244624){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{l'objectiu?}}}%
+    \put(0.504745,0.13572568){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{Ha acabat}}}%
+    \put(0.51102099,0.11375983){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{laDMP?}}}%
+    \put(0.55265474,0.21204266){\color[rgb]{0,0,0}\makebox(0,0)[b]{\smash{No}}}%
+    \put(0.65684816,0.1351353){\color[rgb]{0,0,0}\makebox(0,0)[b]{\smash{No}}}%
+    \put(0.19957657,0.13729467){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{Ha canviat}}}%
+    \put(0.20193004,0.11532885){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{l'objectiu?}}}%
+    \put(0.24486515,0.20395235){\color[rgb]{0,0,0}\makebox(0,0)[b]{\smash{Sí}}}%
+    \put(0.24650942,0.05207969){\color[rgb]{0,0,0}\makebox(0,0)[b]{\smash{No}}}%
+    \put(0.45070779,0.1353797){\color[rgb]{0,0,0}\makebox(0,0)[b]{\smash{Sí}}}%
+    \put(0.75151083,0.04126887){\color[rgb]{0,0,0}\makebox(0,0)[b]{\smash{Sí}}}%
+    \put(0.66882239,0.42194478){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{$x_0$, $v_0$, $t_0$, objectiu, objectiu$\_$final,
+}}}%
+    \put(0.66826772,0.40474841){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{num$\_$pos, tau, iteracions$\_$integrals}}}%
+    \put(0.5133744,0.42285074){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{Aprenentatge}}}%
+    \put(0.49925353,0.39225545){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{de la demostració}}}%
+    \put(0.29293144,0.312237){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{Càlcul de posició i }}}%
+    \put(0.27802601,0.27928823){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{velocitat de tota la DMP}}}%
+  \end{picture}%
+\endgroup%
