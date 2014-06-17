@@ -77,16 +77,16 @@ Grau en Enginyeria en Tecnologies Industrials\\
 \today} %NO FIXAR-SE AMB AIXÒ JA QUE LA PORTADA SERÀ LA DONADA PER L'ESCOLA
 
 \usepackage{chngcntr}
-\counterwithin{figure}{section}%Permet que el comptatge de les figures sigui segons secció
-\counterwithin{table}{section}
-\counterwithin{equation}{section}
-\counterwithin{footnote}{section}
+\counterwithin{figure}{chapter}%Permet que el comptatge de les figures sigui segons capitol
+\counterwithin{table}{chapter}
+\counterwithin{equation}{chapter}
+\counterwithin{footnote}{chapter}
 
 %PLANTEJAR TEMA DE \autoref{} ja que així l'hiperenllaç es també per la paraula i no sols el numero.
 
-\renewcommand{\thefigure}{\arabic{section}.\arabic{figure}}
-\renewcommand{\thetable}{\arabic{section}.\arabic{table}}
-\renewcommand{\theequation}{\arabic{section}.\arabic{equation}}
+\renewcommand{\thefigure}{\arabic{chapter}.\arabic{figure}}
+\renewcommand{\thetable}{\arabic{chapter}.\arabic{table}}
+\renewcommand{\theequation}{\arabic{chapter}.\arabic{equation}}
 \renewcommand{\thefootnote}{\arabic{footnote}}
 
 \usepackage{parskip}
