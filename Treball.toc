@@ -1,79 +1,88 @@
 \select@language {catalan}
 \contentsline {paragraph}{}{1}{section*.1}
 \contentsline {chapter}{Resum}{1}{section*.1}
-\contentsline {chapter}{Prefaci}{6}{chapter*.5}
-\contentsline {section}{Motivaci\IeC {\'o}}{6}{section*.6}
-\contentsline {section}{Definici\IeC {\'o} del \textit {TFG}}{7}{section*.7}
-\contentsline {section}{Requeriments previs}{7}{section*.8}
-\contentsline {chapter}{\numberline {1}Introducci\IeC {\'o}}{8}{chapter.1}
-\contentsline {section}{\numberline {1.1}Objectius}{8}{section.1.1}
-\contentsline {section}{\numberline {1.2}Planificaci\IeC {\'o}}{9}{section.1.2}
-\contentsline {subsection}{\numberline {1.2.1}Planificaci\IeC {\'o} inicial}{9}{subsection.1.2.1}
-\contentsline {subsection}{\numberline {1.2.2}Planificaci\IeC {\'o} final}{9}{subsection.1.2.2}
-\contentsline {section}{\numberline {1.3}Pressupost}{9}{section.1.3}
-\contentsline {section}{\numberline {1.4}Metodologia}{9}{section.1.4}
-\contentsline {section}{\numberline {1.5}Abast del treball}{9}{section.1.5}
-\contentsline {section}{\numberline {1.6}Estat de l'art}{9}{section.1.6}
-\contentsline {subsection}{\numberline {1.6.1}Robot AIBO}{10}{subsection.1.6.1}
-\contentsline {subsubsection}{Hardware}{11}{section*.9}
-\contentsline {subsubsection}{Software}{12}{section*.14}
-\contentsline {subsection}{\numberline {1.6.2}\textit {ROS}}{12}{subsection.1.6.2}
-\contentsline {subsubsection}{Estructura de \textit {ROS}}{13}{section*.15}
-\contentsline {subsubsection}{Objectius de \textit {ROS}}{14}{section*.16}
-\contentsline {subsubsection}{Eines de \textit {ROS}}{16}{section*.17}
-\contentsline {subsection}{\numberline {1.6.3}Robots}{16}{subsection.1.6.3}
-\contentsline {paragraph}{}{17}{section*.19}
-\contentsline {subsection}{\numberline {1.6.4}Modelat de robots}{18}{subsection.1.6.4}
-\contentsline {subsubsection}{Classificaci\IeC {\'o} de models}{18}{section*.22}
-\contentsline {subsubsection}{Simulaci\IeC {\'o} amb models}{20}{section*.25}
-\contentsline {subsection}{\numberline {1.6.5}Aprenentatge supervisat \textit {(SL)}}{21}{subsection.1.6.5}
-\contentsline {subsection}{\numberline {1.6.6}Aprenentatge per refor\IeC {\c c} \textit {(RL)}}{23}{subsection.1.6.6}
-\contentsline {subsection}{\numberline {1.6.7}\textit {DMP} (\textit {\textbf {D}ynamic \textbf {M}oviment \textbf {P}rimitive})}{25}{subsection.1.6.7}
-\contentsline {subsubsection}{Transformation system}{26}{section*.26}
-\contentsline {subsubsection}{Modificaci\IeC {\'o} de l'algorisme}{27}{section*.29}
-\contentsline {subsection}{\numberline {1.6.8}\textbf {P}ath \textbf {I}ntegral \textbf {P}olicy \textbf {I}mprovement ($\mathrm {PI^2}$)}{28}{subsection.1.6.8}
-\contentsline {subsection}{\numberline {1.6.9}Algorismes avan\IeC {\c c}ats}{30}{subsection.1.6.9}
-\contentsline {chapter}{\numberline {2}Estudis preliminars}{31}{chapter.2}
-\contentsline {section}{\numberline {2.1}Comunicaci\IeC {\'o} mitjan\IeC {\c c}ant \textit {ROS}}{31}{section.2.1}
-\contentsline {subsection}{\numberline {2.1.1}Entre l'AIBO i \textit {ROS}}{32}{subsection.2.1.1}
-\contentsline {subsection}{\numberline {2.1.2}Entre l'algorisme de control i \textit {ROS}}{33}{subsection.2.1.2}
-\contentsline {subsection}{\numberline {2.1.3}Entre l'Arduino i \textit {ROS}}{34}{subsection.2.1.3}
-\contentsline {section}{\numberline {2.2}Estabilitat}{34}{section.2.2}
-\contentsline {section}{\numberline {2.3}Algorismes de resposta davant pertorbacions}{35}{section.2.3}
-\contentsline {subsection}{\numberline {2.3.1}Model del robot}{35}{subsection.2.3.1}
-\contentsline {subsection}{\numberline {2.3.2}Aprenentatge supervisat}{35}{subsection.2.3.2}
-\contentsline {subsection}{\numberline {2.3.3}Aprenentatge per refor\IeC {\c c}}{36}{subsection.2.3.3}
-\contentsline {subsection}{\numberline {2.3.4}\textit {DMP}}{37}{subsection.2.3.4}
-\contentsline {subsubsection}{Moviment original}{37}{section*.33}
-\contentsline {subsubsection}{Pesos de la funci\IeC {\'o} \textit {f(s)}}{38}{section*.34}
-\contentsline {subsection}{\numberline {2.3.5}Elecci\IeC {\'o} final}{39}{subsection.2.3.5}
-\contentsline {section}{\numberline {2.4}Codis amb \textit {DMPs} implementades}{39}{section.2.4}
-\contentsline {subsection}{\numberline {2.4.1}\textit {DMPs} de Scott Niekum}{39}{subsection.2.4.1}
-\contentsline {subsubsection}{Aprenentatge dels pesos}{39}{section*.36}
-\contentsline {subsubsection}{C\IeC {\`a}lcul de les accions de control}{40}{section*.37}
-\contentsline {subsection}{\numberline {2.4.2}Package complert del robot PR2 del \textit {USC-CLMC}}{41}{subsection.2.4.2}
-\contentsline {subsubsection}{DMP}{42}{section*.39}
-\contentsline {subsubsection}{Policy$\_$learning}{42}{section*.40}
-\contentsline {chapter}{\numberline {3}Disseny}{44}{chapter.3}
-\contentsline {section}{\numberline {3.1}Model de l'AIBO}{44}{section.3.1}
-\contentsline {section}{\numberline {3.2}Moviment del centre de gravetat}{46}{section.3.2}
-\contentsline {subsection}{\numberline {3.2.1}Acceler\IeC {\`o}metre MPU6050 i giroscopi GY-521}{47}{subsection.3.2.1}
-\contentsline {subsection}{\numberline {3.2.2}C\IeC {\`a}lcul de la posici\IeC {\'o} i de la inclinaci\IeC {\'o}}{47}{subsection.3.2.2}
-\contentsline {subsubsection}{C\IeC {\`a}lcul de la inclinaci\IeC {\'o}}{48}{section*.44}
-\contentsline {section}{\numberline {3.3}\textit {Goals} de les \textit {DMPs} i funci\IeC {\'o} recompensa}{49}{section.3.3}
-\contentsline {section}{\numberline {3.4}Plataforma}{49}{section.3.4}
-\contentsline {chapter}{\numberline {4}Funcionament i execuci\IeC {\'o}}{50}{chapter.4}
-\contentsline {section}{\numberline {4.1}Connexions a establir}{50}{section.4.1}
-\contentsline {subsection}{\numberline {4.1.1}Conjunt acceler\IeC {\`o}metre-giroscopi}{50}{subsection.4.1.1}
-\contentsline {subsection}{\numberline {4.1.2}AIBO a trav\IeC {\'e}s d'\texttt {}\textit {Access Point} (\textit {AP})}{51}{subsection.4.1.2}
-\contentsline {section}{\numberline {4.2}Processos previs}{53}{section.4.2}
-\contentsline {subsection}{\numberline {4.2.1}Carrega del programa de control del \textit {CdG} a Arduino}{53}{subsection.4.2.1}
-\contentsline {subsection}{\numberline {4.2.2}Execucions per l\IeC {\'\i }nia de comandes}{54}{subsection.4.2.2}
-\contentsline {section}{\numberline {4.3}Funcionament de \textit {DMPs} sense $\mathrm {PI^2}$}{54}{section.4.3}
-\contentsline {section}{\numberline {4.4}Funcionament de \textit {DMPs} amb $\mathrm {PI^2}$}{54}{section.4.4}
-\contentsline {chapter}{\numberline {5}Conclusions}{55}{chapter.5}
-\contentsline {chapter}{Agra\IeC {\@umlaut \i }ments}{56}{chapter*.48}
-\contentsline {chapter}{Refer\IeC {\`e}ncies}{62}{chapter*.49}
-\contentsline {chapter}{Annexos}{63}{section*.50}
-\contentsline {chapter}{\numberline {A}Instal\IeC {\textperiodcentered }laci\IeC {\'o} de \textit {ROS}, llibreries d'Urbi i paquet aibo$\_$server}{64}{appendix.A}
-\contentsline {chapter}{\numberline {B}Bibliografia}{66}{appendix.B}
+\contentsline {chapter}{Prefaci}{7}{chapter*.5}
+\contentsline {section}{Motivaci\IeC {\'o}}{7}{section*.6}
+\contentsline {section}{Definici\IeC {\'o} del \textit {TFG}}{8}{section*.7}
+\contentsline {section}{Requeriments previs}{8}{section*.8}
+\contentsline {chapter}{\numberline {1}Introducci\IeC {\'o}}{9}{chapter.1}
+\contentsline {section}{\numberline {1.1}Objectius}{9}{section.1.1}
+\contentsline {section}{\numberline {1.2}Metodologia}{10}{section.1.2}
+\contentsline {section}{\numberline {1.3}Abast del treball}{11}{section.1.3}
+\contentsline {section}{\numberline {1.4}Estat de l'art}{11}{section.1.4}
+\contentsline {subsection}{\numberline {1.4.1}Robot AIBO}{11}{subsection.1.4.1}
+\contentsline {subsubsection}{\textit {Hardware}}{12}{section*.9}
+\contentsline {subsubsection}{\textit {Software}}{13}{section*.14}
+\contentsline {subsection}{\numberline {1.4.2}\textit {ROS}}{14}{subsection.1.4.2}
+\contentsline {subsubsection}{Estructura de \textit {ROS}}{15}{section*.15}
+\contentsline {subsubsection}{Objectius de \textit {ROS}}{16}{section*.16}
+\contentsline {subsubsection}{Eines de \textit {ROS}}{17}{section*.17}
+\contentsline {subsection}{\numberline {1.4.3}Robots}{18}{subsection.1.4.3}
+\contentsline {paragraph}{}{18}{section*.19}
+\contentsline {subsection}{\numberline {1.4.4}Modelat de robots}{20}{subsection.1.4.4}
+\contentsline {subsubsection}{Classificaci\IeC {\'o} de models}{20}{section*.22}
+\contentsline {subsubsection}{Simulaci\IeC {\'o} amb models}{21}{section*.25}
+\contentsline {subsection}{\numberline {1.4.5}Aprenentatge supervisat \textit {(SL)}}{23}{subsection.1.4.5}
+\contentsline {subsection}{\numberline {1.4.6}Aprenentatge per refor\IeC {\c c} \textit {(RL)}}{24}{subsection.1.4.6}
+\contentsline {subsection}{\numberline {1.4.7}\textit {DMP} (\textit {\textbf {D}ynamic \textbf {M}oviment \textbf {P}rimitive})}{26}{subsection.1.4.7}
+\contentsline {subsubsection}{Transformation system}{27}{section*.26}
+\contentsline {subsubsection}{Modificaci\IeC {\'o} de l'algorisme}{28}{section*.29}
+\contentsline {subsection}{\numberline {1.4.8}\textbf {P}ath \textbf {I}ntegral \textbf {P}olicy \textbf {I}mprovement ($\mathrm {PI^2}$)}{30}{subsection.1.4.8}
+\contentsline {subsection}{\numberline {1.4.9}Algorismes avan\IeC {\c c}ats}{31}{subsection.1.4.9}
+\contentsline {chapter}{\numberline {2}Estudis preliminars}{33}{chapter.2}
+\contentsline {section}{\numberline {2.1}Comunicaci\IeC {\'o} mitjan\IeC {\c c}ant \textit {ROS}}{33}{section.2.1}
+\contentsline {subsection}{\numberline {2.1.1}Entre l'AIBO i \textit {ROS}}{34}{subsection.2.1.1}
+\contentsline {subsection}{\numberline {2.1.2}Entre l'algorisme de control i \textit {ROS}}{35}{subsection.2.1.2}
+\contentsline {subsection}{\numberline {2.1.3}Entre l'Arduino i \textit {ROS}}{36}{subsection.2.1.3}
+\contentsline {section}{\numberline {2.2}Estabilitat}{36}{section.2.2}
+\contentsline {subsection}{\numberline {2.2.1}Estabilitat del \textit {CdG}}{37}{subsection.2.2.1}
+\contentsline {subsection}{\numberline {2.2.2}Horitzontalitat del robot AIBO}{37}{subsection.2.2.2}
+\contentsline {section}{\numberline {2.3}Algorismes de resposta davant pertorbacions}{37}{section.2.3}
+\contentsline {subsection}{\numberline {2.3.1}Model del robot}{38}{subsection.2.3.1}
+\contentsline {subsection}{\numberline {2.3.2}Aprenentatge supervisat}{38}{subsection.2.3.2}
+\contentsline {subsection}{\numberline {2.3.3}Aprenentatge per refor\IeC {\c c}}{39}{subsection.2.3.3}
+\contentsline {subsection}{\numberline {2.3.4}\textit {DMP}}{40}{subsection.2.3.4}
+\contentsline {subsubsection}{Moviment original}{40}{section*.33}
+\contentsline {subsubsection}{Pesos de la funci\IeC {\'o} \textit {f(s)}}{40}{section*.34}
+\contentsline {subsection}{\numberline {2.3.5}Elecci\IeC {\'o} final}{41}{subsection.2.3.5}
+\contentsline {section}{\numberline {2.4}Codis amb \textit {DMPs} implementades}{41}{section.2.4}
+\contentsline {subsection}{\numberline {2.4.1}\textit {DMPs} de Scott Niekum}{42}{subsection.2.4.1}
+\contentsline {subsubsection}{Aprenentatge dels pesos}{42}{section*.36}
+\contentsline {subsubsection}{C\IeC {\`a}lcul de les accions de control}{43}{section*.37}
+\contentsline {subsection}{\numberline {2.4.2}Package complert del robot PR2 del \textit {USC-CLMC}}{43}{subsection.2.4.2}
+\contentsline {subsubsection}{DMP}{44}{section*.39}
+\contentsline {subsubsection}{Policy$\_$learning}{45}{section*.40}
+\contentsline {chapter}{\numberline {3}Disseny}{46}{chapter.3}
+\contentsline {section}{\numberline {3.1}Model de l'AIBO}{46}{section.3.1}
+\contentsline {section}{\numberline {3.2}Moviment del centre de gravetat}{48}{section.3.2}
+\contentsline {subsection}{\numberline {3.2.1}Acceler\IeC {\`o}metre MPU6050 i giroscopi GY-521}{49}{subsection.3.2.1}
+\contentsline {subsection}{\numberline {3.2.2}C\IeC {\`a}lcul de la posici\IeC {\'o} i de la inclinaci\IeC {\'o}}{49}{subsection.3.2.2}
+\contentsline {subsubsection}{C\IeC {\`a}lcul de la inclinaci\IeC {\'o}}{50}{section*.44}
+\contentsline {subsubsection}{C\IeC {\`a}lcul del despla\IeC {\c c}ament}{51}{section*.45}
+\contentsline {section}{\numberline {3.3}\textit {Goals} de les \textit {DMPs} i funci\IeC {\'o} recompensa del $\mathrm {PI^2}$}{51}{section.3.3}
+\contentsline {subsection}{\numberline {3.3.1}\textit {Goals} de les \textit {DMPs}}{52}{subsection.3.3.1}
+\contentsline {subsection}{\numberline {3.3.2}Funci\IeC {\'o} recompensa del $\mathrm {PI^2}$}{52}{subsection.3.3.2}
+\contentsline {section}{\numberline {3.4}Plataforma}{53}{section.3.4}
+\contentsline {chapter}{\numberline {4}Funcionament i execuci\IeC {\'o}}{54}{chapter.4}
+\contentsline {section}{\numberline {4.1}Connexions a establir}{54}{section.4.1}
+\contentsline {subsection}{\numberline {4.1.1}Conjunt acceler\IeC {\`o}metre-giroscopi}{54}{subsection.4.1.1}
+\contentsline {subsection}{\numberline {4.1.2}AIBO a trav\IeC {\'e}s d'\texttt {}\textit {Access Point} (\textit {AP})}{55}{subsection.4.1.2}
+\contentsline {section}{\numberline {4.2}Processos previs}{57}{section.4.2}
+\contentsline {subsection}{\numberline {4.2.1}Carrega del programa de control del \textit {CdG} a Arduino}{57}{subsection.4.2.1}
+\contentsline {subsection}{\numberline {4.2.2}Execucions per l\IeC {\'\i }nia de comandes}{58}{subsection.4.2.2}
+\contentsline {section}{\numberline {4.3}Funcionament de \textit {DMPs} sense $\mathrm {PI^2}$}{58}{section.4.3}
+\contentsline {section}{\numberline {4.4}Funcionament de \textit {DMPs} amb $\mathrm {PI^2}$}{58}{section.4.4}
+\contentsline {chapter}{\numberline {5}Planificaci\IeC {\'o}}{59}{chapter.5}
+\contentsline {section}{\numberline {5.1}Planificaci\IeC {\'o} inicial}{59}{section.5.1}
+\contentsline {section}{\numberline {5.2}Planificaci\IeC {\'o} final}{59}{section.5.2}
+\contentsline {chapter}{\numberline {6}Pressupost}{60}{chapter.6}
+\contentsline {chapter}{\numberline {7}Impacte medi ambiental}{61}{chapter.7}
+\contentsline {section}{\numberline {7.1}Impacte ambiental}{61}{section.7.1}
+\contentsline {section}{\numberline {7.2}Impacte social}{61}{section.7.2}
+\contentsline {section}{\numberline {7.3}Impacte econ\IeC {\`o}mic}{62}{section.7.3}
+\contentsline {chapter}{\numberline {8}Conclusions}{63}{chapter.8}
+\contentsline {chapter}{Agra\IeC {\@umlaut \i }ments}{64}{chapter*.50}
+\contentsline {chapter}{Refer\IeC {\`e}ncies}{70}{chapter*.51}
+\contentsline {chapter}{Annexos}{71}{section*.52}
+\contentsline {chapter}{\numberline {A}Instal\IeC {\textperiodcentered }laci\IeC {\'o} de \textit {ROS}, llibreries d'\textit {URBI} i paquet aibo$\_$server}{72}{appendix.A}
+\contentsline {chapter}{\numberline {B}Bibliografia}{74}{appendix.B}

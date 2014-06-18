@@ -1,0 +1,606 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="744.09448"
+   height="1052.3622"
+   id="svg2"
+   version="1.1"
+   inkscape:version="0.48.3.1 r9886"
+   sodipodi:docname="dibujo.svg">
+  <defs
+     id="defs4" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="1.979899"
+     inkscape:cx="366.34826"
+     inkscape:cy="839.71116"
+     inkscape:document-units="px"
+     inkscape:current-layer="g3634"
+     showgrid="false"
+     inkscape:window-width="1301"
+     inkscape:window-height="744"
+     inkscape:window-x="65"
+     inkscape:window-y="24"
+     inkscape:window-maximized="1" />
+  <metadata
+     id="metadata7">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Capa 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <text
+       xml:space="preserve"
+       style="font-size:40px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:TeXGyrePagella;-inkscape-font-specification:TeXGyrePagella"
+       x="277.14285"
+       y="196.95161"
+       id="text2985"
+       sodipodi:linespacing="125%"
+       transform="translate(0,308.2677)"><tspan
+         sodipodi:role="line"
+         id="tspan2987"
+         x="277.14285"
+         y="196.95161" /><tspan
+         sodipodi:role="line"
+         x="277.14285"
+         y="246.95161"
+         id="tspan2989" /></text>
+    <g
+       id="g3634"
+       transform="matrix(1.7984729,0,0,1.7984729,-1227.3257,383.69346)">
+      <g
+         id="g3472"
+         transform="matrix(0.52427132,0,0,0.4723753,381.04519,-129.78007)"
+         style="fill:#9dccd8;fill-opacity:1">
+        <path
+           id="path3476"
+           d="m 961.3994,-116.856 102.851,0 c 14.2,0 25.71,8.008 25.71,17.8878 0,9.8793 -11.51,17.8881 -25.71,17.8881 l -102.851,0 c -14.201,0 -25.713,-8.0088 -25.713,-17.8881 0,-9.8798 11.512,-17.8878 25.713,-17.8878"
+           style="fill:#d6e9f0;stroke:#000000;stroke-width:2;fill-opacity:1"
+           inkscape:connector-curvature="0" />
+        <text
+           id="text3478"
+           y="-95.799721"
+           x="1009.2424"
+           style="font-size:6.29622746px;font-style:normal;font-weight:normal;text-anchor:middle;fill:#000000;fill-opacity:1;font-family:TeXGyreTermes"
+           font-size="12.8">
+          <tspan
+             id="tspan3480"
+             y="-95.799721"
+             x="1009.2424"
+             style="font-size:12.32485962px;fill:#000000;fill-opacity:1">Inici algorisme $\mathrm{PI^2}$</tspan>
+        </text>
+      </g>
+      <g
+         id="g3482"
+         transform="matrix(0.52252752,0,0,0.41327628,367.78263,-139.36522)"
+         style="fill:#e7c4fc;fill-opacity:1">
+        <polygon
+           id="polygon3484"
+           points="934.544,-49.879 1140.76,-49.879 1115.29,20.121 909.066,20.121 "
+           style="fill:#e7c4fc;fill-opacity:1" />
+        <polygon
+           id="polygon3486"
+           points="934.544,-49.879 1140.76,-49.879 1115.29,20.121 909.066,20.121 "
+           style="fill:#e7c4fc;stroke:#000000;stroke-width:2;fill-opacity:1" />
+        <text
+           id="text3488"
+           y="-25.329"
+           x="1024.92"
+           style="font-size:12.80000019000000044px;font-style:normal;font-weight:normal;text-anchor:middle;fill:#e7c4fc;font-family:TeXGyreTermes;fill-opacity:1"
+           font-size="12.8" />
+      </g>
+      <text
+         id="text3496"
+         y="146.235"
+         x="753.966"
+         style="font-size:12.80000019px;font-style:normal;font-weight:normal;text-anchor:start;fill:#000000;font-family:TeXGyreTermes"
+         font-size="12.8">
+        <tspan
+           id="tspan3498"
+           y="146.235"
+           x="753.966" />
+      </text>
+      <g
+         id="g3500"
+         transform="matrix(0.32720736,0,0,0.32720736,561.52576,-141.40514)"
+         style="fill:#ff928b;fill-opacity:1">
+        <rect
+           id="rect3502"
+           height="49.5383"
+           width="277.60001"
+           y="190.463"
+           x="1017.99"
+           style="fill:#ff928b;fill-opacity:1" />
+        <rect
+           id="rect3504"
+           height="49.5383"
+           width="277.60001"
+           y="190.463"
+           x="1017.99"
+           style="fill:#ff928b;stroke:#000000;stroke-width:2;fill-opacity:1" />
+        <text
+           id="text3506"
+           y="220.782"
+           x="1156.79"
+           style="font-size:12.80000019000000044px;font-style:normal;font-weight:normal;text-anchor:middle;fill:#ff928b;font-family:TeXGyreTermes;fill-opacity:1"
+           font-size="12.8">
+          <tspan
+             id="tspan3508"
+             y="220.782"
+             x="1156.79"
+             style="fill:#ff928b;fill-opacity:1" />
+        </text>
+      </g>
+      <g
+         id="g3510"
+         transform="matrix(0.40516531,0,0,0.41617904,486.59614,-160.68956)"
+         style="fill-opacity:1;fill:#ff928b">
+        <rect
+           id="rect3512"
+           height="54"
+           width="145.246"
+           y="188.05701"
+           x="841.77802"
+           style="fill:#ff928b;fill-opacity:1" />
+        <rect
+           id="rect3514"
+           height="54"
+           width="145.246"
+           y="188.05701"
+           x="841.77802"
+           style="fill:#ff928b;stroke:#000000;stroke-width:2;fill-opacity:1" />
+        <text
+           id="text3516"
+           y="212.60699"
+           x="914.401"
+           style="font-size:12.80000019000000044px;font-style:normal;font-weight:normal;text-anchor:middle;fill:#ff928b;font-family:TeXGyreTermes;fill-opacity:1"
+           font-size="12.8" />
+      </g>
+      <g
+         id="g3522"
+         transform="matrix(0.38587346,0,0,0.33081722,507.3668,-142.0525)"
+         style="fill:#ff928b;fill-opacity:1">
+        <rect
+           id="rect3524"
+           height="70"
+           width="193.45"
+           y="180.33099"
+           x="619.65997"
+           style="fill:#ff928b;fill-opacity:1" />
+        <rect
+           id="rect3526"
+           height="70"
+           width="193.45"
+           y="180.33099"
+           x="619.65997"
+           style="fill:#ff928b;stroke:#000000;stroke-width:2;fill-opacity:1" />
+        <text
+           id="text3528"
+           y="212.881"
+           x="716.38501"
+           style="font-size:12.80000019000000044px;font-style:normal;font-weight:normal;text-anchor:middle;fill:#ff928b;font-family:TeXGyreTermes;fill-opacity:1"
+           font-size="12.8" />
+      </g>
+      <g
+         id="g3534"
+         transform="matrix(0.32720736,0,0,0.32720736,545.51537,-141.40514)"
+         style="fill:#c8fac8;fill-opacity:1">
+        <path
+           id="path3536"
+           d="m 722.59,59.3064 579.1,0 115.82,35.0146 -115.82,35.015 -579.1,0 L 606.77,94.321 722.59,59.3064 z"
+           style="fill:#c8fac8;fill-opacity:1"
+           inkscape:connector-curvature="0" />
+        <path
+           id="path3538"
+           d="m 722.59,59.3064 579.1,0 115.82,35.0146 -115.82,35.015 -579.1,0 L 606.77,94.321 722.59,59.3064"
+           style="fill:#c8fac8;stroke:#000000;stroke-width:2;fill-opacity:1"
+           inkscape:connector-curvature="0" />
+        <text
+           id="text3540"
+           y="99.920998"
+           x="1012.14"
+           style="font-size:12.80000019000000044px;font-style:normal;font-weight:normal;text-anchor:middle;fill:#c8fac8;font-family:TeXGyreTermes;fill-opacity:1"
+           font-size="12.8">
+          <tspan
+             id="tspan3542"
+             y="99.920998"
+             x="1012.14"
+             style="fill:#c8fac8;fill-opacity:1" />
+        </text>
+        <text
+           xml:space="preserve"
+           style="font-size:22.24109076999999957px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:TeXGyrePagella;-inkscape-font-specification:TeXGyrePagella"
+           x="674.849"
+           y="99.948624"
+           id="text3791"
+           sodipodi:linespacing="125%"><tspan
+             sodipodi:role="line"
+             id="tspan3793"
+             x="674.849"
+             y="99.948624"
+             style="font-size:17.79287337999999963px;fill:#000000;fill-opacity:1">Des de \texttt{trial} = \texttt{first$\_$trial$\_$policy} fins \texttt{last$\_$trial$\_$policy}</tspan></text>
+      </g>
+      <g
+         id="g3544"
+         transform="matrix(0.32720736,0,0,0.32720736,545.51537,-141.40514)">
+        <line
+           id="line3546"
+           y2="181.63734"
+           x2="1204.527"
+           y1="130.24634"
+           x1="1204.627"
+           style="fill:none;stroke:#000000;stroke-width:2" />
+        <polygon
+           id="polygon3548"
+           points="1156.8,188.227 1151.82,178.217 1156.81,180.727 1161.82,178.237 "
+           style="fill:#000000"
+           transform="translate(47.580723,0)" />
+        <polygon
+           id="polygon3550"
+           points="1156.8,188.227 1151.82,178.217 1156.81,180.727 1161.82,178.237 "
+           style="fill:none;stroke:#000000;stroke-width:2"
+           transform="translate(47.580723,0)" />
+      </g>
+      <text
+         id="text3552"
+         y="158.489"
+         x="1165.7"
+         style="font-size:12.80000019px;font-style:normal;font-weight:normal;text-anchor:start;fill:#000000;font-family:TeXGyreTermes"
+         font-size="12.8">
+        <tspan
+           id="tspan3554"
+           y="158.489"
+           x="1165.7" />
+      </text>
+      <g
+         id="g3556"
+         transform="matrix(0.32720736,0,0,0.32720736,543.17619,-141.40514)">
+        <polyline
+           id="polyline3558"
+           points="619.66,215.331 585.77,215.331 585.77,94.321 597.034,94.321 "
+           style="fill:none;stroke:#000000;stroke-width:2" />
+        <polygon
+           id="polygon3560"
+           points="594.534,89.321 604.534,94.321 594.534,99.321 597.034,94.321 "
+           style="fill:#000000" />
+        <polygon
+           id="polygon3562"
+           points="594.534,89.321 604.534,94.321 594.534,99.321 597.034,94.321 "
+           style="fill:none;stroke:#000000;stroke-width:2" />
+      </g>
+      <g
+         id="g3564"
+         transform="matrix(0.32720736,0,0,0.32720736,545.51537,-141.40514)"
+         style="fill:#ff928b;fill-opacity:1">
+        <rect
+           id="rect3566"
+           height="70.438904"
+           width="232.918"
+           y="299.45599"
+           x="908.49597"
+           style="fill:#ff928b;fill-opacity:1" />
+        <rect
+           id="rect3568"
+           height="70.438904"
+           width="232.918"
+           y="299.45599"
+           x="908.49597"
+           style="fill:#ff928b;stroke:#000000;stroke-width:2;fill-opacity:1" />
+        <text
+           id="text3570"
+           y="332.22501"
+           x="1024.95"
+           style="font-size:12.80000019000000044px;font-style:normal;font-weight:normal;text-anchor:middle;fill:#ff928b;font-family:TeXGyreTermes;fill-opacity:1"
+           font-size="12.8" />
+        <text
+           xml:space="preserve"
+           style="font-size:22.24109076999999957px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:TeXGyrePagella;-inkscape-font-specification:TeXGyrePagella"
+           x="930.45709"
+           y="326.86426"
+           id="text3819"
+           sodipodi:linespacing="125%"><tspan
+             sodipodi:role="line"
+             x="930.45709"
+             y="326.86426"
+             id="tspan3823"
+             style="font-size:17.79287337999999963px;fill:#000000;fill-opacity:1">Càlcul nous pesos</tspan></text>
+        <text
+           xml:space="preserve"
+           style="font-size:22.24109077px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:TeXGyrePagella;-inkscape-font-specification:TeXGyrePagella"
+           x="1001.7121"
+           y="348.80103"
+           id="text3841"
+           sodipodi:linespacing="125%"><tspan
+             sodipodi:role="line"
+             id="tspan3843"
+             x="1001.7121"
+             y="348.80103">$\theta^{new}$</tspan></text>
+      </g>
+      <g
+         id="g3576"
+         transform="matrix(0.32720736,0,0,0.32720736,545.51537,-141.40514)">
+        <polyline
+           id="polyline3578"
+           points="1024.96,369.894 1024.96,390.894 526.108,390.894 526.108,-14.8789 912.07,-14.8789 "
+           style="fill:none;stroke:#000000;stroke-width:2" />
+        <polygon
+           id="polygon3580"
+           points="912.07,-14.8789 909.57,-19.8789 919.57,-14.8789 909.57,-9.87892 "
+           style="fill:#000000" />
+        <polygon
+           id="polygon3582"
+           points="912.07,-14.8789 909.57,-19.8789 919.57,-14.8789 909.57,-9.87892 "
+           style="fill:none;stroke:#000000;stroke-width:2" />
+      </g>
+      <g
+         id="g3584"
+         transform="matrix(0.32720736,0,0,0.32720736,545.51537,-141.40514)">
+        <polyline
+           id="polyline3586"
+           points="1417.51,94.321 1445.86,94.321 1445.86,264.44 1024.96,264.44 1024.96,289.72 "
+           style="fill:none;stroke:#000000;stroke-width:2" />
+        <polygon
+           id="polygon3588"
+           points="1024.96,289.72 1029.96,287.22 1024.96,297.22 1019.96,287.22 "
+           style="fill:#000000" />
+        <polygon
+           id="polygon3590"
+           points="1024.96,289.72 1029.96,287.22 1024.96,297.22 1019.96,287.22 "
+           style="fill:none;stroke:#000000;stroke-width:2" />
+      </g>
+      <g
+         id="g3592"
+         transform="matrix(0.23052969,0,0,0.32720736,659.0879,-141.40514)">
+        <line
+           id="line3594"
+           y2="215.11301"
+           x2="996.76001"
+           y1="215.23199"
+           x1="1017.99"
+           style="fill:none;stroke:#000000;stroke-width:2" />
+        <polygon
+           id="polygon3596"
+           points="996.76,215.113 999.232,220.127 989.26,215.071 999.288,210.127 "
+           style="fill:#000000" />
+        <polygon
+           id="polygon3598"
+           points="996.76,215.113 999.232,220.127 989.26,215.071 999.288,210.127 "
+           style="fill:none;stroke:#000000;stroke-width:2" />
+      </g>
+      <g
+         id="g3600"
+         transform="matrix(0.23233474,0,0,0.32720736,632.04936,-141.40514)">
+        <line
+           id="line3602"
+           y2="215.23801"
+           x2="822.84601"
+           y1="215.058"
+           x1="841.77802"
+           style="fill:none;stroke:#000000;stroke-width:2" />
+        <polygon
+           id="polygon3604"
+           points="825.298,210.214 822.846,215.238 825.393,220.214 815.346,215.309 "
+           style="fill:#000000" />
+        <polygon
+           id="polygon3606"
+           points="825.298,210.214 822.846,215.238 825.393,220.214 815.346,215.309 "
+           style="fill:none;stroke:#000000;stroke-width:2" />
+      </g>
+      <g
+         id="g3608"
+         transform="matrix(0.32720736,0,0,0.2244033,568.14427,-135.27817)">
+        <line
+           id="line3610"
+           y2="49.570301"
+           x2="1012.15"
+           y1="20.121"
+           x1="1012.18"
+           style="fill:none;stroke:#000000;stroke-width:2" />
+        <polygon
+           id="polygon3612"
+           points="1017.15,47.0749 1012.14,57.0703 1007.15,47.0657 1012.15,49.5703 "
+           style="fill:#000000" />
+        <polygon
+           id="polygon3614"
+           points="1017.15,47.0749 1012.14,57.0703 1007.15,47.0657 1012.15,49.5703 "
+           style="fill:none;stroke:#000000;stroke-width:2" />
+      </g>
+      <text
+         id="text3616"
+         y="76.073997"
+         x="1388.63"
+         style="font-size:12.80000019px;font-style:normal;font-weight:normal;text-anchor:start;fill:#000000;font-family:TeXGyreTermes"
+         font-size="12.8">
+        <tspan
+           id="tspan3618"
+           y="76.073997"
+           x="1388.63" />
+      </text>
+      <g
+         id="g3620"
+         transform="matrix(0.26845193,0,0,0.26845193,629.47935,-146.48769)">
+        <line
+           id="line3622"
+           y2="-59.614899"
+           x2="1037.6"
+           y1="-81.080002"
+           x1="1037.47"
+           style="fill:none;stroke:#000000;stroke-width:2" />
+        <polygon
+           id="polygon3624"
+           points="1037.64,-52.115 1032.58,-62.086 1037.6,-59.6149 1042.58,-62.1437 "
+           style="fill:#000000" />
+        <polygon
+           id="polygon3626"
+           points="1037.64,-52.115 1032.58,-62.086 1037.6,-59.6149 1042.58,-62.1437 "
+           style="fill:none;stroke:#000000;stroke-width:2" />
+      </g>
+      <text
+         xml:space="preserve"
+         style="font-size:7.27744818px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:TeXGyrePagella;-inkscape-font-specification:TeXGyrePagella"
+         x="857.76373"
+         y="-150.60381"
+         id="text3783"
+         sodipodi:linespacing="125%"><tspan
+           sodipodi:role="line"
+           x="857.76373"
+           y="-150.60381"
+           style="font-size:5.82195902px"
+           id="tspan3789">Pesos de la solució anterior,</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-size:7.27744818px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:TeXGyrePagella;-inkscape-font-specification:TeXGyrePagella"
+         x="924.7514"
+         y="-48.534946"
+         id="text3795"
+         sodipodi:linespacing="125%"><tspan
+           sodipodi:role="line"
+           id="tspan3797"
+           x="924.7514"
+           y="-48.534946"
+           style="font-size:3.63872409px">\texttt{trial} $&gt;$ \texttt{last$\_$trial$\_$policy}</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-size:7.27744818px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:TeXGyrePagella;-inkscape-font-specification:TeXGyrePagella"
+         x="938.81409"
+         y="-89.984909"
+         id="text3799"
+         sodipodi:linespacing="125%"><tspan
+           sodipodi:role="line"
+           id="tspan3801"
+           x="938.81409"
+           y="-89.984909"
+           style="font-size:3.63872409px">\texttt{trial} $\leq$ \texttt{last$\_$trial$\_$policy}</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-size:7.27744818px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:TeXGyrePagella;-inkscape-font-specification:TeXGyrePagella"
+         x="907.66296"
+         y="-70.106712"
+         id="text3803"
+         sodipodi:linespacing="125%"><tspan
+           sodipodi:role="line"
+           id="tspan3805"
+           x="907.66296"
+           y="-70.106712"
+           style="font-size:5.82195902px">Creació $\theta^{init} + \epsilon_{t,k}^{\theta}$</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-size:7.27744818px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:TeXGyrePagella;-inkscape-font-specification:TeXGyrePagella"
+         x="830.32959"
+         y="-75.371025"
+         id="text3807"
+         sodipodi:linespacing="125%"><tspan
+           sodipodi:role="line"
+           x="830.32959"
+           y="-75.371025"
+           style="font-size:5.82195902px"
+           id="tspan3811">Dur a terme la</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-size:7.27744818px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:TeXGyrePagella;-inkscape-font-specification:TeXGyrePagella"
+         x="754.47528"
+         y="-73.41481"
+         id="text3813"
+         sodipodi:linespacing="125%"><tspan
+           sodipodi:role="line"
+           x="754.47528"
+           y="-73.41481"
+           id="tspan3817"
+           style="font-size:5.82195902px">Càlcul del cost</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-size:7.27744913px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:TeXGyrePagella;-inkscape-font-specification:TeXGyrePagella"
+         x="831.43225"
+         y="-68.754822"
+         id="text3825"
+         sodipodi:linespacing="125%"><tspan
+           sodipodi:role="line"
+           id="tspan3827"
+           x="831.43225"
+           y="-68.754822"
+           style="font-size:5.82195902px">nova</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-size:7.27744913px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:TeXGyrePagella;-inkscape-font-specification:TeXGyrePagella"
+         x="756.49072"
+         y="-67.930901"
+         id="text3829"
+         sodipodi:linespacing="125%"><tspan
+           sodipodi:role="line"
+           id="tspan3831"
+           x="756.49072"
+           y="-67.930901"
+           style="font-size:5.82195902px">d'aquesta</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-size:7.27744818px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:TeXGyrePagella;-inkscape-font-specification:TeXGyrePagella"
+         x="857.39612"
+         y="-136.26871"
+         id="text3833"
+         sodipodi:linespacing="125%"><tspan
+           sodipodi:role="line"
+           id="tspan3835"
+           x="857.39612"
+           y="-136.26871"
+           style="font-size:5.82195902px">sistema dinàmic</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-size:7.27744818px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:TeXGyrePagella;-inkscape-font-specification:TeXGyrePagella"
+         x="857.39612"
+         y="-143.98761"
+         id="text3837"
+         sodipodi:linespacing="125%"><tspan
+           sodipodi:role="line"
+           id="tspan3839"
+           x="857.39612"
+           y="-143.98761"
+           style="font-size:5.82195902px">paràmetres K i D del</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-size:22.24109077px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:TeXGyrePagella;-inkscape-font-specification:TeXGyrePagella"
+         x="755.10724"
+         y="-61.903229"
+         id="text3874"
+         sodipodi:linespacing="125%"><tspan
+           sodipodi:role="line"
+           id="tspan3876"
+           x="755.10724"
+           y="-61.903229"
+           style="font-size:5.82160568px"> trajectòria</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-size:22.24109077px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:TeXGyrePagella;-inkscape-font-specification:TeXGyrePagella"
+         x="828.92871"
+         y="-63.139347"
+         id="text3874-0"
+         sodipodi:linespacing="125%"><tspan
+           sodipodi:role="line"
+           id="tspan3876-9"
+           x="828.92871"
+           y="-63.139347"
+           style="font-size:5.82160568px"> trajectòria</tspan></text>
+    </g>
+  </g>
+</svg>
